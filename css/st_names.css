@@ -1,0 +1,90 @@
+﻿/********************************************************
+Настройка стилей окна выбора имени
+*********************************************************/
+
+#snames {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: normal;
+	border: 1px outset #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+	width: 690px;
+	z-index: 2000;
+	left: 250px;
+	top: 50px;
+	position: absolute;
+}
+#snames table {
+		border: 0px;
+		margin: 0px;
+		padding: 0px;
+		font-size: 12px;
+		line-height: normal;
+		text-align: center;
+}
+#snames td {
+		border: 0px;
+		margin: 0px;
+		padding: 0px;
+		text-align: center;
+		vertical-align:middle;
+}
+#snames img {
+		border: 0px;
+		margin: 0px;
+		padding: 0px;
+		vertical-align:middle;
+}
+#snames hr {
+	margin: 5px 0 5px;
+}
+#snames .header {	/* Заголовок					*/
+	color: white;					/* Цвет текста	*/
+	height: 70px; 
+	text-align: center;
+	font-weight: bold; 
+    font-size: 16px;
+    padding: 3px 5px;
+}
+#snames .footer {	/* Подвал						*/
+	color: white;					/* Цвет текста	*/
+	height: 60px; 
+	font-size: 16px;
+	text-align: center;
+}
+#snames .separator {	/* Разделитель					*/
+	background-image: url('separator.png');
+	height: 50px;
+}
+#snames .separator1 {	/* Разделитель	верх		*/
+	background-image: url('separator1.png');
+	height: 25px;
+}
+#snames .separator2 {	/* Разделитель	низ			*/
+	background-image: url('separator2.png');
+	height: 25px;
+}
+#snames .bottom1 {	/* Разделитель	верх		*/
+	height: 25px;
+}
+#snames .bottom2 {	/* Разделитель	низ			*/
+	height: 25px;
+}
+#snames .day {		/* Описание дня					*/
+	min-height: 200px;
+	padding: 6px;
+}
+.curDate {			/* Обычная дата					*/
+	font-size: 16px;
+	font-weight: bold;
+}
+.holDate {			/* Празднечная дата				*/
+	color:red;						/* Цвет текста	*/
+	font-size: 16px;
+	font-weight: bold;
+}
+.holiday {			/* Праздник 					*/
+	color: red;						/* Цвет текста	*/
+	font-weight: bold;
+}

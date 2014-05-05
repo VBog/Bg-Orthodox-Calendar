@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru-RU">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="ru">
+
+<head>
+<title>Православный календарь на год</title>
+
+<link href="css/bs_calendar.css" rel="stylesheet" type="text/css">
+<link href="css/st_names.css" rel="stylesheet" type="text/css">
+<link href="css/sl_psaltir.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/bg_ortcal_days.js"></script>
+<script type="text/javascript" src="js/bg_ortcal_year.js"></script>
+<script type="text/javascript" src="js/bg_ortcal_names.js"></script>
+<script>
+	var baseUrl =  "";
+	loadXML(); 										// Загрузка данных для календаря
+
+	var now = new Date();
+	var cur_year=now.getFullYear();					// Текущий год
+	var cur_month=now.getMonth();					// Текущий месяц
+	var cur_date=now.getDate();						// Текущая дата
+	var one_month=false;
+	var dim = new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+	var one_day=false;
+
+
+/* -----------------------------------------------------------------------------
+  Читаем строку параметров
+ ------------------------------------------------------------------------------- */
+// Сначало мы присваиваем переменной все то, что находится после знака вопроса:
+	var p_url=location.search.substring(1);
+// Если параметров было много, то их надо разделить:
+	var parametr=p_url.split("&");
+// Теперь надо избавиться от знака равенства и присвоить каждой переменной свое значение:
+	var values= new Array();
+	for(i in parametr) {
+		var j=parametr[i].split("=");
+		values[j[0]]=unescape(j[1]);
+	}
+/* ---------------------------------------------------------------------------- */
+	if (values["year"]) { 						// Если задан год
+		cur_year = parseInt(values["year"]);	// то отобажаем календарь для заданного года
+	}
+	if (values["month"]) { 						// Если задан месяц
+		var m = parseInt(values["month"]);							
+		if (m >=1 && m<=12) cur_month = m-1;	// то отобажаем календарь для заданного месяца, если значение месяца задано некорректно, то текущий месяц
+		one_month=true;							// причем только один месяц
+		if (values["date"]) { 					// Если задана дата
+			var d = parseInt(values["date"]);
+			var all_days = (cur_month == 2 && isLeap(cur_year)) ? 29 : dim[cur_month];
+			if (d >0) cur_date = d;				// то отобажаем календарь для заданной даты, если день задан некорректно, то текущую дату
+			if (cur_date>all_days) cur_date = all_days;	// а если дата больше количества дней в месяце, последний день месяца
+			one_day=true;						// причем только один день
+		}
+	}
+
+function show_days() {
+
+    var mns = new Array("Zнварь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентzбрь","Октzбрь","Ноzбрь","Декабрь");
+	var t_text="";
+	var curD = 1; 
+	var curM = 0;
+	var curY = cur_year;
+	var el = document.getElementsByTagName('body')[0];
+	el.style.cursor = 'wait';
+	var yCh;
+	
+	var all_days = (cur_month == 2 && isLeap(cur_year)) ? 29 : dim[cur_month];
+	if (cur_date>all_days) cur_date = all_days;	// если дата больше количества дней в месяце, последний день месяца
+	
+	if (cur_year == 0) yCh = 'Год Рождества Христова';
+	else if (cur_year < 0) yCh = '<snap style="font-family: Times; font-weight:bold">'+(-cur_year) + '</snap> год до РХ';
+	else yCh = '<snap style="font-family: Times; font-weight:bold">'+cur_year + '</snap> год от РХ';
+	
+	t_text+='<table border="0" width="100%"><tbody><tr><td class="menu-entry" width="40" valign="center" align="center" style="color: #ff0000; font-weight: bolder; font-size: x-large;" onclick="prev_year()"><<</td><td></td><td width="800" valign="center" align="center">';
+	t_text+='<div class="Name0" align="center">на '+yCh+'</div>';
+	t_text+='</td><td width="20"></td><td class="menu-entry" width="40" valign="center" align="center" style="color: #ff0000; font-weight: bolder; font-size: x-large;" onclick="next_year()">>></td></tr></tbody></table>';
+
+
+// Выводим на экран дни года	
+	var d = new Date(curY, curM, curD);
+	var fixM=-1;
+	d.setFullYear(curY);
+	do {
+		curD = d.getDate();
+		curM = d.getMonth();
+		curY = d.getFullYear();
+		if (!one_month || (one_month && curM == cur_month)) {
+			if (!one_day || (one_day && curD == cur_date)) {
+				if (one_month) dispM = "";
+				else dispM = "display: none;";
+				t_text+="<div class='separator2'></div>";
+				if (one_day) {				// Заголовок для одного дня
+					t_text+='<table border="0" width="100%"><tbody><tr><td class="menu-entry" width="40" valign="center" align="center" style="color: #000000; font-weight: bolder; font-size: large; border: 1px outset;" onclick="prev_day()"><</td><td></td><td width="800" valign="center">';
+					t_text+='</td><td width="20"></td><td class="menu-entry" width="40" valign="center" align="center" style="color: #000000; font-weight: bolder; font-size: large; border: 1px outset" onclick="next_day()">></td></tr></tbody></table>';
+				}
+				else if (fixM != curM) {	// Заголовок для месяца (месяц, год)
+					fixM = curM;
+					t_text+='<table border="0" width="100%"><tbody><tr><td class="menu-entry" width="40" valign="center" align="center" style="color: #ff0000; font-weight: bolder; font-size: x-large;'+dispM+'" onclick="prev_month()"><</td><td></td><td width="800" valign="center" align="center">';
+					t_text+='<div class="Name1" align="center">'+mns[curM]+'</div>';
+					t_text+='</td><td width="20"></td><td class="menu-entry" width="40" valign="center" align="center" style="color: #ff0000; font-weight: bolder; font-size: x-large;'+dispM+'" onclick="next_month()">></td></tr></tbody></table>';
+					t_text+="<div class='separator2'></div>";
+				}
+				t_text+=getDayInfo(d);
+			}
+		}
+		d.setFullYear(curY,curM,curD+1);
+	} while (d.getFullYear() == cur_year);
+	
+	el.style.cursor = 'auto';
+	return t_text;
+}
+function showYear() {
+	var t = show_days();
+	document.getElementById('table_text').innerHTML = t;
+}
+function next_year() {
+	cur_year++; 
+	var t = show_days();
+	document.getElementById('table_text').innerHTML = t;
+}
+function prev_year() {
+	cur_year--; 
+	var t = show_days();
+	document.getElementById('table_text').innerHTML = t;
+}
+function next_month() {
+	cur_month++; 
+	if (cur_month > 11) {
+		cur_month = 0;
+		cur_year++;
+	}
+	var t = show_days();
+	document.getElementById('table_text').innerHTML = t;
+}
+function prev_month() {
+	cur_month--; 
+	if (cur_month < 0) {
+		cur_month = 11;
+		cur_year--;
+	}
+	var t = show_days();
+	document.getElementById('table_text').innerHTML = t;
+}
+function next_day() {
+	var all_days = (cur_month == 2 && isLeap(cur_year)) ? 29 : dim[cur_month];
+	cur_date++; 
+	if (cur_date>all_days) {
+		cur_date = 1;
+		cur_month++; 
+		if (cur_month > 11) {
+			cur_month = 0;
+			cur_year++;
+		}
+	}
+	var t = show_days();
+	document.getElementById('table_text').innerHTML = t;
+}
+function prev_day() {
+	cur_date--; 
+	if (cur_date<1) {
+		cur_month--; 
+		if (cur_month < 0) {
+			cur_month = 11;
+			cur_year--;
+		}
+		cur_date = (cur_month == 2 && isLeap(cur_year)) ? 29 : dim[cur_month];
+	}
+	var t = show_days();
+	document.getElementById('table_text').innerHTML = t;
+}
+
+</script>
+
+</head>
+
+<body onload="showYear();">
+	<div id="section">
+		<div class="Name0" align="center"><br>ПРАВОСЛАВНЫЙ КАЛЕНДАРЬ<br></div>		
+	
+		<div id="table_text" class="day">&nbsp;</div>
+		
+		<div class='separator2'></div>
+		<b>Обозначения:</b>
+		<table border="0" class="ru_text" width="100%"><tbody>
+			<tr><td width="20" valign="top"><img src="js/S0.gif" align="center"></img></td><td align="left" ><font color="red"><b>СВЕТЛОЕ ХРИСТОВО ВОСКРЕСЕНИЕ.</b></font></td></tr>
+			<tr><td width="20" valign="top"><img src="js/S1.gif" align="center"></img></td><td align="left" ><font color="red"><b>ДВУНАДЕСЯТЫЕ ПРАЗДНИКИ.</b></font></td></tr>
+			<tr><td width="20" valign="top"><img src="js/S2.gif" align="center"></img></td><td align="left" ><font color="red">Великие праздники.</font></td></tr>
+			<tr><td width="20" valign="top"><img src="js/S3.gif" align="center"></img></td><td align="left" >Средние бденные праздники.</td></tr>
+			<tr><td width="20" valign="top"><img src="js/S4.gif" align="center"></img></td><td align="left" >Средние полиелейные праздники.</td></tr>
+			<tr><td width="20" valign="top"><img src="js/S5.gif" align="center"></img></td><td align="left" >Малые славословные праздники</td></tr>
+			<tr><td width="20" valign="top"><img src="js/S6.gif" align="center"></img></td><td align="left" >Малые шестиричные праздники.</td></tr>
+			<tr><td width="20" valign="top"><img src="js/S7.gif" align="center"></img></td><td align="left" >Вседневные (Cовершается служба, не отмеченная в Типиконе никаким знаком).</td></tr>
+		</tbody></table>
+		<div class='separator2'></div>
+		<p style='margin-left:1em; font-size:80%'><a href='http://hpf.ru.com/'><b>Храм в честь святых благоверных Петра и Февронии</b></a>. © 2013 Все права защищены.</p>
+	</div>
+
+</body>
+</html>

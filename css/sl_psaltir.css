@@ -1,0 +1,182 @@
+﻿@font-face {
+  font-family: Orthodox;
+  src: 	url('OriUCS8.eot'), url('OriUCS8.ttf');
+}
+@font-face {
+  font-family: OrthoCaps;
+  src: 	url('OriUCS8c.eot'), url('OriUCS8c.ttf');
+}
+.Name0 {
+	font-family: Orthodox;
+	font-size: 36px;
+	color: #FF0000;
+	text-align: center;
+	font-weight: normal;
+}
+.Name1 {
+	font-family: Orthodox;
+	font-size: 32px;
+	color: #FF0000;
+	text-align: center;
+	font-weight: normal;
+}
+.Name2 {
+	font-family: Orthodox;
+	font-size: 24px;
+	color: #FF0000;
+	text-align: center;
+	padding-top: 15px;
+}
+.Name3 {
+	color: #FF0000;
+	font-family: Orthodox;
+	text-align: center;
+	font-size: 22px;
+	padding-top: 10px;
+}
+
+.text_L_1 {
+	color: #FF0000;
+	font-family: Orthodox;
+	font-size: 24px;
+	vertical-align: top;
+}
+.text_slov {
+	font-family: Orthodox;
+	font-size: 24px;
+	text-indent: 25px;
+	text-align: justify;
+	color: #000000;
+}
+.Title0 {
+	font-family: OrthoCaps;
+	font-size: 36px;
+	font-weight: bold;
+	color: #FF0000;
+	text-align: center;
+}
+.Title1 {
+	font-family: OrthoCaps;
+	font-size: 32px;
+	font-weight: bold;
+	color: #FF0000;
+	text-align: center;
+	font-weight: normal;
+}
+.Title2 {
+	font-family: OrthoCaps;
+	font-size: 24px;
+	font-weight: normal;
+	color: #FF0000;
+	text-align: center;
+	padding-top: 15px;
+}
+.Title3 {
+	color: #FF0000;
+	font-family: OrthoCaps;
+	font-weight: normal;
+	text-align: center;
+	font-size: 20px;
+	padding-top: 10px;
+}
+
+.text_prayer {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	text-indent: 25px;
+	text-align: justify;
+	color: #000000;
+}
+.right {
+	font-family: Orthodox;
+	font-size: 20px;
+	color: #FF0000;
+	text-align: right;
+	padding-top: 0px;
+	padding-bottom: 25px;
+}
+.text_ru {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #000066;
+	text-indent: 25px; 
+}
+.text_sl {
+	font-family: Orthodox;
+	font-size: 18px;
+	color: #ff0000;
+	text-indent: 25px; 
+}
+.table_ru {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #000066;
+}
+.ru_text {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000066;
+	text-indent: 25px; 
+}
+.nav { 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 12px; color: #FFFFFF; 
+	text-align: center; 
+	background-color: #0000CC; 
+	word-spacing: 7px; 
+}
+
+.menu-entry {
+  padding: 3px 2px;
+  cursor:pointer;
+}
+.menu-entry:hover {
+  border: 1px solid #AECFF7;
+  -webkit-border-radius:3px;
+  padding: 2px 1px;
+  padding-left:2px;
+  margin-left:-1px;
+}
+.menu-entry1 {
+  padding: 3px 2px;
+}
+.menu-entry1:hover {
+  border: 1px solid #AECFF7;
+  -webkit-border-radius:3px;
+  padding: 2px 1px;
+  padding-left:2px;
+  margin-left:-1px;
+}
+.separator {
+  width: 100%;
+  border-top: 2px groove white;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: -5px;
+  margin-right: -8px;
+}
+.separator2 {
+  width: 100%;
+  border-top: 2px groove white;
+  border-bottom: 2px groove white;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+#section {
+	margin:0 auto; 
+	padding: 20px;
+	width: 690px;
+	background-image: url('old-paper-background.jpg');
+}
+body {
+	background: #D5D7D7;
+}
+
+#gl:link { text-decoration: none; color: #FFFFFF; }
+#gl:visited { text-decoration: none; color: #FFFFFF; }
+#gl:hover { text-decoration: underline;	color: #FFFFFF; }
+#gl:active { text-decoration: none;	color: #FFFFFF; }
