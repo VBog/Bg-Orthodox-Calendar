@@ -23,11 +23,11 @@
 	color: <?php echo $mainColor; ?>;				/* Цвет основного текста*/
 }
 /* Поля перехода назад-вперед и название месяца								*/
-#bscal td.arrow, .month{ 
+#bscal td.arrow, #bscal .month{ 
 	color: <?php echo $titleColor; ?>;				/* Цвет текста			*/
 }
 /* Заголовок и подвал окна, Дни недели, Выделение в меню  					*/
-#bscal .top td, td.bot, .week, #v-menu li:hover, li a:hover  { 
+#bscal .top td, #bscal td.bot, #bscal .week, #v-menu li:hover, #v-menu li a:hover  { 
 	background-color: <?php echo $otherBgColor; ?>;	/* Цвет фона			*/
 	color: <?php echo $otherColor; ?>;				/* Цвет текста			*/
 }
@@ -51,7 +51,7 @@
 	color: <?php echo $otherColor; ?>;				/* Цвет основного текста*/
 }
 /* Описание дня, Разделители низ											*/
-#snames .day, .separator2, .bottom2 {	
+#snames .day, #snames .separator2, #snames .bottom2 {	
 	background-color: <?php echo $mainBgColor; ?>;	/* Цвет фона			*/
 	color: <?php echo $mainColor; ?>;				/* Цвет текста			*/
 }

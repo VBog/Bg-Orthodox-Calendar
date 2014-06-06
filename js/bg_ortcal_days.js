@@ -43,17 +43,15 @@ function MemoryDay () {
 }
 
 // Возвращает название Седмицы (Недели) по годичному кругу богослужений.
-function Sedmica (d) {			// d - текущая дата
+function Sedmica (d) {											// d - текущая дата
 	var nw;
-	var one_day=1000*60*60*24;	//1 день в милисекундах
+	var one_day=1000*60*60*24;									//1 день в милисекундах
 	var wd = d.getDay();
 	var easter_day = new Date(0);
 	year = d.getFullYear();
 	easter(easter_day, year);
 	var cd = Math.floor(d.getTime()/one_day);
 	var ed = Math.floor(easter_day.getTime()/one_day)-1;
-//	alert (cd+" "+ed+" "+ (cd - ed));
-
 	if (cd < ed-70) {				// До Недели о мытаре и фарисее идут седмицы по Пятидесятнице прошлого года
 		easter(easter_day, (year-1));
 		ed = Math.floor(easter_day.getTime()/one_day)-1;
@@ -61,8 +59,14 @@ function Sedmica (d) {			// d - текущая дата
 		if (wd == 0) return "Неделя "+nw+"-я по Пятидесятнице";
 		else return "Седмица "+nw+"-я по Пятидесятнице";
 	}
-	else if (cd <= ed-49) return ""; // Седмицы без наименований
-	else if (cd < ed-13) {			// Седмицы Великого поста
+	else if (cd == ed-70) return "Неделя о мытаре и фарисее";	// Седмицы подготовительные
+	else if (cd < ed-63) return "Седмица о мытаре и фарисее";	
+	else if (cd == ed-63) return "Неделя о блудном сыне";	
+	else if (cd < ed-56) return "Седмица о блудном сыне";	
+	else if (cd == ed-56) return "Неделя мясопустная, о Страшнем суде";	
+	else if (cd < ed-49) return "Сырная седмица (масленица)";						
+	else if (cd == ed-49) return "Неделя сыропустная. Воспоминание Адамова изгнания. Прощеное воскресенье";						
+	else if (cd < ed-13) {										// Седмицы Великого поста
 		nw = Math.ceil((cd - (ed-49))/7);
 		if (wd == 0) return "Неделя "+nw+"-я Великого поста";
 		else return "Седмица "+nw+"-я Великого поста";
@@ -72,12 +76,12 @@ function Sedmica (d) {			// d - текущая дата
 	else if (cd < ed) return "Страстная седмица";
 	else if (cd == ed) return "";
 	else if (cd < ed+7) return "Пасхальная (Светлая) седмица";
-	else if (cd < ed+50) {			// Седмицы по Пасхе
+	else if (cd < ed+50) {										// Седмицы по Пасхе
 		nw = Math.ceil((cd - ed)/7);
 		if (wd == 0) return "Неделя "+(nw+1)+"-я по Пасхе";
 		else return "Седмица "+nw+"-я по Пасхе";
 	}
-	else  {							// Седмицы по Пятидесятнице
+	else  {														// Седмицы по Пятидесятнице
 		nw = Math.ceil((cd - (ed+49))/7);
 		if (wd == 0) return "Неделя "+nw+"-я по Пятидесятнице";
 		else return "Седмица "+nw+"-я по Пятидесятнице";
