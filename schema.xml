@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MemoryDays>
+    <event>
+      <s_month>0</s_month>
+      <s_date>0</s_date>
+      <f_month>0</f_month>
+      <f_date>0</f_date>
+      <name>Светлое Христово Воскресение. Пасха</name>
+      <type>0</type>
+    </event>
+    <event>
+      <s_month>0</s_month>
+      <s_date>-7</s_date>
+      <f_month>0</f_month>
+      <f_date>-7</f_date>
+      <name>Вход Господень в Иерусалим</name>
+      <type>1</type>
+    </event>
+  </MemoryDays>
