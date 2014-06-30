@@ -160,6 +160,10 @@ Details in Russian only:
 
 == Changelog ==
 
+= 0.5.1 =
+
+* Исправлены ошибки / Fixed bugs
+
 = 0.5 =
 
 * Добавлены Апостольские и Евангельские чтения / Added Apostolic and Gospel Readings
@@ -250,6 +254,10 @@ GNU General Public License v2
 * Плагин в режиме бета-тестирования / Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 0.5.1 =
+
+* Исправлены ошибки / Fixed bugs
 
 = 0.5 =
 
