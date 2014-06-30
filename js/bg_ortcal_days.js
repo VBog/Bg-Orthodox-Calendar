@@ -190,8 +190,8 @@ function memory_days(year) {
 				}	
 				if (s_month < 0) {					
 					sd.setFullYear(y, f_month-1, f_date+dd);		// Сб./Вс. перед/после праздника = -1, Праздник в Сб./Вс. перед/после даты = -2 Праздник в указанный день недели = -3
-					wd = s_date-sd.getDay();
-					if (s_month == -1 && wd == 0) continue;			// Если праздник приходится на Сб./Вс. перед/после праздника = -1, то игнорируем событие
+					wd = sd.getDay();
+					if (s_month == -1 && wd == s_date) continue;	// Если праздник приходится на Сб./Вс. перед/после праздника = -1, то игнорируем событие
 					if (s_month == -3 && wd != s_date) continue;	// Если праздник не совпадает с указанным днем недели, то не отмечается
 					sd.setDate(sd.getDate()+wd);
 					fd.setTime(sd.getTime());
