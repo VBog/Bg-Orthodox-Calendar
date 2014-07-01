@@ -160,6 +160,10 @@ Details in Russian only:
 
 == Changelog ==
 
+= 0.5.2 =
+
+* Добавлены чтения Псалтири / Added reading of the Psalter
+
 = 0.5.1 =
 
 * Исправлены ошибки / Fixed bugs
@@ -254,6 +258,10 @@ GNU General Public License v2
 * Плагин в режиме бета-тестирования / Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 0.5.2 =
+
+* Добавлены чтения Псалтири / Added reading of the Psalter
 
 = 0.5.1 =
 
