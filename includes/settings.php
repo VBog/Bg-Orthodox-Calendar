@@ -17,6 +17,8 @@ function bg_ortcal_options_page() {
 	$todayBgColor_name	= "bg_ortcal_todayBgColor"; 
 	$weddingColor_name	= "bg_ortcal_weddingColor"; 
 
+    $customXML_name = "bg_ortcal_customXML";					// Имя пользовательского xml-файла
+	
     $bg_ortcal_hidden_field_name = 'bg_ortcal_submit_hidden';	// Скрытое поле для проверки обновления информацции в форме
 	
 	bg_ortcal_options_ini (); 			// Параметры по умолчанию
@@ -32,6 +34,8 @@ function bg_ortcal_options_page() {
 	$todayColor 	= get_option( "bg_ortcal_todayColor" );
 	$todayBgColor 	= get_option( "bg_ortcal_todayBgColor" );
 	$weddingColor 	= get_option( "bg_ortcal_weddingColor" );
+	
+    $customXML_val = get_option( "bg_ortcal_customXML" );
 	
 // Проверяем, отправил ли пользователь нам некоторую информацию
 // Если "Да", в это скрытое поле будет установлено значение 'Y'
@@ -67,6 +71,9 @@ function bg_ortcal_options_page() {
 
 		$weddingColor = ( isset( $_POST[$weddingColor_name] ) && $_POST[$weddingColor_name] ) ? $_POST[$weddingColor_name] : '' ;
 		update_option( $weddingColor_name, $weddingColor );
+
+		$customXML_val = ( isset( $_POST[$customXML_name] ) && $_POST[$customXML_name] ) ? $_POST[$customXML_name] : '' ;
+		update_option( $customXML_name, $customXML_val );
 
         // Вывести сообщение об обновлении параметров на экран
 		echo '<div class="updated"><p><strong>Параметры сохранены.</strong></p></div>';
@@ -138,6 +145,11 @@ function bg_ortcal_options_page() {
 <th scope="row">Цвет рамки дней браковенчаний:</th>
 <td>
 <input type="color" id="weddingColor_name" name="<?php echo $weddingColor_name ?>" value="<?php echo $weddingColor ?>"><br />
+</td></tr>
+<tr valign="top">
+<th scope="row">Пользовательский XML-файл данных</th>
+<td>
+<input type="text" id="customXML_name" name="<?php echo $customXML_name ?>" size="60" value="<?php echo $customXML_val ?>"><br />
 </td></tr></table>
 
 <p class="submit">
@@ -190,6 +202,7 @@ function bg_ortcal_options_ini () {
 	add_option('bg_ortcal_todayColor', "#FFFFFF");
 	add_option('bg_ortcal_todayBgColor', "#335AAB");
 	add_option('bg_ortcal_weddingColor', "#335AAB");
+	add_option('bg_ortcal_customXML', "");
 }
 
 // Очистка таблицы параметров при удалении плагина
@@ -204,6 +217,7 @@ function bg_ortcal_deinstall() {
 	delete_option('bg_ortcal_todayColor');
 	delete_option('bg_ortcal_todayBgColor');
 	delete_option('bg_ortcal_weddingColor');
+	delete_option('bg_ortcal_customXML');
 
 	delete_option('bg_ortcal_submit_hidden');
 }

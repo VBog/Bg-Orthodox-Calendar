@@ -160,7 +160,7 @@ function sedmica ($month, $day, $year) {
 /*******************************************************************************
 // Функция получает данные из XML файла	
 *******************************************************************************/  
-function getXML ($xmlFile) {
+function getXML ($url) {
 //    $bg_curl_val = get_option( 'bg_bibfers_curl' );
 //    $bg_fgc_val = get_option( 'bg_bibfers_fgc' );
 //    $bg_fopen_val = get_option( 'bg_bibfers_fopen' );
@@ -169,7 +169,6 @@ function getXML ($xmlFile) {
     $bg_fopen_val = 'on';
 	
 	$code = false;
-	$url = plugins_url( $xmlFile, dirname(__FILE__ ) );			// URL файла
 	if ($bg_curl_val == 'on' && function_exists('curl_init')) {	// Попытка1. Если установлен cURL				
 		$ch = curl_init($url);										// создание нового ресурса cURL
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);				// возврат результата передачи в качестве строки из curl_exec() вместо прямого вывода в браузер

@@ -435,9 +435,72 @@ function getXMLvalue(e,tag) {
 function isLeap(year) {
 		return (((year % 4)==0) && ((year % 100)!=0) || ((year % 400)==0)) ? true : false }
 
+
+function loadXML() {
+// 	Получаем данные о событиях из XML-файла
+	var e1="";
+	var e2="";
+	var xml1=loadXMLfile(baseUrl+"MemoryDays.xml");
+	if (xml1) e1=xml1.getElementsByTagName("event");
+	if (bg_ortcal_customXML == "") events = e1;
+	else {
+		var xml2=loadXMLfile(bg_ortcal_customXML);
+		if (xml2) e2=xml2.getElementsByTagName("event");
+		events = obj_merge(e2, e1);
+	}
+}
+
+function obj_merge(obj1, obj2){
+    var out = {};
+	var j=0;
+	
+    for(var k1 in obj1){
+        if (typeof obj1[k1]==='object') {out[j] = obj1[k1]; j++;}
+    }
+//	j--;
+    for(var k2 in obj2){
+        if (typeof obj2[k2]==='object') {out[j] = obj2[k2]; j++}
+    }
+	out.length = j;
+    return out;
+}
+
+function loadXMLfile(url) {
+// 	Получаем данные о событиях из XML-файла
+	var xml = false;
+	var xmlhttp = getXmlHttp();
+
+	xmlhttp.open("GET", url, false);
+    xmlhttp.onreadystatechange = function() {
+		try { // Важно!
+			// только при состоянии "complete"
+			if (xmlhttp.readyState == 4) {
+				// для статуса "OK"
+				if (xmlhttp.status == 200) {
+					// обработка ответа
+					xml=xmlhttp.responseXML;
+//					events=xml.getElementsByTagName("event");
+				}
+				else {
+					alert("Не удалось получить данные из "+url+"\nстатус:" +this.statusText);
+				}
+			}
+		  }
+		  catch( e ) {
+				alert(e.name);
+			  // alert('Ошибка: ' + e.description);
+			  // В связи с багом XMLHttpRequest в Firefox приходится отлавливать ошибку
+			  // Bugzilla Bug 238559 XMLHttpRequest needs a way to report networking errors
+			  // https://bugzilla.mozilla.org/show_bug.cgi?id=238559
+		  }
+	};
+	xmlhttp.send();
+
+	return xml;
+}
 // Кроссбраузерное создание объекта запроса		
 function getXmlHttp(){
-  var xmlhttp;
+  var xmlhttp=false;
   try {
     xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
   } catch (e) {
@@ -452,34 +515,4 @@ function getXmlHttp(){
   }
   return xmlhttp;
 }	
-
-function loadXML() {
-// 	Получаем данные о событиях из XML-файла
-	var xmlhttp = getXmlHttp();
-	xmlhttp.open("GET", baseUrl+"MemoryDays.xml",true);
-    xmlhttp.onreadystatechange = function() {
-		try { // Важно!
-			// только при состоянии "complete"
-			if (xmlhttp.readyState == 4) {
-				// для статуса "OK"
-				if (xmlhttp.status == 200) {
-					// обработка ответа
-					xml=xmlhttp.responseXML;
-					events=xml.getElementsByTagName("event");
-				}
-				else {
-					alert("Не удалось получить данные:\n" +	this.statusText);
-				}
-			}
-		  }
-		  catch( e ) {
-				alert(e.name);
-			  // alert('Ошибка: ' + e.description);
-			  // В связи с багом XMLHttpRequest в Firefox приходится отлавливать ошибку
-			  // Bugzilla Bug 238559 XMLHttpRequest needs a way to report networking errors
-			  // https://bugzilla.mozilla.org/show_bug.cgi?id=238559
-		  }
-	};
-	xmlhttp.send();
-}
 

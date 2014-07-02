@@ -1162,6 +1162,14 @@
 	</event>
 	<event>
 		<s_month>6</s_month>
+		<s_date>25</s_date>
+		<f_month>6</f_month>
+		<f_date>25</f_date>
+		<name>Блгв. кн. Петра, в иночестве Давида, и кн. Февронии, в иночестве Евфросинии, Муромских чудотворцев (1228)</name>
+		<type>5</type>
+	</event>
+	<event>
+		<s_month>6</s_month>
 		<s_date>30</s_date>
 		<f_month>6</f_month>
 		<f_date>30</f_date>
@@ -1782,14 +1790,6 @@
 		<f_month>6</f_month>
 		<f_date>16</f_date>
 		<name>Прп. Тихона Медынского, Калужского (1492). Прп. Тихона Луховского, Костромского чудотворца (1503)</name>
-		<type>6</type>
-	</event>
-	<event>
-		<s_month>6</s_month>
-		<s_date>25</s_date>
-		<f_month>6</f_month>
-		<f_date>25</f_date>
-		<name>Блгв. кн. Петра, в иночестве Давида, и кн. Февронии, в иночестве Евфросинии, Муромских чудотворцев (1228)</name>
 		<type>6</type>
 	</event>
 	<event>

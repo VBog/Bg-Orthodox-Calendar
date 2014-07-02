@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь на год: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: Vadim Bogaiskov
-    Version: 0.5.2
+    Version: 0.6
     Author URI: http://bogaiskov.ru 
 */
 
@@ -35,7 +35,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.5.2');
+define('BG_ORTCAL_VERSION', '0.6');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -55,9 +55,11 @@ function bg_ortcal_frontend_scripts () {
 	wp_enqueue_script( 'bg_ortcal_year', plugins_url( 'js/bg_ortcal_year.js' , __FILE__ ), false, BG_ORTCAL_VERSION, true );
 	wp_enqueue_script( 'bg_ortcal_init', plugins_url( 'js/bg_ortcal_init.js' , __FILE__ ), false, BG_ORTCAL_VERSION, true );
 }
-function bg_ortcal_js_options () { ?>
+function bg_ortcal_js_options () { 
+	$customXML_val=get_option( "bg_ortcal_customXML" );?>
 	<script>
-		var baseUrl =  "<?php echo plugins_url( '/' , __FILE__ );?>";
+		var baseUrl =  "<?php echo plugins_url( '/' , __FILE__ ); ?>";
+		var bg_ortcal_customXML =  "<?php if (is_file(ABSPATH."/".$customXML_val)) echo $customXML_val; ?>";
 	</script>
 <?php
 }
@@ -88,9 +90,24 @@ if ( defined('ABSPATH') && defined('WPINC') ) {
 	add_shortcode( 'dayinfo_all', 'bg_ortcal_DayInfo_all' ); 
 }
 // Загружаем в память базу данных событий из XML
-$xml = getXML('/MemoryDays.xml');
+$url = plugins_url( '/MemoryDays.xml', __FILE__  );			// URL файла
+$xml = getXML($url);
 if ($xml) $events = $xml["event"];
 else $events = false;
+if ($events) {
+	$customXML_val = get_option( "bg_ortcal_customXML" );
+
+	$url = ABSPATH."/".$customXML_val;
+	if (is_file($url)) {
+		$custom_xml = getXML($url);
+		if ($custom_xml) {
+			$custom_events = $custom_xml["event"];
+			if ($custom_events) {
+				$events = array_merge ( $custom_events, $events );
+			}
+		}
+	}
+}
 // Функция действия перед крючком добавления меню
 function bg_ortcal_add_pages() {
     // Добавим новое подменю в раздел Параметры 

@@ -34,11 +34,6 @@ Details in Russian only:
 С помощью нашего календаря существует возможность выбора имени новорожденному в соответствии с традицией по Месяцеслову.
 При желании можно отметить на календаре дни браковенчаний.
 
-Запуск православного календаря на отдельной странице возможен также из адресной строки браузера. Например, чтобы вывести на экран календарь на год, необходимо указать в адресной строке: http://bogaiskov.ru/wp-content/plugins/bg-orthodox-calendar/index.html?year=1958.
-Чтобы вывести на экран календарь только на один месяц, используйте параметр month: http://bogaiskov.ru/wp-content/plugins/bg-orthodox-calendar/index.html?year=1958&month=12
-Существует также возможность вывести на экран календарь только на один день. Для этого используйте параметр date: http://bogaiskov.ru/wp-content/plugins/bg-orthodox-calendar/index.html?year=1958&month=12&date=14
-Если параметр не задан, то отображается календарь на текущий год, месяц или день.
-
 Используйте настройки, чтобы изменить цветовую палитру некоторых элементов календаря. 
 
 Чтобы вставить в текст статьи кнопку для вызова календаря используется шорт-код  [ ortcal_button val=' Православный календарь на год' ]
@@ -141,6 +136,8 @@ Details in Russian only:
 
 * day, month, year - день, месяц и год по Григорианскому календарю, по умолчанию – данные текущего дня.
 
+Вы можете добавлять события в базу данных, используя [пользовательский XML-файл данных](http://wp.me/p4B8xz-nM "Подробнее").
+
 == Installation ==
 
 1. Upload 'bg-orthodox-calendar' directory to the '/wp-content/plugins/' directory.
@@ -160,6 +157,10 @@ Details in Russian only:
 3. Страница календаря на год (месяц, день).
 
 == Changelog ==
+
+= 0.6 =
+
+* Пользовательский XML-файл данных / Custom XML-file with data
 
 = 0.5.2 =
 
@@ -230,35 +231,15 @@ Details in Russian only:
 
 * Добавлены настройки цветов / Added color settings
 
-== License ==
-
-GNU General Public License v2
-
-= 0.3.1 =
-
-* Исправлена ошибка в настройках CSS / Fixed error in CSS settings
-
-= 0.3 =
-
-* Добавлены настройки цвета рамки дней браковенчаний / Added settings of the frame color of Wedding Days
-
-= 0.2.3 =
-
-* Исправлена ошибка в настройках цвета фона Сегодня / Fixed error in background option of Today
-
-= 0.2.2 =
-
-* Изменения в настройках стилей / Changes in styles  
-
-= 0.2 =
-
-* Добавлены настройки цветов / Added color settings
-
 = 0.1 =
 
 * Плагин в режиме бета-тестирования / Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 0.6 =
+
+* Пользовательский XML-файл данных / Custom XML-file with data
 
 = 0.5.2 =
 
