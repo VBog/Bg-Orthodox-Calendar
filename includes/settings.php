@@ -18,6 +18,10 @@ function bg_ortcal_options_page() {
 	$weddingColor_name	= "bg_ortcal_weddingColor"; 
 
     $customXML_name = "bg_ortcal_customXML";					// Имя пользовательского xml-файла
+
+	$bg_fgc_name = 'bg_bibfers_fgc';					// Чтение файлов Библии с помощью file_get_contents()
+	$bg_fopen_name = 'bg_bibfers_fopen';				// Чтение файлов Библии с помощью fopen()
+	$bg_curl_name = 'bg_bibfers_curl';					// Чтение файлов Библии с помощью cURL
 	
     $bg_ortcal_hidden_field_name = 'bg_ortcal_submit_hidden';	// Скрытое поле для проверки обновления информацции в форме
 	
@@ -37,6 +41,10 @@ function bg_ortcal_options_page() {
 	
     $customXML_val = get_option( "bg_ortcal_customXML" );
 	
+    $bg_fgc_val = get_option( $bg_fgc_name );
+    $bg_fopen_val = get_option( $bg_fopen_name );
+    $bg_curl_val = get_option( $bg_curl_name );
+
 // Проверяем, отправил ли пользователь нам некоторую информацию
 // Если "Да", в это скрытое поле будет установлено значение 'Y'
     if( isset( $_POST[ $bg_ortcal_hidden_field_name ] ) && $_POST[ $bg_ortcal_hidden_field_name ] == 'Y' ) {
@@ -74,6 +82,15 @@ function bg_ortcal_options_page() {
 
 		$customXML_val = ( isset( $_POST[$customXML_name] ) && $_POST[$customXML_name] ) ? $_POST[$customXML_name] : '' ;
 		update_option( $customXML_name, $customXML_val );
+
+		$bg_fgc_val = ( isset( $_POST[$bg_fgc_name] ) && $_POST[$bg_fgc_name] ) ? $_POST[$bg_fgc_name] : '' ;
+		update_option( $bg_fgc_name, $bg_fgc_val );
+
+		$bg_fopen_val = ( isset( $_POST[$bg_fopen_name] ) && $_POST[$bg_fopen_name] ) ? $_POST[$bg_fopen_name] : '' ;
+		update_option( $bg_fopen_name, $bg_fopen_val );
+
+		$bg_curl_val = ( isset( $_POST[$bg_curl_name] ) && $_POST[$bg_curl_name] ) ? $_POST[$bg_curl_name] : '' ;
+		update_option( $bg_curl_name, $bg_curl_val );
 
         // Вывести сообщение об обновлении параметров на экран
 		echo '<div class="updated"><p><strong>Параметры сохранены.</strong></p></div>';
@@ -150,7 +167,28 @@ function bg_ortcal_options_page() {
 <th scope="row">Пользовательский XML-файл данных</th>
 <td>
 <input type="text" id="customXML_name" name="<?php echo $customXML_name ?>" size="60" value="<?php echo $customXML_val ?>"><br />
+</td></tr>
+<tr valign="top">
+<th scope="row">Метод чтения файлов</th>
+<td>
+<input type="checkbox" id="bg_fgc" name="<?php echo $bg_fgc_name ?>" <?php if($bg_fgc_val=="on") echo "checked" ?>  value="on" onclick='reading_off_checked();'> file_get_contents()<br />
+<input type="checkbox" id="bg_fopen" name="<?php echo $bg_fopen_name ?>" <?php if($bg_fopen_val=="on") echo "checked" ?>  value="on" onclick='reading_off_checked();'> fopen() - fread() - fclose()<br />
+<input type="checkbox" id="bg_curl" name="<?php echo $bg_curl_name ?>" <?php if($bg_curl_val=="on") echo "checked" ?> value="on" onclick='reading_off_checked();'> cURL<br />
+<i>(Плагин пытается загружать XML-файлы данных отмеченными методами в указанном порядке.<br>Чтобы сделать загрузку более быстрой отключите лишние методы.<br><u>Внимание:</u> Некоторые методы могут быть недоступны на Вашем сервере.)</i><br />
 </td></tr></table>
+<script>
+function reading_off_checked() {
+	if (document.getElementById('bg_curl').checked == true || document.getElementById('bg_fgc').checked == true || document.getElementById('bg_fopen').checked == true) {
+		document.getElementById('bg_verses').disabled = false;
+	} else {
+		document.getElementById('bg_verses').disabled = true;
+		document.getElementById('bg_verses').checked = false;
+		document.getElementById('bg_preq').disabled = true;
+		document.getElementById('bg_preq').checked = false;
+	}
+}
+reading_off_checked();
+</script>
 
 <p class="submit">
 <input type="submit" name="Submit" value="Сохранить настройки" />
