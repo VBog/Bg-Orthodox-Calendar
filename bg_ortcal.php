@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь на год: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: Vadim Bogaiskov
-    Version: 0.7.3
+    Version: 0.7.4
     Author URI: http://bogaiskov.ru 
 */
 
@@ -35,7 +35,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.7.3');
+define('BG_ORTCAL_VERSION', '0.7.4');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -287,7 +287,7 @@ function bg_ortcal_get_plugin_version() {
 function bg_ortcal_load_xml() {
 	
 	// Загружаем в память базу данных событий из XML
-	$plugins_dir = substr (plugins_url( 'MemoryDays.xml',(__FILE__)), strlen(site_url())+1);
+	$plugins_dir = dirname(__FILE__).'/MemoryDays.xml';
 	$xml = getXML($plugins_dir);
 	if ($xml) $events = $xml["event"];
 	else $events = false;
@@ -295,7 +295,7 @@ function bg_ortcal_load_xml() {
 		$customXML_val = get_option( "bg_ortcal_customXML" );
 
 		if (is_file(ABSPATH.$customXML_val)) {
-			$custom_xml = getXML($customXML_val);
+			$custom_xml = getXML(ABSPATH.$customXML_val);
 			if ($custom_xml) {
 				$custom_events = $custom_xml["event"];
 				if ($custom_events) {

@@ -19,9 +19,9 @@ function bg_ortcal_options_page() {
 
     $customXML_name = "bg_ortcal_customXML";					// Имя пользовательского xml-файла
 
-	$bg_fgc_name = 'bg_bibfers_fgc';					// Чтение файлов Библии с помощью file_get_contents()
-	$bg_fopen_name = 'bg_bibfers_fopen';				// Чтение файлов Библии с помощью fopen()
-	$bg_curl_name = 'bg_bibfers_curl';					// Чтение файлов Библии с помощью cURL
+	$bg_fgc_name = 'bg_ortcal_fgc';								// Чтение XML-файлов с помощью file_get_contents()
+	$bg_fopen_name = 'bg_ortcal_fopen';							// Чтение XML-файлов с помощью fopen()
+	$bg_curl_name = 'bg_ortcal_curl';							// Чтение XML-файлов с помощью cURL
 	
     $bg_ortcal_hidden_field_name = 'bg_ortcal_submit_hidden';	// Скрытое поле для проверки обновления информацции в форме
 	
@@ -241,6 +241,9 @@ function bg_ortcal_options_ini () {
 	add_option('bg_ortcal_todayBgColor', "#335AAB");
 	add_option('bg_ortcal_weddingColor', "#335AAB");
 	add_option('bg_ortcal_customXML', "");
+	add_option('bg_ortcal_fgc', "on");
+	add_option('bg_ortcal_fopen', "on");
+	add_option('bg_ortcal_curl', "on");
 }
 
 // Очистка таблицы параметров при удалении плагина
@@ -256,6 +259,9 @@ function bg_ortcal_deinstall() {
 	delete_option('bg_ortcal_todayBgColor');
 	delete_option('bg_ortcal_weddingColor');
 	delete_option('bg_ortcal_customXML');
+	delete_option('bg_ortcal_fgc');
+	delete_option('bg_ortcal_fopen');
+	delete_option('bg_ortcal_curl');
 
 	delete_option('bg_ortcal_submit_hidden');
 }
