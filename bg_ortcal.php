@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь на год: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: Vadim Bogaiskov
-    Version: 0.7.4
+    Version: 0.7.5
     Author URI: http://bogaiskov.ru 
 */
 
@@ -35,7 +35,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.7.4');
+define('BG_ORTCAL_VERSION', '0.7.5');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -56,20 +56,30 @@ function bg_ortcal_frontend_scripts () {
 	wp_enqueue_script( 'bg_ortcal_init', plugins_url( 'js/bg_ortcal_init.js' , __FILE__ ), false, BG_ORTCAL_VERSION, true );
 }
 function bg_ortcal_js_options () { 
-	$customXML_val=get_option( "bg_ortcal_customXML" );?>
+	$customXML_val=get_option( "bg_ortcal_customXML" );
+    $popmenu1_val = get_option( "bg_ortcal_popmenu1" );
+    $popmenu2_val = get_option( "bg_ortcal_popmenu2" );
+    $popmenu3_val = get_option( "bg_ortcal_popmenu3" );
+    $popmenu101_val = get_option( "bg_ortcal_popmenu101" );
+    $popmenu1001_val = get_option( "bg_ortcal_popmenu1001" );
+    $popmenu1002_val = get_option( "bg_ortcal_popmenu1002" );
+    $dblClick_val = get_option( "bg_ortcal_dblClick" );
+?>
 	<script>
 		var baseUrl =  "<?php echo plugins_url( '/' , __FILE__ ); ?>";
 		var bg_ortcal_customXML =  "<?php if (is_file(ABSPATH."/".$customXML_val)) echo site_url()."/".$customXML_val; ?>";
-		var popmenu =[									// Удалите, перегруппируйте или переименуйте пункты меню, если потребуется
-						{name: "Официальный календарь РПЦ", type: 1},
-						{name: "Календарь на Православие.Ru", type: 2},
-						{name: "Богослужебные указания", type: 3},
-						{name: "Этот день в календаре", type: 101},
-						{name: "Текущий день", type: 1001},
-						{name: "Выбор имени по Месяцеслову", type: 1002}
-					];
-		var dblClick = 2;								// Пункт меню при двойном щелчке по дате (варианты см. выше)										
-		var dayLink = 2;								// Ссылка при нажатии на дату в описании дня (календарь списком, текущий день, выбор имени)
+		var popmenu =[];									
+<?php 
+		$i=0;
+		if ($popmenu1_val) {echo 'popmenu['.$i.']={name:"'.$popmenu1_val.'", type: 1};'; $i++;}
+		if ($popmenu2_val) {echo 'popmenu['.$i.']={name: "'.$popmenu2_val.'", type: 2};';$i++;}
+		if ($popmenu3_val) {echo 'popmenu['.$i.']={name: "'.$popmenu3_val.'", type: 3};';$i++;}
+		if ($popmenu101_val) {echo 'popmenu['.$i.']={name: "'.$popmenu101_val.'", type: 101};';$i++;}
+		if ($popmenu1001_val) {echo 'popmenu['.$i.']={name: "'.$popmenu1001_val.'", type: 1001};';$i++;}
+		if ($popmenu1002_val) {echo 'popmenu['.$i.']={name: "'.$popmenu1002_val.'", type: 1002};';$i++;}
+ ?>
+					
+		var dblClick = <?php echo get_option( "bg_ortcal_dblClick" ); ?>;							// Пункт меню при двойном щелчке по дате (варианты см. выше)										
 	</script>
 <?php
 }

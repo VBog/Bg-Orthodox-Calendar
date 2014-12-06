@@ -263,8 +263,10 @@ var bscal = {
 	},
 	retMenu : function(r_month, r_day, obj){
         if (!r_day || r_day=="&nbsp;") return false;
+		if (!popmenu.length) return false;
 		bscal.sDate.setFullYear(bscal.curY, r_month-1, r_day);
-		bscal.showMenu(obj);
+		if (popmenu.length == 1) bscal.link(bscal.sDate, popmenu[0].type);
+		else bscal.showMenu(obj);
 	},
 	retOffset : function(r_month, r_day){
 		if (!r_day || r_day=="&nbsp;") return false;
@@ -377,21 +379,28 @@ var bscal = {
 	htmlMenu : function() {
 // А теперь добавим всплывающее меню
 		var hr = false;
+		var hr1 = false;
 		var res  = "<ul>";
 		res += "<div id='onlyThisYear'>";
 		for (var i=0; i<popmenu.length; i++) {
 			if (popmenu[i].type < 100) {			// Только текущий год
-				res += "<li onclick='bscal.link(bscal.sDate, "+popmenu[i].type+")'>"+popmenu[i].name+"</li>";
-				hr = true;
+				if(popmenu[i].name) {
+					res += "<li onclick='bscal.link(bscal.sDate, "+popmenu[i].type+")'>"+popmenu[i].name+"</li>";
+					hr = true;
+				}
 			}
 		}
-		if (hr) res += "<hr>";
-		res += "</div>";
+		var res1 = "";
 		for (var i=0; i<popmenu.length; i++) {
 			if (popmenu[i].type >= 100) {
-				res += "<li onclick='bscal.link(bscal.sDate, "+popmenu[i].type+")'>"+popmenu[i].name+"</li>";
+				if(popmenu[i].name) {
+					res1 += "<li onclick='bscal.link(bscal.sDate, "+popmenu[i].type+")'>"+popmenu[i].name+"</li>";
+					hr1 = true;
+				}
 			}
 		}
+		if (hr && hr1) res += "<hr>";
+		res += res1+"</div>";
 		res += "</ul>";
 		return res;
 	},

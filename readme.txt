@@ -170,6 +170,10 @@ Details in Russian only:
 
 == Changelog ==
 
+= 0.7.5 =
+
+* Добавлена настройка элементов всплывающего меню календаря.
+
 = 0.7.4 =
 
 * Исправлены ошибки.
@@ -238,38 +242,12 @@ Details in Russian only:
 
 * Плагин в режиме бета-тестирования / Plugin in beta testing mode
 
-== Upgrade Notice ==
-
-= 0.4 =
-
-* Добавлены шорт-коды, позволяющие выводить информацию из православного календаря / Added short codes to display information from the Orthodox calendar
-* Исправлены ошибки в базе данных / Fixed mistakes in database
-
-= 0.3.1 =
-
-* Исправлена ошибка в настройках CSS / Fixed error in CSS settings
-
-= 0.3 =
-
-* Добавлены настройки цвета рамки дней браковенчаний / Added settings of the frame color of Wedding Days
-
-= 0.2.3 =
-
-* Исправлена ошибка в настройках цвета фона Сегодня / Fixed error in background option of Today
-
-= 0.2.2 =
-
-* Изменения в настройках стилей / Changes in styles  
-
-= 0.2 =
-
-* Добавлены настройки цветов / Added color settings
-
-= 0.1 =
-
-* Плагин в режиме бета-тестирования / Plugin in beta testing mode
 
 == Upgrade Notice ==
+
+= 0.7.5 =
+
+* Добавлена настройка элементов всплывающего меню календаря.
 
 = 0.7.4 =
 
@@ -334,6 +312,7 @@ Details in Russian only:
 = 0.2 =
 
 * Добавлены настройки цветов / Added color settings
+
 
 == License ==
 
