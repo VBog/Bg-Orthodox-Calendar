@@ -170,6 +170,10 @@ Details in Russian only:
 
 == Changelog ==
 
+= 0.7.8 =
+
+* Исправлены ошибки в БД.
+
 = 0.7.7 =
 
 * Исправлены ошибки.
@@ -252,6 +256,10 @@ Details in Russian only:
 
 
 == Upgrade Notice ==
+
+= 0.7.8 =
+
+* Исправлены ошибки в БД.
 
 = 0.7.7 =
 

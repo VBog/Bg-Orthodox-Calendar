@@ -275,7 +275,7 @@ function dayEvents($month, $day, $year){
 					else if ($type==207) $finish = shift207 ($s_date, $date, $year);								// Евангелие на Литургии
 					else if ($type>=301 && $type<=309) $finish = shift300 ($s_date, $date, $year);					// Псалтирь 
 					else {																							// Все остальные события
-						if ($date >= $ny) $finish = $easter+$s_date*3600*24;											// После Нового года - отсчет от текущей Пасхи
+						if ($date >= $ny) $finish = $easter+$f_date*3600*24;											// После Нового года - отсчет от текущей Пасхи
 						else $finish = $easter_prev+$f_date*3600*24;													// До Нового года - отсчет от предыдущей Пасхи
 					}
 				}
