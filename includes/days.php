@@ -343,8 +343,8 @@ function dayEvents($month, $day, $year){
 				$events[$i]['finish']=$finish;
 			}
 
-			$start=$event['start'];
-			$finish=$event['finish'];
+			$start=$events[$i]['start'];
+			$finish=$events[$i]['finish'];
 
 			if ($start && $finish) {
 				// Событие относится к данному дню, если
