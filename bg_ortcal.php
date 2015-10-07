@@ -87,8 +87,6 @@ if ( !is_admin() ) {
 	bg_ortcal_options_ini (); 			// Параметры по умолчанию
 	add_action( 'wp_enqueue_scripts' , 'bg_ortcal_frontend_scripts' ); 
 	add_action( 'wp_head' , 'bg_ortcal_js_options' ); 
-
-	$events = bg_ortcal_load_xml();	
 }
 
 if ( defined('ABSPATH') && defined('WPINC') ) {
@@ -128,6 +126,7 @@ function bg_ortcal_button($atts) {
 		'val' => ' Календарь на год '
 	), $atts ) );
 
+	bg_ortcal_load_xml();
 	global $events;
 	static $is_loaded = false;
 	$quote = "<button onClick='bscal.show();'>".$val."</button>";
@@ -252,7 +251,7 @@ function bg_ortcal_DayInfo_all ($atts) {
 	), $atts ) );
 
 	return showDayInfo ( $day, $month, $year, 'l, j F Y г. ', '(j F ст.ст.)', 'on', 'on', 'on', 'on', 'on', '<b>День памяти святых:</b><br>', '<b>День памяти исповедников и новомучеников российских:</b><br>', '<b>День почитания икон Божией Матери:</b><br>', '<hr />', 'on', '<hr /><b>Чтения дня:</b><br>', 'on' );
-	$quote .= showDayInfo ( $day, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links )."<hr>";
+//	$quote .= showDayInfo ( $day, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links )."<hr>";
 }
 
 // Функция обработки шорт-кода UpcomingEvents
@@ -275,16 +274,20 @@ function bg_ortcal_UpcomingEvents($atts) {
 		'links' => 'off',					// Ссылки и цитаты
 	), $atts ) );
 
-	$day = '';						// День (по умолчанию - сегодня)
-	$month = '';					// Месяц (по умолчанию - сегодня)
-	$year = '';						// Год (по умолчанию - сегодня)
+	$key='up_'.date("m.d.y").md5(json_encode($atts));
+	if(false===($t=wp_cache_get($key,'bg-ortho-cal'))) {
+		$day = '';                        // День (по умолчанию - сегодня)
+		$month = '';                    // Месяц (по умолчанию - сегодня)
+		$year = '';                        // Год (по умолчанию - сегодня)
 
-	if ($numdays < 1) $numdays = 14;
-	$t = "";
-	for ($n = 0; $n < $numdays; $n++) {
-		$d = "+".($n+1);
-		$tt = showDayInfo ( $d, $month, $year, "", "", $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links );
-		if ($tt) $t .= showDayInfo ( $d, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links );
+		if ($numdays < 1) $numdays = 14;
+		$t = "";
+		for ($n = 0; $n < $numdays; $n++) {
+			$d = "+" . ($n + 1);
+			$tt = showDayInfo($d, $month, $year, "", "", $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links);
+			if ($tt) $t .= showDayInfo($d, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links);
+		}
+		wp_cache_set($key,$t,'bg-ortho-cal',12*3600);
 	}
 	return $t;
 }
@@ -293,26 +296,27 @@ function bg_ortcal_get_plugin_version() {
 	$plugin_data = get_plugin_data( __FILE__  );
 	return $plugin_data['Version'];
 }
-
 function bg_ortcal_load_xml() {
-	
-	// Загружаем в память базу данных событий из XML
-	$plugins_dir = dirname(__FILE__).'/MemoryDays.xml';
-	$xml = getXML($plugins_dir);
-	if ($xml) $events = $xml["event"];
-	else $events = false;
-	if ($events) {
-		$customXML_val = get_option( "bg_ortcal_customXML" );
+	if(false===($events=wp_cache_get('bg-orthodox-calendar-events','bg-ortho-cal'))) {
+		// Загружаем в память базу данных событий из XML
+		$plugins_dir = dirname(__FILE__) . '/MemoryDays.xml';
+		$xml = getXML($plugins_dir);
+		if ($xml) $events = $xml["event"];
+		else $events = false;
+		if ($events) {
+			$customXML_val = get_option("bg_ortcal_customXML");
 
-		if (is_file(ABSPATH.$customXML_val)) {
-			$custom_xml = getXML(ABSPATH.$customXML_val);
-			if ($custom_xml) {
-				$custom_events = $custom_xml["event"];
-				if ($custom_events) {
-					$events = array_merge ( $custom_events, $events );
+			if (is_file(ABSPATH . $customXML_val)) {
+				$custom_xml = getXML(ABSPATH . $customXML_val);
+				if ($custom_xml) {
+					$custom_events = $custom_xml["event"];
+					if ($custom_events) {
+						$events = array_merge($custom_events, $events);
+					}
 				}
 			}
 		}
+		wp_cache_set('bg-orthodox-calendar-events',$events,'bg-ortho-cal',3600);
 	}
 	return $events;
 }
