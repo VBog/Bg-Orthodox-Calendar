@@ -6121,10 +6121,10 @@
 		<type>8</type>
 	</event>
 	<event>
-		<s_month>10</s_month>
-		<s_date>14</s_date>
+		<s_month>-2</s_month>
+		<s_date>7</s_date>
 		<f_month>10</f_month>
-		<f_date>14</f_date>
+		<f_date>7</f_date>
 		<name>Память святых отцев VII Вселенского собора</name>
 		<type>8</type>
 	</event>

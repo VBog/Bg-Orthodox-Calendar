@@ -18,31 +18,32 @@
    }
 ?>
 /* Окно календаря и меню													*/
-#bscal,  #v-menu {					
+#bscal, .bg_moncal, #v-menu {					
 	background-color: <?php echo $mainBgColor; ?>;	/* Цвет основного фона	*/
 	color: <?php echo $mainColor; ?>;				/* Цвет основного текста*/
 }
 /* Поля перехода назад-вперед и название месяца								*/
-#bscal td.arrow, #bscal .month{ 
+#bscal td.arrow, #bscal .month, .bg_moncal td.arrow, .bg_moncal .month{ 
 	color: <?php echo $titleColor; ?>;				/* Цвет текста			*/
 }
 /* Заголовок и подвал окна, Дни недели, Выделение в меню  					*/
-#bscal .top td, #bscal td.bot, #bscal .week, #v-menu li:hover, #v-menu li a:hover  { 
+#bscal .top td, #bscal td.bot, #bscal .week, #v-menu li:hover, #v-menu li a:hover,
+.bg_moncal .top td, .bg_moncal td.bot, .bg_moncal .week{ 
 	background-color: <?php echo $otherBgColor; ?>;	/* Цвет фона			*/
 	color: <?php echo $otherColor; ?>;				/* Цвет текста			*/
 }
 /* Дата под курсором														*/	
-#bscal .over {			
+#bscal .over, .bg_moncal .over {			
 	background-color: <?php echo $overBgColor; ?>;	/* Цвет фона			*/
 	color: <?php echo $overColor; ?>;				/* Цвет текста			*/
 }
 /* Сегодня																	*/
-#bscal .today {			
+#bscal .today, .bg_moncal .today{			
 	background-color: <?php echo $todayBgColor; ?>;	/* Цвет фона			*/
 	color: <?php echo $todayColor; ?>;				/* Цвет текста			*/
 }
 /* День бракосочетаний	(вкл.)												*/
-#bscal .wedding_on {		
+#bscal .wedding_on, .bg_moncal .wedding_on{		
 	outline-color: <?php echo $weddingColor; ?>;	/* Цвет рамки			*/
 }
 /* Окно описания дня 														*/

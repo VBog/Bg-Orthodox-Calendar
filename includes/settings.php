@@ -24,6 +24,8 @@ function bg_ortcal_options_page() {
     $popmenu1001_name = "bg_ortcal_popmenu1001";				// Текущий день
     $popmenu1002_name = "bg_ortcal_popmenu1002";				// Выбор имени по Месяцеслову
     $dblClick_name = "bg_ortcal_dblClick";						// Функция при двойном щелчке по дате в календаре
+    $bg_ortcal_page = "bg_ortcal_page";							// Постоянная ссылка на страницу с календарем
+	
     $customXML_name = "bg_ortcal_customXML";					// Имя пользовательского xml-файла
 
 	$bg_fgc_name = 'bg_ortcal_fgc';								// Чтение XML-файлов с помощью file_get_contents()
@@ -53,6 +55,7 @@ function bg_ortcal_options_page() {
     $popmenu1001_val = get_option( "bg_ortcal_popmenu1001" );
     $popmenu1002_val = get_option( "bg_ortcal_popmenu1002" );
     $dblClick_val = get_option( "bg_ortcal_dblClick" );
+    $bg_ortcal_page_val = get_option( "bg_ortcal_page" );
 	
     $customXML_val = get_option( "bg_ortcal_customXML" );
 	
@@ -110,6 +113,9 @@ function bg_ortcal_options_page() {
 
 		$dblClick_val = ( isset( $_POST[$dblClick_name] ) && $_POST[$dblClick_name] ) ? $_POST[$dblClick_name] : '' ;
 		update_option( $dblClick_name, $dblClick_val );
+		
+		$bg_ortcal_page_val = ( isset( $_POST[$bg_ortcal_page] ) && $_POST[$bg_ortcal_page] ) ? $_POST[$bg_ortcal_page] : '' ;
+		update_option( $bg_ortcal_page, $bg_ortcal_page_val );
 		
 		$customXML_val = ( isset( $_POST[$customXML_name] ) && $_POST[$customXML_name] ) ? $_POST[$customXML_name] : '' ;
 		update_option( $customXML_name, $customXML_val );
@@ -230,29 +236,7 @@ function bg_ortcal_options_page() {
 <td>
 <input type="text" id="popmenu1002_name" name="<?php echo $popmenu1002_name ?>" size="60" value="<?php echo $popmenu1002_val ?>"><br />
 </td></tr>
-<script>
-function show_popmenu_items() {
-	if (document.getElementById('popmenu1').style.display  == 'none') {
-		document.getElementById('popmenu').innerHTML = ' &#9650; скрыть  &#9650;';
-		document.getElementById('popmenu1').style.display = '';
-		document.getElementById('popmenu2').style.display = '';
-		document.getElementById('popmenu3').style.display = '';
-		document.getElementById('popmenu101').style.display = '';
-		document.getElementById('popmenu1001').style.display = '';
-		document.getElementById('popmenu1002').style.display = '';
-	} else {
-		document.getElementById('popmenu').innerHTML = '&#9660; отобразить  &#9660;';
-		document.getElementById('popmenu1').style.display = 'none';
-		document.getElementById('popmenu2').style.display = 'none';
-		document.getElementById('popmenu3').style.display = 'none';
-		document.getElementById('popmenu101').style.display = 'none';
-		document.getElementById('popmenu1001').style.display = 'none';
-		document.getElementById('popmenu1002').style.display = 'none';
-	}
-}
-reading_off_checked();
-</script>
-<tr valign="top">
+<tr valign="top" id="dubleclick" style="display:none">
 <th scope="row">Функция при двойном щелчке по дате</th>
 <td>
 <select name="<?php echo $dblClick_name ?>">
@@ -263,6 +247,36 @@ reading_off_checked();
 <option value=1001 <?php if($dblClick_val==1001) echo 'selected="selected"'; ?> >Этот день в календаре (окно)</option>
 <option value=1002 <?php if($dblClick_val==1002) echo 'selected="selected"'; ?> >Выбор имени по Месяцеслову</option>
 </select>
+</td></tr>
+<script>
+function show_popmenu_items() {
+	if (document.getElementById('popmenu1').style.display  == 'none') {
+		document.getElementById('popmenu').innerHTML = ' &#9650; скрыть  &#9650;';
+		document.getElementById('popmenu1').style.display = '';
+		document.getElementById('popmenu2').style.display = '';
+		document.getElementById('popmenu3').style.display = '';
+		document.getElementById('popmenu101').style.display = '';
+		document.getElementById('popmenu1001').style.display = '';
+		document.getElementById('popmenu1002').style.display = '';
+		document.getElementById('dubleclick').style.display = '';
+	} else {
+		document.getElementById('popmenu').innerHTML = '&#9660; отобразить  &#9660;';
+		document.getElementById('popmenu1').style.display = 'none';
+		document.getElementById('popmenu2').style.display = 'none';
+		document.getElementById('popmenu3').style.display = 'none';
+		document.getElementById('popmenu101').style.display = 'none';
+		document.getElementById('popmenu1001').style.display = 'none';
+		document.getElementById('popmenu1002').style.display = 'none';
+		document.getElementById('dubleclick').style.display = 'none';
+	}
+}
+reading_off_checked();
+</script>
+
+<tr valign="top">
+<th scope="row">Постоянная ссылка на страницу с календарем</th>
+<td>
+<input type="text" id="bg_ortcal_page" name="<?php echo $bg_ortcal_page ?>" size="60" value="<?php echo $bg_ortcal_page_val ?>"><br />
 </td></tr>
 
 <tr valign="top">
@@ -349,6 +363,7 @@ function bg_ortcal_options_ini () {
 	add_option('bg_ortcal_popmenu1001', "Этот день в календаре (окно)");
 	add_option('bg_ortcal_popmenu1002', "Выбор имени по Месяцеслову");
 	add_option('bg_ortcal_dblClick', "2");
+	add_option('bg_ortcal_page', "");
 	add_option('bg_ortcal_customXML', "");
 	add_option('bg_ortcal_fgc', "on");
 	add_option('bg_ortcal_fopen', "on");
@@ -374,6 +389,7 @@ function bg_ortcal_deinstall() {
 	delete_option('bg_ortcal_popmenu1001');
 	delete_option('bg_ortcal_popmenu1002');
 	delete_option('bg_ortcal_dblClick');
+	delete_option('bg_ortcal_page');
 	delete_option('bg_ortcal_customXML');
 	delete_option('bg_ortcal_fgc');
 	delete_option('bg_ortcal_fopen');

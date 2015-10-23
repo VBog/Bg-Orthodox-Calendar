@@ -223,15 +223,14 @@ function dayEvents($month, $day, $year){
 		$events = bg_ortcal_load_xml();
 
 		$date = oldStyle('U', $month, $day, $year);						// Дата по старому стилю
+		$os_year = date ('Y', $date);									// Год по старому стилю
+		$dd = dd($os_year);												// Отклонение григорианского календаря от юлианского в днях
 		$leap = isLeap(oldStyle('Y', $month, $day, $year));				// true - если високосный год по старому стилю
 		$ny =  date( 'U', mktime ( 0, 0, 0, 1, 1, $year ));				// Новый год по григорианскому календарю
 		$easter = easter('U', $year, true);								// Пасха в текущем году
 		$easter_prev = easter('U', $year-1, true);						// Пасха в предыдущем году
 		$f_e = (date( 'U', mktime ( 0, 0, 0,12, 25, $year-1 ))-$easter_prev)/(3600*24)-date( 'w', mktime ( 0, 0, 0, 12, 25+dd($year-1), $year-1 )); // Кол-во дней до Недели св.отцов от Пасхи
 		$ep_e = (date( 'U', mktime ( 0, 0, 0, 1, 6, $year ))-$easter_prev)/(3600*24)-date( 'w', mktime ( 0, 0, 0, 1, 6+dd($year), $year )); 		// Кол-во дней до Недели перед Богоявлением от Пасхи
-		$y=$year;
-		if ($date < $ny) $year-=1;										// Если дата по старому стилю до Нового года, то это предыдущий год
-		$dd = dd($year);												// Отклонение григорианского календаря от юлианского в днях
 		$wd = date( 'w', mktime ( 0, 0, 0, $month, $day, $year ));
 		if ($wd == 3 || $wd == 5) $post = "Постный день";				// Пост по средам и пятницам
 		else $post = "";
@@ -254,7 +253,7 @@ function dayEvents($month, $day, $year){
 
 				//проверяем наличие кешированных даты начала и конца
 				//если есть, не рассчитываем их второй раз
-				if(!$event['start'] || !$event['finish']) {
+				if(!$event[i]['start'] || !$event[i]['finish']) {
 					// Если невисокосный год, то события которые приходятся на 29 февраля празднуются 28 февраля
 					if ( ! $leap ) {
 						if ( $s_month == 2 && $s_date == 29 ) {
@@ -268,11 +267,11 @@ function dayEvents($month, $day, $year){
 					if ( $s_month < 0 ) {        //  Сб./Вс. перед/после праздника или Праздник в Сб./Вс. перед/после даты
 						// Если неделя Богоотцов совпадает с Неделей перед Богоявлением, то чтения Недели перед Богоявлением переносятся на 1 января ст.ст.
 						if ( ( $f_e + 7 == $ep_e ) && ( $s_month == - 1 && $s_date == 0 && $f_month == 1 && $f_date == 6 && ( $type == 204 || $type == 207 ) ) ) {
-							$finish = date( 'U', mktime( 0, 0, 0, 1, 1, $year ) );
+							$finish = date( 'U', mktime( 0, 0, 0, 1, 1, $os_year ) );
 							$start  = $finish;
 						} else {
-							$we     = date( 'w', mktime( 0, 0, 0, $f_month, $f_date, $year + $y ) + $dd * 3600 * 24 );                // День недели
-							$finish = date( 'U', mktime( 0, 0, 0, $f_month, $f_date, $year + $y ) + ( $s_date - $we ) * 3600 * 24 );    // Смещение относительно даты на $s_date-$we дней
+							$we     = date( 'w', mktime( 0, 0, 0, $f_month, $f_date, $os_year + $y ) + $dd * 3600 * 24 );                // День недели
+							$finish = date( 'U', mktime( 0, 0, 0, $f_month, $f_date, $os_year + $y ) + ( $s_date - $we ) * 3600 * 24 );    // Смещение относительно даты на $s_date-$we дней
 							$start  = $finish;
 
 							if ( $s_month == - 1 && $we == $s_date ) {
@@ -291,20 +290,20 @@ function dayEvents($month, $day, $year){
 						}
 					} else {
 						if ( $s_month > 0 ) {
-							$start = date( 'U', mktime( 0, 0, 0, $s_month, $s_date, $year ) );
+							$start = date( 'U', mktime( 0, 0, 0, $s_month, $s_date, $os_year ) );
 						}            // Неподвижные события - начало периода
 						else if ( $s_month == 0 ) {                                                                        // Переходящие события - начало периода
 							if ( $type == 202 ) {
-								$start = shift202( $s_date, $date, $year );
+								$start = shift202( $s_date, $date, $os_year );
 							}                                        // Чтения на утрени
 							else if ( $type == 204 ) {
-								$start = shift204( $s_date, $date, $year );
+								$start = shift204( $s_date, $date, $os_year );
 							}                                    // Апостол на Литургии
 							else if ( $type == 207 ) {
-								$start = shift207( $s_date, $date, $year );
+								$start = shift207( $s_date, $date, $os_year );
 							}                                    // Евангелие на Литургии
 							else if ( $type >= 301 && $type <= 309 ) {
-								$start = shift300( $s_date, $date, $year );
+								$start = shift300( $s_date, $date, $os_year );
 							}                    // Псалтирь
 							else {                                                                                            // Все остальные события
 								if ( $date >= $ny ) {
@@ -317,20 +316,20 @@ function dayEvents($month, $day, $year){
 						}
 
 						if ( $f_month > 0 ) {
-							$finish = date( 'U', mktime( 0, 0, 0, $f_month, $f_date, $year ) );
+							$finish = date( 'U', mktime( 0, 0, 0, $f_month, $f_date, $os_year ) );
 						}            // Неподвижные события - конец периода
 						else if ( $f_month == 0 ) {                                                                        // Переходящие события - конец периода
 							if ( $type == 202 ) {
-								$finish = shift202( $s_date, $date, $year );
+								$finish = shift202( $s_date, $date, $os_year );
 							}                                        // Чтения на утрени
 							else if ( $type == 204 ) {
-								$finish = shift204( $s_date, $date, $year );
+								$finish = shift204( $s_date, $date, $os_year );
 							}                                // Апостол на Литургии
 							else if ( $type == 207 ) {
-								$finish = shift207( $s_date, $date, $year );
+								$finish = shift207( $s_date, $date, $os_year );
 							}                                // Евангелие на Литургии
 							else if ( $type >= 301 && $type <= 309 ) {
-								$finish = shift300( $s_date, $date, $year );
+								$finish = shift300( $s_date, $date, $os_year );
 							}                    // Псалтирь
 							else {                                                                                            // Все остальные события
 								if ( $date >= $ny ) {
@@ -346,7 +345,7 @@ function dayEvents($month, $day, $year){
 					// Обрабатываем коллизию, связанную со сменой года
 					if ($start > $finish) {
 						if ($start > $date) $start -= ($leap?366:365)*3600*24;	// Начало в прошлом году
-						else $finish -= ($leap?366:365)*3600*24;				// Окончание в следующем году
+						else $finish += ($leap?366:365)*3600*24;				// Окончание в следующем году
 					}
 
 					//сохраняем дату начала и конца в кеш
@@ -403,6 +402,19 @@ function dayEvents($month, $day, $year){
 	}
 
 	return $result;
+}
+/*******************************************************************************
+// Функция возвращает свойства дня
+*******************************************************************************/  
+function dayProperties ($month, $day, $year){
+	$res = 7;							// Самый обычный день
+	$e = dayEvents($month, $day, $year);
+	$cnt = count($e);
+	for ($i=0; $i < $cnt; $i++) {
+		if (($e[$i]['type'] <= 2 OR $e[$i]['type'] == 9)  AND $e[$i]['type'] < $res) $res = $e[$i]['type'];	
+		if ($e[$i]['type'] == 10) $post = 10;
+	}
+	return $res+$post;
 }
 
 function shift202 ($d, $date, $year) {				// Смещение даты для Чтений на Утрене

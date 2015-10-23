@@ -137,7 +137,9 @@ function getLink(d, type) {
 		if (omonth<10) {omonth="0"+omonth}
 		odate=d.getDate();
 		if (odate<10) {odate="0"+odate}
-		l = baseUrl+"?year="+d.getFullYear()+"&month="+omonth+"&date="+odate;
+		if (bg_ortcal_page) l = bg_ortcal_page;
+		else l = baseUrl;
+		l += "?yr="+d.getFullYear()+"&mon="+omonth+"&d="+odate;
 		break;
 	}
 

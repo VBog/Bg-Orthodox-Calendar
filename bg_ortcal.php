@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь на год: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: Vadim Bogaiskov
-    Version: 0.8.1
+    Version: 0.8.3.1
     Author URI: http://bogaiskov.ru 
 */
 
@@ -35,7 +35,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.8.1');
+define('BG_ORTCAL_VERSION', '0.8.3.1');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -64,6 +64,7 @@ function bg_ortcal_js_options () {
     $popmenu1001_val = get_option( "bg_ortcal_popmenu1001" );
     $popmenu1002_val = get_option( "bg_ortcal_popmenu1002" );
     $dblClick_val = get_option( "bg_ortcal_dblClick" );
+    $bg_ortcal_page_val = get_option( "bg_ortcal_page" );							// Постоянная ссылка на страницу с календарем
 ?>
 	<script>
 		var baseUrl =  "<?php echo plugins_url( '/' , __FILE__ ); ?>";
@@ -79,7 +80,8 @@ function bg_ortcal_js_options () {
 		if ($popmenu1002_val) {echo 'popmenu['.$i.']={name: "'.$popmenu1002_val.'", type: 1002};';$i++;}
  ?>
 					
-		var dblClick = <?php echo get_option( "bg_ortcal_dblClick" ); ?>;							// Пункт меню при двойном щелчке по дате (варианты см. выше)										
+		var dblClick = <?php echo $dblClick_val; ?>;							// Пункт меню при двойном щелчке по дате (варианты см. выше)										
+		var bg_ortcal_page = <?php echo '"'.$bg_ortcal_page_val. '"'; ?>;				// Постоянная ссылка на страницу с календарем
 	</script>
 <?php
 }
@@ -103,6 +105,7 @@ if ( defined('ABSPATH') && defined('WPINC') ) {
 	add_shortcode( 'OldStyle', 'bg_ortcal_OldStyle' );		// Для совместимости с версией 0.4
 	add_shortcode( 'Sedmica', 'bg_ortcal_Sedmica' );		// Для совместимости с версией 0.4
 	add_shortcode( 'dayinfo', 'bg_ortcal_DayInfo' );
+	add_shortcode( 'ortcal', 'bg_ortcal_setDate' );
 	add_shortcode( 'monthinfo', 'bg_ortcal_MonthInfo' );
 	add_shortcode( 'oldstyle', 'bg_ortcal_OldStyle' );
 	add_shortcode( 'sedmica', 'bg_ortcal_Sedmica' );
@@ -158,8 +161,113 @@ function bg_ortcal_DayInfo($atts) {
 		'links' => 'on',					// Ссылки и цитаты
 	), $atts ) );
 
+// Если $day задано значение "get", то получаем $day, $month и $year из ссылки	
+	if ($day == "get") {
+		$day = $_GET["d"];
+		$month = $_GET["mon"];
+		$year = $_GET["yr"];
+	}
+// ===========================================================================
 	return showDayInfo ( $day, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links );
 }
+// Функция обработки шорт-кода setdate
+function bg_ortcal_setDate($atts) {
+
+	$input = ort_calendar(); 
+	
+	return "{$input}"; 
+}
+
+function ort_calendar() { 
+    $bg_ortcal_page = get_option( "bg_ortcal_page" );
+	$month_names=array("Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"); 
+
+	if (isset($_GET['yr'])) $y=$_GET['yr'];
+	if (isset($_GET['mon'])) $m=$_GET['mon']; 
+	if (!isset($y)) $y=date("Y");
+	if (!isset($m) OR $m < 1 OR $m > 12) $m=date("m");
+	
+	$month_stamp=mktime(0,0,0,$m,1,$y);
+	$day_count=date("t",$month_stamp);
+	$weekday=date("w",$month_stamp);
+	if ($weekday==0) $weekday=7;
+	$start=-($weekday-2);
+	$end=$start+41;
+	$today=date("Y-m-d");
+	$prev_month_stamp=mktime(0,0,0,$m-1,1,$y);
+	$prev_day_count=date("t",$prev_month_stamp);
+	$prev=date('?\y\r=Y&\m\o\n=m&\d=d',mktime (0,0,0,$m-1,$prev_day_count,$y));  
+	$next=date('?\y\r=Y&\m\o\n=m&\d=d',mktime (0,0,0,$m+1,1,$y));
+	$input = '
+		<div class="bg_moncal">
+		<table> 
+		 <tr>
+		  <td colspan=7 align="center"> 
+		   <table width="100%" border=0 cellspacing=0 cellpadding=0> 
+			<tr> 
+			 <td align="left" class="arrow"><a href="'. $bg_ortcal_page . $prev .'">&lt;&lt;</a></td> 
+			 <td align="center" class="month" style="font-size: 12px;">'. $month_names[$m-1] .' '. $y .'</td> 
+			 <td align="right" class="arrow"><a href="'. $bg_ortcal_page . $next .'">&gt;&gt;</a></td> 
+			</tr> 
+		   </table> 
+		  </td> 
+		 </tr> 
+		 <tr><td class="week">Пн</td><td class="week">Вт</td><td class="week">Ср</td><td class="week">Чт</td><td class="week">Пт</td><td class="week">Сб</td><td class="week">Вс</td><tr>
+	';
+	$i=0;
+	for($d=$start;$d<=$end;$d++) { 
+		if (!($i++ % 7)) $input .= " <tr>\n";
+		if ($d < 1 OR $d > $day_count) {
+			$input .= '  <td align="center" class="day">&nbsp;';
+		} else {
+			$info = showDayInfo ( $d, $m, $y, 'l, j F Y г. ', '(j F ст.ст.)', 'on', 'on', 'on', 7, 'on', 'off', 'off', 'off', 'on', 'off', 'off', 'off' );
+			$info = str_replace ( "<br>", "\n", $info );
+			$prop = dayProperties ($m, $d, $y);
+			$cur="$y-$m-".sprintf("%02d",$d);
+			$selected=date('?\y\r=Y&\m\o\n=m&\d=d',mktime (0,0,0,$m,$d,$y));
+			if ($cur == $today) $input .= ' <td align="center" class="today">'; 
+			else {
+				switch ($prop) {
+				case 0:
+					$input .= '  <td align="center" class="easter">';
+					break;
+				case 1:
+				case 2:
+					$input .= '  <td align="center" class="holidays">';
+					break;
+				case 9:
+					$input .= '  <td align="center" class="memory">';
+					break;
+				case 11:
+				case 12:
+					$input .= '  <td align="center" class="post_holidays">';
+					break;
+				case 19:
+					$input .= '  <td align="center" class="post_memory">';
+					break;
+				default:
+					if ($prop > 10) {
+						if (!($i % 7)) $input .= '  <td align="center" class="post_weekend">';
+						else $input .= '  <td align="center" class="post">';
+					}
+					else {
+						if (!($i % 7)) $input .= '  <td align="center" class="weekend">';
+						else $input .= '  <td align="center" class="day">';
+					}
+					break;
+				}
+			}
+
+			$input .= '<a href="'. $bg_ortcal_page . $selected. '" title="'. strip_tags($info). '">'.$d.'</a>'; 
+		}
+		$input .= "</td>\n";
+		if (!($i % 7))  $input .= " </tr>\n";
+	} 
+	$input .= '</table></div>';
+	return $input; 
+}
+
+
 // Функция обработки шорт-кода YearInfo
 function bg_ortcal_MonthInfo($atts) {
 	extract( shortcode_atts( array(
@@ -181,6 +289,12 @@ function bg_ortcal_MonthInfo($atts) {
 		'links' => 'on',					// Ссылки и цитаты
 	), $atts ) );
 	
+// Если $day задано значение "get", то получаем $month и $year из ссылки	
+	if ($day == "get") {
+		$month = $_GET["mon"];
+		$year = $_GET["yr"];
+	}
+// ===========================================================================
 	$quote = "";
 	if ($year == '') $year = date('Y');
 	if ($month == '' || ($month < 1 || $month > 12)) $month = date('m');
@@ -250,8 +364,14 @@ function bg_ortcal_DayInfo_all ($atts) {
 		'year' => '',						// Год (по умолчанию - сегодня)
 	), $atts ) );
 
+// Если $day задано значение "get", то получаем $day, $month и $year из ссылки	
+	if ($day == "get") {
+		$day = $_GET["d"];
+		$month = $_GET["mon"];
+		$year = $_GET["yr"];
+	}
+// ===========================================================================
 	return showDayInfo ( $day, $month, $year, 'l, j F Y г. ', '(j F ст.ст.)', 'on', 'on', 'on', 'on', 'on', '<b>День памяти святых:</b><br>', '<b>День памяти исповедников и новомучеников российских:</b><br>', '<b>День почитания икон Божией Матери:</b><br>', '<hr />', 'on', '<hr /><b>Чтения дня:</b><br>', 'on' );
-//	$quote .= showDayInfo ( $day, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links )."<hr>";
 }
 
 // Функция обработки шорт-кода UpcomingEvents

@@ -248,13 +248,6 @@ var bscal = {
 		}
 		if (document.getElementById('weddingID').checked == true) bscal.changeWedding();
 	},
-	showList : function(){
-		var link = baseUrl+'index.html';
-		var y = document.getElementById('bs_year').value;
-		if (y != "") link += '?year='+y;
-		window.open(link);
-		bscal.hide();
-	},
 	retD : function(r_month, r_day){
         if (!r_day || r_day=="&nbsp;") return false;
 		var d = new Date(0);
@@ -327,7 +320,7 @@ var bscal = {
 		res += "<tr unselectable=on>"+
 	           "<td class='arrow' onClick=bscal.scroll_Y(-1);><< предыдущий год</td>"+
 				"<td unselectable=on></td>"+
-				"<td unselectable=on><input id='bs_year' type='text' style='width: 90px' onchange=bscal.change_Y(this.value); onkeyup='return onlyDigits(this);'></input> <button onClick='bscal.change_Y(bs_year.value);'>&nbsp;Ok&nbsp;</button> <button onClick='bscal.showList();'>&nbsp;Список&nbsp;</button></td>"+
+				"<td unselectable=on><input id='bs_year' type='text' style='width: 90px' onchange=bscal.change_Y(this.value); onkeyup='return onlyDigits(this);'></input> <button onClick='bscal.change_Y(bs_year.value);'>&nbsp;Ok&nbsp;</button></td>"+
 				"<td unselectable=on></td>"+
 			   "<td class='arrow' onClick=bscal.scroll_Y(1);>следующий год >></td>\n"+
 				"</tr>\n";

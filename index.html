@@ -139,15 +139,15 @@
 		values[j[0]]=unescape(j[1]);
 	}
 /* ---------------------------------------------------------------------------- */
-	if (values["year"]) { 						// Если задан год
-		cur_year = parseInt(values["year"]);	// то отобажаем календарь для заданного года
+	if (values["yr"]) { 						// Если задан год
+		cur_year = parseInt(values["yr"]);	// то отобажаем календарь для заданного года
 	}
-	if (values["month"]) { 						// Если задан месяц
-		var m = parseInt(values["month"]);							
+	if (values["mon"]) { 						// Если задан месяц
+		var m = parseInt(values["mon"]);							
 		if (m >=1 && m<=12) cur_month = m-1;	// то отобажаем календарь для заданного месяца, если значение месяца задано некорректно, то текущий месяц
 		one_month=true;							// причем только один месяц
-		if (values["date"]) { 					// Если задана дата
-			var d = parseInt(values["date"]);
+		if (values["d"]) { 					// Если задана дата
+			var d = parseInt(values["d"]);
 			var all_days = (cur_month == 2 && isLeap(cur_year)) ? 29 : dim[cur_month];
 			if (d >0) cur_date = d;				// то отобажаем календарь для заданной даты, если день задан некорректно, то текущую дату
 			if (cur_date>all_days) cur_date = all_days;	// а если дата больше количества дней в месяце, последний день месяца
