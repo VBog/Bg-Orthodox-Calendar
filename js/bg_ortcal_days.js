@@ -137,7 +137,9 @@ function getLink(d, type) {
 		if (omonth<10) {omonth="0"+omonth}
 		odate=d.getDate();
 		if (odate<10) {odate="0"+odate}
-		l = baseUrl+"?year="+d.getFullYear()+"&month="+omonth+"&date="+odate;
+		if (bg_ortcal_page) l = bg_ortcal_page;
+		else l = baseUrl;
+		l += "?date="+d.getFullYear()+"-"+omonth+"-"+odate;
 		break;
 	}
 
@@ -433,8 +435,10 @@ function getDayInfo(d) {
 
 function getXMLvalue(e,tag) {
 	var s=e.getElementsByTagName(tag);
-	if (s[0].textContent) return s[0].textContent;
-	else return s[0].text;
+	if (s[0]) {
+		if ('textContent' in s[0]) return s[0].textContent;
+		else return s[0].text;
+	}
 }
 
 

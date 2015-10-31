@@ -35,7 +35,7 @@
 	border: 0px;
 	margin: 0px;
 	padding: 0px;
-	min-width: 29px;
+	min-width: 25px;
 }
 #bscal hr {
 	margin: 2px 0 2px;
@@ -165,9 +165,15 @@
 #bscal .wedding_off {	/* Есть бракосочетание	выкл.	*/
 	outline-width: 0px;
 }
-#bscal .empty {			/* ЕНет отметок					*/
+#bscal .empty {			/* Нет отметок					*/
 	background-image: url('empty.png');
 	background-repeat: no-repeat;
+}
+#bscal a {			/* Ссылки внетри календаря			*/
+    color: inherit;
+	background-repeat: no-repeat;
+	text-align: center;
+	text-decoration: none;
 }
 
 /*** Окно меню выбора действий						  ***/
@@ -201,4 +207,149 @@
 	text-decoration: none;
 	color:inherit;
 	border: 0;
+}
+
+/********************************************************
+Настройка стилей окна календаря на месяц
+*********************************************************/
+
+
+/*** Окно календаря 								 ***/
+.bg_moncal {					
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: normal;
+	border: 5px ridge #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+	min-width: 170px;
+	max-width: 200px;
+}
+.bg_moncal table {
+	border: 0px;
+	border-collapse:collapse; 
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	line-height: normal;
+	text-align: center;
+}
+
+.bg_moncal tr {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+.bg_moncal td {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	min-width: 25px;
+}
+.bg_moncal hr {
+	margin: 2px 0 2px;
+}
+.bg_moncal .top {			/* Заголовок окна 				*/
+       height: 20px;
+}
+.bg_moncal td.bot {			/* Подвал окна 					*/
+	cursor: pointer;
+	text-align: center;
+}
+.bg_moncal .top td, .bg_moncal td.bot {
+    font-family: Tahoma;
+    font-size: 12px;
+    padding: 2px 0px;
+}
+ 
+.bg_moncal td.arrow{			/* Поля перехода назад-вперед	*/
+    font-family: Tahoma;
+    font-size: 16px;
+	text-align: center;
+	padding: 3px 5px;
+	cursor: pointer;
+}
+.bg_moncal  td.over {			/* Дата под курсором			*/	
+    border: 0px outset;
+	font-weight: bold;
+    cursor: pointer;
+	text-align: center;
+}
+.bg_moncal td.month {			/* Названия месяцев				*/
+    font-weight: bold;
+    font-size: 14px;
+}
+.bg_moncal td.week {			/* Дни недели					*/
+	text-align: center;
+}
+.bg_moncal td.day {			/* Обычный день					*/
+    color: #000000;
+	background-repeat: no-repeat;
+	text-align: center;
+}
+.bg_moncal td.today {			/* Сегодня						*/
+	background-repeat: no-repeat;
+    font-weight: bold;
+	text-align: center;
+}
+.bg_moncal td.weekend {		/* Воскресные дни				*/
+	color: red;						/* Цвет текста 	*/
+	text-align: center;
+}
+.bg_moncal td.easter {		/* Пасха						*/
+    color: white;					/* Цвет текста 	*/
+ 	background-color: red;			/* Цвет фона 	*/
+    font-weight: bold;
+	text-align: center;
+}
+.bg_moncal td.holidays {		/* Праздники					*/
+    color: red;						/* Цвет текста 	*/
+    font-weight: bold;
+	text-align: center;
+}
+.bg_moncal td.memory {		/* Дни памяти (родительские)	*/
+    color: blue;					/* Цвет текста 	*/
+    font-weight: bold;
+	text-align: center;
+}
+.bg_moncal td.post {			/* Постные дни					*/
+	background-color:silver;		/* Цвет фона 	*/
+	text-align: center;
+}
+.bg_moncal td.post_weekend { /* Постные воскресные дни		*/
+	color: red;						/* Цвет фона 	*/
+	background-color:silver;		/* Цвет фона 	*/
+	text-align: center;
+}
+.bg_moncal td.post_holidays { /* Постные праздники			*/
+	color: red;						/* Цвет текста 	*/
+	background-color:silver;		/* Цвет фона 	*/
+    font-weight: bold;
+	text-align: center;
+}
+.bg_moncal td.post_memory {	/* Постные дни памяти			*/
+	color: blue;					/* Цвет текста 	*/
+	background-color:silver;		/* Цвет фона 	*/
+    font-weight: bold;
+	text-align: center;
+}
+.bg_moncal .wedding_on {		/* Есть бракосочетание			*/
+	outline-width: 1px;
+    outline-style: solid; 
+}
+.bg_moncal .nowedding_off {	/* Нет бракосочетания выкл.		*/
+	outline-width: 0px;
+}
+.bg_moncal .wedding_off {	/* Есть бракосочетание	выкл.	*/
+	outline-width: 0px;
+}
+.bg_moncal .empty {			/* Нет отметок					*/
+	background-image: url('empty.png');
+	background-repeat: no-repeat;
+}
+.bg_moncal a, .bg_moncal a:hover, .bg_moncal a:active {			/* Ссылки внетри календаря			*/
+    color: inherit;
+	background-repeat: no-repeat;
+	text-align: center;
+	text-decoration: none;
 }
