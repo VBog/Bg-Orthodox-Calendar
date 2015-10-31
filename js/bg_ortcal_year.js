@@ -328,7 +328,6 @@ var bscal = {
 		res += "<tr unselectable=on>"+
 	           "<td class='arrow' onClick=bscal.scroll_Y(-1);><< предыдущий год</td>"+
 				"<td unselectable=on></td>"+
-//				"<td unselectable=on><input id='bs_year' type='text' style='width: 90px' onchange=bscal.change_Y(this.value); onkeyup='return onlyDigits(this);'></input> <button onClick='bscal.change_Y(bs_year.value);'>&nbsp;Ok&nbsp;</button> <button onClick='bscal.showList();'>&nbsp;Список&nbsp;</button></td>"+
 				"<td unselectable=on><input id='bs_year' type='text' style='width: 90px' onchange=bscal.change_Y(this.value); onkeyup='return onlyDigits(this);'></input> <button onClick='bscal.change_Y(bs_year.value);'>&nbsp;Ok&nbsp;</button></td>"+
 				"<td unselectable=on></td>"+
 			   "<td class='arrow' onClick=bscal.scroll_Y(1);>следующий год >></td>\n"+
