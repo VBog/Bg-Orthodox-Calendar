@@ -2,13 +2,14 @@
 /* 
     Plugin Name: Bg Orthodox Calendar 
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
-    Description: Плагин выводит на экран православный календарь на год: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
-    Author: Vadim Bogaiskov
-    Version: 0.9.1
+    Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
+    Author: VBog
+    Version: 0.9.2
     Author URI: http://bogaiskov.ru 
+	License:     GPL2
 */
 
-/*  Copyright 2014  Vadim Bogaiskov  (email: vadim.bogaiskov@gmail.com)
+/*  Copyright 2015  Vadim Bogaiskov  (email: vadim.bogaiskov@gmail.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -35,7 +36,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.9.1');
+define('BG_ORTCAL_VERSION', '0.9.2');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -169,7 +170,7 @@ function bg_ortcal_DayInfo($atts) {
 // ===========================================================================
 	return showDayInfo ( $day, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links );
 }
-// Функция обработки шорт-кода setdate
+// Функция обработки шорт-кода ortcal
 function bg_ortcal_setDate($atts) {
 	extract( shortcode_atts( array(
 		'day' => '',						// День (по умолчанию - сегодня)
@@ -266,7 +267,7 @@ function ort_calendar($y=null, $m=null) {
 				}
 			}
 
-			$input .= '<a href="'. $bg_ortcal_page . $selected. '" title="'. strip_tags($info). '">'.$d.'</a>'; 
+			$input .= "<a href='". $bg_ortcal_page . $selected. "' title='". strip_tags($info). "'>".$d."</a>"; 
 		}
 		$input .= "</td>\n";
 		if (!($i % 7))  $input .= " </tr>\n";
