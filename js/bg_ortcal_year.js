@@ -248,6 +248,14 @@ var bscal = {
 		}
 		if (document.getElementById('weddingID').checked == true) bscal.changeWedding();
 	},
+	showList : function(){
+		var link = baseUrl+'index.html';
+	//	if (bg_ortcal_page) link = bg_ortcal_page;
+		var y = document.getElementById('bs_year').value;
+		if (y != "") link += '?date='+y;
+		window.open(link);
+		bscal.hide();
+	},
 	retD : function(r_month, r_day){
         if (!r_day || r_day=="&nbsp;") return false;
 		var d = new Date(0);

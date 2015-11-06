@@ -134,7 +134,6 @@ function bg_ortcal_options_page() {
     }
 ?>
 <!--  форма опций -->
-    
 <table width="100%">
 <tr><td valign="top">
 <!--  Теперь отобразим опции на экране редактирования -->
@@ -147,164 +146,151 @@ function bg_ortcal_options_page() {
 <form name="form1" method="post" action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
 
 <!--  Основные параметры -->
+<details>
+<summary><strong>Цвета формы календаря</strong></summary>
 <table class="form-table">
+	<tr valign="top">
+	<th scope="row">Основной цвет текста:</th>
+	<td>
+	<input type="hidden" name="<?php echo $bg_ortcal_hidden_field_name; ?>" value="Y">
+	<input type="color" id="mainColor_name" name="<?php echo $mainColor_name ?>" value="<?php echo $mainColor ?>"><br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Основной цвет фона:</th>
+	<td>
+	<input type="color" id="mainBgColor_name" name="<?php echo $mainBgColor_name ?>" value="<?php echo $mainBgColor ?>"><br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Цвет заголовков:</th>
+	<td>
+	<input type="color" id="titleColor_name" name="<?php echo $titleColor_name ?>" value="<?php echo $titleColor ?>"> (стрелки перехода на другой год, названия месяцев)<br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Дополнительный цвет текста:</th>
+	<td>
+	<input type="color" id="otherColor_name" name="<?php echo $otherColor_name ?>" value="<?php echo $otherColor ?>"> (заголовок, подвал, дни недели)<br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Дополнительный цвет фона:</th>
+	<td>
+	<input type="color" id="otherBgColor_name" name="<?php echo $otherBgColor_name ?>" value="<?php echo $otherBgColor ?>"> (заголовок, подвал, дни недели)<br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Цвет текста выбранного дня:</th>
+	<td>
+	<input type="color" id="overColor_name" name="<?php echo $overColor_name ?>" value="<?php echo $overColor ?>"> (день, на который указывает курсор)<br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Цвет фона выбранного дня:</th>
+	<td>
+	<input type="color" id="overBgColor_name" name="<?php echo $overBgColor_name ?>" value="<?php echo $overBgColor ?>"> (день, на который указывает курсор)<br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Цвет текста сегодня:</th>
+	<td>
+	<input type="color" id="todayColor_name" name="<?php echo $todayColor_name ?>" value="<?php echo $todayColor ?>"><br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Цвет фона сегодня:</th>
+	<td>
+	<input type="color" id="todayBgColor_name" name="<?php echo $todayBgColor_name ?>" value="<?php echo $todayBgColor ?>"><br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Цвет рамки дней браковенчаний:</th>
+	<td>
+	<input type="color" id="weddingColor_name" name="<?php echo $weddingColor_name ?>" value="<?php echo $weddingColor ?>"><br />
+</td></tr>
+</table>
+<hr>
+</details>
+<br>
+<details>
+<summary><strong>Элементы всплывающего меню календаря</strong></summary>
+<table class="form-table">
+	<tr valign="top">
+	<th scope="row">Ссылка на сайт официального календаря РПЦ</th>
+	<td>
+	<input type="text" id="popmenu1_name" name="<?php echo $popmenu1_name ?>" size="60" value="<?php echo $popmenu1_val ?>"><br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Ссылка на сайт календаря на Православие.Ru</th>
+	<td>
+	<input type="text" id="popmenu2_name" name="<?php echo $popmenu2_name ?>" size="60" value="<?php echo $popmenu2_val ?>"><br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Ссылка на сайт богослужебных указаний</th>
+	<td>
+	<input type="text" id="popmenu3_name" name="<?php echo $popmenu3_name ?>" size="60" value="<?php echo $popmenu3_val ?>"><br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Этот день в календаре (страница сайта)</th>
+	<td>
+	<input type="text" id="popmenu101_name" name="<?php echo $popmenu101_name ?>" size="60" value="<?php echo $popmenu101_val ?>"><br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Этот день в календаре (всплывающее окно)</th>
+	<td>
+	<input type="text" id="popmenu1001_name" name="<?php echo $popmenu1001_name ?>" size="60" value="<?php echo $popmenu1001_val ?>"><br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Выбор имени по Месяцеслову (всплывающее окно)</th>
+	<td>
+	<input type="text" id="popmenu1002_name" name="<?php echo $popmenu1002_name ?>" size="60" value="<?php echo $popmenu1002_val ?>"><br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Функция при двойном щелчке по дате</th>
+	<td>
+	<select name="<?php echo $dblClick_name ?>">
+	<option value=1 <?php if($dblClick_val==1) echo 'selected="selected"'; ?> >Официальный календарь РПЦ</option>
+	<option value=2 <?php if($dblClick_val==2) echo 'selected="selected"'; ?> >Календарь на Православие.Ru</option>
+	<option value=3 <?php if($dblClick_val==3) echo 'selected="selected"'; ?> >Богослужебные указания</option>
+	<option value=101 <?php if($dblClick_val==101) echo 'selected="selected"'; ?> >Этот день в календаре (страница)</option>
+	<option value=1001 <?php if($dblClick_val==1001) echo 'selected="selected"'; ?> >Этот день в календаре (окно)</option>
+	<option value=1002 <?php if($dblClick_val==1002) echo 'selected="selected"'; ?> >Выбор имени по Месяцеслову</option>
+	</select>
+	</td></tr>
+</table>
+<hr>
+</details>
 
-<tr valign="top">
-<th scope="row">Основной цвет текста:</th>
-<td>
-<input type="hidden" name="<?php echo $bg_ortcal_hidden_field_name; ?>" value="Y">
-<input type="color" id="mainColor_name" name="<?php echo $mainColor_name ?>" value="<?php echo $mainColor ?>"><br />
-</td></tr>
-<tr valign="top">
-<th scope="row">Основной цвет фона:</th>
-<td>
-<input type="color" id="mainBgColor_name" name="<?php echo $mainBgColor_name ?>" value="<?php echo $mainBgColor ?>"><br />
-</td></tr>
-<tr valign="top">
-<th scope="row">Цвет заголовков:</th>
-<td>
-<input type="color" id="titleColor_name" name="<?php echo $titleColor_name ?>" value="<?php echo $titleColor ?>"> (стрелки перехода на другой год, названия месяцев)<br />
-</td></tr>
-<tr valign="top">
-<th scope="row">Дополнительный цвет текста:</th>
-<td>
-<input type="color" id="otherColor_name" name="<?php echo $otherColor_name ?>" value="<?php echo $otherColor ?>"> (заголовок, подвал, дни недели)<br />
-</td></tr>
-<tr valign="top">
-<th scope="row">Дополнительный цвет фона:</th>
-<td>
-<input type="color" id="otherBgColor_name" name="<?php echo $otherBgColor_name ?>" value="<?php echo $otherBgColor ?>"> (заголовок, подвал, дни недели)<br />
-</td></tr>
-<tr valign="top">
-<th scope="row">Цвет текста выбранного дня:</th>
-<td>
-<input type="color" id="overColor_name" name="<?php echo $overColor_name ?>" value="<?php echo $overColor ?>"> (день, на который указывает курсор)<br />
-</td></tr>
-<tr valign="top">
-<th scope="row">Цвет фона выбранного дня:</th>
-<td>
-<input type="color" id="overBgColor_name" name="<?php echo $overBgColor_name ?>" value="<?php echo $overBgColor ?>"> (день, на который указывает курсор)<br />
-</td></tr>
-<tr valign="top">
-<th scope="row">Цвет текста сегодня:</th>
-<td>
-<input type="color" id="todayColor_name" name="<?php echo $todayColor_name ?>" value="<?php echo $todayColor ?>"><br />
-</td></tr>
-<tr valign="top">
-<th scope="row">Цвет фона сегодня:</th>
-<td>
-<input type="color" id="todayBgColor_name" name="<?php echo $todayBgColor_name ?>" value="<?php echo $todayBgColor ?>"><br />
-</td></tr>
-<tr valign="top">
-<th scope="row">Цвет рамки дней браковенчаний:</th>
-<td>
-<input type="color" id="weddingColor_name" name="<?php echo $weddingColor_name ?>" value="<?php echo $weddingColor ?>"><br />
-</td></tr>
+<br>
+<details>
+<summary><strong>Прочие параметры ...</strong></summary>
+<table class="form-table">
+	<tr valign="top">
+	<th scope="row">Постоянная ссылка на страницу с календарем</th>
+	<td>
+	<input type="text" id="bg_ortcal_page" name="<?php echo $bg_ortcal_page ?>" size="60" value="<?php echo $bg_ortcal_page_val ?>"><br />
+	</td></tr>
 
-<tr valign="top">
-<th scope="row">Элементы всплывающего меню календаря</th>
-<td>
-<p id="popmenu" onclick='show_popmenu_items();' style="cursor:pointer">&#9660; отобразить  &#9660;<br />
-</td></tr>
-<tr valign="top" id="popmenu1" style="display:none">
-<th scope="row">&#9654; Ссылка на сайт официального календаря РПЦ</th>
-<td>
-<input type="text" id="popmenu1_name" name="<?php echo $popmenu1_name ?>" size="60" value="<?php echo $popmenu1_val ?>"><br />
-</td></tr>
-<tr valign="top" id="popmenu2" style="display:none">
-<th scope="row">&#9654; Ссылка на сайт календаря на Православие.Ru</th>
-<td>
-<input type="text" id="popmenu2_name" name="<?php echo $popmenu2_name ?>" size="60" value="<?php echo $popmenu2_val ?>"><br />
-</td></tr>
-<tr valign="top" id="popmenu3" style="display:none">
-<th scope="row">&#9654; Ссылка на сайт богослужебных указаний</th>
-<td>
-<input type="text" id="popmenu3_name" name="<?php echo $popmenu3_name ?>" size="60" value="<?php echo $popmenu3_val ?>"><br />
-</td></tr>
-<tr valign="top" id="popmenu101" style="display:none">
-<th scope="row">&#9654; Этот день в календаре (страница сайта)</th>
-<td>
-<input type="text" id="popmenu101_name" name="<?php echo $popmenu101_name ?>" size="60" value="<?php echo $popmenu101_val ?>"><br />
-</td></tr>
-<tr valign="top" id="popmenu1001" style="display:none">
-<th scope="row">&#9654; Этот день в календаре (всплывающее окно)</th>
-<td>
-<input type="text" id="popmenu1001_name" name="<?php echo $popmenu1001_name ?>" size="60" value="<?php echo $popmenu1001_val ?>"><br />
-</td></tr>
-<tr valign="top" id="popmenu1002" style="display:none">
-<th scope="row">&#9654; Выбор имени по Месяцеслову (всплывающее окно)</th>
-<td>
-<input type="text" id="popmenu1002_name" name="<?php echo $popmenu1002_name ?>" size="60" value="<?php echo $popmenu1002_val ?>"><br />
-</td></tr>
-<tr valign="top" id="dubleclick" style="display:none">
-<th scope="row">Функция при двойном щелчке по дате</th>
-<td>
-<select name="<?php echo $dblClick_name ?>">
-<option value=1 <?php if($dblClick_val==1) echo 'selected="selected"'; ?> >Официальный календарь РПЦ</option>
-<option value=2 <?php if($dblClick_val==2) echo 'selected="selected"'; ?> >Календарь на Православие.Ru</option>
-<option value=3 <?php if($dblClick_val==3) echo 'selected="selected"'; ?> >Богослужебные указания</option>
-<option value=101 <?php if($dblClick_val==101) echo 'selected="selected"'; ?> >Этот день в календаре (страница)</option>
-<option value=1001 <?php if($dblClick_val==1001) echo 'selected="selected"'; ?> >Этот день в календаре (окно)</option>
-<option value=1002 <?php if($dblClick_val==1002) echo 'selected="selected"'; ?> >Выбор имени по Месяцеслову</option>
-</select>
-</td></tr>
-<script>
-function show_popmenu_items() {
-	if (document.getElementById('popmenu1').style.display  == 'none') {
-		document.getElementById('popmenu').innerHTML = ' &#9650; скрыть  &#9650;';
-		document.getElementById('popmenu1').style.display = '';
-		document.getElementById('popmenu2').style.display = '';
-		document.getElementById('popmenu3').style.display = '';
-		document.getElementById('popmenu101').style.display = '';
-		document.getElementById('popmenu1001').style.display = '';
-		document.getElementById('popmenu1002').style.display = '';
-		document.getElementById('dubleclick').style.display = '';
-	} else {
-		document.getElementById('popmenu').innerHTML = '&#9660; отобразить  &#9660;';
-		document.getElementById('popmenu1').style.display = 'none';
-		document.getElementById('popmenu2').style.display = 'none';
-		document.getElementById('popmenu3').style.display = 'none';
-		document.getElementById('popmenu101').style.display = 'none';
-		document.getElementById('popmenu1001').style.display = 'none';
-		document.getElementById('popmenu1002').style.display = 'none';
-		document.getElementById('dubleclick').style.display = 'none';
+	<tr valign="top">
+	<th scope="row">Пользовательский XML-файл данных</th>
+	<td>
+	<input type="text" id="customXML_name" name="<?php echo $customXML_name ?>" size="60" value="<?php echo $customXML_val ?>"><br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Метод чтения файлов</th>
+	<td>
+	<input type="checkbox" id="bg_fgc" name="<?php echo $bg_fgc_name ?>" <?php if($bg_fgc_val=="on") echo "checked" ?>  value="on" onclick='reading_off_checked();'> file_get_contents()<br />
+	<input type="checkbox" id="bg_fopen" name="<?php echo $bg_fopen_name ?>" <?php if($bg_fopen_val=="on") echo "checked" ?>  value="on" onclick='reading_off_checked();'> fopen() - fread() - fclose()<br />
+	<input type="checkbox" id="bg_curl" name="<?php echo $bg_curl_name ?>" <?php if($bg_curl_val=="on") echo "checked" ?> value="on" onclick='reading_off_checked();'> cURL<br />
+	<i>(Плагин пытается загружать XML-файлы данных отмеченными методами в указанном порядке.<br>Чтобы сделать загрузку более быстрой отключите лишние методы.<br><u>Внимание:</u> Некоторые методы могут быть недоступны на Вашем сервере.)</i><br />
+	</td></tr>
+	<script>
+	function reading_off_checked() {
+		if (document.getElementById('bg_curl').checked == true || document.getElementById('bg_fgc').checked == true || document.getElementById('bg_fopen').checked == true) {
+			document.getElementById('bg_verses').disabled = false;
+		} else {
+			document.getElementById('bg_verses').disabled = true;
+			document.getElementById('bg_verses').checked = false;
+			document.getElementById('bg_preq').disabled = true;
+			document.getElementById('bg_preq').checked = false;
+		}
 	}
-}
-reading_off_checked();
-</script>
-
-<tr valign="top">
-<th scope="row">Постоянная ссылка на страницу с календарем</th>
-<td>
-<input type="text" id="bg_ortcal_page" name="<?php echo $bg_ortcal_page ?>" size="60" value="<?php echo $bg_ortcal_page_val ?>"><br />
-</td></tr>
-
-<tr valign="top">
-<th scope="row">Пользовательский XML-файл данных</th>
-<td>
-<input type="text" id="customXML_name" name="<?php echo $customXML_name ?>" size="60" value="<?php echo $customXML_val ?>"><br />
-</td></tr>
-<tr valign="top">
-<th scope="row">Метод чтения файлов</th>
-<td>
-<input type="checkbox" id="bg_fgc" name="<?php echo $bg_fgc_name ?>" <?php if($bg_fgc_val=="on") echo "checked" ?>  value="on" onclick='reading_off_checked();'> file_get_contents()<br />
-<input type="checkbox" id="bg_fopen" name="<?php echo $bg_fopen_name ?>" <?php if($bg_fopen_val=="on") echo "checked" ?>  value="on" onclick='reading_off_checked();'> fopen() - fread() - fclose()<br />
-<input type="checkbox" id="bg_curl" name="<?php echo $bg_curl_name ?>" <?php if($bg_curl_val=="on") echo "checked" ?> value="on" onclick='reading_off_checked();'> cURL<br />
-<i>(Плагин пытается загружать XML-файлы данных отмеченными методами в указанном порядке.<br>Чтобы сделать загрузку более быстрой отключите лишние методы.<br><u>Внимание:</u> Некоторые методы могут быть недоступны на Вашем сервере.)</i><br />
-</td></tr></table>
-<script>
-function reading_off_checked() {
-	if (document.getElementById('bg_curl').checked == true || document.getElementById('bg_fgc').checked == true || document.getElementById('bg_fopen').checked == true) {
-		document.getElementById('bg_verses').disabled = false;
-	} else {
-		document.getElementById('bg_verses').disabled = true;
-		document.getElementById('bg_verses').checked = false;
-		document.getElementById('bg_preq').disabled = true;
-		document.getElementById('bg_preq').checked = false;
-	}
-}
-reading_off_checked();
-</script>
+	reading_off_checked();
+	</script>
+</table>
+</details>
 
 <p class="submit">
 <input type="submit" name="Submit" value="Сохранить настройки" />

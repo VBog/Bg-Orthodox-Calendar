@@ -2,13 +2,14 @@
 /* 
     Plugin Name: Bg Orthodox Calendar 
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
-    Description: Плагин выводит на экран православный календарь на год: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
-    Author: Vadim Bogaiskov
-    Version: 0.8.3.1
+    Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
+    Author: VBog
+    Version: 0.9.2
     Author URI: http://bogaiskov.ru 
+	License:     GPL2
 */
 
-/*  Copyright 2014  Vadim Bogaiskov  (email: vadim.bogaiskov@gmail.com)
+/*  Copyright 2015  Vadim Bogaiskov  (email: vadim.bogaiskov@gmail.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -35,7 +36,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.8.3.1');
+define('BG_ORTCAL_VERSION', '0.9.2');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -163,28 +164,36 @@ function bg_ortcal_DayInfo($atts) {
 
 // Если $day задано значение "get", то получаем $day, $month и $year из ссылки	
 	if ($day == "get") {
-		$day = $_GET["d"];
-		$month = $_GET["mon"];
-		$year = $_GET["yr"];
+		if (isset($_GET['date'])) $dd = $_GET["date"];
+		list($year,$month, $day) = explode("-",$dd);
 	}
 // ===========================================================================
 	return showDayInfo ( $day, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links );
 }
-// Функция обработки шорт-кода setdate
+// Функция обработки шорт-кода ortcal
 function bg_ortcal_setDate($atts) {
+	extract( shortcode_atts( array(
+		'day' => '',						// День (по умолчанию - сегодня)
+		'month' => '',						// Месяц (по умолчанию - сегодня)
+		'year' => '',						// Год (по умолчанию - сегодня)
+	), $atts ) );
 
-	$input = ort_calendar(); 
+	$input = ort_calendar($year, $month); 
 	
 	return "{$input}"; 
 }
 
-function ort_calendar() { 
+function ort_calendar($y=null, $m=null) { 
     $bg_ortcal_page = get_option( "bg_ortcal_page" );
+	if (!$bg_ortcal_page) $bg_ortcal_page = plugins_url( '/' , __FILE__ );
 	$month_names=array("Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"); 
+	$month_names2=array("января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"); 
 
-	if (isset($_GET['yr'])) $y=$_GET['yr'];
-	if (isset($_GET['mon'])) $m=$_GET['mon']; 
-	if (!isset($y)) $y=date("Y");
+	if (isset($_GET['date'])) {
+		if (isset($_GET['date'])) $dd = $_GET["date"];
+		list($y,$m, $d) = explode("-",$dd);
+	}
+	if (!isset($y) OR !$y) $y=date("Y");
 	if (!isset($m) OR $m < 1 OR $m > 12) $m=date("m");
 	
 	$month_stamp=mktime(0,0,0,$m,1,$y);
@@ -196,8 +205,8 @@ function ort_calendar() {
 	$today=date("Y-m-d");
 	$prev_month_stamp=mktime(0,0,0,$m-1,1,$y);
 	$prev_day_count=date("t",$prev_month_stamp);
-	$prev=date('?\y\r=Y&\m\o\n=m&\d=d',mktime (0,0,0,$m-1,$prev_day_count,$y));  
-	$next=date('?\y\r=Y&\m\o\n=m&\d=d',mktime (0,0,0,$m+1,1,$y));
+	$prev=date('?\d\a\t\e=Y-m-d',mktime (0,0,0,$m-1,$prev_day_count,$y));  
+	$next=date('?\d\a\t\e=Y-m-d',mktime (0,0,0,$m+1,1,$y));
 	$input = '
 		<div class="bg_moncal">
 		<table> 
@@ -205,9 +214,9 @@ function ort_calendar() {
 		  <td colspan=7 align="center"> 
 		   <table width="100%" border=0 cellspacing=0 cellpadding=0> 
 			<tr> 
-			 <td align="left" class="arrow"><a href="'. $bg_ortcal_page . $prev .'">&lt;&lt;</a></td> 
+			 <td align="left" class="arrow"><a href="'. $bg_ortcal_page . $prev .'" title="'.$prev_day_count.' '.$month_names2[$m-2].' '.$y.'">&lt;&lt;</a></td> 
 			 <td align="center" class="month" style="font-size: 12px;">'. $month_names[$m-1] .' '. $y .'</td> 
-			 <td align="right" class="arrow"><a href="'. $bg_ortcal_page . $next .'">&gt;&gt;</a></td> 
+			 <td align="right" class="arrow"><a href="'. $bg_ortcal_page . $next .'" title="1 '.$month_names2[$m].' '.$y.'">&gt;&gt;</a></td> 
 			</tr> 
 		   </table> 
 		  </td> 
@@ -224,7 +233,7 @@ function ort_calendar() {
 			$info = str_replace ( "<br>", "\n", $info );
 			$prop = dayProperties ($m, $d, $y);
 			$cur="$y-$m-".sprintf("%02d",$d);
-			$selected=date('?\y\r=Y&\m\o\n=m&\d=d',mktime (0,0,0,$m,$d,$y));
+			$selected=date('?\d\a\t\e=Y-m-d',mktime (0,0,0,$m,$d,$y));
 			if ($cur == $today) $input .= ' <td align="center" class="today">'; 
 			else {
 				switch ($prop) {
@@ -258,7 +267,7 @@ function ort_calendar() {
 				}
 			}
 
-			$input .= '<a href="'. $bg_ortcal_page . $selected. '" title="'. strip_tags($info). '">'.$d.'</a>'; 
+			$input .= '<a href="'. $bg_ortcal_page . $selected. '" title="'. htmlspecialchars ( strip_tags($info), ENT_QUOTES ). '">'.$d.'</a>'; 
 		}
 		$input .= "</td>\n";
 		if (!($i % 7))  $input .= " </tr>\n";
@@ -268,7 +277,7 @@ function ort_calendar() {
 }
 
 
-// Функция обработки шорт-кода YearInfo
+// Функция обработки шорт-кода MonthInfo
 function bg_ortcal_MonthInfo($atts) {
 	extract( shortcode_atts( array(
 		'month' => '',						// Месяц (по умолчанию - сегодня)
@@ -291,8 +300,8 @@ function bg_ortcal_MonthInfo($atts) {
 	
 // Если $day задано значение "get", то получаем $month и $year из ссылки	
 	if ($day == "get") {
-		$month = $_GET["mon"];
-		$year = $_GET["yr"];
+		if (isset($_GET['date'])) $dd = $_GET["date"];
+		list($year,$month, $day) = explode("-",$dd);
 	}
 // ===========================================================================
 	$quote = "";
@@ -366,9 +375,8 @@ function bg_ortcal_DayInfo_all ($atts) {
 
 // Если $day задано значение "get", то получаем $day, $month и $year из ссылки	
 	if ($day == "get") {
-		$day = $_GET["d"];
-		$month = $_GET["mon"];
-		$year = $_GET["yr"];
+		if (isset($_GET['date'])) $dd = $_GET["date"];
+		list($year,$month, $day) = explode("-",$dd);
 	}
 // ===========================================================================
 	return showDayInfo ( $day, $month, $year, 'l, j F Y г. ', '(j F ст.ст.)', 'on', 'on', 'on', 'on', 'on', '<b>День памяти святых:</b><br>', '<b>День памяти исповедников и новомучеников российских:</b><br>', '<b>День почитания икон Божией Матери:</b><br>', '<hr />', 'on', '<hr /><b>Чтения дня:</b><br>', 'on' );
