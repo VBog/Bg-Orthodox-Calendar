@@ -16,6 +16,7 @@ function bg_ortcal_options_page() {
 	$todayColor_name 	= "bg_ortcal_todayColor";
 	$todayBgColor_name	= "bg_ortcal_todayBgColor"; 
 	$weddingColor_name	= "bg_ortcal_weddingColor"; 
+	$Zindex_name 		= "bg_ortcal_Zindex";
 
     $popmenu1_name = "bg_ortcal_popmenu1";						// Официальный календарь РПЦ
     $popmenu2_name = "bg_ortcal_popmenu2";						// Календарь на Православие.Ru
@@ -47,6 +48,7 @@ function bg_ortcal_options_page() {
 	$todayColor 	= get_option( "bg_ortcal_todayColor" );
 	$todayBgColor 	= get_option( "bg_ortcal_todayBgColor" );
 	$weddingColor 	= get_option( "bg_ortcal_weddingColor" );
+	$Zindex 		= get_option( "bg_ortcal_Zindex" );
 	
     $popmenu1_val = get_option( "bg_ortcal_popmenu1" );
     $popmenu2_val = get_option( "bg_ortcal_popmenu2" );
@@ -97,6 +99,9 @@ function bg_ortcal_options_page() {
 
 		$weddingColor = ( isset( $_POST[$weddingColor_name] ) && $_POST[$weddingColor_name] ) ? $_POST[$weddingColor_name] : '' ;
 		update_option( $weddingColor_name, $weddingColor );
+
+		$Zindex = ( isset( $_POST[$Zindex_name] ) && $_POST[$Zindex_name] ) ? $_POST[$Zindex_name] : '' ;
+		update_option( $Zindex_name, $Zindex );
 
 		$popmenu1_val = ( isset( $_POST[$popmenu1_name] ) && $_POST[$popmenu1_name] ) ? $_POST[$popmenu1_name] : '' ;
 		update_option( $popmenu1_name, $popmenu1_val );
@@ -199,7 +204,12 @@ function bg_ortcal_options_page() {
 	<th scope="row">Цвет рамки дней браковенчаний:</th>
 	<td>
 	<input type="color" id="weddingColor_name" name="<?php echo $weddingColor_name ?>" value="<?php echo $weddingColor ?>"><br />
-</td></tr>
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Z-index всплывающего окна календаря:</th>
+	<td>
+	<input type="number" id="Zindex_name" name="<?php echo $Zindex_name ?>" value="<?php echo $Zindex ?>"><br />
+	</td></tr>
 </table>
 <hr>
 </details>
@@ -342,6 +352,7 @@ function bg_ortcal_options_ini () {
 	add_option('bg_ortcal_todayColor', "#FFFFFF");
 	add_option('bg_ortcal_todayBgColor', "#335AAB");
 	add_option('bg_ortcal_weddingColor', "#335AAB");
+	add_option('bg_ortcal_Zindex', "10000");
 	add_option('bg_ortcal_popmenu1', "Официальный календарь РПЦ");
 	add_option('bg_ortcal_popmenu2', "Календарь на Православие.Ru");
 	add_option('bg_ortcal_popmenu3', "Богослужебные указания");
@@ -368,6 +379,7 @@ function bg_ortcal_deinstall() {
 	delete_option('bg_ortcal_todayColor');
 	delete_option('bg_ortcal_todayBgColor');
 	delete_option('bg_ortcal_weddingColor');
+	delete_option('bg_ortcal_Zindex');
 	delete_option('bg_ortcal_popmenu1');
 	delete_option('bg_ortcal_popmenu2');
 	delete_option('bg_ortcal_popmenu3');

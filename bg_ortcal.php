@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: VBog
-    Version: 0.9.2
+    Version: 0.9.3
     Author URI: http://bogaiskov.ru 
 	License:     GPL2
 */
@@ -36,7 +36,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.9.2');
+define('BG_ORTCAL_VERSION', '0.9.3');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -130,8 +130,8 @@ function bg_ortcal_button($atts) {
 		'val' => ' Календарь на год '
 	), $atts ) );
 
-	bg_ortcal_load_xml();
 	global $events;
+	if (!$events) $events = bg_ortcal_load_xml();
 	static $is_loaded = false;
 	$quote = "<button onClick='bscal.show();'>".$val."</button>";
 	if (!$is_loaded) {
@@ -267,7 +267,7 @@ function ort_calendar($y=null, $m=null) {
 				}
 			}
 
-			$input .= "<a href='". $bg_ortcal_page . $selected. "' title='". strip_tags($info). "'>".$d."</a>"; 
+			$input .= '<a href="'. $bg_ortcal_page . $selected. '" title="'. htmlspecialchars ( strip_tags($info), ENT_QUOTES ). '">'.$d.'</a>'; 
 		}
 		$input .= "</td>\n";
 		if (!($i % 7))  $input .= " </tr>\n";

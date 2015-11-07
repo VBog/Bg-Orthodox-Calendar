@@ -220,7 +220,7 @@ function dayEvents($month, $day, $year){
 	if(false===($result=wp_cache_get($key,'bg-ortho-cal'))) {
 		global $events;
 
-		$events = bg_ortcal_load_xml();
+		if (!$events) $events = bg_ortcal_load_xml();
 
 		$date = oldStyle('U', $month, $day, $year);						// Дата по старому стилю
 		$os_year = date ('Y', $date);									// Год по старому стилю

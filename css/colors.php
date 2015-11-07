@@ -15,6 +15,7 @@
 	$todayColor 	= get_option( "bg_ortcal_todayColor" );
 	$todayBgColor 	= get_option( "bg_ortcal_todayBgColor" );
 	$weddingColor 	= get_option( "bg_ortcal_weddingColor" );
+	$Zindex 		= get_option( "bg_ortcal_Zindex" );;
    }
 ?>
 /* Окно календаря и меню													*/
@@ -55,4 +56,14 @@
 #snames .day, #snames .separator2, #snames .bottom2 {	
 	background-color: <?php echo $mainBgColor; ?>;	/* Цвет фона			*/
 	color: <?php echo $mainColor; ?>;				/* Цвет текста			*/
+}
+/* Z-index для всплывающих окон */
+#bscal {					
+	z-index: <?php echo $Zindex;  ?>;				/* Z-index основного окна */
+}
+#v-menu {					
+	z-index: <?php echo ($Zindex+1);  ?>;			/* Z-index окна меню */
+}
+#snames {					
+	z-index: <?php echo ($Zindex+2);  ?>;			/* Z-index окна описания дня */
 }
