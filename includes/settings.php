@@ -25,10 +25,11 @@ function bg_ortcal_options_page() {
     $popmenu1001_name = "bg_ortcal_popmenu1001";				// Текущий день
     $popmenu1002_name = "bg_ortcal_popmenu1002";				// Выбор имени по Месяцеслову
     $dblClick_name = "bg_ortcal_dblClick";						// Функция при двойном щелчке по дате в календаре
-    $bg_ortcal_page = "bg_ortcal_page";							// Постоянная ссылка на страницу с календарем
-	
-    $customXML_name = "bg_ortcal_customXML";					// Имя пользовательского xml-файла
 
+    $bg_ortcal_page = "bg_ortcal_page";							// Постоянная ссылка на страницу с календарем
+    $customXML_name = "bg_ortcal_customXML";					// Имя пользовательского xml-файла
+	$bg_ortcal_linkImage = "bg_ortcal_linkImage";				// Изображение кнопки ссылки
+	$bg_ortcal_addDate = "bg_ortcal_addDate";					// Добавлять дату к адресу ссылки
 	$bg_fgc_name = 'bg_ortcal_fgc';								// Чтение XML-файлов с помощью file_get_contents()
 	$bg_fopen_name = 'bg_ortcal_fopen';							// Чтение XML-файлов с помощью fopen()
 	$bg_curl_name = 'bg_ortcal_curl';							// Чтение XML-файлов с помощью cURL
@@ -57,10 +58,11 @@ function bg_ortcal_options_page() {
     $popmenu1001_val = get_option( "bg_ortcal_popmenu1001" );
     $popmenu1002_val = get_option( "bg_ortcal_popmenu1002" );
     $dblClick_val = get_option( "bg_ortcal_dblClick" );
+
     $bg_ortcal_page_val = get_option( "bg_ortcal_page" );
-	
     $customXML_val = get_option( "bg_ortcal_customXML" );
-	
+	$bg_ortcal_linkImage_val =  get_option( "bg_ortcal_linkImage" );
+	$bg_ortcal_addDate_val =  get_option( "bg_ortcal_addDate" );
     $bg_fgc_val = get_option( $bg_fgc_name );
     $bg_fopen_val = get_option( $bg_fopen_name );
     $bg_curl_val = get_option( $bg_curl_name );
@@ -105,14 +107,19 @@ function bg_ortcal_options_page() {
 
 		$popmenu1_val = ( isset( $_POST[$popmenu1_name] ) && $_POST[$popmenu1_name] ) ? $_POST[$popmenu1_name] : '' ;
 		update_option( $popmenu1_name, $popmenu1_val );
+
 		$popmenu2_val = ( isset( $_POST[$popmenu2_name] ) && $_POST[$popmenu2_name] ) ? $_POST[$popmenu2_name] : '' ;
 		update_option( $popmenu2_name, $popmenu2_val );
+
 		$popmenu3_val = ( isset( $_POST[$popmenu3_name] ) && $_POST[$popmenu3_name] ) ? $_POST[$popmenu3_name] : '' ;
 		update_option( $popmenu3_name, $popmenu3_val );
+
 		$popmenu101_val = ( isset( $_POST[$popmenu101_name] ) && $_POST[$popmenu101_name] ) ? $_POST[$popmenu101_name] : '' ;
 		update_option( $popmenu101_name, $popmenu101_val );
+
 		$popmenu1001_val = ( isset( $_POST[$popmenu1001_name] ) && $_POST[$popmenu1001_name] ) ? $_POST[$popmenu1001_name] : '' ;
 		update_option( $popmenu1001_name, $popmenu1001_val );
+
 		$popmenu1002_val = ( isset( $_POST[$popmenu1002_name] ) && $_POST[$popmenu1002_name] ) ? $_POST[$popmenu1002_name] : '' ;
 		update_option( $popmenu1002_name, $popmenu1002_val );
 
@@ -124,6 +131,12 @@ function bg_ortcal_options_page() {
 		
 		$customXML_val = ( isset( $_POST[$customXML_name] ) && $_POST[$customXML_name] ) ? $_POST[$customXML_name] : '' ;
 		update_option( $customXML_name, $customXML_val );
+
+		$bg_ortcal_linkImage_val = ( isset( $_POST[$bg_ortcal_linkImage] ) && $_POST[$bg_ortcal_linkImage] ) ? $_POST[$bg_ortcal_linkImage] : '' ;
+		update_option( $bg_ortcal_linkImage, $bg_ortcal_linkImage_val );
+
+		$bg_ortcal_addDate_val = ( isset( $_POST[$bg_ortcal_addDate] ) && $_POST[$bg_ortcal_addDate] ) ? $_POST[$bg_ortcal_addDate] : '' ;
+		update_option( $bg_ortcal_addDate, $bg_ortcal_addDate_val );
 
 		$bg_fgc_val = ( isset( $_POST[$bg_fgc_name] ) && $_POST[$bg_fgc_name] ) ? $_POST[$bg_fgc_name] : '' ;
 		update_option( $bg_fgc_name, $bg_fgc_val );
@@ -272,33 +285,30 @@ function bg_ortcal_options_page() {
 	<td>
 	<input type="text" id="bg_ortcal_page" name="<?php echo $bg_ortcal_page ?>" size="60" value="<?php echo $bg_ortcal_page_val ?>"><br />
 	</td></tr>
-
 	<tr valign="top">
 	<th scope="row">Пользовательский XML-файл данных</th>
 	<td>
 	<input type="text" id="customXML_name" name="<?php echo $customXML_name ?>" size="60" value="<?php echo $customXML_val ?>"><br />
 	</td></tr>
 	<tr valign="top">
+	<th scope="row">Изображение кноки ссылки</th>
+	<td>
+	<input type="text" id="bg_ortcal_linkImage" name="<?php echo $bg_ortcal_linkImage ?>" size="60" value="<?php echo $bg_ortcal_linkImage_val ?>"><br />
+	<i>(Если изображение не задано, то отображается указанный здесь текст в виде ссылки ссылки.<br> Если пустая строка, то отображвается название события как простая текстовая ссылка.)</i><br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Добавлять дату к ссылке</th>
+	<td>
+	<input type="checkbox" id="bg_addDate" name="<?php echo $bg_ortcal_addDate ?>" <?php if($bg_ortcal_addDate_val=="on") echo "checked" ?> value="on"><br><i>Например, http:\\my-link.ru<b>?date=2015-07-08</b></i><br />
+	</td></tr>
+	<tr valign="top">
 	<th scope="row">Метод чтения файлов</th>
 	<td>
-	<input type="checkbox" id="bg_fgc" name="<?php echo $bg_fgc_name ?>" <?php if($bg_fgc_val=="on") echo "checked" ?>  value="on" onclick='reading_off_checked();'> file_get_contents()<br />
-	<input type="checkbox" id="bg_fopen" name="<?php echo $bg_fopen_name ?>" <?php if($bg_fopen_val=="on") echo "checked" ?>  value="on" onclick='reading_off_checked();'> fopen() - fread() - fclose()<br />
-	<input type="checkbox" id="bg_curl" name="<?php echo $bg_curl_name ?>" <?php if($bg_curl_val=="on") echo "checked" ?> value="on" onclick='reading_off_checked();'> cURL<br />
+	<input type="checkbox" id="bg_fgc" name="<?php echo $bg_fgc_name ?>" <?php if($bg_fgc_val=="on") echo "checked" ?>  value="on"> file_get_contents()<br />
+	<input type="checkbox" id="bg_fopen" name="<?php echo $bg_fopen_name ?>" <?php if($bg_fopen_val=="on") echo "checked" ?>  value="on"> fopen() - fread() - fclose()<br />
+	<input type="checkbox" id="bg_curl" name="<?php echo $bg_curl_name ?>" <?php if($bg_curl_val=="on") echo "checked" ?> value="on"> cURL<br />
 	<i>(Плагин пытается загружать XML-файлы данных отмеченными методами в указанном порядке.<br>Чтобы сделать загрузку более быстрой отключите лишние методы.<br><u>Внимание:</u> Некоторые методы могут быть недоступны на Вашем сервере.)</i><br />
 	</td></tr>
-	<script>
-	function reading_off_checked() {
-		if (document.getElementById('bg_curl').checked == true || document.getElementById('bg_fgc').checked == true || document.getElementById('bg_fopen').checked == true) {
-			document.getElementById('bg_verses').disabled = false;
-		} else {
-			document.getElementById('bg_verses').disabled = true;
-			document.getElementById('bg_verses').checked = false;
-			document.getElementById('bg_preq').disabled = true;
-			document.getElementById('bg_preq').checked = false;
-		}
-	}
-	reading_off_checked();
-	</script>
 </table>
 </details>
 
@@ -313,12 +323,12 @@ function bg_ortcal_options_page() {
 <!-- Информация о плагине -->
 <td valign="top" align="left" width="45em">
 
-<div class="bg_bibfers_info_box">
+<div class="bg_ortcal_info_box">
 
 	<h3>Спасибо, что используете Православный календарь!</h3>
-	<p class="bg_bibfers_gravatar"><a href="http://bogaiskov.ru" target="_blank"><?php echo get_avatar("vadim.bogaiskov@gmail.com", '64'); ?></a></p>
+	<p class="bg_ortcal_gravatar"><a href="http://bogaiskov.ru" target="_blank"><?php echo get_avatar("vadim.bogaiskov@gmail.com", '64'); ?></a></p>
 	<p>Дорогие братия и сестры!<br />Спасибо, что используете мой плагин!<br />Я надеюсь, что он оказался полезен для вашего сайта.</p>
-	<p class="bg_bibfers_author"><a href="http://bogaiskov.ru" target="_blank">Вадим Богайсков</a></p>
+	<p class="bg_ortcal_author"><a href="http://bogaiskov.ru" target="_blank">Вадим Богайсков</a></p>
 
 	<h3>Мне нравится этот плагин. Как я могу Вас отблагодарить?</h3>
 	<p>Есть несколько путей сделать это:</p>
@@ -333,7 +343,7 @@ function bg_ortcal_options_page() {
 	<h3>Поддержка</h3>
 	<p>См. <a href="http://wordpress.org/support/plugin/bg-orthodox-calendar" target="_blank">форум поддержки</a> или мой <a href="http://bogaiskov.ru/plagin-orthodox-calendar/" target="_blank">персональный сайт</a> для справки.</p>
 	
-	<p class="bg_bibfers_close">Храни вас Господи!</p>
+	<p class="bg_ortcal_close">Храни вас Господи!</p>
 </div>
 </td></tr></table>
 <?php 
@@ -362,6 +372,8 @@ function bg_ortcal_options_ini () {
 	add_option('bg_ortcal_dblClick', "2");
 	add_option('bg_ortcal_page', "");
 	add_option('bg_ortcal_customXML', "");
+	add_option('bg_ortcal_linkImage', "");
+	add_option('bg_ortcal_addDate');
 	add_option('bg_ortcal_fgc', "on");
 	add_option('bg_ortcal_fopen', "on");
 	add_option('bg_ortcal_curl', "on");
@@ -389,6 +401,8 @@ function bg_ortcal_deinstall() {
 	delete_option('bg_ortcal_dblClick');
 	delete_option('bg_ortcal_page');
 	delete_option('bg_ortcal_customXML');
+	delete_option('bg_ortcal_linkImage');
+	delete_option('bg_ortcal_addDate');
 	delete_option('bg_ortcal_fgc');
 	delete_option('bg_ortcal_fopen');
 	delete_option('bg_ortcal_curl');

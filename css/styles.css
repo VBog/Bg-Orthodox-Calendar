@@ -1,0 +1,38 @@
+/*****************************************
+	Экран настроек
+	Информационная панель
+******************************************/
+.bg_ortcal_info_box {
+	padding: 1.5em;
+	background-color: #FAFAFA;
+	border: 1px solid #ddd;
+	margin: 1em;
+	float: right;
+	width: 22em;
+}
+.bg_ortcal_info_box h3:first-of-type {
+	margin-top: 0;
+}
+.bg_ortcal_author {
+	font-style: italic;
+}
+.bg_ortcal_info_box p {
+	margin: 0 0 .5em 0;
+}
+p.bg_ortcal_gravatar {
+	float: right;
+	margin: 0 0 1em 1em;
+}
+.bg_ortcal_info_box ul {
+	list-style-type: disc;
+	margin-left: 20px;
+}
+p.bg_ortcal_close {
+	text-align: right;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 1.5em;
+	color: darkblue;
+	margin-top: 1.5em;
+	margin-bottom: 0;
+}

@@ -33,12 +33,16 @@ function MemoryDay () {
 	this.start = new Date(0);
 	this.finish = new Date(0);
 	this.name = "";
+	this.link = "";
 	this.type = -999;
-	this.setMemoryDay = function (s, f, n, t){
+	this.discription = "";
+	this.setMemoryDay = function (s, f, n, l, t, d){
 		this.start.setTime(s.getTime());
 		this.finish.setTime(f.getTime());
 		this.name = n;
+		this.link = l;
 		this.type = t;
+		this.discription = d;
 	}
 }
 
@@ -178,7 +182,9 @@ function memory_days(year) {
 			f_month=parseInt(getXMLvalue(events[i],"f_month"));
 */
 			name=events[i].name;
+			link=events[i].link;
 			type=events[i].type;
+			discription=events[i].discription;
 					
 			s_date=parseInt(events[i].s_date);
 			s_month=parseInt(events[i].s_month);
@@ -230,7 +236,7 @@ function memory_days(year) {
 				if ((sd.getFullYear() != year) && (fd.getFullYear() != year))  continue; 	// Если начальная и конечная даты события не в текущем году, то игнорируем событие
 		// Сохраняем это событие в памяти 
 				curMD[j]=new MemoryDay();
-				curMD[j].setMemoryDay (sd, fd, name, type);
+				curMD[j].setMemoryDay (sd, fd, name, link, type, discription);
 								
 				j++;
 			}
@@ -247,9 +253,9 @@ function memory_days(year) {
 	t = false;
 		for (i=0; i<curMD.length-1; i++) {
 			if (curMD[i].start.getTime() > curMD[i+1].start.getTime()){
-				bufer.setMemoryDay(curMD[i].start, curMD[i].finish, curMD[i].name,  curMD[i].type);
-				curMD[i].setMemoryDay (curMD[i+1].start, curMD[i+1].finish, curMD[i+1].name,  curMD[i+1].type);
-				curMD[i+1].setMemoryDay (bufer.start, bufer.finish, bufer.name,  bufer.type);
+				bufer.setMemoryDay(curMD[i].start, curMD[i].finish, curMD[i].name, curMD[i].link,  curMD[i].type, curMD[i].discription);
+				curMD[i].setMemoryDay (curMD[i+1].start, curMD[i+1].finish, curMD[i+1].name, curMD[i+1].link,  curMD[i+1].type, curMD[i+1].discription);
+				curMD[i+1].setMemoryDay (bufer.start, bufer.finish, bufer.name, bufer.link,  bufer.type, bufer.discription);
 				t = true;
 			}
 		}

@@ -248,7 +248,9 @@ function dayEvents($month, $day, $year){
 				$f_date = (int) $event["f_date"];
 				$f_month = (int) $event["f_month"];
 				$name = $event["name"];
+				$link = $event["link"];
 				$type = (int) $event["type"];
+				$discription = $event["discription"];
 
 
 				//проверяем наличие кешированных даты начала и конца
@@ -370,7 +372,9 @@ function dayEvents($month, $day, $year){
 							"f_month" => date ("m", $f),
 							"f_year" => date ("Y", $f),
 							"name" => $name,
-							"type" => $event["type"]);
+							"link" => $link,
+							"type" => $event["type"],
+							"discription" => $discription);
 						if ($event["type"] == '10' || $event["type"] == '100') $post = "";	// Уже установлен пост по другой причине или сплошная седмица
 						if ($event["type"] == '20') $noglans = "";							// Уже запрещено браковенчание по другой причине
 					}
@@ -385,7 +389,9 @@ function dayEvents($month, $day, $year){
 				"f_month" => $month,
 				"f_year" => $year,
 				"name" => $post,
-				"type" => "10");
+				"link" => $link,
+				"type" => "10",
+				"discription" => $discription);
 		}
 		if ($noglans != "") {												// Браковенчание не совершается по вторникам, четвергам и субботам
 			$result[] = array (	"s_date" => $day,
@@ -395,7 +401,9 @@ function dayEvents($month, $day, $year){
 				"f_month" => $month,
 				"f_year" => $year,
 				"name" => $noglans,
-				"type" => "20");
+				"link" => $link,
+				"type" => "20",
+				"discription" => $discription);
 		}
 
 		wp_cache_set( $key, $result, 'bg-ortho-cal', 12*3600 );
@@ -562,7 +570,8 @@ function showDayInfo ( $day,				// День (по умолчанию - сего�
 					$posts,					// Постные дни
 					$noglans,				// Дни, в которые браковенчание не совершается
 					$readings,				// Чтения Апостола и Евангелие
-					$links )				// Ссылки и цитаты
+					$links,					// Ссылки и цитаты
+					$custom)				// Пользовательские ссылки
 {
 	if ($day == 'post') {							// Дата создания текущего поста
 		$year = get_the_date('Y');
@@ -803,7 +812,14 @@ function showDayInfo ( $day,				// День (по умолчанию - сего�
 				}
 				if ($q) $quote .= $qtitle.'<span class="bg_ortcal_readings">'.$q.'</span><br>';
 			}
-
+			// Пользовательские ссылки
+			if ($custom != 'off') {
+				$q = "";
+				for ($i=0; $i < $cnt; $i++) {
+					if ($e[$i]['type'] == 999) $q .= eventLink ($e[$i], "&date=".$year."-".$month."-".$day).'<br>';
+				}
+				if ($q) $quote .= (($custom!='on')?'<strong>'.htmlspecialchars_decode($custom).'</strong>':'').'<br><span class="bg_ortcal_custom">'.$q.'</span>';
+			}
 		}
 		$res="{$quote}";
 		wp_cache_set($key,$res,'bg-ortho-cal',3600*24);
@@ -914,4 +930,46 @@ function psalmsReadins ($qq) {
 function imgTypicon ($lavel) {
 	$title = array ('Светлое Христово Воскресение. Пасха', 'Двунадесятый праздник', 'Великий праздник', 'Средний бденный праздник', 'Средний полиелейный праздник', 'Малый славословный праздник', 'Малый шестиричный праздник', 'Вседневный праздник. Cовершается служба, не отмеченная в Типиконе никаким знаком');
 	return '<img src="'.plugins_url( 'js/S'.$lavel.'.gif' , dirname(__FILE__) ).'" title="'.$title[$lavel].'" /> ';
+}
+/*******************************************************************************
+// Функция формирует гиперссылку события
+*******************************************************************************/  
+function eventLink ($e, $date) {
+	$bg_ortcal_addDate_val =  get_option( "bg_ortcal_addDate" );
+	if ($bg_ortcal_addDate_val == 'on' && $e['link']) {
+		if (strrpos ( $e['link'], "?" ) ) $link = $e['link']."&".$date;
+		else $link = $e['link']."?".$date;
+	}
+	else $link = $e['link'];
+
+	$bg_ortcal_linkImage_val =  get_option( "bg_ortcal_linkImage" );
+	if ($bg_ortcal_linkImage_val) {
+		if (is_file(ABSPATH . $bg_ortcal_linkImage_val)) $bg_ortcal_linkImage = '<img src="'.site_url( $bg_ortcal_linkImage_val ).'" style="border: 0px; padding: 0px; margin: 0px;">';
+		else if (is_file_url($bg_ortcal_linkImage_val)) $bg_ortcal_linkImage =  '<img src="'.$bg_ortcal_linkImage_val.'" style="border: 0px; padding: 0px; margin: 0px;">';
+		else $bg_ortcal_linkImage = $bg_ortcal_linkImage_val;
+
+		if ($link) $res = $e['name'].' <a href="'.$link.'"  style="border: 0px; padding: 0px; margin: 0px;" title="'.$e['discription'].'">'.$bg_ortcal_linkImage.'</a> ';
+		else if ($e['discription']) $res = $e['name'].' <span title="'.$e['discription'].'">'.$bg_ortcal_linkImage.'</span> ';
+		else $res = $e['name'];
+	}
+	else {
+		if ($link) $res = '<a href="'.$link.'" title="'.$e['discription'].'">'.$e['name'].'</a>';
+		else if ($e['discription']) $res = '<span title="'.$e['discription'].'">'.$e['name'].'</span>';
+		else $res = $e['name'];
+	}
+	return $res;
+}
+
+/*******************************************************************************
+// Функция проверяет url файла на его наличие
+*******************************************************************************/  
+function is_file_url ($url){
+	$file_headers = @get_headers($url);
+
+	$file_exists = false;
+	if (false !== strpos($file_headers[0], '200 OK')) {
+	  // Проверка MIME-типа: [3] => Content-Type: image/png
+	  $file_exists = true;
+	}
+	return $file_exists;
 }
