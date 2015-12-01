@@ -178,6 +178,10 @@ https://bogaiskov.ru/ortcal/?date=2015-10-31,
 
 == Changelog ==
 
+= 0.9.4 =
+
+* Совместимость в версией 3.11 плагина Bg Bible References.
+
 = 0.9.3 =
 
 * Добавлена настройка Z-index для всплывающего окна календаря.
@@ -291,6 +295,10 @@ https://bogaiskov.ru/ortcal/?date=2015-10-31,
 
 
 == Upgrade Notice ==
+
+= 0.9.4 =
+
+* Совместимость в версией 3.11 плагина Bg Bible References.
 
 = 0.9.3 =
 
