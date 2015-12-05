@@ -1,5 +1,4 @@
-﻿
-var bscal = {
+﻿var bg_ortcal_bscal = {
     left : 5,
     top  : 10,
     width: 0,
@@ -34,40 +33,40 @@ var bscal = {
 	
 	init : function()
 	{
-		bscal.css.rel = "stylesheet";
-		bscal.css.href= baseUrl+"css/bs_calendar.css";
-		document.body.appendChild(bscal.css);
+		bg_ortcal_bscal.css.rel = "stylesheet";
+		bg_ortcal_bscal.css.href= bg_ortcal_baseUrl+"css/bs_calendar.css";
+		document.body.appendChild(bg_ortcal_bscal.css);
 
-		bscal.div.style.left = "0px";
-		bscal.div.style.top  = "0px";
-		bscal.div.style.width  = "690px";
-        bscal.div.id = 'bscal';
-        bscal.div.innerHTML = bscal.html();
-        bscal.div.style.display = "none";
-		document.body.appendChild(bscal.div);
+		bg_ortcal_bscal.div.style.left = "0px";
+		bg_ortcal_bscal.div.style.top  = "0px";
+		bg_ortcal_bscal.div.style.width  = "690px";
+        bg_ortcal_bscal.div.id = 'bg_ortcal_bscal';
+        bg_ortcal_bscal.div.innerHTML = bg_ortcal_bscal.html();
+        bg_ortcal_bscal.div.style.display = "none";
+		document.body.appendChild(bg_ortcal_bscal.div);
 
-		bscal.vmn.style.left = "0px";
-		bscal.vmn.style.top  = "0px";
-        bscal.vmn.id = 'v-menu';
-        bscal.vmn.name = 'v-menu';
-        bscal.vmn.innerHTML = bscal.htmlMenu();
-        bscal.vmn.style.display = "none";
-        document.body.appendChild(bscal.vmn);
+		bg_ortcal_bscal.vmn.style.left = "0px";
+		bg_ortcal_bscal.vmn.style.top  = "0px";
+        bg_ortcal_bscal.vmn.id = 'bg_ortcal_v-menu';
+        bg_ortcal_bscal.vmn.name = 'bg_ortcal_v-menu';
+        bg_ortcal_bscal.vmn.innerHTML = bg_ortcal_bscal.htmlMenu();
+        bg_ortcal_bscal.vmn.style.display = "none";
+        document.body.appendChild(bg_ortcal_bscal.vmn);
 		document.body.onclick = function() {
 			t=event.target||event.srcElement; 
-			if (t.className!='over' && t.className!='bot') bscal.hideMenu();
+			if (t.className!='bg_ortcal_over' && t.className!='bg_ortcal_bot') bg_ortcal_bscal.hideMenu();
 		}
 
-        bscal.ysel = document.getElementById("bs_year");
-        bscal.ysel.style.width = "90px";
+        bg_ortcal_bscal.ysel = document.getElementById("bs_year");
+        bg_ortcal_bscal.ysel.style.width = "90px";
 
 	},
 	draw : function()
 	{
-		bscal.hideMenu();
-		md = memory_days(bscal.curY);
+		bg_ortcal_bscal.hideMenu();
+		md = bg_ortcal_memory_days(bg_ortcal_bscal.curY);
 		var beginY=new Date(0);
-		beginY.setFullYear(bscal.curY-1, 11, 31);
+		beginY.setFullYear(bg_ortcal_bscal.curY-1, 11, 31);
 		var one_day=1000*60*60*24;	//1 день в милисекундах
 		var num_day=0;
 		var m=0;
@@ -81,7 +80,7 @@ var bscal = {
     	for (var y=1;y<=6;y++)
 			for (var x=1;x<=7;x++){
 				var el = document.getElementById("cell_"+m+"_"+y+"_"+x);
-				el.className = "day";
+				el.className = "bg_ortcal_day";
 				el.style.cursor = 'default';
 				el.innerHTML   = "&nbsp;";
 			}
@@ -91,9 +90,9 @@ var bscal = {
 		for (var i=1; i<=3; i++)
 		{
 		m++;
-    	all_days = (m == 2 && bscal.isLeap(bscal.curY)) ? 29 : bscal.dim[m-1];
+    	all_days = (m == 2 && bg_ortcal_bscal.isLeap(bg_ortcal_bscal.curY)) ? 29 : bg_ortcal_bscal.dim[m-1];
     	var beginM = new Date(0);
-		beginM.setFullYear(bscal.curY,m-1,1);
+		beginM.setFullYear(bg_ortcal_bscal.curY,m-1,1);
 		begin = beginM.getDay();
 		
 	    //заполняем месяц
@@ -103,8 +102,8 @@ var bscal = {
 			var el = document.getElementById("cell_"+m+"_"+y+"_"+x);
 			num_day++;
 
-			if (x > 6) {el.className = "weekend";}				// Воскресение
-			if (x == 3 || x == 5) {el.className = "post";}		// Пост по средам и пятницам
+			if (x > 6) {el.className = "bg_ortcal_weekend";}				// Воскресение
+			if (x == 3 || x == 5) {el.className = "bg_ortcal_post";}		// Пост по средам и пятницам
 
 // Проверяем и отмечаем памятные дни
 		
@@ -113,8 +112,8 @@ var bscal = {
 				if (md[k].name == "") continue;	
 				if (md[k].type == 9) {
 					if (md[k].start.getDate() == c && md[k].start.getMonth() == m-1) {						// Дни особого поминовения усопших. (Тип 9)
-						if(el.className == "post") {el.className = "post_memory";}						
-						else {el.className = "memory";}
+						if(el.className == "bg_ortcal_post") {el.className = "bg_ortcal_post_memory";}						
+						else {el.className = "bg_ortcal_memory";}
 						el.title = md[k].name;
 					} 
 				}
@@ -128,8 +127,8 @@ var bscal = {
 				}
 				else if (md[k].type == 1 || md[k].type == 2) {												// ДВУНАДЕСЯТЫЕ И ВЕЛИКИЕ ПРАЗДНИКИ (Тип 1 и 2)
 					if (md[k].start.getDate() == c && md[k].start.getMonth() == m-1) {
-						if(el.className == "post") {el.className = "post_holidays";}						
-						else {el.className = "holidays";}
+						if(el.className == "bg_ortcal_post") {el.className = "bg_ortcal_post_holidays";}						
+						else {el.className = "bg_ortcal_holidays";}
 						el.title = (el.title == "")? md[k].name : md[k].name+',\n'+el.title;
 					} 
 				}
@@ -148,7 +147,7 @@ var bscal = {
 				if (md[k].name == "") continue;	
 				if (md[k].type == 0) {
 					if (md[k].start.getDate() == c && md[k].start.getMonth() == m-1) {						// Светлое Христово Воскресение. Пасха. (Тип 0)
-						el.className = "easter";
+						el.className = "bg_ortcal_easter";
 						el.title = (el.title == "")? md[k].name : md[k].name+',\n'+el.title;
 					} 	
 				}
@@ -160,16 +159,16 @@ var bscal = {
 					fd = Math.round((md[k].finish.getTime()-beginY.getTime())/(one_day));
 					
 					if (num_day >= sd && num_day <= fd) {										// Сплошные седмицы. (Тип 100)
-						if (el.className == "post_memory") {
-							el.className = "memory";
+						if (el.className == "bg_ortcal_post_memory") {
+							el.className = "bg_ortcal_memory";
 							if (md[k].name != "") el.title = (el.title == "")? md[k].name : el.title+',\n'+md[k].name;
 						}
-						else if (el.className == "post_holidays") {
-							el.className = "holidays";
+						else if (el.className == "bg_ortcal_post_holidays") {
+							el.className = "bg_ortcal_holidays";
 							if (md[k].name != "") el.title = (el.title == "")? md[k].name : el.title+',\n'+md[k].name;
 						}
-						else if (el.className == "day" || el.className == "post") {
-							el.className = "day";
+						else if (el.className == "bg_ortcal_day" || el.className == "bg_ortcal_post") {
+							el.className = "bg_ortcal_day";
 							if (md[k].name != "") el.title = (el.title == "")? md[k].name : el.title+',\n'+md[k].name;
 						}
 						else  {
@@ -185,20 +184,20 @@ var bscal = {
 					fd = Math.round((md[k].finish.getTime()-beginY.getTime())/(one_day));
 					
 					if ((num_day >= sd && num_day <= fd)) {						// Многодневные и однодневные посты.  (Тип 10) && Не забываем про окончание Филлипова поста в начале года
-						if (el.className == "holidays") {
-							el.className = "post_holidays";
+						if (el.className == "bg_ortcal_holidays") {
+							el.className = "bg_ortcal_post_holidays";
 							el.title = (el.title == "")? md[k].name : el.title+',\n'+md[k].name;
 						}
-						else if (el.className == "memory") {
-							el.className = "post_memory";
+						else if (el.className == "bg_ortcal_memory") {
+							el.className = "bg_ortcal_post_memory";
 							el.title = (el.title == "")? md[k].name : el.title+',\n'+md[k].name;
 						}
-						else if (el.className == "weekend") {
-							el.className = "post_weekend";
+						else if (el.className == "bg_ortcal_weekend") {
+							el.className = "bg_ortcal_post_weekend";
 							el.title = (el.title == "")? md[k].name : el.title+',\n'+md[k].name;
 						}
-						else if (el.className == "day" || el.className == "post") {
-							el.className = "post";
+						else if (el.className == "bg_ortcal_day" || el.className == "bg_ortcal_post") {
+							el.className = "bg_ortcal_post";
 							el.title = (el.title == "")? md[k].name : el.title+',\n'+md[k].name;
 						}
 					} 
@@ -206,16 +205,16 @@ var bscal = {
 			}
 // конец проверки памятных дней
 
-			if (bscal.istoday(m, c)){el.className="today";}
+			if (bg_ortcal_bscal.istoday(m, c)){el.className="bg_ortcal_today";}
 			el.innerHTML   = c;
 			el.style.cursor = 'pointer';
 
 // Браковенчание не совершается
-			el.className = el.className + " wedding_off";
+			el.className = el.className + " bg_ortcal_wedding_off";
 			var nowedding = "Браковенчание не совершается";
 			if (x == 2 || x == 4 || x == 6) {								// Не совершается браковенчание накануне среды и пятницы всего года (вторник и четверг), и воскресных дней (суббота)
 				el.title = (el.title == "")? nowedding : el.title+',\n'+nowedding;
-				el.className = el.className.replace(" wedding_off", " nowedding_off");
+				el.className = el.className.replace(" bg_ortcal_wedding_off", " bg_ortcal_nowedding_off");
 			}
 			else {
 				for (k = 0; k < md.length; k++) {																// А также не совершается браковенчание накануне двунадесятых, храмовых и великих праздников
@@ -226,93 +225,93 @@ var bscal = {
 																												// Воздвижения Креста Господня - 27 (12) сентября.
 						if (num_day >= sd && num_day <= fd) {													// Тип 20 && Не забываем про окончание Филлипова поста в начале года
 							el.title = (el.title == "")? nowedding : el.title+',\n'+nowedding;
-							el.className = el.className.replace(" wedding_off", " nowedding_off");
+							el.className = el.className.replace(" bg_ortcal_wedding_off", " bg_ortcal_nowedding_off");
 							break;
 						}
 					}
 				}
 			}
 // Седмица
-			var d = new Date (bscal.curY, m-1, c);
-			var t = Sedmica(d);
+			var d = new Date (bg_ortcal_bscal.curY, m-1, c);
+			var t = bg_ortcal_Sedmica(d);
 			if (t !="") el.title = t + ".,\n" + el.title;
 
 // Дата по старому стилю			
 			var od = new Date(0);
-			d.setFullYear(bscal.curY);
-			OldStyle(od, d);
-			el.title = d.getDate()+bscal.mnr[d.getMonth()]+" ("+od.getDate()+bscal.mnr[od.getMonth()]+" ст.ст.),\n" + el.title;
+			d.setFullYear(bg_ortcal_bscal.curY);
+			bg_ortcal_OldStyle(od, d);
+			el.title = d.getDate()+bg_ortcal_bscal.mnr[d.getMonth()]+" ("+od.getDate()+bg_ortcal_bscal.mnr[od.getMonth()]+" ст.ст.),\n" + el.title;
 			
 			x++; if (x>7){x=1;y++;}
          }
 		}
-		if (document.getElementById('weddingID').checked == true) bscal.changeWedding();
+		if (document.getElementById('weddingID').checked == true) bg_ortcal_bscal.changeWedding();
 	},
 	showList : function(){
-		var link = baseUrl+'index.html';
+		var link = bg_ortcal_baseUrl+'index.html';
 	//	if (bg_ortcal_page) link = bg_ortcal_page;
 		var y = document.getElementById('bs_year').value;
 		if (y != "") link += '?date='+y;
 		window.open(link);
-		bscal.hide();
+		bg_ortcal_bscal.hide();
 	},
 	retD : function(r_month, r_day){
         if (!r_day || r_day=="&nbsp;") return false;
 		var d = new Date(0);
-		d.setFullYear(bscal.curY, r_month-1, r_day);
-		bscal.link(d, dblClick);
+		d.setFullYear(bg_ortcal_bscal.curY, r_month-1, r_day);
+		bg_ortcal_bscal.link(d, bg_ortcal_dblClick);
 	},
 	retMenu : function(r_month, r_day, obj){
         if (!r_day || r_day=="&nbsp;") return false;
-		if (!popmenu.length) return false;
-		bscal.sDate.setFullYear(bscal.curY, r_month-1, r_day);
-		if (popmenu.length == 1) bscal.link(bscal.sDate, popmenu[0].type);
-		else bscal.showMenu(obj);
+		if (!bg_ortcal_popmenu.length) return false;
+		bg_ortcal_bscal.sDate.setFullYear(bg_ortcal_bscal.curY, r_month-1, r_day);
+		if (bg_ortcal_popmenu.length == 1) bg_ortcal_bscal.link(bg_ortcal_bscal.sDate, bg_ortcal_popmenu[0].type);
+		else bg_ortcal_bscal.showMenu(obj);
 	},
 	retOffset : function(r_month, r_day){
 		if (!r_day || r_day=="&nbsp;") return false;
 		
 		var msec=24*60*60*1000;
         var d = new Date(0);
-		d.setFullYear(bscal.curY, r_month-1, r_day);
+		d.setFullYear(bg_ortcal_bscal.curY, r_month-1, r_day);
 		d_today = new Date(0);
 		d.setHours(0, 0, 0, 0);
 		d_today.setHours(0, 0, 0, 0);
 		offset = Math.round((d.getTime() - d_today.getTime())/msec);
 	    currentday(offset);
-	    bscal.hide();
+	    bg_ortcal_bscal.hide();
 		location.reload();
 	},
 	istoday : function(month, day){
-		return (bscal.nowD==day && bscal.curM==month && bscal.curY == bscal.nowY) ? true : false;
+		return (bg_ortcal_bscal.nowD==day && bg_ortcal_bscal.curM==month && bg_ortcal_bscal.curY == bg_ortcal_bscal.nowY) ? true : false;
 	},
 
     dover : function(el){
 		if (el.innerHTML=='&nbsp;') return false;
-		bscal.hover = el.className;
-		el.className = 'over';
+		bg_ortcal_bscal.hover = el.className;
+		el.className = 'bg_ortcal_over';
     },
     dout  : function(el){
 		if (el.innerHTML=='&nbsp;') return false;
-		el.className = bscal.hover;
-		bscal.hover = null;
+		el.className = bg_ortcal_bscal.hover;
+		bg_ortcal_bscal.hover = null;
     },
 	today : function(){
-    	bscal.curD = bscal.nowD;
-    	bscal.curM = bscal.nowM;
-    	bscal.curY = bscal.nowY;
-        bscal.scroll_Y(0);
+    	bg_ortcal_bscal.curD = bg_ortcal_bscal.nowD;
+    	bg_ortcal_bscal.curM = bg_ortcal_bscal.nowM;
+    	bg_ortcal_bscal.curY = bg_ortcal_bscal.nowY;
+        bg_ortcal_bscal.scroll_Y(0);
 	},
     change_Y : function (dir){
-		bscal.curY = dir*1;
-		bscal.scroll_Y(0);
+		bg_ortcal_bscal.curY = dir*1;
+		bg_ortcal_bscal.scroll_Y(0);
     },
 	scroll_Y : function (dir){
-    	bscal.curY+= dir;
-    	if (bscal.curY < bscal.minY) bscal.curY = bscal.minY;
-    	if (bscal.curY > bscal.maxY) bscal.curY = bscal.maxY;
-		document.getElementById('bs_year').value = bscal.curY;
-		bscal.draw();
+    	bg_ortcal_bscal.curY+= dir;
+    	if (bg_ortcal_bscal.curY < bg_ortcal_bscal.minY) bg_ortcal_bscal.curY = bg_ortcal_bscal.minY;
+    	if (bg_ortcal_bscal.curY > bg_ortcal_bscal.maxY) bg_ortcal_bscal.curY = bg_ortcal_bscal.maxY;
+		document.getElementById('bs_year').value = bg_ortcal_bscal.curY;
+		bg_ortcal_bscal.draw();
 	},
 
     isLeap : function (year) {
@@ -324,13 +323,13 @@ var bscal = {
 		var m=0;
 
 	    res += "<table width=100% unselectable=on>\n";
-	    res += "<tr class='top'><td class=top-left title = 'Если навести мышку на какую-нибудь дату высвечиваются: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, посты и сплошные седмицы.\nЕсли нажать на кнопку мыши на одном из дней текущего года, открывается дополнительное меню, при двойном щелчке - попадаем на соответствующую страницу дня на сайте Православие.ру.'>Выберите дату</td><td colspan='4' class=top-right onclick='bscal.hide();' title='Закрыть'>x </td></tr>\n";
+	    res += "<tr class='bg_ortcal_top'><td class=bg_ortcal_top-left title = 'Если навести мышку на какую-нибудь дату высвечиваются: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, посты и сплошные седмицы.\nЕсли нажать на кнопку мыши на одном из дней текущего года, открывается дополнительное меню, при двойном щелчке - попадаем на соответствующую страницу дня на сайте Православие.ру.'>Выберите дату</td><td colspan='4' class=bg_ortcal_top-right onclick='bg_ortcal_bscal.hide();' title='Закрыть'>x </td></tr>\n";
 		res += "<tr unselectable=on>"+
-	           "<td class='arrow' onClick=bscal.scroll_Y(-1);><< предыдущий год</td>"+
+	           "<td class='bg_ortcal_arrow' onClick=bg_ortcal_bscal.scroll_Y(-1);><< предыдущий год</td>"+
 				"<td unselectable=on></td>"+
-				"<td unselectable=on><input id='bs_year' type='text' style='width: 90px' onchange=bscal.change_Y(this.value); onkeyup='return onlyDigits(this);'></input> <button onClick='bscal.change_Y(bs_year.value);'>&nbsp;Ok&nbsp;</button></td>"+
+				"<td unselectable=on><input id='bs_year' type='text' style='width: 90px' onchange=bg_ortcal_bscal.change_Y(this.value); onkeyup='return onlyDigits(this);'></input> <button onClick='bg_ortcal_bscal.change_Y(bs_year.value);'>&nbsp;Ok&nbsp;</button></td>"+
 				"<td unselectable=on></td>"+
-			   "<td class='arrow' onClick=bscal.scroll_Y(1);>следующий год >></td>\n"+
+			   "<td class='bg_ortcal_arrow' onClick=bg_ortcal_bscal.scroll_Y(1);>следующий год >></td>\n"+
 				"</tr>\n";
 		for (var j=1; j<=4; j++)
 		{
@@ -342,17 +341,17 @@ var bscal = {
 		
 				res += "<table width=100% unselectable=on>\n";
 				res += "<tr unselectable=on>"+
-						"<td class='month' colspan=7 unselectable=on>"+bscal.mns[m-1]+"</td>"+
+						"<td class='bg_ortcal_month' colspan=7 unselectable=on>"+bg_ortcal_bscal.mns[m-1]+"</td>"+
 						"</tr>\n";
 				res += "<tr unselectable=on align=center>\n";
 				for (var x=0;x<7;x++)
-					res += "<td class='week' unselectable=on>"+bscal.wds[x]+"</td>\n";
+					res += "<td class='bg_ortcal_week' unselectable=on>"+bg_ortcal_bscal.wds[x]+"</td>\n";
 				res += "</tr>";
 				for (var y=1;y<=6;y++)
 				{
 					res += "<tr align=center unselectable=on>\n";
 					for (var x=1;x<=7;x++){
-						res += "<td id='cell_"+m+"_"+y+"_"+x+"' onmouseover=\"bscal.dover(this);\" onmouseout=\"bscal.dout(this);\" onclick=\"bscal.retMenu("+m+", this.innerHTML, this);\" ondblclick=\"bscal.retD("+m+", this.innerHTML);\" unselectable=on>"+m+"_"+y+"_"+x+"</td>\n";
+						res += "<td id='cell_"+m+"_"+y+"_"+x+"' onmouseover=\"bg_ortcal_bscal.dover(this);\" onmouseout=\"bg_ortcal_bscal.dout(this);\" onclick=\"bg_ortcal_bscal.retMenu("+m+", this.innerHTML, this);\" ondblclick=\"bg_ortcal_bscal.retD("+m+", this.innerHTML);\" unselectable=on>"+m+"_"+y+"_"+x+"</td>\n";
 					}
 					res += "</tr>\n";
 				}
@@ -364,15 +363,15 @@ var bscal = {
 			res += "</tr>\n";
 			if (j<=3) res += "<tr><td colspan=5></td></tr>\n";
 		}
-		res += "<tr class='top' align=center>\n"+
-				"<td colspan=1 class=bot onClick=\"bscal.today();bscal.retMenu("+bscal.nowM+", "+(bscal.nowD-1)+", this);\" ondblclick=\"bscal.today();bscal.retD("+bscal.nowM+", "+(bscal.nowD-1)+");\" >вчера</td>\n"+
-				"<td class=bot>/</td>"+
-				"<td colspan=1 class=bot onClick=\"bscal.today();bscal.retMenu("+bscal.nowM+", "+bscal.nowD+", this);\" ondblclick=\"bscal.today();bscal.retD("+bscal.nowM+", "+bscal.nowD+");\" >сегодня</td>\n"+
-				"<td class=bot>/</td>"+
-				"<td colspan=1 class=bot onClick=\"bscal.today();bscal.retMenu("+bscal.nowM+", "+(bscal.nowD+1)+", this);\" ondblclick=\"bscal.today();bscal.retD("+bscal.nowM+", "+(bscal.nowD+1)+");\" >завтра</td>\n"+
+		res += "<tr class='bg_ortcal_top' align=center>\n"+
+				"<td colspan=1 class=bg_ortcal_bot onClick=\"bg_ortcal_bscal.today();bg_ortcal_bscal.retMenu("+bg_ortcal_bscal.nowM+", "+(bg_ortcal_bscal.nowD-1)+", this);\" ondblclick=\"bg_ortcal_bscal.today();bg_ortcal_bscal.retD("+bg_ortcal_bscal.nowM+", "+(bg_ortcal_bscal.nowD-1)+");\" >вчера</td>\n"+
+				"<td class=bg_ortcal_bot>/</td>"+
+				"<td colspan=1 class=bg_ortcal_bot onClick=\"bg_ortcal_bscal.today();bg_ortcal_bscal.retMenu("+bg_ortcal_bscal.nowM+", "+bg_ortcal_bscal.nowD+", this);\" ondblclick=\"bg_ortcal_bscal.today();bg_ortcal_bscal.retD("+bg_ortcal_bscal.nowM+", "+bg_ortcal_bscal.nowD+");\" >сегодня</td>\n"+
+				"<td class=bg_ortcal_bot>/</td>"+
+				"<td colspan=1 class=bg_ortcal_bot onClick=\"bg_ortcal_bscal.today();bg_ortcal_bscal.retMenu("+bg_ortcal_bscal.nowM+", "+(bg_ortcal_bscal.nowD+1)+", this);\" ondblclick=\"bg_ortcal_bscal.today();bg_ortcal_bscal.retD("+bg_ortcal_bscal.nowM+", "+(bg_ortcal_bscal.nowD+1)+");\" >завтра</td>\n"+
 				"</tr>\n";
 		res += "</table>";
-		res += "<span style='margin-left:1em;'><input id='weddingID' type='checkbox' onchange='bscal.changeWedding();'> Показать дни браковенчаний</span><br>";
+		res += "<span style='margin-left:1em;'><input id='weddingID' type='checkbox' onchange='bg_ortcal_bscal.changeWedding();'> Показать дни браковенчаний</span><br>";
 		res += "<p style='margin-left:1em; font-size:80%'><a href='http://hpf.ru.com/'><b>Храм святых благоверных князей Петра и Февронии Муромских в Марьино г. Москвы</b></a>.<br /> © 2014 Все права защищены.</p>";
 
 	return res;
@@ -383,19 +382,19 @@ var bscal = {
 		var hr1 = false;
 		var res  = "<ul>";
 		res += "<div id='onlyThisYear'>";
-		for (var i=0; i<popmenu.length; i++) {
-			if (popmenu[i].type < 100) {			// Только текущий год
-				if(popmenu[i].name) {
-					res += "<li onclick='bscal.link(bscal.sDate, "+popmenu[i].type+")'>"+popmenu[i].name+"</li>";
+		for (var i=0; i<bg_ortcal_popmenu.length; i++) {
+			if (bg_ortcal_popmenu[i].type < 100) {			// Только текущий год
+				if(bg_ortcal_popmenu[i].name) {
+					res += "<li onclick='bg_ortcal_bscal.link(bg_ortcal_bscal.sDate, "+bg_ortcal_popmenu[i].type+")'>"+bg_ortcal_popmenu[i].name+"</li>";
 					hr = true;
 				}
 			}
 		}
 		var res1 = "";
-		for (var i=0; i<popmenu.length; i++) {
-			if (popmenu[i].type >= 100) {
-				if(popmenu[i].name) {
-					res1 += "<li onclick='bscal.link(bscal.sDate, "+popmenu[i].type+")'>"+popmenu[i].name+"</li>";
+		for (var i=0; i<bg_ortcal_popmenu.length; i++) {
+			if (bg_ortcal_popmenu[i].type >= 100) {
+				if(bg_ortcal_popmenu[i].name) {
+					res1 += "<li onclick='bg_ortcal_bscal.link(bg_ortcal_bscal.sDate, "+bg_ortcal_popmenu[i].type+")'>"+bg_ortcal_popmenu[i].name+"</li>";
 					hr1 = true;
 				}
 			}
@@ -414,74 +413,79 @@ var bscal = {
 			for (var y=1;y<=6;y++)
 			for (var x=1;x<=7;x++){
 				var el = document.getElementById("cell_"+m+"_"+y+"_"+x);
-				if (el.className.indexOf(" wedding_off") > -1) el.className = el.className.replace(" wedding_off", " wedding_on");
-				else if (el.className.indexOf(" wedding_on") > -1) {el.className = el.className.replace(" wedding_on", " wedding_off"); }
+				if (el.className.indexOf(" bg_ortcal_wedding_off") > -1) el.className = el.className.replace(" bg_ortcal_wedding_off", " bg_ortcal_wedding_on");
+				else if (el.className.indexOf(" bg_ortcal_wedding_on") > -1) {el.className = el.className.replace(" bg_ortcal_wedding_on", " bg_ortcal_wedding_off"); }
 			}
 		}
 	},
 
-	show : function() {
-    	if (bscal.div.style.display == "block"){
-			bscal.hide(); return false;
+	show : function(year) {
+    	if (bg_ortcal_bscal.div.style.display == "block"){
+			bg_ortcal_bscal.hide(); return false;
     	}
- 		bscal.today();
-		bscal.div.style.display = "block";
+    	bg_ortcal_bscal.curD = bg_ortcal_bscal.nowD;
+    	bg_ortcal_bscal.curM = bg_ortcal_bscal.nowM;
+		if (year === undefined) bg_ortcal_bscal.curY = bg_ortcal_bscal.nowY;
+		else bg_ortcal_bscal.curY = year*1;
+        bg_ortcal_bscal.scroll_Y(0);
 
-		bscal.width  = bscal.div.offsetWidth;
-		bscal.height = bscal.div.offsetHeight;	
-		bscal.div.style.left=window.pageXOffset +(parseInt(document.documentElement.clientWidth)-parseInt(bscal.div.clientWidth))/2+"px";
-		bscal.div.style.top=window.pageYOffset+(parseInt(document.documentElement.clientHeight)-parseInt(bscal.div.clientHeight))/2+"px";
+		bg_ortcal_bscal.div.style.display = "block";
+
+		bg_ortcal_bscal.width  = bg_ortcal_bscal.div.offsetWidth;
+		bg_ortcal_bscal.height = bg_ortcal_bscal.div.offsetHeight;	
+		bg_ortcal_bscal.div.style.left=window.pageXOffset +(parseInt(document.documentElement.clientWidth)-parseInt(bg_ortcal_bscal.div.clientWidth))/2+"px";
+		bg_ortcal_bscal.div.style.top=window.pageYOffset+(parseInt(document.documentElement.clientHeight)-parseInt(bg_ortcal_bscal.div.clientHeight))/2+"px";
 	},
 	hide : function() {
-		bscal.div.style.display = "none";
-		bscal.hideMenu();
+		bg_ortcal_bscal.div.style.display = "none";
+		bg_ortcal_bscal.hideMenu();
 	},
     pos  : function (el) {
         var r = { x: el.offsetLeft, y: el.offsetTop };
         if (el.offsetParent) {
-                var tmp = bscal.pos(el.offsetParent);
+                var tmp = bg_ortcal_bscal.pos(el.offsetParent);
                 r.x += tmp.x;
                 r.y += tmp.y;
         }
 	return r;
 	},
 	showMenu: function (obj){
-		var pos = bscal.pos(obj);
-		bscal.vmn.style.display="block";
+		var pos = bg_ortcal_bscal.pos(obj);
+		bg_ortcal_bscal.vmn.style.display="block";
 
 		pos.y += obj.offsetHeight;
-		if (pos.x > bscal.div.offsetLeft+bscal.div.offsetWidth-bscal.vmn.offsetWidth) {
-			pos.x += obj.offsetWidth - bscal.vmn.offsetWidth;
+		if (pos.x > bg_ortcal_bscal.div.offsetLeft+bg_ortcal_bscal.div.offsetWidth-bg_ortcal_bscal.vmn.offsetWidth) {
+			pos.x += obj.offsetWidth - bg_ortcal_bscal.vmn.offsetWidth;
 		}
-		bscal.vmn.style.left = pos.x+"px";
-		bscal.vmn.style.top  = pos.y+"px";
+		bg_ortcal_bscal.vmn.style.left = pos.x+"px";
+		bg_ortcal_bscal.vmn.style.top  = pos.y+"px";
 		
 	// Отображать пункты меню предназначенные только для текущего года
 		var now = new Date();
 		var el = document.getElementById("onlyThisYear");
-		if (bscal.curY==now.getFullYear()) {
+		if (bg_ortcal_bscal.curY==now.getFullYear()) {
 			el.style.display="block";
 		} else {
 			el.style.display="none";
 		}
 	},
 	hideMenu : function() {
-		if (bscal.vmn.style.display=="block") bscal.vmn.style.display="none";
+		if (bg_ortcal_bscal.vmn.style.display=="block") bg_ortcal_bscal.vmn.style.display="none";
 	},
 	link: function (d, type) {
-		bscal.hideMenu();
+		bg_ortcal_bscal.hideMenu();
 		switch(type) {
 		case 1001:
-			today.show(d, 'bscal');
+			bg_ortcal_today.show(d, 'bg_ortcal_bscal');
 			break;
 		case 1002:
-			naming.show(d, 'bscal');
+			bg_ortcal_naming.show(d, 'bg_ortcal_bscal');
 			break;
 		default:
-			var l = getLink(d, type);
+			var l = bg_ortcal_getLink(d, type);
 			if (l) {
 				window.open(l);
-				bscal.hide();
+				bg_ortcal_bscal.hide();
 			}
 			break;
 		}
@@ -496,5 +500,5 @@ function onlyDigits(input) {
 // Синоним функции обработки нажатия кнопки календаря
 // <button onclick='ortcal_button();'> Календарь на год </button>
 function ortcal_button() {	
-	bscal.show();	
+	bg_ortcal_bscal.show();	
 }

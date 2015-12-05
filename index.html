@@ -14,7 +14,7 @@
 <script type="text/javascript" src="js/bg_ortcal_year.js"></script>
 <script type="text/javascript" src="js/bg_ortcal_names.js"></script>
 <script>
-	var baseUrl =  "";
+	var bg_ortcal_baseUrl =  "";
 	var bg_ortcal_customXML =  "";
 /********************************************************************************
 Загрузка данных из XML файла
@@ -24,7 +24,7 @@
 	// 	Получаем данные о событиях из XML-файла
 		var e1="";
 		var e2="";
-		var xml1=loadXMLfile(baseUrl+"MemoryDays.xml");
+		var xml1=loadXMLfile(bg_ortcal_baseUrl+"MemoryDays.xml");
 		if (xml1) e1=xml1.getElementsByTagName("event");
 		if (bg_ortcal_customXML == "") ev = e1;
 		else {
@@ -45,7 +45,7 @@
 				ee[i] = e;
 			}
 		}
-		events = ee;
+		bg_ortcal_events = ee;
 	}
 
 	function obj_merge(obj1, obj2){
@@ -112,6 +112,15 @@
 	  }
 	  return xmlhttp;
 	}	
+
+	function getXMLvalue(e,tag) {
+		var s=e.getElementsByTagName(tag);
+		if (s[0]) {
+			if ('textContent' in s[0]) return s[0].textContent;
+			else return s[0].text;
+		}
+	}
+
 	loadXML(); 										// Загрузка данных для календаря
 
 	var now = new Date();
@@ -121,6 +130,8 @@
 	var one_month=false;
 	var dim = new Array(31,28,31,30,31,30,31,31,30,31,30,31);
 	var one_day=false;
+
+
 
 
 /* -----------------------------------------------------------------------------
@@ -146,7 +157,7 @@
 		one_month=true;							// причем только один месяц
 		if (values["date"]) { 					// Если задана дата
 			var d = parseInt(values["date"]);
-			var all_days = (cur_month == 2 && isLeap(cur_year)) ? 29 : dim[cur_month];
+			var all_days = (cur_month == 2 && bg_ortcal_isLeap(cur_year)) ? 29 : dim[cur_month];
 			if (d >0) cur_date = d;				// то отобажаем календарь для заданной даты, если день задан некорректно, то текущую дату
 			if (cur_date>all_days) cur_date = all_days;	// а если дата больше количества дней в месяце, последний день месяца
 			one_day=true;						// причем только один день
@@ -161,7 +172,7 @@
 			one_month=true;							// причем только один месяц
 			if (ymd[2]) {
 				var d = parseInt(ymd[2]);
-				var all_days = (cur_month == 2 && isLeap(cur_year)) ? 29 : dim[cur_month];
+				var all_days = (cur_month == 2 && bg_ortcal_isLeap(cur_year)) ? 29 : dim[cur_month];
 				if (d >0) cur_date = d;				// то отобажаем календарь для заданной даты, если день задан некорректно, то текущую дату
 				if (cur_date>all_days) cur_date = all_days;	// а если дата больше количества дней в месяце, последний день месяца
 				one_day=true;						// причем только один день
@@ -180,7 +191,7 @@ function show_days() {
 	el.style.cursor = 'wait';
 	var yCh;
 	
-	var all_days = (cur_month == 2 && isLeap(cur_year)) ? 29 : dim[cur_month];
+	var all_days = (cur_month == 2 && bg_ortcal_isLeap(cur_year)) ? 29 : dim[cur_month];
 	if (cur_date>all_days) cur_date = all_days;	// если дата больше количества дней в месяце, последний день месяца
 	
 	if (cur_year == 0) yCh = 'Год Рождества Христова';
@@ -216,7 +227,7 @@ function show_days() {
 					t_text+='</td><td width="20"></td><td class="menu-entry" width="40" valign="center" align="center" style="color: #ff0000; font-weight: bolder; font-size: x-large;'+dispM+'" onclick="next_month()">></td></tr></tbody></table>';
 					t_text+="<div class='separator2'></div>";
 				}
-				t_text+=getDayInfo(d);
+				t_text+=bg_ortcal_getDayInfo(d);
 			}
 		}
 		d.setFullYear(curY,curM,curD+1);
@@ -258,7 +269,7 @@ function prev_month() {
 	document.getElementById('table_text').innerHTML = t;
 }
 function next_day() {
-	var all_days = (cur_month == 2 && isLeap(cur_year)) ? 29 : dim[cur_month];
+	var all_days = (cur_month == 2 && bg_ortcal_isLeap(cur_year)) ? 29 : dim[cur_month];
 	cur_date++; 
 	if (cur_date>all_days) {
 		cur_date = 1;
@@ -279,7 +290,7 @@ function prev_day() {
 			cur_month = 11;
 			cur_year--;
 		}
-		cur_date = (cur_month == 2 && isLeap(cur_year)) ? 29 : dim[cur_month];
+		cur_date = (cur_month == 2 && bg_ortcal_isLeap(cur_year)) ? 29 : dim[cur_month];
 	}
 	var t = show_days();
 	document.getElementById('table_text').innerHTML = t;

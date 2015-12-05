@@ -1,8 +1,8 @@
-﻿var events;
-var curMD = [];
-var curYear;
+﻿var bg_ortcal_events;
+var bg_ortcal_curMD = [];
+var bg_ortcal_curYear;
 
-function OldStyle(od, nd){
+function bg_ortcal_OldStyle(od, nd){
 var Y, dd;
 
 	Y=nd.getFullYear();
@@ -12,7 +12,7 @@ var Y, dd;
 
 }
 	
-function easter(ed, Y) {
+function bg_ortcal_easter(ed, Y) {
 // Определяем день Пасхи на заданный год
 var a, b, dd, D, M;
 	
@@ -29,7 +29,7 @@ var a, b, dd, D, M;
 	ed.setDate(ed.getDate()+dd);
 }
 
-function MemoryDay () {
+function bg_ortcal_MemoryDay () {
 	this.start = new Date(0);
 	this.finish = new Date(0);
 	this.name = "";
@@ -47,17 +47,17 @@ function MemoryDay () {
 }
 
 // Возвращает название Седмицы (Недели) по годичному кругу богослужений.
-function Sedmica (d) {											// d - текущая дата
+function bg_ortcal_Sedmica (d) {											// d - текущая дата
 	var nw;
 	var one_day=1000*60*60*24;									//1 день в милисекундах
 	var wd = d.getDay();
 	var easter_day = new Date(0);
 	year = d.getFullYear();
-	easter(easter_day, year);
+	bg_ortcal_easter(easter_day, year);
 	var cd = Math.floor(d.getTime()/one_day);
 	var ed = Math.floor(easter_day.getTime()/one_day)-1;
 	if (cd < ed-70) {				// До Недели о мытаре и фарисее идут седмицы по Пятидесятнице прошлого года
-		easter(easter_day, (year-1));
+		bg_ortcal_easter(easter_day, (year-1));
 		ed = Math.floor(easter_day.getTime()/one_day)-1;
 		nw = Math.ceil((cd - (ed+49))/7);
 		if (wd == 0) return "Неделя "+nw+"-я по Пятидесятнице";
@@ -93,22 +93,13 @@ function Sedmica (d) {											// d - текущая дата
 
 	return "";
 }
-
-function ArrayMemoryDay (k) {
-	
-	for (i=1; i<k; i++) {
-		(this)[i] = new MemoryDay ();
-	}
-	this.length=k;
-}
-
-function getLink(d, type) {
+function bg_ortcal_getLink(d, type) {
 	var omonth, odate, l = "";
 	var od= new Date();
 	var now = new Date();
 	var mon = new Array("jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec");
 
-	OldStyle(od, d);
+	bg_ortcal_OldStyle(od, d);
 	switch (type) {
 	case 1: 								// Официальный календарь РПЦ
 		if (d.getFullYear()!=now.getFullYear()) break;	// Если не текущий год, то на выход
@@ -142,7 +133,7 @@ function getLink(d, type) {
 		odate=d.getDate();
 		if (odate<10) {odate="0"+odate}
 		if (bg_ortcal_page) l = bg_ortcal_page;
-		else l = baseUrl;
+		else l = bg_ortcal_baseUrl;
 		l += "?date="+d.getFullYear()+"-"+omonth+"-"+odate;
 		break;
 	}
@@ -150,8 +141,8 @@ function getLink(d, type) {
 	return l;
 }
 
-function memory_days(year) {
-	if (year == curYear) return curMD;
+function bg_ortcal_memory_days(year) {
+	if (year == bg_ortcal_curYear) return bg_ortcal_curMD;
 	
 //	var md = [];
 
@@ -159,46 +150,37 @@ function memory_days(year) {
 	var d= new Date(0);
 	var sd= new Date(0);
 	var fd= new Date(0);
-	var bufer = new MemoryDay();
+	var bufer = new bg_ortcal_MemoryDay();
 	var iw, im, ddd, wd;
 	var dd; 
-//	var daysY = isLeap(year) ? 366 : 365;
+//	var daysY = bg_ortcal_isLeap(year) ? 366 : 365;
 	var one_day=1000*60*60*24;	//1 день в милисекундах
 					
 //	Светлое Христово Воскресение. Пасха. 
-	easter(easter_day, year);
+	bg_ortcal_easter(easter_day, year);
 
 	var j=0;
-	if(events) {
-		for(var i=0; i<events.length; i++)
+	if(bg_ortcal_events) {
+		for(var i=0; i<bg_ortcal_events.length; i++)
 		{
-/*				
-			name=getXMLvalue(events[i],"name");
-			type=getXMLvalue(events[i],"type");
+			name=bg_ortcal_events[i].name;
+			link=bg_ortcal_events[i].link;
+			type=bg_ortcal_events[i].type;
+			discription=bg_ortcal_events[i].discription;
 					
-			s_date=parseInt(getXMLvalue(events[i],"s_date"));
-			s_month=parseInt(getXMLvalue(events[i],"s_month"));
-			f_date=parseInt(getXMLvalue(events[i],"f_date"));
-			f_month=parseInt(getXMLvalue(events[i],"f_month"));
-*/
-			name=events[i].name;
-			link=events[i].link;
-			type=events[i].type;
-			discription=events[i].discription;
-					
-			s_date=parseInt(events[i].s_date);
-			s_month=parseInt(events[i].s_month);
-			f_date=parseInt(events[i].f_date);
-			f_month=parseInt(events[i].f_month);
+			s_date=parseInt(bg_ortcal_events[i].s_date);
+			s_month=parseInt(bg_ortcal_events[i].s_month);
+			f_date=parseInt(bg_ortcal_events[i].f_date);
+			f_month=parseInt(bg_ortcal_events[i].f_month);
 			
 			for (var y = year-1; y <= year+1; y++) { 
 				dd = (y-y%100)/100 - (y-y%400)/400 - 2; 
 			//	Светлое Христово Воскресение. Пасха. 
-				easter(easter_day, y);
+				bg_ortcal_easter(easter_day, y);
 			
 			
 				// Если не висакосный год, то праздники, приходящиеся на 29 февраля, отмечаются 28 февраля
-				if (!isLeap(y)) {
+				if (!bg_ortcal_isLeap(y)) {
 					if (s_month == 2 && s_date == 29) s_date = 28;
 					if (f_month == 2 && f_date == 29) f_date = 28;
 				}	
@@ -235,8 +217,8 @@ function memory_days(year) {
 				if (name == "") continue;													// Если наименование события не задано, то игнорируем это событие
 				if ((sd.getFullYear() != year) && (fd.getFullYear() != year))  continue; 	// Если начальная и конечная даты события не в текущем году, то игнорируем событие
 		// Сохраняем это событие в памяти 
-				curMD[j]=new MemoryDay();
-				curMD[j].setMemoryDay (sd, fd, name, link, type, discription);
+				bg_ortcal_curMD[j]=new bg_ortcal_MemoryDay();
+				bg_ortcal_curMD[j].setMemoryDay (sd, fd, name, link, type, discription);
 								
 				j++;
 			}
@@ -251,29 +233,29 @@ function memory_days(year) {
 	t = true;
 	while (t == true) {
 	t = false;
-		for (i=0; i<curMD.length-1; i++) {
-			if (curMD[i].start.getTime() > curMD[i+1].start.getTime()){
-				bufer.setMemoryDay(curMD[i].start, curMD[i].finish, curMD[i].name, curMD[i].link,  curMD[i].type, curMD[i].discription);
-				curMD[i].setMemoryDay (curMD[i+1].start, curMD[i+1].finish, curMD[i+1].name, curMD[i+1].link,  curMD[i+1].type, curMD[i+1].discription);
-				curMD[i+1].setMemoryDay (bufer.start, bufer.finish, bufer.name, bufer.link,  bufer.type, bufer.discription);
+		for (i=0; i<bg_ortcal_curMD.length-1; i++) {
+			if (bg_ortcal_curMD[i].start.getTime() > bg_ortcal_curMD[i+1].start.getTime()){
+				bufer.setMemoryDay(bg_ortcal_curMD[i].start, bg_ortcal_curMD[i].finish, bg_ortcal_curMD[i].name, bg_ortcal_curMD[i].link,  bg_ortcal_curMD[i].type, bg_ortcal_curMD[i].discription);
+				bg_ortcal_curMD[i].setMemoryDay (bg_ortcal_curMD[i+1].start, bg_ortcal_curMD[i+1].finish, bg_ortcal_curMD[i+1].name, bg_ortcal_curMD[i+1].link,  bg_ortcal_curMD[i+1].type, bg_ortcal_curMD[i+1].discription);
+				bg_ortcal_curMD[i+1].setMemoryDay (bufer.start, bufer.finish, bufer.name, bufer.link,  bufer.type, bufer.discription);
 				t = true;
 			}
 		}
 	}
-	curYear = year;
-	return curMD;
+	bg_ortcal_curYear = year;
+	return bg_ortcal_curMD;
 }
 
-function setLink(t) {
+function bg_ortcal_setLink(t) {
 	var d = new Date(0);
 	d.setTime(t);
-	var link = getLink(d, dayLink);
+	var link = bg_ortcal_getLink(d, dayLink);
 	if (link) {
 		window.open(link);
 	}
 }
 
-function getDayInfo(d) {
+function bg_ortcal_getDayInfo(d) {
 
     var mnr = new Array(" января"," февраля"," марта"," апреля"," мая"," июня"," июля"," августа"," сентября"," октября"," ноября"," декабря");
 	var cwd = new Array("Воскресение","Понедельник","Вторник","Среда","Четверг","Пятница","Суббота");
@@ -286,7 +268,7 @@ function getDayInfo(d) {
 	var name;
 	var yCh;
 	
-	var md = memory_days(curY);
+	var md = bg_ortcal_memory_days(curY);
 	var beginY=new Date(0);
 	var nowY=beginY.getFullYear();
 	beginY.setFullYear(curY-1, 11, 31);
@@ -296,15 +278,15 @@ function getDayInfo(d) {
 
 // Дата по новому и старому стилю, Седмица, Памятные дни
 	var od = new Date(0);
-	OldStyle(od, d);
+	bg_ortcal_OldStyle(od, d);
 	if (curY == 0) yCh = 'в Год Рождества Христова';
 	else if (curY < 0) yCh = (-curY) + ' г. до РХ';
 	else yCh = curY + ' г. от РХ';
 		
 	var t = curD+mnr[curM-1]+" "+yCh+" ("+od.getDate()+mnr[od.getMonth()]+" ст.ст.), "+cwd[curW];
-	if (curY == nowY) t = "<span class='curDate' style='cursor:pointer' onclick=\'setLink("+d.getTime()+")\'>" + t + "</span><br>";
-	else t = "<span class='curDate' style='cursor:auto' onclick=\'setLink("+d.getTime()+")\'>" + t + "</span><br>";		// Если не текущий год, то курсор обыкновенный
-	var tt = Sedmica(d);																			// Седмица
+	if (curY == nowY) t = "<span class='bg_ortcal_curDate' style='cursor:pointer' onclick=\'bg_ortcal_setLink("+d.getTime()+")\'>" + t + "</span><br>";
+	else t = "<span class='bg_ortcal_curDate' style='cursor:auto' onclick=\'bg_ortcal_setLink("+d.getTime()+")\'>" + t + "</span><br>";		// Если не текущий год, то курсор обыкновенный
+	var tt = bg_ortcal_Sedmica(d);																			// Седмица
 	if (tt !="") t += "<b>" + tt + "</b><br>";
 		
 	tt = "";
@@ -324,7 +306,7 @@ function getDayInfo(d) {
 		if (md[k].name == "") continue;	
 		if (md[k].type == 0) {																		// Светлое Христово Воскресение. Пасха. (Тип 0)
 			if (md[k].start.getDate() == curD && md[k].start.getMonth() == curM-1) {				
-				tt += "<img src='"+baseUrl+"js/S"+md[k].type+".gif' title='"+typicon[md[k].type]+"' /><span class='holiday'>"+md[k].name+"</span><br>";
+				tt += "<img src='"+bg_ortcal_baseUrl+"js/S"+md[k].type+".gif' title='"+typicon[md[k].type]+"' /><span class='bg_ortcal_holiday'>"+md[k].name+"</span><br>";
 			} 	
 		}
 	}
@@ -332,17 +314,17 @@ function getDayInfo(d) {
 		if (md[k].name == "") continue;	
 		if (md[k].type == 1 || md[k].type == 2) {													// ДВУНАДЕСЯТЫЕ И ВЕЛИКИЕ ПРАЗДНИКИ (Тип 1 и 2)
 			if (md[k].start.getDate() == curD && md[k].start.getMonth() == curM-1) {				
-				tt += "<img src='"+baseUrl+"js/S"+md[k].type+".gif' title='"+typicon[md[k].type]+"' /><span class='holiday'>"+md[k].name+"</span><br>";
+				tt += "<img src='"+bg_ortcal_baseUrl+"js/S"+md[k].type+".gif' title='"+typicon[md[k].type]+"' /><span class='bg_ortcal_holiday'>"+md[k].name+"</span><br>";
 			} 	
 		}
 	}
-	if (tt !="" || curW == 0) t=t.replace("curDate","holDate");										// Если Великий праздник или воскресный день, меняем цвет даты на красный
+	if (tt !="" || curW == 0) t=t.replace("bg_ortcal_curDate","bg_ortcal_holDate");										// Если Великий праздник или воскресный день, меняем цвет даты на красный
 		
 	for (k = 0; k < md.length; k++) {
 		if (md[k].name == "") continue;	
 		if (md[k].type >= 3 && md[k].type <= 7) {													// СРЕДНИЕ, МАЛЫЕ и другие ПРАЗДНИКИ (Типы 3-7)
 			if (md[k].start.getDate() == curD && md[k].start.getMonth() == curM-1) {				
-				tt += "<img src='"+baseUrl+"js/S"+md[k].type+".gif' title='"+typicon[md[k].type]+"' />"+md[k].name+"<br>";
+				tt += "<img src='"+bg_ortcal_baseUrl+"js/S"+md[k].type+".gif' title='"+typicon[md[k].type]+"' />"+md[k].name+"<br>";
 			} 	
 		}
 	}
@@ -436,17 +418,5 @@ function getDayInfo(d) {
 	return t;
 }
 
-
-
-
-function getXMLvalue(e,tag) {
-	var s=e.getElementsByTagName(tag);
-	if (s[0]) {
-		if ('textContent' in s[0]) return s[0].textContent;
-		else return s[0].text;
-	}
-}
-
-
-function isLeap(year) {
+function bg_ortcal_isLeap(year) {
 		return (((year % 4)==0) && ((year % 100)!=0) || ((year % 400)==0)) ? true : false }

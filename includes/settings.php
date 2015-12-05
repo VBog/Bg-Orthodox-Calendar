@@ -28,6 +28,7 @@ function bg_ortcal_options_page() {
 
     $bg_ortcal_page = "bg_ortcal_page";							// Постоянная ссылка на страницу с календарем
     $customXML_name = "bg_ortcal_customXML";					// Имя пользовательского xml-файла
+    $only_customXML = "bg_ortcal_only_customXML";				// Только пользовательский xml-файл
 	$bg_ortcal_linkImage = "bg_ortcal_linkImage";				// Изображение кнопки ссылки
 	$bg_ortcal_addDate = "bg_ortcal_addDate";					// Добавлять дату к адресу ссылки
 	$bg_fgc_name = 'bg_ortcal_fgc';								// Чтение XML-файлов с помощью file_get_contents()
@@ -61,6 +62,7 @@ function bg_ortcal_options_page() {
 
     $bg_ortcal_page_val = get_option( "bg_ortcal_page" );
     $customXML_val = get_option( "bg_ortcal_customXML" );
+    $only_customXML_val = get_option( "bg_ortcal_only_customXML" );
 	$bg_ortcal_linkImage_val =  get_option( "bg_ortcal_linkImage" );
 	$bg_ortcal_addDate_val =  get_option( "bg_ortcal_addDate" );
     $bg_fgc_val = get_option( $bg_fgc_name );
@@ -131,6 +133,9 @@ function bg_ortcal_options_page() {
 		
 		$customXML_val = ( isset( $_POST[$customXML_name] ) && $_POST[$customXML_name] ) ? $_POST[$customXML_name] : '' ;
 		update_option( $customXML_name, $customXML_val );
+
+		$only_customXML_val = ( isset( $_POST[$only_customXML] ) && $_POST[$only_customXML] ) ? $_POST[$only_customXML] : '' ;
+		update_option( $only_customXML, $only_customXML_val );
 
 		$bg_ortcal_linkImage_val = ( isset( $_POST[$bg_ortcal_linkImage] ) && $_POST[$bg_ortcal_linkImage] ) ? $_POST[$bg_ortcal_linkImage] : '' ;
 		update_option( $bg_ortcal_linkImage, $bg_ortcal_linkImage_val );
@@ -288,10 +293,11 @@ function bg_ortcal_options_page() {
 	<tr valign="top">
 	<th scope="row">Пользовательский XML-файл данных</th>
 	<td>
-	<input type="text" id="customXML_name" name="<?php echo $customXML_name ?>" size="60" value="<?php echo $customXML_val ?>"><br />
+	<input type="text" id="customXML_name" name="<?php echo $customXML_name ?>" size="60" value="<?php echo $customXML_val ?>">
+	<input type="checkbox" id="only_customXML" name="<?php echo $only_customXML ?>" <?php if($only_customXML_val=="on") echo "checked" ?> value="on"> Только пользовательский XML-файл<br />
 	</td></tr>
 	<tr valign="top">
-	<th scope="row">Изображение кноки ссылки</th>
+	<th scope="row">Изображение кнопки ссылки</th>
 	<td>
 	<input type="text" id="bg_ortcal_linkImage" name="<?php echo $bg_ortcal_linkImage ?>" size="60" value="<?php echo $bg_ortcal_linkImage_val ?>"><br />
 	<i>(Если изображение не задано, то отображается указанный здесь текст в виде ссылки ссылки.<br> Если пустая строка, то отображвается название события как простая текстовая ссылка.)</i><br />
@@ -372,6 +378,7 @@ function bg_ortcal_options_ini () {
 	add_option('bg_ortcal_dblClick', "2");
 	add_option('bg_ortcal_page', "");
 	add_option('bg_ortcal_customXML', "");
+	add_option('bg_ortcal_only_customXML');
 	add_option('bg_ortcal_linkImage', "");
 	add_option('bg_ortcal_addDate');
 	add_option('bg_ortcal_fgc', "on");
@@ -401,6 +408,7 @@ function bg_ortcal_deinstall() {
 	delete_option('bg_ortcal_dblClick');
 	delete_option('bg_ortcal_page');
 	delete_option('bg_ortcal_customXML');
+	delete_option('bg_ortcal_only_customXML');
 	delete_option('bg_ortcal_linkImage');
 	delete_option('bg_ortcal_addDate');
 	delete_option('bg_ortcal_fgc');

@@ -6,8 +6,8 @@
       <f_month>0</f_month>
       <f_date>0</f_date>
       <name>Светлое Христово Воскресение. Пасха</name>
-      <link></link>
       <type>0</type>
+      <link></link>
       <discription></discription>
     </event>
     <event>
@@ -16,8 +16,8 @@
       <f_month>0</f_month>
       <f_date>-7</f_date>
       <name>Вход Господень в Иерусалим</name>
-      <link></link>
       <type>1</type>
+      <link></link>
       <discription></discription>
     </event>
  </MemoryDays>
