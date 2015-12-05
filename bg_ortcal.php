@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: VBog
-    Version: 0.10.0-RC
+    Version: 0.10.1-RC
     Author URI: http://bogaiskov.ru 
 	License:     GPL2
 */
@@ -36,7 +36,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.10.0-RC');
+define('BG_ORTCAL_VERSION', '0.10.1-RC');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');

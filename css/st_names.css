@@ -9,6 +9,7 @@
 	border: 5px ridge #FFFFFF;
 	margin: 0px;
 	padding: 0px;
+	box-shadow: 0 0 5px;
 	width: 690px;
 /*	z-index: 2000; */
 	left: 250px;

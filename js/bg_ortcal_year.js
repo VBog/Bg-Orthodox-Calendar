@@ -323,7 +323,7 @@
 		var m=0;
 
 	    res += "<table width=100% unselectable=on>\n";
-	    res += "<tr class='bg_ortcal_top'><td class=bg_ortcal_top-left title = 'Если навести мышку на какую-нибудь дату высвечиваются: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, посты и сплошные седмицы.\nЕсли нажать на кнопку мыши на одном из дней текущего года, открывается дополнительное меню, при двойном щелчке - попадаем на соответствующую страницу дня на сайте Православие.ру.'>Выберите дату</td><td colspan='4' class=bg_ortcal_top-right onclick='bg_ortcal_bscal.hide();' title='Закрыть'>x </td></tr>\n";
+	    res += "<tr class='bg_ortcal_top'><td class=bg_ortcal_top-left title = 'Если навести мышку на какую-нибудь дату высвечиваются: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, посты и сплошные седмицы.\nЕсли нажать на кнопку мыши на одном из дней текущего года, открывается дополнительное меню.'>Выберите дату</td><td colspan='3'> </td><td class=bg_ortcal_top-right> <span title='Закрыть' onclick='bg_ortcal_bscal.hide();' style='cursor:pointer;'>x</span> </td></tr>\n";
 		res += "<tr unselectable=on>"+
 	           "<td class='bg_ortcal_arrow' onClick=bg_ortcal_bscal.scroll_Y(-1);><< предыдущий год</td>"+
 				"<td unselectable=on></td>"+
@@ -433,8 +433,12 @@
 
 		bg_ortcal_bscal.width  = bg_ortcal_bscal.div.offsetWidth;
 		bg_ortcal_bscal.height = bg_ortcal_bscal.div.offsetHeight;	
-		bg_ortcal_bscal.div.style.left=window.pageXOffset +(parseInt(document.documentElement.clientWidth)-parseInt(bg_ortcal_bscal.div.clientWidth))/2+"px";
-		bg_ortcal_bscal.div.style.top=window.pageYOffset+(parseInt(document.documentElement.clientHeight)-parseInt(bg_ortcal_bscal.div.clientHeight))/2+"px";
+		p_left = window.pageXOffset +(parseInt(document.documentElement.clientWidth)-parseInt(bg_ortcal_bscal.div.clientWidth))/2;
+		if (p_left < 24)p_left = 24;
+		bg_ortcal_bscal.div.style.left = p_left+"px";
+		p_top = window.pageYOffset+(parseInt(document.documentElement.clientHeight)-parseInt(bg_ortcal_bscal.div.clientHeight))/2;
+		if (p_top < 24) p_top = 24;
+		bg_ortcal_bscal.div.style.top = p_top+"px";
 	},
 	hide : function() {
 		bg_ortcal_bscal.div.style.display = "none";
@@ -490,10 +494,9 @@
 			break;
 		}
 	}
-	
  };
 
-// Проверка ввода только цифр
+ // Проверка ввода только цифр
 function onlyDigits(input) {
     input.value = input.value.replace(/[^\d]/g, '');
 };
@@ -502,3 +505,26 @@ function onlyDigits(input) {
 function ortcal_button() {	
 	bg_ortcal_bscal.show();	
 }
+
+// Перемещение окна календаря по экрану
+bg_ortcal_bscal.div.onmousedown = function(e) { // отследить нажатие
+	bg_ortcal_bscal.hideMenu();
+	cursorX = parseInt(bg_ortcal_bscal.div.style.left)-e.pageX;
+	cursorY = parseInt(bg_ortcal_bscal.div.style.top)-e.pageY;
+
+	//  отследить движение 
+	document.onmousemove = function(e) {
+		bg_ortcal_bscal.div.style.left = e.pageX + cursorX + 'px';
+		bg_ortcal_bscal.div.style.top = e.pageY + cursorY + 'px';
+	}
+
+	//  отследить окончание переноса
+	bg_ortcal_bscal.div.onmouseup = function() {
+		document.onmousemove = null;
+		bg_ortcal_bscal.div.onmouseup = null;
+	}
+}
+// Запрет встроенного  Drag'n'Drop 
+bg_ortcal_bscal.div.ondragstart = function() {
+  return false;
+};

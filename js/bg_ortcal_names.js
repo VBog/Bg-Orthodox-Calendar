@@ -110,7 +110,28 @@
 		return bg_ortcal_getDayInfo(d);
 	}
 };	
+// Перемещение окна naming по экрану
+bg_ortcal_naming.div.onmousedown = function(e) { // отследить нажатие
+	
+	cursorX = parseInt(bg_ortcal_naming.div.style.left)-e.pageX;
+	cursorY = parseInt(bg_ortcal_naming.div.style.top)-e.pageY;
 
+	//  отследить движение 
+	document.onmousemove = function(e) {
+		bg_ortcal_naming.div.style.left = e.pageX + cursorX + 'px';
+		bg_ortcal_naming.div.style.top = e.pageY + cursorY + 'px';
+	}
+
+	//  отследить окончание переноса
+	bg_ortcal_naming.div.onmouseup = function() {
+		document.onmousemove = null;
+		bg_ortcal_naming.div.onmouseup = null;
+	}
+}
+// Запрет встроенного  Drag'n'Drop 
+bg_ortcal_naming.div.ondragstart = function() {
+	return false;
+};
 var bg_ortcal_today = {
     left : 0,
     top  : 0,
@@ -193,3 +214,26 @@ var bg_ortcal_today = {
 		return bg_ortcal_getDayInfo(d);
 	}
 };	
+// Перемещение окна today по экрану
+bg_ortcal_today.div.onmousedown = function(e) { // отследить нажатие
+	
+	cursorX = parseInt(bg_ortcal_today.div.style.left)-e.pageX;
+	cursorY = parseInt(bg_ortcal_today.div.style.top)-e.pageY;
+
+	//  отследить движение 
+	document.onmousemove = function(e) {
+		bg_ortcal_today.div.style.left = e.pageX + cursorX + 'px';
+		bg_ortcal_today.div.style.top = e.pageY + cursorY + 'px';
+	}
+
+	//  отследить окончание переноса
+	bg_ortcal_today.div.onmouseup = function() {
+		document.onmousemove = null;
+		bg_ortcal_today.div.onmouseup = null;
+	}
+}
+// Запрет встроенного  Drag'n'Drop 
+bg_ortcal_today.div.ondragstart = function() {
+	return false;
+};
+
