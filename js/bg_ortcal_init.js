@@ -55,6 +55,18 @@ jQuery(window).resize(function() {
  	setObj(bg_ortcal_naming.div);
  	setObj(bg_ortcal_today.div);
 });
+// Установим обработчик события keydown
+jQuery(window).keydown(function(e) {
+	// Закрыть все окна по Esc
+	if( e.keyCode === 27 ) {
+		bg_ortcal_bscal.hideMenu();
+		bg_ortcal_bscal.hide();
+		bg_ortcal_naming.hide();
+		bg_ortcal_today.hide();	
+	}
+});
+
+
 	bg_ortcal_loadXML(); 							// Загрузка данных для календаря
 	bg_ortcal_bscal.init();							// Инициация картинки календаря
 	bg_ortcal_naming.init();						// Инициация месяцеслова
