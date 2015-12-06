@@ -52,18 +52,8 @@
 		bg_ortcal_naming.bdY = d.getFullYear();
 		bg_ortcal_naming.draw ();
 		bg_ortcal_naming.div.style.display = "block";
-		
-		bg_ortcal_naming.obj = document.getElementById(obj);
-    	var pos = bg_ortcal_naming.pos(bg_ortcal_naming.obj);
 
-		pos.x += bg_ortcal_naming.obj.offsetWidth - bg_ortcal_naming.div.offsetWidth + bg_ortcal_naming.left;
-   		pos.y += bg_ortcal_naming.top;
-		if (pos.y < 0) pos.y = 0;
-		if (pos.x < 0) pos.x -= bg_ortcal_naming.obj.offsetWidth-bg_ortcal_naming.div.offsetWidth;
-		bg_ortcal_naming.width  = bg_ortcal_naming.div.offsetWidth;
-		bg_ortcal_naming.height = bg_ortcal_naming.div.offsetHeight;	
-		bg_ortcal_naming.div.style.left = pos.x+"px";
-		bg_ortcal_naming.div.style.top = pos.y+"px";
+		setObj(bg_ortcal_naming.div);
 		bg_ortcal_bscal.hide();
 	},
 	draw : function() {
@@ -172,18 +162,8 @@ var bg_ortcal_today = {
 		var el = document.getElementById("thisDay");
 		el.innerHTML = bg_ortcal_today.dayInfo(1);
 		bg_ortcal_today.div.style.display = "block";
-		
-		bg_ortcal_today.obj = document.getElementById(obj);
-    	var pos = bg_ortcal_today.pos(bg_ortcal_today.obj);
 
-		pos.x += bg_ortcal_today.obj.offsetWidth - bg_ortcal_today.div.offsetWidth + bg_ortcal_today.left;
-   		pos.y += bg_ortcal_today.top;
-		if (pos.y < 0) pos.y = 0;
-		if (pos.x < 0) pos.x -= bg_ortcal_today.obj.offsetWidth-bg_ortcal_today.div.offsetWidth;
-		bg_ortcal_today.width  = bg_ortcal_today.div.offsetWidth;
-		bg_ortcal_today.height = bg_ortcal_today.div.offsetHeight;	
-		bg_ortcal_today.div.style.left = pos.x+"px";
-		bg_ortcal_today.div.style.top = pos.y+"px";
+		setObj(bg_ortcal_today.div);
 		bg_ortcal_bscal.hide();
 	},
 	hide : function() {

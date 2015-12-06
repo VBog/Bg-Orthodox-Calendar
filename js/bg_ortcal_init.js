@@ -38,7 +38,23 @@ function bg_ortcal_month(ee, y, m) {
 		}
 	});
 }
+// Устанавливает объект посередине страницы
+function setObj (obj) {
+		p_left = window.pageXOffset +(parseInt(document.documentElement.clientWidth)-parseInt(obj.clientWidth))/2;
+		if (p_left < 0)p_left = 0;
+		obj.style.left = p_left+"px";
+		p_top = window.pageYOffset+(parseInt(document.documentElement.clientHeight)-parseInt(obj.clientHeight))/2;
+		if (p_top < 32) p_top = 32;
+		obj.style.top = p_top+"px";		
+}
 
+// Установим обработчик события resize
+jQuery(window).resize(function() {
+	bg_ortcal_bscal.hideMenu();
+ 	setObj(bg_ortcal_bscal.div);
+ 	setObj(bg_ortcal_naming.div);
+ 	setObj(bg_ortcal_today.div);
+});
 	bg_ortcal_loadXML(); 							// Загрузка данных для календаря
 	bg_ortcal_bscal.init();							// Инициация картинки календаря
 	bg_ortcal_naming.init();						// Инициация месяцеслова

@@ -66,12 +66,12 @@
 #bg_ortcal_bscal .bg_ortcal_top {			/* Заголовок окна 				*/
        height: 20px;
 }
-#bg_ortcal_bscal td.bot {			/* Подвал окна 					*/
+#bg_ortcal_bscal td.bg_ortcal_bot {			/* Подвал окна 					*/
 	cursor: pointer;
 	text-align: center;
 }
-#bg_ortcal_bscal .bg_ortcal_top td, #bg_ortcal_bscal td.bot {
-    font-family: Tahoma;
+#bg_ortcal_bscal .bg_ortcal_top td, #bg_ortcal_bscal td.bg_ortcal_bot {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: bold;
     padding: 3px 5px;
@@ -85,7 +85,7 @@
 }
  
 #bg_ortcal_bscal td.bg_ortcal_arrow{			/* Поля перехода назад-вперед	*/
-    font-family: Tahoma;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
     font-size: 16px;
 	text-align: center;
 	padding: 3px 5px;
@@ -180,6 +180,7 @@
 	border: 1px outset;
 	margin: 0px;
 	padding: 0px;
+	box-shadow: 0 0 5px;
 /*	z-index: 1001; */
 	left: 0px;
 	top: 0px;
@@ -253,13 +254,13 @@
 	text-align: center;
 }
 .bg_moncal .bg_ortcal_top td, .bg_moncal td.bg_ortcal_bot {
-    font-family: Tahoma;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
     font-size: 12px;
     padding: 2px 0px;
 }
  
 .bg_moncal td.bg_ortcal_arrow{			/* Поля перехода назад-вперед	*/
-    font-family: Tahoma;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
     font-size: 16px;
 	text-align: center;
 	padding: 3px 5px;
