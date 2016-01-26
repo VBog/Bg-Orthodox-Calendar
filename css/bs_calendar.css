@@ -6,7 +6,7 @@
 /*** Окно календаря 								 ***/
 #bg_ortcal_bscal {					
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
+	font-size: 12px; 
 	line-height: normal;
 	border: 5px ridge #FFFFFF;
 	margin: 0px;
@@ -37,6 +37,9 @@
 	margin: 0px;
 	padding: 0px;
 	min-width: 25px;
+    -webkit-user-select: none;    /* user-select -- это нестандартное свойство */
+    -moz-user-select: none;    /* поэтому нужны префиксы */
+    -ms-user-select: none;
 }
 #bg_ortcal_bscal hr {
 	margin: 2px 0 2px;
@@ -129,7 +132,7 @@
     font-weight: bold;
 	text-align: center;
 }
-#bg_ortcal_bscal td.bg_ortcal_memory {		/* Дни памяти (родительские)	*/
+#bg_ortcal_bscal td.bg_ortcal_commemoration {		/* Дни памяти (родительские)	*/
     color: blue;					/* Цвет текста 	*/
     font-weight: bold;
 	text-align: center;
@@ -149,7 +152,7 @@
     font-weight: bold;
 	text-align: center;
 }
-#bg_ortcal_bscal td.bg_ortcal_post_memory {	/* Постные дни памяти			*/
+#bg_ortcal_bscal td.bg_ortcal_post_commemoration {	/* Постные дни памяти			*/
 	color: blue;					/* Цвет текста 	*/
 	background-color:silver;		/* Цвет фона 	*/
     font-weight: bold;
@@ -304,7 +307,7 @@
     font-weight: bold;
 	text-align: center;
 }
-.bg_moncal td.bg_ortcal_memory {		/* Дни памяти (родительские)	*/
+.bg_moncal td.bg_ortcal_commemoration {		/* Дни памяти (родительские)	*/
     color: blue;					/* Цвет текста 	*/
     font-weight: bold;
 	text-align: center;
@@ -324,15 +327,15 @@
     font-weight: bold;
 	text-align: center;
 }
-.bg_moncal td.bg_ortcal_post_memory {	/* Постные дни памяти			*/
+.bg_moncal td.bg_ortcal_post_commemoration {	/* Постные дни памяти			*/
 	color: blue;					/* Цвет текста 	*/
 	background-color:silver;		/* Цвет фона 	*/
     font-weight: bold;
 	text-align: center;
 }
 .bg_moncal a, .bg_moncal a:hover, .bg_moncal a:active {			/* Ссылки внетри календаря			*/
-    color: inherit;
-	background-repeat: no-repeat;
-	text-align: center;
-	text-decoration: none;
+    color: inherit !important;
+	background-repeat: no-repeat !important;
+	text-align: center !important;
+	text-decoration: none !important;
 }

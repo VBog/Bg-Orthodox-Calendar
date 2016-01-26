@@ -127,7 +127,7 @@ function bg_ortcal_getLink(d, type) {
 		if (odate<10) {odate="0"+odate}
 		l = "http://www.patriarchia.ru/bu/"+od.getFullYear()+"-"+omonth+"-"+odate+"/print.html";
 		break;
-	case 101: 								// Богослужебные указания
+	case 101: 								// Страница на сайте
 		omonth=d.getMonth()+1;
 		if (omonth<10) {omonth="0"+omonth}
 		odate=d.getDate();

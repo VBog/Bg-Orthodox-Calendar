@@ -28,6 +28,7 @@
 	
     ysel : null,
     hover: null,
+	timeoutId: null,
 	
 	sDate: new Date(),
 	
@@ -112,8 +113,8 @@
 				if (md[k].name == "") continue;	
 				if (md[k].type == 9) {
 					if (md[k].start.getDate() == c && md[k].start.getMonth() == m-1) {						// Дни особого поминовения усопших. (Тип 9)
-						if(el.className == "bg_ortcal_post") {el.className = "bg_ortcal_post_memory";}						
-						else {el.className = "bg_ortcal_memory";}
+						if(el.className == "bg_ortcal_post") {el.className = "bg_ortcal_post_commemoration";}						
+						else {el.className = "bg_ortcal_commemoration";}
 						el.title = md[k].name;
 					} 
 				}
@@ -159,8 +160,8 @@
 					fd = Math.round((md[k].finish.getTime()-beginY.getTime())/(one_day));
 					
 					if (num_day >= sd && num_day <= fd) {										// Сплошные седмицы. (Тип 100)
-						if (el.className == "bg_ortcal_post_memory") {
-							el.className = "bg_ortcal_memory";
+						if (el.className == "bg_ortcal_post_commemoration") {
+							el.className = "bg_ortcal_commemoration";
 							if (md[k].name != "") el.title = (el.title == "")? md[k].name : el.title+',\n'+md[k].name;
 						}
 						else if (el.className == "bg_ortcal_post_holidays") {
@@ -188,8 +189,8 @@
 							el.className = "bg_ortcal_post_holidays";
 							el.title = (el.title == "")? md[k].name : el.title+',\n'+md[k].name;
 						}
-						else if (el.className == "bg_ortcal_memory") {
-							el.className = "bg_ortcal_post_memory";
+						else if (el.className == "bg_ortcal_commemoration") {
+							el.className = "bg_ortcal_post_commemoration";
 							el.title = (el.title == "")? md[k].name : el.title+',\n'+md[k].name;
 						}
 						else if (el.className == "bg_ortcal_weekend") {
@@ -256,12 +257,37 @@
 		bg_ortcal_bscal.hide();
 	},
 	retD : function(r_month, r_day){
-        if (!r_day || r_day=="&nbsp;") return false;
+        clearTimeout(bg_ortcal_bscal.timeoutId);
+        bg_ortcal_bscal.timeoutId=setTimeout(function() {
+			if (!r_month) {
+				bg_ortcal_bscal.today();
+				r_month = bg_ortcal_bscal.nowM;
+				r_day = r_day + bg_ortcal_bscal.nowD;
+			}
+			if (!r_day || r_day=="&nbsp;") return false;
+			var d = new Date(0);
+			d.setFullYear(bg_ortcal_bscal.curY, r_month-1, r_day);
+			bg_ortcal_bscal.link(d, 101)
+		}, 250);
+	},
+	retLink : function(r_month, r_day){
+        clearTimeout(bg_ortcal_bscal.timeoutId);
+		if (!r_month) {
+			bg_ortcal_bscal.today();
+			r_month = bg_ortcal_bscal.nowM;
+			r_day = r_day + bg_ortcal_bscal.nowD;
+		}
+		if (!r_day || r_day=="&nbsp;") return false;
 		var d = new Date(0);
 		d.setFullYear(bg_ortcal_bscal.curY, r_month-1, r_day);
 		bg_ortcal_bscal.link(d, bg_ortcal_dblClick);
 	},
 	retMenu : function(r_month, r_day, obj){
+		if (!r_month) {
+			bg_ortcal_bscal.today();
+			r_month = bg_ortcal_bscal.nowM;
+			r_day = r_day + bg_ortcal_bscal.nowD;
+		}
         if (!r_day || r_day=="&nbsp;") return false;
 		if (!bg_ortcal_popmenu.length) return false;
 		bg_ortcal_bscal.sDate.setFullYear(bg_ortcal_bscal.curY, r_month-1, r_day);
@@ -351,24 +377,24 @@
 				{
 					res += "<tr align=center unselectable=on>\n";
 					for (var x=1;x<=7;x++){
-						res += "<td id='cell_"+m+"_"+y+"_"+x+"' onmouseover=\"bg_ortcal_bscal.dover(this);\" onmouseout=\"bg_ortcal_bscal.dout(this);\" onclick=\"bg_ortcal_bscal.retMenu("+m+", this.innerHTML, this);\" ondblclick=\"bg_ortcal_bscal.retD("+m+", this.innerHTML);\" unselectable=on>"+m+"_"+y+"_"+x+"</td>\n";
+						res += "<td id='cell_"+m+"_"+y+"_"+x+"' onmouseover=\"bg_ortcal_bscal.dover(this);\" onmouseout=\"bg_ortcal_bscal.dout(this);\" oncontextmenu=\"bg_ortcal_bscal.retMenu("+m+", this.innerHTML, this); return false;\" onClick=\"bg_ortcal_bscal.retD("+m+", this.innerHTML);\" ondblclick=\"bg_ortcal_bscal.retLink("+m+", this.innerHTML);\" unselectable=on>"+m+"_"+y+"_"+x+"</td>\n";
 					}
 					res += "</tr>\n";
 				}
 				res += "</table>";
 		
 				res += "</td>\n";
-				if (i<=2) res += "<td>&nbsp;</td>\n";
+				if (i<=2) res += "<td unselectable=on>&nbsp;</td>\n";
 			}
 			res += "</tr>\n";
-			if (j<=3) res += "<tr><td colspan=5></td></tr>\n";
+			if (j<=3) res += "<tr><td colspan=5 unselectable=on></td></tr>\n";
 		}
 		res += "<tr class='bg_ortcal_top' align=center>\n"+
-				"<td colspan=1 class=bg_ortcal_bot onClick=\"bg_ortcal_bscal.today();bg_ortcal_bscal.retMenu("+bg_ortcal_bscal.nowM+", "+(bg_ortcal_bscal.nowD-1)+", this);\" ondblclick=\"bg_ortcal_bscal.today();bg_ortcal_bscal.retD("+bg_ortcal_bscal.nowM+", "+(bg_ortcal_bscal.nowD-1)+");\" >вчера</td>\n"+
+				"<td colspan=1 class=bg_ortcal_bot oncontextmenu=\"bg_ortcal_bscal.retMenu(0, -1, this); return false;\" onClick=\"bg_ortcal_bscal.retD(0, -1);\" ondblclick=\"bg_ortcal_bscal.retLink(0, -1);\" unselectable=on>вчера</td>\n"+
 				"<td class=bg_ortcal_bot>/</td>"+
-				"<td colspan=1 class=bg_ortcal_bot onClick=\"bg_ortcal_bscal.today();bg_ortcal_bscal.retMenu("+bg_ortcal_bscal.nowM+", "+bg_ortcal_bscal.nowD+", this);\" ondblclick=\"bg_ortcal_bscal.today();bg_ortcal_bscal.retD("+bg_ortcal_bscal.nowM+", "+bg_ortcal_bscal.nowD+");\" >сегодня</td>\n"+
+				"<td colspan=1 class=bg_ortcal_bot oncontextmenu=\"bg_ortcal_bscal.retMenu(0, 0, this); return false;\" onClick=\"bg_ortcal_bscal.retD(0, 0);\" ondblclick=\"bg_ortcal_bscal.retLink(0, 0);\" unselectable=on>сегодня</td>\n"+
 				"<td class=bg_ortcal_bot>/</td>"+
-				"<td colspan=1 class=bg_ortcal_bot onClick=\"bg_ortcal_bscal.today();bg_ortcal_bscal.retMenu("+bg_ortcal_bscal.nowM+", "+(bg_ortcal_bscal.nowD+1)+", this);\" ondblclick=\"bg_ortcal_bscal.today();bg_ortcal_bscal.retD("+bg_ortcal_bscal.nowM+", "+(bg_ortcal_bscal.nowD+1)+");\" >завтра</td>\n"+
+				"<td colspan=1 class=bg_ortcal_bot oncontextmenu=\"bg_ortcal_bscal.retMenu(0, 1, this); return false;\" onClick=\"bg_ortcal_bscal.retD(0, 1);\" ondblclick=\"bg_ortcal_bscal.retLink(0, 1);\" unselectable=on>завтра</td>\n"+
 				"</tr>\n";
 		res += "</table>";
 		res += "<span style='margin-left:1em;'><input id='weddingID' type='checkbox' onchange='bg_ortcal_bscal.changeWedding();'> Показать дни браковенчаний</span><br>";
@@ -481,7 +507,7 @@
 		default:
 			var l = bg_ortcal_getLink(d, type);
 			if (l) {
-				window.open(l);
+				window.open(l,'_blank');
 				bg_ortcal_bscal.hide();
 			}
 			break;

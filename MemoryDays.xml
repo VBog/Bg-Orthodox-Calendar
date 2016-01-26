@@ -7,6 +7,7 @@
 		<f_date>0</f_date>
 		<name>Светлое Христово Воскресение. Пасха</name>
 		<type>0</type>
+		<link> </link>
 		<discription/>
 	</event>
 	<event>
@@ -299,7 +300,7 @@
 	</event>
 	<event>
 		<s_month>-2</s_month>
-		<s_date>7</s_date>
+		<s_date>0</s_date>
 		<f_month>1</f_month>
 		<f_date>22</f_date>
 		<name>Собор новомучеников и исповедников Церкви Русской</name>
@@ -1312,6 +1313,7 @@
 		<f_date>25</f_date>
 		<name>Блгв. кн. Петра, в иночестве Давида, и кн. Февронии, в иночестве Евфросинии, Муромских чудотворцев (1228)</name>
 		<type>5</type>
+		<link>http://hpf.ru.com</link>
 		<discription/>
 	</event>
 	<event>
@@ -1835,6 +1837,14 @@
 		<name>Бессребреников мчч. Кира и Иоанна и с ними мцц. Афанасии и дщерей ее Феодотии, Феоктисты и Евдоксии (311)</name>
 		<type>6</type>
 		<discription/>
+	</event>
+	<event>
+		<s_month>2</s_month>
+		<s_date>1</s_date>
+		<f_month>2</f_month>
+		<f_date>1</f_date>
+		<name>Предпразднство Сретения Господня</name>
+		<type>6</type>
 	</event>
 	<event>
 		<s_month>2</s_month>
@@ -2678,15 +2688,6 @@
 		<s_date>4</s_date>
 		<f_month>1</f_month>
 		<f_date>4</f_date>
-		<name>Предпразднство Богоявления</name>
-		<type>7</type>
-		<discription/>
-	</event>
-	<event>
-		<s_month>1</s_month>
-		<s_date>4</s_date>
-		<f_month>1</f_month>
-		<f_date>4</f_date>
 		<name>Собор 70-ти апостолов</name>
 		<type>7</type>
 		<discription/>
@@ -3032,6 +3033,14 @@
 		<name>Сщмч. Ипполита, папы Римского и с ним (III)</name>
 		<type>7</type>
 		<discription/>
+	</event>
+	<event>
+		<s_month>2</s_month>
+		<s_date>3</s_date>
+		<f_month>2</f_month>
+		<f_date>3</f_date>
+		<name>Попразднство Сретения Господня</name>
+		<type>7</type>
 	</event>
 	<event>
 		<s_month>2</s_month>
@@ -4006,10 +4015,10 @@
 		<discription/>
 	</event>
 	<event>
-		<s_month>5</s_month>
-		<s_date>9</s_date>
-		<f_month>5</f_month>
-		<f_date>9</f_date>
+		<s_month>0</s_month>
+		<s_date>-52</s_date>
+		<f_month>0</f_month>
+		<f_date>-52</f_date>
 		<name>Мч. Христофора (ок. 250)</name>
 		<type>7</type>
 		<discription/>
@@ -5254,6 +5263,7 @@
 		<f_date>6</f_date>
 		<name>Перенесение мощей блгв. кн. Петра, в иночестве Давида, и кн. Февронии, в иночестве Евфросинии, Муромских чудотворцев (1992)</name>
 		<type>7</type>
+		<link>http://hpf.ru.com</link>
 		<discription/>
 	</event>
 	<event>
