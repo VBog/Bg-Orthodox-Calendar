@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: VBog
-    Version: 0.10.3-RC
+    Version: 0.10.4-RC
     Author URI: http://bogaiskov.ru 
 	License:     GPL2
 */
@@ -36,7 +36,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.10.3-RC');
+define('BG_ORTCAL_VERSION', '0.10.4-RC');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -483,4 +483,70 @@ function bg_ortcal_load_xml() {
 		wp_cache_set('bg-orthodox-calendar-events',$events,'bg-ortho-cal',3600);
 	}
 	return $events;
+}
+
+/*****************************************************************************************
+	Параметры плагина
+	
+******************************************************************************************/
+// Задание параметров по умолчанию
+function bg_ortcal_options_ini () {
+	add_option('bg_ortcal_mainColor', "#000000");
+	add_option('bg_ortcal_mainBgColor', "#EEEEEE");
+	add_option('bg_ortcal_titleColor', "#132E64");
+	add_option('bg_ortcal_otherColor', "#FFFFFF");
+	add_option('bg_ortcal_otherBgColor', "#132E64");
+	add_option('bg_ortcal_overColor', "#FFFFFF");
+	add_option('bg_ortcal_overBgColor', "#406FCD");
+	add_option('bg_ortcal_todayColor', "#FFFFFF");
+	add_option('bg_ortcal_todayBgColor', "#335AAB");
+	add_option('bg_ortcal_weddingColor', "#335AAB");
+	add_option('bg_ortcal_Zindex', "10000");
+	add_option('bg_ortcal_popmenu1', "Официальный календарь РПЦ");
+	add_option('bg_ortcal_popmenu2', "Календарь на Православие.Ru");
+	add_option('bg_ortcal_popmenu3', "Богослужебные указания");
+	add_option('bg_ortcal_popmenu101', "Этот день в календаре (страница)");
+	add_option('bg_ortcal_popmenu1001', "Этот день в календаре (окно)");
+	add_option('bg_ortcal_popmenu1002', "Выбор имени по Месяцеслову");
+	add_option('bg_ortcal_dblClick', "2");
+	add_option('bg_ortcal_page', "");
+	add_option('bg_ortcal_customXML', "");
+	add_option('bg_ortcal_only_customXML');
+	add_option('bg_ortcal_linkImage', "");
+	add_option('bg_ortcal_addDate');
+	add_option('bg_ortcal_fgc', "on");
+	add_option('bg_ortcal_fopen', "on");
+	add_option('bg_ortcal_curl', "on");
+}
+
+// Очистка таблицы параметров при удалении плагина
+function bg_ortcal_deinstall() {
+	delete_option('bg_ortcal_mainColor');
+	delete_option('bg_ortcal_mainBgColor');
+	delete_option('bg_ortcal_titleColor');
+	delete_option('bg_ortcal_otherColor');
+	delete_option('bg_ortcal_otherBgColor');
+	delete_option('bg_ortcal_overColor');
+	delete_option('bg_ortcal_overBgColor');
+	delete_option('bg_ortcal_todayColor');
+	delete_option('bg_ortcal_todayBgColor');
+	delete_option('bg_ortcal_weddingColor');
+	delete_option('bg_ortcal_Zindex');
+	delete_option('bg_ortcal_popmenu1');
+	delete_option('bg_ortcal_popmenu2');
+	delete_option('bg_ortcal_popmenu3');
+	delete_option('bg_ortcal_popmenu101');
+	delete_option('bg_ortcal_popmenu1001');
+	delete_option('bg_ortcal_popmenu1002');
+	delete_option('bg_ortcal_dblClick');
+	delete_option('bg_ortcal_page');
+	delete_option('bg_ortcal_customXML');
+	delete_option('bg_ortcal_only_customXML');
+	delete_option('bg_ortcal_linkImage');
+	delete_option('bg_ortcal_addDate');
+	delete_option('bg_ortcal_fgc');
+	delete_option('bg_ortcal_fopen');
+	delete_option('bg_ortcal_curl');
+
+	delete_option('bg_ortcal_submit_hidden');
 }
