@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: VBog
-    Version: 0.10.4-RC
+    Version: 0.10.5-RC
     Author URI: http://bogaiskov.ru 
 	License:     GPL2
 */
@@ -36,7 +36,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.10.4-RC');
+define('BG_ORTCAL_VERSION', '0.10.5-RC');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -117,9 +117,13 @@ add_action ('wp_ajax_nopriv_bg_ortcal', 'bg_ortcal_callback');
 function bg_ortcal_callback() {
 	global $events;
 	
-	$load = $_GET["load"];
-	$y = $_GET["year"];
-	$m = $_GET["month"];
+	
+	if (isset($_GET['load'])) $load = $_GET["load"];
+	else $load = "";
+	if (isset($_GET['year'])) $y = $_GET["year"];
+	else $y = "";
+	if (isset($_GET['month'])) $m = $_GET["month"];
+	else $m = "";
 	if ($load == 'Y') {
 		if (!$events) $events = bg_ortcal_load_xml();
 		echo json_encode($events); 
@@ -466,7 +470,7 @@ function bg_ortcal_load_xml() {
 		if ($only_customXML != "on") {	
 			$plugins_dir = dirname(__FILE__) . '/MemoryDays.xml';
 			$xml = ortcal_getXML($plugins_dir);
-			if ($xml) $events = $xml["event"];
+			if ($xml) $events = bg_ortcal_events_array($xml["event"]);
 		}
 			
 		$customXML_val = get_option("bg_ortcal_customXML");
@@ -474,17 +478,31 @@ function bg_ortcal_load_xml() {
 			$custom_xml = ortcal_getXML(ABSPATH . $customXML_val);
 			if ($custom_xml) {
 				if ($events) {
-					$custom_events = $custom_xml["event"];
+					$custom_events = bg_ortcal_events_array($custom_xml["event"]);
 					if ($custom_events) $events = array_merge($custom_events, $events);
 				}
-				else $events = $custom_xml["event"];
+				else $events = bg_ortcal_events_array($custom_xml["event"]);
 			}
 		}
 		wp_cache_set('bg-orthodox-calendar-events',$events,'bg-ortho-cal',3600);
 	}
 	return $events;
 }
-
+// Дополняет пропущенные элементы массива
+function bg_ortcal_events_array($event) {
+	$cnt = count ($event);
+	for ($i=0; $i < $cnt; $i++) {
+		if (!array_key_exists ( "s_month" , $event[$i] )) $event[$i]["s_month"]=0;
+		if (!array_key_exists ( "s_date" , $event[$i] )) $event[$i]["s_date"]=0;
+		if (!array_key_exists ( "f_month" , $event[$i] )) $event[$i]["f_month"]=0;
+		if (!array_key_exists ( "f_date" , $event[$i] )) $event[$i]["f_date"]=0;
+		if (!array_key_exists ( "name" , $event[$i] )) $event[$i]["name"]="";
+		if (!array_key_exists ( "type" , $event[$i] )) $event[$i]["type"]=0;
+		if (!array_key_exists ( "link" , $event[$i] )) $event[$i]["link"]="";
+		if (!array_key_exists ( "discription" , $event[$i] )) $event[$i]["discription"]="";
+	}
+	return $event;
+}
 /*****************************************************************************************
 	Параметры плагина
 	
