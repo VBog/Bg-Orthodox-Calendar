@@ -29,7 +29,7 @@
 }
 /* Заголовок и подвал окна, Дни недели, Выделение в меню  					*/
 #bg_ortcal_bscal .bg_ortcal_top td, #bg_ortcal_bscal td.bg_ortcal_bot, #bg_ortcal_bscal .bg_ortcal_week, #bg_ortcal_v-menu li:hover, #bg_ortcal_v-menu li a:hover,
-.bg_moncal .bg_ortcal_top td, .bg_moncal td.bg_ortcal_bot, .bg_moncal .bg_ortcal_week{ 
+.bg_moncal .bg_ortcal_top td, .bg_moncal td.bg_ortcal_bot, .bg_moncal .bg_ortcal_week, .bg_ortcal_schedule .bg_ortcal_week{ 
 	background-color: <?php echo $otherBgColor; ?>;	/* Цвет фона			*/
 	color: <?php echo $otherColor; ?>;				/* Цвет текста			*/
 }
@@ -66,4 +66,11 @@
 }
 #bg_ortcal_snames {					
 	z-index: <?php echo ($Zindex+2);  ?>;			/* Z-index окна описания дня */
+}
+.bg_ortcal_schedule td.bg_ortcal_day {				/* Нижняя граница описания дня	*/
+    border-top: 1px solid <?php echo $otherBgColor; ?>;
+    border-bottom: 1px dotted <?php echo $otherBgColor; ?>;
+}
+.bg_ortcal_schedule table {							/* Нижняя граница таблицы расписания	*/
+    border-bottom: 1px solid <?php echo $otherBgColor; ?>;
 }

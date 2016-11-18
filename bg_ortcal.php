@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: VBog
-    Version: 0.10.5-RC
+    Version: 0.11.0
     Author URI: http://bogaiskov.ru 
 	License:     GPL2
 */
@@ -36,7 +36,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.10.5-RC');
+define('BG_ORTCAL_VERSION', '0.11.0');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -148,6 +148,8 @@ function bg_ortcal_callback() {
 	add_shortcode( 'readings', 'bg_ortcal_Readings' );
 	add_shortcode( 'dayinfo_all', 'bg_ortcal_DayInfo_all' ); 
 	add_shortcode( 'upcoming_events', 'bg_ortcal_UpcomingEvents' ); 
+	add_shortcode( 'schedule', 'bg_ortcal_schedule' ); 
+	
 }
 // Функция действия перед крючком добавления меню
 function bg_ortcal_add_pages() {
@@ -456,6 +458,47 @@ function bg_ortcal_UpcomingEvents($atts) {
 	}
 	return $t;
 }
+// Функция обработки шорт-кода [schedule]
+function bg_ortcal_schedule( $atts, $content=null ) {
+	extract( shortcode_atts( array(
+		'period' => ''
+	), $atts ) );
+	$template = '/(\d{1,2}[\/-]\d{1,2}[\/-]\d{2,4})\s+(\d{1,2}:\d{1,2})\s(.*)/ui';
+	preg_match_all($template, $content, $matches, PREG_OFFSET_CAPTURE);
+	$cnt = count($matches[0]);
+	$prev_date = "";
+	$prev_week = 0;
+	$content = "<div class='bg_ortcal_schedule'><table width='100%'>";
+	for ($i = 0; $i < $cnt; $i++) {
+	// Проверим по каждому паттерну. 
+		preg_match($template, $matches[0][$i][0], $mt);
+		
+		$the_time = trim($mt[2]);
+		if ($the_time == '88:88') $time = strtotime (trim(str_replace('/','-',$mt[1]))." 00:00");
+		else $time = strtotime (trim(str_replace('/','-',$mt[1]))." ".$the_time);
+		if ($time):
+			$text = trim(str_replace('<p></p>','',$mt[3]));
+			$the_week = (int) date("W", $time);
+			$the_date = date("Y-m-j", $time);
+			$nosunday = (int) date("w", $time);
+			list($year, $month, $day) = explode("-", $the_date);
+			if ($prev_week != $the_week) {
+				$content .= "<tr><td colspan='2' class='bg_ortcal_week'>".ortcal_sedmica ($month, $nosunday?$day:($day-6), $year)."</td></tr>";
+				$prev_week = $the_week;
+			}
+			if ($prev_date != $the_date) {
+				$content .= "<tr><td colspan='2' class='bg_ortcal_day'>".bg_ortcal_showDayInfo ( $day, $month, $year, 'l, j F Y г. ', '(j F ст.ст.)', $nosunday?'off':'on', 'on', 'on', 7, 'on', 'off', 'off', 'off', 'off', 'off', 'off', 'on', 'off' )."</td></tr>";
+				$prev_date = $the_date;
+			}
+			$content .= "<tr><td width='10%' class='bg_ortcal_time'>".(($the_time=='88:88')?"":date("G:i ", $time))."</td><td class='bg_ortcal_event'>".$text."</td></tr>";
+		endif;
+	}
+	$content .= "</table></div>";
+	return "{$content}";
+}
+
+
+
 // Определить версию плагина
 function bg_ortcal_get_plugin_version() {
 	$plugin_data = get_plugin_data( __FILE__  );
