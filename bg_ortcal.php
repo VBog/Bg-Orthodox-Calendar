@@ -483,14 +483,14 @@ function bg_ortcal_schedule( $atts, $content=null ) {
 			$nosunday = (int) date("w", $time);
 			list($year, $month, $day) = explode("-", $the_date);
 			if ($prev_week != $the_week) {
-				$content .= "<tr><td colspan='2' class='bg_ortcal_week'>".ortcal_sedmica ($month, $nosunday?$day:($day-6), $year)."</td></tr>";
+				$content .= "<tr><td  colspan='2' class='bg_ortcal_week'>".ortcal_sedmica ($month, $nosunday?$day:($day-6), $year)."</td></tr>";
 				$prev_week = $the_week;
 			}
 			if ($prev_date != $the_date) {
-				$content .= "<tr><td colspan='2' class='bg_ortcal_day'>".bg_ortcal_showDayInfo ( $day, $month, $year, 'l, j F Y г. ', '(j F ст.ст.)', $nosunday?'off':'on', 'on', 'on', 7, 'on', 'off', 'off', 'off', 'off', 'off', 'off', 'on', 'off' )."</td></tr>";
+				$content .= "<tr><td style='padding-left:24px;' colspan='2' class='bg_ortcal_day'>".bg_ortcal_showDayInfo ( $day, $month, $year, 'l, j F Y г. ', '(j F ст.ст.)', $nosunday?'off':'on', 'on', 'on', 7, 'on', 'off', 'off', 'off', 'off', 'off', 'off', 'on', 'off' )."</td></tr>";
 				$prev_date = $the_date;
 			}
-			$content .= "<tr><td width='10%' class='bg_ortcal_time'>".(($the_time=='88:88')?"":date("G:i ", $time))."</td><td class='bg_ortcal_event'>".$text."</td></tr>";
+			$content .= "<tr><td width='24px' class='bg_ortcal_time'>".(($the_time=='88:88')?"":date("G:i ", $time))."</td><td class='bg_ortcal_event'>".$text."</td></tr>";
 		endif;
 	}
 	$content .= "</table></div>";
