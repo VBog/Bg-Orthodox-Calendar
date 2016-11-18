@@ -483,7 +483,7 @@ function bg_ortcal_schedule( $atts, $content=null ) {
 			$nosunday = (int) date("w", $time);
 			list($year, $month, $day) = explode("-", $the_date);
 			if ($prev_week != $the_week) {
-				$content .= "<tr><td  colspan='2' class='bg_ortcal_week'>".ortcal_sedmica ($month, $nosunday?$day:($day-6), $year)."</td></tr>";
+				$content .= "<tr><td colspan='2' class='bg_ortcal_week'>".ortcal_sedmica ($month, $nosunday?$day:($day-6), $year)."</td></tr>";
 				$prev_week = $the_week;
 			}
 			if ($prev_date != $the_date) {
