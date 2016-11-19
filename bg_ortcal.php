@@ -461,7 +461,7 @@ function bg_ortcal_UpcomingEvents($atts) {
 // Функция обработки шорт-кода [schedule]
 function bg_ortcal_schedule( $atts, $content=null ) {
 	extract( shortcode_atts( array(
-		'period' => 'm',					// Период группировки дней: m - месяц, s - седмица
+		'period' => 's',					// Период группировки дней: m - месяц, s - седмица
 		'date' => 'l, j F Y г. ',			// Формат даты по нов. стилю
 		'old' => '(j F ст.ст.)',			// Формат даты по ст. стилю
 		'sedmica' => 'nedela',				// Седмица
