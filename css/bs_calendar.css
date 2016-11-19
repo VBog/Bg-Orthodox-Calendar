@@ -343,17 +343,17 @@
 .bg_ortcal_schedule td.bg_ortcal_week {	/* Название седмицы			*/
     font-weight: bold;
 	text-align: center;
-    font-size: 120%;
+	padding: 6px;
+    font-size: 140%;
 }
 .bg_ortcal_schedule td.bg_ortcal_time {	/* Время начала события		*/
 	vertical-align: top;
-	font-weight: bold;
 	text-align: right;
-    font-size: 110%;
+    font-size: 120%;
 }
 .bg_ortcal_schedule td.bg_ortcal_event {	/* Название события			*/
 	text-align: left;
-    font-size: 110%;
+    font-size: 120%;
 }
 .bg_ortcal_schedule table {							/* Нижняя граница таблицы расписания	*/
 	margin: 0px;

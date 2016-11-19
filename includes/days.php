@@ -608,7 +608,7 @@ function bg_ortcal_showDayInfo (
 		$qdate = "&date=".$year."-".$month."-".$day;
 
 
-		if ($sedmica != 'off') $sedmica = 'on';
+		if ($sedmica != 'on' && $sedmica != 'nedela') $sedmica = 'off';
 		if ($memory != 'off') $memory = 'on';
 		if ($honor != 'off') $honor = 'on';
 
@@ -623,7 +623,7 @@ function bg_ortcal_showDayInfo (
 		$quote = '';
 		if ($date != 'off' && $date != '') $quote .= '<span class="bg_ortcal_date'.(($wd==0)?' bg_ortcal_sunday':'').'">'.ortcal_dateRU (date($date, mktime(0, 0, 0, $month, $day, $year))).'</span>';
 		if ($old != 'off' && $old != '') $quote .= '<span class="bg_ortcal_old'.(($wd==0)?' bg_ortcal_sunday':'').'">'.ortcal_oldStyle ($old,  $month, $day, $year).'</span><br>';
-		if ($sedmica != 'off') $quote .= '<span class="bg_ortcal_sedmica'.(($wd==0)?' bg_ortcal_sunday':'').'">'.ortcal_sedmica ($month, $day, $year).'</span><br>';
+		if ($sedmica == 'on' || ($sedmica == 'nedela' && $wd==0)) $quote .= '<span class="bg_ortcal_sedmica'.(($wd==0)?' bg_ortcal_sunday':'').'">'.ortcal_sedmica ($month, $day, $year).'</span><br>';
 
 		$e = bg_ortcal_dayEvents($month, $day, $year);
 		$e1 = bg_ortcal_dayEvents($month, $day+1, $year);

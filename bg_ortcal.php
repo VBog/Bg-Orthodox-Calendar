@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: VBog
-    Version: 0.11.0
+    Version: 0.11.1
     Author URI: http://bogaiskov.ru 
 	License:     GPL2
 */
@@ -36,7 +36,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.11.0');
+define('BG_ORTCAL_VERSION', '0.11.1');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -461,14 +461,31 @@ function bg_ortcal_UpcomingEvents($atts) {
 // Функция обработки шорт-кода [schedule]
 function bg_ortcal_schedule( $atts, $content=null ) {
 	extract( shortcode_atts( array(
-		'period' => ''
+		'period' => 'm',					// Период группировки дней: m - месяц, s - седмица
+		'date' => 'l, j F Y г. ',			// Формат даты по нов. стилю
+		'old' => '(j F ст.ст.)',			// Формат даты по ст. стилю
+		'sedmica' => 'nedela',				// Седмица
+		'memory' => 'on',					// Памятные дни
+		'honor' => 'on',					// Дни поминовения усопших
+		'holiday' => 7,						// Праздники (уровень значимости)
+		'img' => 'on',						// Значок праздника по Типикону
+		'saints' => 'off',					// Святые
+		'martyrs' => 'off',					// Новомученники и исповедники российские
+		'icons' => 'off',					// Дни почитания икон Богоматери
+		'posts' => 'off',					// Постные дни
+		'noglans' => 'off',					// Дни, в которые браковенчание не совершается
+		'readings' => 'off',				// Чтения Апостола и Евангелие
+		'links' => 'on',					// Ссылки и цитаты
+		'custom' => 'off',					// Пользовательские ссылки
 	), $atts ) );
+	$rus_month = array('Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь');
 	$template = '/(\d{1,2}[\/-]\d{1,2}[\/-]\d{2,4})\s+(\d{1,2}:\d{1,2})\s(.*)/ui';
 	preg_match_all($template, $content, $matches, PREG_OFFSET_CAPTURE);
 	$cnt = count($matches[0]);
 	$prev_date = "";
 	$prev_week = 0;
-	$content = "<div class='bg_ortcal_schedule'><table width='100%'>";
+	$prev_month = 0;
+	$content = "<div class='bg_ortcal_schedule'><table width='100%' cellpadding='0' cellspacing='0'>";
 	for ($i = 0; $i < $cnt; $i++) {
 	// Проверим по каждому паттерну. 
 		preg_match($template, $matches[0][$i][0], $mt);
@@ -478,19 +495,24 @@ function bg_ortcal_schedule( $atts, $content=null ) {
 		else $time = strtotime (trim(str_replace('/','-',$mt[1]))." ".$the_time);
 		if ($time):
 			$text = trim(str_replace('<p></p>','',$mt[3]));
+			$the_month = (int) date("n", $time);
 			$the_week = (int) date("W", $time);
 			$the_date = date("Y-m-j", $time);
-			$nosunday = (int) date("w", $time);
+			$wd = (int) date("w", $time);
 			list($year, $month, $day) = explode("-", $the_date);
-			if ($prev_week != $the_week) {
-				$content .= "<tr><td colspan='2' class='bg_ortcal_week'>".ortcal_sedmica ($month, $nosunday?$day:($day-6), $year)."</td></tr>";
+			if ($period == 'm' && $prev_month != $the_month) {
+				$content .= "<tr><td colspan='2' class='bg_ortcal_week'>".$rus_month [$month-1]." ".$year." г.</td></tr>";
+				$prev_month = $the_month;
+			}
+			else if ($period == 's' && $prev_week != $the_week) {
+				$content .= "<tr><td colspan='2' class='bg_ortcal_week'>".ortcal_sedmica ($month, $wd?$day:($day-6), $year)."</td></tr>";
 				$prev_week = $the_week;
 			}
 			if ($prev_date != $the_date) {
-				$content .= "<tr><td style='padding-left:24px;' colspan='2' class='bg_ortcal_day'>".bg_ortcal_showDayInfo ( $day, $month, $year, 'l, j F Y г. ', '(j F ст.ст.)', $nosunday?'off':'on', 'on', 'on', 7, 'on', 'off', 'off', 'off', 'off', 'off', 'off', 'on', 'off' )."</td></tr>";
+				$content .= "<tr><td style='padding-left:4.5em;' colspan='2' class='bg_ortcal_day'>".bg_ortcal_showDayInfo ( $day, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom )."</td></tr>";
 				$prev_date = $the_date;
 			}
-			$content .= "<tr><td width='24px' class='bg_ortcal_time'>".(($the_time=='88:88')?"":date("G:i ", $time))."</td><td class='bg_ortcal_event'>".$text."</td></tr>";
+			$content .= "<tr><td width='4em' class='bg_ortcal_time'>".(($the_time=='88:88')?"":date("G:i ", $time))."</td><td style='padding-left:0.5em;' class='bg_ortcal_event'>".$text."</td></tr>";
 		endif;
 	}
 	$content .= "</table></div>";
