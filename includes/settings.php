@@ -161,18 +161,6 @@ function bg_ortcal_options_page() {
 <tr><td valign="top">
 <!--  Теперь отобразим опции на экране редактирования -->
 <div class="wrap">
-<div style="border: 4px ridge #ffffff; background: #F0EBE6; padding: 10px;"><h3>Дорогие братия и сестры - пользователи плагина!</h3>
-	<p>Подходит к концу растянувшийся на несколько лет этап разработки. Бог даст к Рождеству будет опубликована первая стабильная версия.</p>
-	<p>И, чтобы первый блин не получился комом, обращаюсь к Вам с просьбой сообщать мне о всех ошибках, багах и недочетах текущих версий <b>0.10.x</b> всеми доступными способами:</p>
-	<ul style="list-style: circle inside; padding: 0px 30px;">
-		<li>на мой персональный сайт через <a href="https://bogaiskov.ru/about-me/write-me/" target="_blank">форму обратной связи</a> или в <a href="https://bogaiskov.ru/version-0-10/" target="_blank">комментарии к заметке о версии 0.10.x-RC плагина</a>.</li>
-		<li>в <a href="https://wordpress.org/support/plugin/bg-orthodox-calendar" target="_blank">форум поддержки</a> на Wordpress.org</li>
-	</ul>
-	<p>Буду Вам также чрезвычайно благодарен, если Вы сообщите мне адреса сайтов, на которых используется этот плагин.</p>
-	<p><i><b>С Богом!</b><br>
-	Вадим</i></p>
-</div>
-<p> </p>
 <!--  Заголовок -->
 <h2>Параметры плагина "Православный календарь"</h2>
 <p><?php printf( 'Версия <b>'.bg_ortcal_get_plugin_version().'</b>' ); ?></p>

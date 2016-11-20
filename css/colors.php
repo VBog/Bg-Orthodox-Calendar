@@ -68,11 +68,11 @@
 	z-index: <?php echo ($Zindex+2);  ?>;			/* Z-index окна описания дня */
 }
 .bg_ortcal_schedule td.bg_ortcal_day {				/* Нижняя граница описания дня	*/
-    border-top: 1px solid <?php echo $otherBgColor; ?>;
+    border-top: 2px solid <?php echo $otherBgColor; ?>;
     border-bottom: 1px dotted <?php echo $otherBgColor; ?>;
 }
 .bg_ortcal_schedule table {							/* Нижняя граница таблицы расписания	*/
-    border-bottom: 1px solid <?php echo $otherBgColor; ?>;
+    border-bottom: 2px solid <?php echo $otherBgColor; ?>;
 }
 .bg_ortcal_schedule .bg_ortcal_week{ 
 	background-color: <?php echo $otherBgColor; ?>;	/* Цвет фона			*/
