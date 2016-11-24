@@ -117,7 +117,7 @@ function bg_ortcal_getLink(d, type) {
 		if (omonth<10) {omonth="0"+omonth}
 		odate=od.getDate();
 		if (odate<10) {odate="0"+odate}
-		l = "http://days.pravoslavie.ru/Days/"+od.getFullYear()+""+omonth+""+odate+".htm";
+		l = "http://days.pravoslavie.ru/Days/"+od.getFullYear()+""+omonth+""+odate+".html";
 		break;
 	case 3: 								// Богослужебные указания
 		if (d.getFullYear()!=now.getFullYear()) break;	// Если не текущий год, то на выход
