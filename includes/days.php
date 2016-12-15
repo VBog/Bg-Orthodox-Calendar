@@ -605,7 +605,7 @@ function bg_ortcal_showDayInfo (
 		$year = date('Y', $mtime);
 		$wd = date('w', $mtime);
 
-		$qdate = "&date=".$year."-".$month."-".$day;
+		$qdate = "date=".$year."-".$month."-".$day;
 
 
 		if ($sedmica != 'on' && $sedmica != 'nedela') $sedmica = 'off';
@@ -806,7 +806,7 @@ function bg_ortcal_showDayInfo (
 				else if (function_exists ('bg_bibfers_convertTitles') && $links != 'off') { // Bg Bible References до версии 3.10 
 					$q = bg_bibfers_convertTitles($q, $links); // Преобразуем заголовки и подсвечиваем ссылки или выводим на экран текст Священного Писания
 				}
-				if ($q) $quote .= $qtitle.'<span class="bg_ortcal_readings">'.$q.'</span><br>';
+				if ($q) $quote .= $qtitle.'<span class="bg_ortcal_readings">'.$q.'</span>';
 			}
 			// Пользовательские ссылки
 			if ($custom != 'off') {

@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: VBog
-    Version: 0.11.2
+    Version: 0.11.3
     Author URI: http://bogaiskov.ru 
 	License:     GPL2
 */
@@ -36,7 +36,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.11.2');
+define('BG_ORTCAL_VERSION', '0.11.3');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -98,6 +98,7 @@ if ( !is_admin() ) {
 	bg_ortcal_options_ini (); 			// Параметры по умолчанию
 	add_action( 'wp_enqueue_scripts' , 'bg_ortcal_frontend_scripts' ); 
 	add_action( 'wp_head' , 'bg_ortcal_js_options' ); 
+	date_default_timezone_set(get_option( "bg_ortcal_timezone", "UTC" )); // Устанавливаем часовой пояс
 }
 
 if ( defined('ABSPATH') && defined('WPINC') ) {
@@ -596,6 +597,7 @@ function bg_ortcal_options_ini () {
 	add_option('bg_ortcal_customXML', "");
 	add_option('bg_ortcal_only_customXML');
 	add_option('bg_ortcal_linkImage', "");
+	add_option('bg_ortcal_timezone',"UTC");
 	add_option('bg_ortcal_addDate');
 	add_option('bg_ortcal_fgc', "on");
 	add_option('bg_ortcal_fopen', "on");
@@ -626,6 +628,7 @@ function bg_ortcal_deinstall() {
 	delete_option('bg_ortcal_customXML');
 	delete_option('bg_ortcal_only_customXML');
 	delete_option('bg_ortcal_linkImage');
+	delete_option('bg_ortcal_timezone');
 	delete_option('bg_ortcal_addDate');
 	delete_option('bg_ortcal_fgc');
 	delete_option('bg_ortcal_fopen');

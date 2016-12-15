@@ -30,6 +30,7 @@ function bg_ortcal_options_page() {
     $customXML_name = "bg_ortcal_customXML";					// Имя пользовательского xml-файла
     $only_customXML = "bg_ortcal_only_customXML";				// Только пользовательский xml-файл
 	$bg_ortcal_linkImage = "bg_ortcal_linkImage";				// Изображение кнопки ссылки
+	$bg_ortcal_timezone = "bg_ortcal_timezone";					// Временная зона для смены дат на сервере
 	$bg_ortcal_addDate = "bg_ortcal_addDate";					// Добавлять дату к адресу ссылки
 	$bg_fgc_name = 'bg_ortcal_fgc';								// Чтение XML-файлов с помощью file_get_contents()
 	$bg_fopen_name = 'bg_ortcal_fopen';							// Чтение XML-файлов с помощью fopen()
@@ -64,6 +65,7 @@ function bg_ortcal_options_page() {
     $customXML_val = get_option( "bg_ortcal_customXML" );
     $only_customXML_val = get_option( "bg_ortcal_only_customXML" );
 	$bg_ortcal_linkImage_val =  get_option( "bg_ortcal_linkImage" );
+	$bg_ortcal_timezone_val =  get_option( "bg_ortcal_timezone" );
 	$bg_ortcal_addDate_val =  get_option( "bg_ortcal_addDate" );
     $bg_fgc_val = get_option( $bg_fgc_name );
     $bg_fopen_val = get_option( $bg_fopen_name );
@@ -139,6 +141,9 @@ function bg_ortcal_options_page() {
 
 		$bg_ortcal_linkImage_val = ( isset( $_POST[$bg_ortcal_linkImage] ) && $_POST[$bg_ortcal_linkImage] ) ? $_POST[$bg_ortcal_linkImage] : '' ;
 		update_option( $bg_ortcal_linkImage, $bg_ortcal_linkImage_val );
+
+		$bg_ortcal_timezone_val = ( isset( $_POST[$bg_ortcal_timezone] ) && $_POST[$bg_ortcal_timezone] ) ? $_POST[$bg_ortcal_timezone] : '' ;
+		update_option( $bg_ortcal_timezone, $bg_ortcal_timezone_val );
 
 		$bg_ortcal_addDate_val = ( isset( $_POST[$bg_ortcal_addDate] ) && $_POST[$bg_ortcal_addDate] ) ? $_POST[$bg_ortcal_addDate] : '' ;
 		update_option( $bg_ortcal_addDate, $bg_ortcal_addDate_val );
@@ -303,7 +308,19 @@ function bg_ortcal_options_page() {
 	<i>(Если изображение не задано (указан просто текст), то отображается указанный здесь текст в виде текстовой ссылки.<br> Если ничего не указано (пустая строка), то отображается название события как простая текстовая ссылка.)</i><br />
 	</td></tr>
 	<tr valign="top">
-	<th scope="row">Добавлять дату к ссылке</th>
+	<th scope="row">Часовой пояс</th>
+	<td>
+	<select name="<?php echo $bg_ortcal_timezone ?>">
+		<?php 
+		$array = DateTimeZone::listIdentifiers();
+		foreach($array as $value) {
+			echo "<option value='".$value."'".(($bg_ortcal_timezone_val==$value)? " selected='selected'":"").">".__($value)."</option>";
+		}
+		?>
+	</select><br /><i>(для определения даты на сервере)</i><br />
+	</td></tr>
+	<tr valign="top">
+	<th scope="row">Добавлять дату к ссылке в событии календаря</th>
 	<td>
 	<input type="checkbox" id="bg_addDate" name="<?php echo $bg_ortcal_addDate ?>" <?php if($bg_ortcal_addDate_val=="on") echo "checked" ?> value="on"><br><i>Например, http:\\my-link.ru<b>?date=2015-07-08</b></i><br />
 	</td></tr>
