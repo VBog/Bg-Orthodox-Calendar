@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: VBog
-    Version: 0.11.3
+    Version: 0.11.4
     Author URI: http://bogaiskov.ru 
 	License:     GPL2
 */
@@ -36,7 +36,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.11.3');
+define('BG_ORTCAL_VERSION', '0.11.4');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -97,9 +97,13 @@ function bg_ortcal_js_options () {
 if ( !is_admin() ) {
 	bg_ortcal_options_ini (); 			// Параметры по умолчанию
 	add_action( 'wp_enqueue_scripts' , 'bg_ortcal_frontend_scripts' ); 
-	add_action( 'wp_head' , 'bg_ortcal_js_options' ); 
-	date_default_timezone_set(get_option( "bg_ortcal_timezone", "UTC" )); // Устанавливаем часовой пояс
+	add_action( 'wp_head' , 'bg_ortcal_js_options' );
 }
+// Устанавливаем часовой пояс
+if (get_option( "bg_ortcal_timezone", "WP" ) == "WP") 								
+	date_default_timezone_set(wp_get_timezone_string());
+else 
+	date_default_timezone_set(get_option( "bg_ortcal_timezone", "WP" )); 
 
 if ( defined('ABSPATH') && defined('WPINC') ) {
 // Регистрируем крючок для добавления меню администратора
@@ -569,6 +573,44 @@ function bg_ortcal_events_array($event) {
 	}
 	return $event;
 }
+/**
+ * Returns the timezone string for a site, even if it's set to a UTC offset
+ *
+ * Adapted from http://www.php.net/manual/en/function.timezone-name-from-abbr.php#89155
+ *
+ * @return string valid PHP timezone string
+ */
+function wp_get_timezone_string() {
+ 
+    // if site timezone string exists, return it
+    if ( $timezone = get_option( 'timezone_string' ) )
+        return $timezone;
+ 
+    // get UTC offset, if it isn't set then return UTC
+    if ( 0 === ( $utc_offset = get_option( 'gmt_offset', 0 ) ) )
+        return 'UTC';
+ 
+    // adjust UTC offset from hours to seconds
+    $utc_offset *= 3600;
+ 
+    // attempt to guess the timezone string from the UTC offset
+    if ( $timezone = timezone_name_from_abbr( '', $utc_offset, 0 ) ) {
+        return $timezone;
+    }
+ 
+    // last try, guess timezone string manually
+    $is_dst = date( 'I' );
+ 
+    foreach ( timezone_abbreviations_list() as $abbr ) {
+        foreach ( $abbr as $city ) {
+            if ( $city['dst'] == $is_dst && $city['offset'] == $utc_offset )
+                return $city['timezone_id'];
+        }
+    }
+     
+    // fallback to UTC
+    return 'UTC';
+}
 /*****************************************************************************************
 	Параметры плагина
 	
@@ -597,7 +639,7 @@ function bg_ortcal_options_ini () {
 	add_option('bg_ortcal_customXML', "");
 	add_option('bg_ortcal_only_customXML');
 	add_option('bg_ortcal_linkImage', "");
-	add_option('bg_ortcal_timezone',"UTC");
+	add_option('bg_ortcal_timezone',"WP");
 	add_option('bg_ortcal_addDate');
 	add_option('bg_ortcal_fgc', "on");
 	add_option('bg_ortcal_fopen', "on");

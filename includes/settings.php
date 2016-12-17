@@ -316,8 +316,9 @@ function bg_ortcal_options_page() {
 		foreach($array as $value) {
 			echo "<option value='".$value."'".(($bg_ortcal_timezone_val==$value)? " selected='selected'":"").">".__($value)."</option>";
 		}
+		echo "<option value='WP'".(($bg_ortcal_timezone_val=='WP')? " selected='selected'":"").">Часовой пояс WP (".wp_get_timezone_string().")</option>";
 		?>
-	</select><br /><i>(для определения даты на сервере)</i><br />
+	</select><br /><i>(для определения даты на сервере)</i><br />Местное время на сервере: <code><?php echo date('d-m-Y, H:i:s',mktime()); ?></code><br />
 	</td></tr>
 	<tr valign="top">
 	<th scope="row">Добавлять дату к ссылке в событии календаря</th>
