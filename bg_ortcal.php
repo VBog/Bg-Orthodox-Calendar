@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: VBog
-    Version: 0.11.5
+    Version: 0.11.6
     Author URI: http://bogaiskov.ru 
 	License:     GPL2
 */
@@ -36,7 +36,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.11.5');
+define('BG_ORTCAL_VERSION', '0.11.6');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -146,6 +146,8 @@ function bg_ortcal_callback() {
 	add_shortcode( 'OldStyle', 'bg_ortcal_OldStyle' );		// Для совместимости с версией 0.4
 	add_shortcode( 'Sedmica', 'bg_ortcal_Sedmica' );		// Для совместимости с версией 0.4
 	add_shortcode( 'dayinfo', 'bg_ortcal_DayInfo' );
+	add_shortcode( 'next_day', 'bg_ortcal_nextday' );
+	add_shortcode( 'prev_day', 'bg_ortcal_prevday' );
 	add_shortcode( 'ortcal', 'bg_ortcal_setDate' );
 	add_shortcode( 'monthinfo', 'bg_ortcal_MonthInfo' );
 	add_shortcode( 'oldstyle', 'bg_ortcal_OldStyle' );
@@ -201,10 +203,46 @@ function bg_ortcal_DayInfo($atts) {
 // Если $day задано значение "get", то получаем $day, $month и $year из ссылки	
 	if ($day == "get") {
 		if (isset($_GET['date'])) $dd = $_GET["date"];
-		list($year,$month, $day) = explode("-",$dd);
+		list($year, $month, $day) = explode("-",$dd);
 	}
 // ===========================================================================
 	return bg_ortcal_showDayInfo ( $day, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom );
+}
+// Функция обработки шорт-кода next_day
+function bg_ortcal_nextday($atts) {
+	extract( shortcode_atts( array(
+		'title' => 'Следующий день &#9205;'	// Подпись на кнопке
+	), $atts ) );
+	
+	if (isset($_GET['date'])) {
+		$dd = $_GET["date"];
+		list($year, $month, $day) = explode("-",$dd);
+		$d = date ("U", mktime ( 0, 0, 0, $month, $day, $year ));
+	} else {
+		$d = date ("U", mktime ( 0, 0, 0 ));
+	}
+	$selected = date('?\d\a\t\e=Y-m-d', ortcal_add_days($d, 1));
+	$input = '<a class="bg_ortcal_nextday" href="'. get_page_link( ) . $selected. '" title="'.$title.'">'.$title.'</a>'; 
+	return "{$input}"; 
+	
+}
+// Функция обработки шорт-кода prev_day
+function bg_ortcal_prevday($atts) {
+	extract( shortcode_atts( array(
+		'title' => '&#9204; Предыдущий день'	// Подпись на кнопке
+	), $atts ) );
+	
+	if (isset($_GET['date'])) {
+		$dd = $_GET["date"];
+		list($year, $month, $day) = explode("-",$dd);
+		$d = date ("U", mktime ( 0, 0, 0, $month, $day, $year ));
+	} else {
+		$d = date ("U", mktime ( 0, 0, 0 ));
+	}
+	$selected = date('?\d\a\t\e=Y-m-d', ortcal_add_days($d, (-1)));
+	$input = '<a class="bg_ortcal_prevday" href="'. get_page_link( ) . $selected. '" title="'.$title.'">'.$title.'</a>'; 
+	return "{$input}"; 
+	
 }
 // Функция обработки шорт-кода ortcal
 function bg_ortcal_setDate($atts) {
@@ -418,11 +456,13 @@ function bg_ortcal_DayInfo_all ($atts) {
 
 // Если $day задано значение "get", то получаем $day, $month и $year из ссылки	
 	if ($day == "get") {
-		if (isset($_GET['date'])) $dd = $_GET["date"];
-		list($year,$month, $day) = explode("-",$dd);
+		if (isset($_GET['date'])) {
+			$dd = $_GET["date"];
+			list($year, $month, $day) = explode("-",$dd);
+		}
 	}
 // ===========================================================================
-	return bg_ortcal_showDayInfo ( $day, $month, $year, 'l, j F Y г. ', '(j F ст.ст.)', 'on', 'on', 'on', 'on', 'on', '<b>День памяти святых:</b><br>', '<b>День памяти исповедников и новомучеников российских:</b><br>', '<b>День почитания икон Божией Матери:</b><br>', '<hr />', 'on', '<hr /><b>Чтения дня:</b><br>', 'on', '<hr />См. также:' );
+	return bg_ortcal_showDayInfo ( $day, $month, $year, 'l, j F Y г. ', '(j F ст.ст.)', 'on', 'on', 'on', 'on', 'on', '<b>День памяти святых:</b><br>', '<b>День памяти исповедников и новомучеников Церкви Русской:</b><br>', '<b>День почитания икон Божией Матери:</b><br>', '<hr />', 'on', '<hr /><b>Чтения дня</b><br>', 'on', '<hr />См. также:' );
 }
 
 // Функция обработки шорт-кода UpcomingEvents
@@ -459,7 +499,7 @@ function bg_ortcal_UpcomingEvents($atts) {
 			$tt = bg_ortcal_showDayInfo($d, $month, $year, "", "", $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom);
 			if ($tt) $t .= bg_ortcal_showDayInfo($d, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom);
 		}
-		wp_cache_set($key,$t,'bg-ortho-cal',12*3600);
+		wp_cache_set($key,$t,'bg-ortho-cal',DAY_IN_SECONDS);
 	}
 	return $t;
 }
@@ -554,7 +594,7 @@ function bg_ortcal_load_xml() {
 				else $events = bg_ortcal_events_array($custom_xml["event"]);
 			}
 		}
-		wp_cache_set('bg-orthodox-calendar-events',$events,'bg-ortho-cal',3600);
+		wp_cache_set('bg-orthodox-calendar-events',$events,'bg-ortho-cal',HOUR_IN_SECONDS);
 	}
 	return $events;
 }
@@ -591,7 +631,7 @@ function wp_get_timezone_string() {
         return 'UTC';
  
     // adjust UTC offset from hours to seconds
-    $utc_offset *= 3600;
+    $utc_offset *= HOUR_IN_SECONDS;
  
     // attempt to guess the timezone string from the UTC offset
     if ( $timezone = timezone_name_from_abbr( '', $utc_offset, 0 ) ) {

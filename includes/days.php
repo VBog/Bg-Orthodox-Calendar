@@ -21,6 +21,12 @@ function ortcal_dd($year) {
 	return ($year-$year%100)/100 - ($year-$year%400)/400 - 2;
 }
 /*******************************************************************************
+// Функция добавляет заданное количество дней к дате, заданной в виде int
+*******************************************************************************/  
+function ortcal_add_days($date, $days) {
+	return date( 'U', mktime ( 0, 0, 0, date("n", $date), date("j", $date)+$days, date("Y", $date) ) );
+}
+/*******************************************************************************
 // Функция возвращает дату по старому стилю
 *******************************************************************************/  
 function ortcal_oldStyle($format, $month, $day, $year){
@@ -33,7 +39,7 @@ function ortcal_oldStyle($format, $month, $day, $year){
 		$replace[$week[$i]] = $week[$di];
 		$replace[$wk[$i]] = $wk[$di];
 	}
-	return  strtr ( ortcal_dateRU ( date( $format, mktime ( 0, 0, 0, $month, $day, $year ) - ( $dd*24*3600 ) ) ), $replace );
+	return  strtr ( ortcal_dateRU ( date( $format, mktime ( 0, 0, 0, $month, $day-$dd, $year ) ) ), $replace );
 }
 /*******************************************************************************
 // Перевод названия месяца на русский язык (именительный падеж, заглавная буква)
@@ -119,8 +125,8 @@ function ortcal_easter($format, $year, $old=false) {
 		}
 		if ($old) $dd = 0;
 		else $dd = ortcal_dd($year);
-		$res=ortcal_dateRU ( date( $format, mktime ( 0, 0, 0, $month, $day, $year ) + ( $dd*24*3600 ) ) );
-		wp_cache_set($key,$res,'bg-ortho-cal',3600);
+		$res=ortcal_dateRU ( date( $format, mktime ( 0, 0, 0, $month, $day+$dd, $year ) ) );
+		wp_cache_set($key,$res,'bg-ortho-cal',HOUR_IN_SECONDS);
 	}
 	$easter[$key]=$res;
 	return $res;
@@ -228,10 +234,10 @@ function bg_ortcal_dayEvents($month, $day, $year){
 		$dd = ortcal_dd($os_year);										// Отклонение григорианского календаря от юлианского в днях
 		$leap = ortcal_isLeap(ortcal_oldStyle('Y', $month, $day, $year));		// true - если високосный год по старому стилю
 		$ny =  date( 'U', mktime ( 0, 0, 0, 1, 1, $year ));				// Новый год по григорианскому календарю
-		$easter = ortcal_easter('U', $year, true);								// Пасха в текущем году
-		$easter_prev = ortcal_easter('U', $year-1, true);						// Пасха в предыдущем году
-		$f_e = (date( 'U', mktime ( 0, 0, 0,12, 25, $year-1 ))-$easter_prev)/(3600*24)-date( 'w', mktime ( 0, 0, 0, 12, 25+ortcal_dd($year-1), $year-1 )); // Кол-во дней до Недели св.отцов от Пасхи
-		$ep_e = (date( 'U', mktime ( 0, 0, 0, 1, 6, $year ))-$easter_prev)/(3600*24)-date( 'w', mktime ( 0, 0, 0, 1, 6+ortcal_dd($year), $year )); 		// Кол-во дней до Недели перед Богоявлением от Пасхи
+		$easter = ortcal_easter('U', $year, true);						// Пасха в текущем году
+		$easter_prev = ortcal_easter('U', $year-1, true);				// Пасха в предыдущем году
+		$f_e = (date( 'U', mktime ( 0, 0, 0,12, 25, $year-1 ))-$easter_prev)/DAY_IN_SECONDS-date( 'w', mktime ( 0, 0, 0, 12, 25+ortcal_dd($year-1), $year-1 )); // Кол-во дней до Недели св.отцов от Пасхи
+		$ep_e = (date( 'U', mktime ( 0, 0, 0, 1, 6, $year ))-$easter_prev)/DAY_IN_SECONDS-date( 'w', mktime ( 0, 0, 0, 1, 6+ortcal_dd($year), $year )); 		// Кол-во дней до Недели перед Богоявлением от Пасхи
 		$wd = date( 'w', mktime ( 0, 0, 0, $month, $day, $year ));
 		if ($wd == 3 || $wd == 5) $post = "Постный день";				// Пост по средам и пятницам
 		else $post = "";
@@ -269,82 +275,82 @@ function bg_ortcal_dayEvents($month, $day, $year){
 						$finish = date( 'U', mktime( 0, 0, 0, 1, 1, $os_year ) );
 						$start  = $finish;
 					} else {
-						$we     = date( 'w', mktime( 0, 0, 0, $f_month, $f_date, $os_year + $y ) + $dd * 3600 * 24 );                // День недели
-						$finish = date( 'U', mktime( 0, 0, 0, $f_month, $f_date, $os_year + $y ) + ( $s_date - $we ) * 3600 * 24 );    // Смещение относительно даты на $s_date-$we дней
+						$we     = date( 'w', mktime( 0, 0, 0, $f_month, $f_date+$dd, $os_year + $y ) );				// День недели
+						$finish = date( 'U', mktime( 0, 0, 0, $f_month, $f_date+($s_date-$we), $os_year + $y ) );	// Смещение относительно даты на $s_date-$we дней
 						$start  = $finish;
 
-						if ( $s_month == - 1 && $we == $s_date ) {
+						if ( $s_month == - 1 && $we == $s_date ) {		// Если Сб./Вс. приходится на самый день праздника, то не отмечается
 							$name = "";
-						}                                                // Если Сб./Вс. приходится на самый день праздника, то не отмечается
-						if ( $s_month == - 3 && $we != $s_date ) {
+						}                                                
+						if ( $s_month == - 3 && $we != $s_date ) {		// Если праздник не совпадает с указанным днем недели, то не отмечается
 							$name = "";
-						}                                                // Если праздник не совпадает с указанным днем недели, то не отмечается
-						if ( $y == 0 ) {
+						}                                                
+						if ( $y == 0 ) {								// Проверяем дважды: для текущего и следующего года
 							$i --;
 							$y = 1;
-						}                                                                    // Проверяем дважды: для текущего и следующего года
+						}                                                                    
 						else {
 							$y = 0;
 						}
 					}
 				} else {
-					if ( $s_month > 0 ) {
+					if ( $s_month > 0 ) {						// Неподвижные события - начало периода
 						$start = date( 'U', mktime( 0, 0, 0, $s_month, $s_date, $os_year ) );
-					}            // Неподвижные события - начало периода
-					else if ( $s_month == 0 ) {                                                                        // Переходящие события - начало периода
-						if ( $type == 202 ) {
+					}            
+					else if ( $s_month == 0 ) {					// Переходящие события - начало периода
+						if ( $type == 202 ) {						// Чтения на утрени
 							$start = ortcal_shift202( $s_date, $date, $os_year );
-						}                                        // Чтения на утрени
-						else if ( $type == 204 ) {
+						}										
+						else if ( $type == 204 ) {					// Апостол на Литургии
 							$start = ortcal_shift204( $s_date, $date, $os_year );
-						}                                    // Апостол на Литургии
-						else if ( $type == 207 ) {
+						}                                    
+						else if ( $type == 207 ) {					// Евангелие на Литургии
 							$start = ortcal_shift207( $s_date, $date, $os_year );
-						}                                    // Евангелие на Литургии
-						else if ( $type >= 301 && $type <= 309 ) {
+						}                                    
+						else if ( $type >= 301 && $type <= 309 ) {	// Псалтирь
 							$start = ortcal_shift300( $s_date, $date, $os_year );
-						}                    // Псалтирь
-						else {                                                                                            // Все остальные события
-							if ( $date >= $ny ) {
-								$start = $easter + $s_date * 3600 * 24;
-							}                                                // После Нового года - отсчет от текущей Пасхи
-							else {
-								$start = $easter_prev + $s_date * 3600 * 24;
-							}                                                        // До Нового года - отсчет от предыдущей Пасхи
+						}                    
+						else {										// Все остальные события
+							if ( $date >= $ny ) {						// После Нового года - отсчет от текущей Пасхи
+								$start = ortcal_add_days($easter, $s_date);
+							}                                                
+							else {										// До Нового года - отсчет от предыдущей Пасхи
+								$start = ortcal_add_days($easter_prev, $s_date);
+							}                                                        
 						}
 					}
 
-					if ( $f_month > 0 ) {
+					if ( $f_month > 0 ) {						// Неподвижные события - конец периода
 						$finish = date( 'U', mktime( 0, 0, 0, $f_month, $f_date, $os_year ) );
-					}            // Неподвижные события - конец периода
-					else if ( $f_month == 0 ) {                                                                        // Переходящие события - конец периода
-						if ( $type == 202 ) {
+					}            
+					else if ( $f_month == 0 ) {						// Переходящие события - конец периода
+						if ( $type == 202 ) {						// Чтения на утрени
 							$finish = ortcal_shift202( $s_date, $date, $os_year );
-						}                                        // Чтения на утрени
-						else if ( $type == 204 ) {
+						}                                        
+						else if ( $type == 204 ) {					// Апостол на Литургии
 							$finish = ortcal_shift204( $s_date, $date, $os_year );
-						}                                // Апостол на Литургии
-						else if ( $type == 207 ) {
+						}                                
+						else if ( $type == 207 ) {					// Евангелие на Литургии
 							$finish = ortcal_shift207( $s_date, $date, $os_year );
-						}                                // Евангелие на Литургии
-						else if ( $type >= 301 && $type <= 309 ) {
+						}                                
+						else if ( $type >= 301 && $type <= 309 ) {	// Псалтирь
 							$finish = ortcal_shift300( $s_date, $date, $os_year );
-						}                    // Псалтирь
-						else {                                                                                            // Все остальные события
-							if ( $date >= $ny ) {
-								$finish = $easter + $f_date * 3600 * 24;
-							}                                            // После Нового года - отсчет от текущей Пасхи
-							else {
-								$finish = $easter_prev + $f_date * 3600 * 24;
-							}                                                    // До Нового года - отсчет от предыдущей Пасхи
+						}                    
+						else {										// Все остальные события
+							if ( $date >= $ny ) {						// После Нового года - отсчет от текущей Пасхи
+								$finish = ortcal_add_days($easter, $f_date);
+							}                                            
+							else {										// До Нового года - отсчет от предыдущей Пасхи
+								$finish = ortcal_add_days($easter_prev, $f_date);
+							}                                                    
 						}
 					}
 				}
 
 				// Обрабатываем коллизию, связанную со сменой года
 				if ($start > $finish) {
-					if ($start > $date) $start -= ($leap?366:365)*3600*24;	// Начало в прошлом году
-					else $finish += ($leap?366:365)*3600*24;				// Окончание в следующем году
+					if ($start > $date) $start = ortcal_add_days($start, ($leap?(-366):(-365)));	// Начало в прошлом году
+					else $finish = ortcal_add_days($finish, ($leap?(366):(365)));					// Окончание в следующем году
 				}
 
 				if ($start && $finish) {
@@ -352,8 +358,8 @@ function bg_ortcal_dayEvents($month, $day, $year){
 					// - его наименование не пустое,
 					// - день попадает в интервал между начальной и конечной датой события
 					if ($name != "" && $date >= $start && $date <= $finish) {
-						$s = $start+$dd*3600*24;
-						$f = $finish+$dd*3600*24;
+						$s = ortcal_add_days($start, $dd);
+						$f = ortcal_add_days($finish, $dd);
 						$result[] = array (	"s_date" => date ("d", $s),
 							"s_month" => date ("m", $s),
 							"s_year" => date ("Y", $s),
@@ -395,7 +401,7 @@ function bg_ortcal_dayEvents($month, $day, $year){
 				"discription" => "");
 		}
 
-		wp_cache_set( $key, $result, 'bg-ortho-cal', 12*3600 );
+		wp_cache_set( $key, $result, 'bg-ortho-cal', DAY_IN_SECONDS );
 	}
 
 	return $result;
@@ -414,31 +420,37 @@ function bg_ortcal_dayProperties ($month, $day, $year){
 	}
 	return $res+$post;
 }
-
-function ortcal_shift202 ($d, $date, $year) {				// Смещение даты для Чтений на Утрене
-	$easter=ortcal_easter('U', $year, true);
+/*******************************************************************************
+// Смещение даты для Чтений на Утрене
+*******************************************************************************/  
+function ortcal_shift202 ($d, $date, $year) {				
+	$easter=ortcal_easter('U', $year, true);			// Пасха в текущем году
 	$easter_prev=ortcal_easter('U', $year-1, true);
-	if ($date < $easter-7*3600*24) {		// До Вербного Воскресенья - отсчет от предыдущей Пасхи
+	if ($date < ortcal_add_days($easter, (-7))) {		// До Вербного Воскресенья - отсчет от предыдущей Пасхи
 		$easter = $easter_prev;
-		$easter_prev=ortcal_easter('U', $year-2, true);								// Пасха в текущем году
+		$easter_prev=ortcal_easter('U', $year-2, true);		// Пасха в предыдущем году
 	}
-	$e_e = ($easter - $easter_prev)/(3600*24);		// Количество дней от Пасхи до Пасхи
-	if ($d >= $e_e-7) return false; 								// Отбрасываем лишние дни в конце цикла
-	$res=$easter+$d*3600*24;
+	$e_e = ($easter - $easter_prev)/DAY_IN_SECONDS;		// Количество дней от Пасхи до Пасхи
+	if ($d >= $e_e-7) return false;						// Отбрасываем лишние дни в конце цикла
+	$res=ortcal_add_days($easter, $d);
 	return $res;
 }
 
-function ortcal_shift204 ($d, $date, $year) {				// Смещение даты для Апостола на Литургии
-	$easter = ortcal_easter('U', $year, true);							// Пасха в текущем году
+/*******************************************************************************
+// Смещение даты для Апостола на Литургии
+*******************************************************************************/  
+function ortcal_shift204 ($d, $date, $year) {				
+	$easter = ortcal_easter('U', $year, true);				// Пасха в текущем году
 	$dd = ortcal_dd($year);									// Отклонение григорианского календаря от юлианского в днях
-	$er_e        = ( date( 'U', mktime( 0, 0, 0, 9, 14, $year ) ) - $easter ) / ( 3600 * 24 ) + ( 7 - date( 'w', mktime( 0, 0, 0, 9, 14 + $dd, $year ) ) ); // Кол-во дней до Недели по воздвижении от Пасхи
-	$easter_prev = ortcal_easter('U', $year-1, true);					// Пасха в предыдущем году
-	$dd_prev     = ortcal_dd( $year - 1 );                             	// Отклонение григорианского календаря от юлианского в днях в предыдущем году
-	$er_e_prev   = ( date( 'U', mktime( 0, 0, 0, 9, 14, $year - 1 ) ) - $easter_prev ) / ( 3600 * 24 ) + ( 7 - date( 'w', mktime( 0, 0, 0, 9, 14 + $dd_prev, $year - 1 ) ) ); // Кол-во дней до Недели по воздвижении от Пасхи в предыдущем году
-	$end  = $easter_prev / ( 3600 * 24 ) + 280 + ( $er_e_prev - 168 );  // День конца годичного цикла
-	$ec_e = $easter/(3600*24) - $end;							// Количество дней от конца годичного цикла до Пасхи
+	$er_e = (date('U', mktime(0, 0, 0, 9, 14, $year)) - $easter)/DAY_IN_SECONDS + 
+		(7 - date('w', mktime(0, 0, 0, 9, 14+$dd, $year))); // Кол-во дней до Недели по воздвижении от Пасхи
+	$easter_prev = ortcal_easter('U', $year-1, true);		// Пасха в предыдущем году
+	$dd_prev = ortcal_dd( $year - 1 );					// Отклонение григорианского календаря от юлианского в днях в предыдущем году
+	$er_e_prev = (date('U',mktime(0, 0, 0, 9, 14, $year-1))-$easter_prev)/DAY_IN_SECONDS + 
+		(7 - date('w', mktime(0, 0, 0, 9, 14+$dd_prev, $year-1)));	// Кол-во дней до Недели по воздвижении от Пасхи в предыдущем году
+	$end = ortcal_add_days($easter_prev, 280+($er_e_prev-168));		// День конца годичного цикла
+	$ec_e = ($easter - $end)/DAY_IN_SECONDS;				// Количество дней от конца годичного цикла до Пасхи
 
-//	if ($d == 280) echo ($er_e_prev -168)." ". date ('j-m-Y', $easter_prev + ($er_e_prev + $dd_prev) * 3600 * 24)." ".$ec_e ." ". date ('j-m-Y', ($end + $dd_prev) * 3600 * 24)."<br>";
 	if ($ec_e <= 70) {											// Если внутрь-Пасха
 		if ($d > 210+$ec_e) return false; 							// Отбрасываем лишние дни в конце цикла
 		if ($d < -70) return false;									// Отсчет нового цикла с Недели о мытаре и фарисее
@@ -452,102 +464,116 @@ function ortcal_shift204 ($d, $date, $year) {				// Смещение даты д
 	// Евангельское зачало Недели 28-й и апостольское зачало Недели 29-й читаются в Неделю святых праотец,
 	// поэтому они меняются местами с соответствующими рядовым чтениями той Недели,
 	// на которую придется в данном году Неделя свв. праотец.
-	$ff_e = (date( 'U', mktime ( 0, 0, 0, 12, 25, $year ))-$easter)/(3600*24)-(7+date( 'w', mktime ( 0, 0, 0, 12, 25+$dd, $year ))); // Кол-во дней до Недели Праотцов от Пасхи
+	$ff_e = (date('U', mktime(0, 0, 0, 12, 25, $year))-$easter)/(DAY_IN_SECONDS)-
+		(7 + date( 'w', mktime (0, 0, 0, 12, 25+$dd, $year)));	// Кол-во дней до Недели Праотцов от Пасхи
 	if ($d == 252) $d = $ff_e;									// Неделя 29-я
 	else if ($d == $ff_e) $d = 252;								// Неделя Праотцов
 	
-	if ( $date <= $end * 3600 * 24 ) {        // До конца годичного цикла - отсчет от предыдущей Пасхи
-		$easter = $easter_prev;               // Пасха в указанном году
-		$er_e   = $er_e_prev;                // Кол-во дней до Недели по воздвижении от Пасхи
+	if ( $date <= $end ) {										// До конца годичного цикла - отсчет от предыдущей Пасхи
+		$easter = $easter_prev;										// Пасха в указанном году
+		$er_e   = $er_e_prev;										// Кол-во дней до Недели по воздвижении от Пасхи
 	}
-	if ($date > ($easter+(3600*24*280)) ) { //Если в конце периода не хватает седмиц,
-		if ( $d > 280 - ( $er_e - 168 ) && $d <= 280 ) { // и если была воздвиженская отступка, 
-			$d = $d + ( $er_e - 168 );
-		}                // дублируем чтения предыдущих(ей) седмиц(ы)
+	if ($date > ortcal_add_days($easter, 280) ) {				//Если в конце периода не хватает седмиц,
+		if ( $d > 280 - ( $er_e - 168 ) && $d <= 280 ) {			// и если была воздвиженская отступка, 
+			$d = $d + ( $er_e - 168 );								// дублируем чтения предыдущих(ей) седмиц(ы)
+		}                
 	}
-	$res=$easter+$d*3600*24;
+	$res=ortcal_add_days($easter, $d);
 	return $res;
 }
 
-function ortcal_shift207 ($d, $date, $year) {						// Смещение даты для Евангелие на Литургии
-	$easter      = ortcal_easter( 'U', $year, true );                         	// Пасха в текущем году
-	$dd          = ortcal_dd( $year );                                 	// Отклонение григорианского календаря от юлианского в днях
-	$er_e        = ( date( 'U', mktime( 0, 0, 0, 9, 14, $year ) ) - $easter ) / ( 3600 * 24 ) + ( 7 - date( 'w', mktime( 0, 0, 0, 9, 14 + $dd, $year ) ) ); // Кол-во дней до Недели по воздвижении от Пасхи
-	$easter_prev = ortcal_easter( 'U', $year - 1, true );                    	// Пасха в предыдущем году
-	$dd_prev     = ortcal_dd( $year - 1 );                             	// Отклонение григорианского календаря от юлианского в днях в предыдущем году
-	$er_e_prev   = ( date( 'U', mktime( 0, 0, 0, 9, 14, $year - 1 ) ) - $easter_prev ) / ( 3600 * 24 ) + ( 7 - date( 'w', mktime( 0, 0, 0, 9, 14 + $dd_prev, $year - 1 ) ) ); // Кол-во дней до Недели по воздвижении от Пасхи в предыдущем году
+/*******************************************************************************
+// Смещение даты для Евангелие на Литургии
+*******************************************************************************/  
+function ortcal_shift207 ($d, $date, $year) {						
+	$easter = ortcal_easter( 'U', $year, true );			// Пасха в текущем году
+	$dd = ortcal_dd( $year );								// Отклонение григорианского календаря от юлианского в днях
+	$er_e = (date('U', mktime(0, 0, 0, 9, 14, $year)) - $easter)/DAY_IN_SECONDS + 
+		(7 - date('w', mktime( 0, 0, 0, 9, 14 + $dd, $year))); // Кол-во дней до Недели по воздвижении от Пасхи
+	$easter_prev = ortcal_easter( 'U', $year - 1, true );	// Пасха в предыдущем году
+	$dd_prev = ortcal_dd( $year - 1 );						// Отклонение григорианского календаря от юлианского в днях в предыдущем году
+	$er_e_prev = (date('U', mktime(0, 0, 0, 9, 14, $year - 1)) - $easter_prev)/DAY_IN_SECONDS + 
+		(7 - date('w', mktime( 0, 0, 0, 9, 14 + $dd_prev, $year - 1))); // Кол-во дней до Недели по воздвижении от Пасхи в предыдущем году
 
-	$end  = $easter_prev / ( 3600 * 24 ) + 280 + ( $er_e_prev - 168 );  // День конца годичного цикла
-	$ec_e = $easter / ( 3600 * 24 ) - $end;                            	// Количество дней от конца годичного цикла до Пасхи
+	$end  = ortcal_add_days($easter_prev, 280+($er_e_prev-168));	// День конца годичного цикла
+	$ec_e = ($easter - $end)/DAY_IN_SECONDS;				// Количество дней от конца годичного цикла до Пасхи
 
-	if ( $ec_e <= 70 ) {                                            	// Если внутрь-Пасха
-		if ( $d > 210 + $ec_e ) return false;          						// Отбрасываем лишние дни в конце цикла
-		if ( $d < - 70 ) return false;                         				// Отсчет нового цикла с Недели о мытаре и фарисее
-	} else {                                                    		// Если вне-Пасха
-		if ( $ec_e > 98 ) {                                        			// Если недостает более 4 седмиц, вставляем 17-ю седмицу между 31-й и 32-й
-			if ( $d < - 97 ) $d = $d + 14;             						// 17-я седмица хранится в начале базы данных с датами от -104 до -98
+	if ( $ec_e <= 70 ) {									// Если внутрь-Пасха
+		if ( $d > 210 + $ec_e ) return false;					// Отбрасываем лишние дни в конце цикла
+		if ( $d < - 70 ) return false;							// Отсчет нового цикла с Недели о мытаре и фарисее
+	} else {												// Если вне-Пасха
+		if ( $ec_e > 98 ) {										// Если недостает более 4 седмиц, вставляем 17-ю седмицу между 31-й и 32-й
+			if ( $d < - 97 ) $d = $d + 14;						// 17-я седмица хранится в начале базы данных с датами от -104 до -98
 			else if ( $d >= - 97 && $d <= - 84 ) $d = $d - 7;
 		} else 
-		if ( $d < - $ec_e ) return false;  									// Отсчет нового цикла начинаем за $ec_e дней до Пасхи
+		if ( $d < - $ec_e ) return false;						// Отсчет нового цикла начинаем за $ec_e дней до Пасхи
 	}
 
 	// Евангельское зачало Недели 28-й и апостольское зачало Недели 29-й читаются в Неделю святых праотец,
 	// поэтому они меняются местами с соответствующими рядовым чтениями той Недели,
 	// на которую придется в данном году Неделя свв. праотец.
-	$ff_e = ( date( 'U', mktime( 0, 0, 0, 12, 25, $year ) ) - $easter ) / ( 3600 * 24 ) - ( 7 + date( 'w', mktime( 0, 0, 0, 12, 25 + $dd, $year ) ) ) - ( $er_e - 168 ); // Кол-во дней до Недели Праотцов от Пасхи с учетом воздвиженской отступки
-	if ( $d == 245 ) {
+	$ff_e = (date('U', mktime(0, 0, 0, 12, 25, $year)) - $easter)/DAY_IN_SECONDS - 
+		(7 + date('w', mktime(0, 0, 0, 12, 25 + $dd, $year))) - ($er_e - 168); // Кол-во дней до Недели Праотцов от Пасхи с учетом воздвиженской отступки
+	if ( $d == 245 ) {										// Неделя 28-я
 		$d = $ff_e;
-	}                                    // Неделя 28-я
+	}                                    
 	else if ( $d == $ff_e ) {
 		$d = 245;
 	}
 
-	if ( $date <= $end * 3600 * 24 ) {        // До конца годичного цикла - отсчет от предыдущей Пасхи
-		$easter = $easter_prev;               // Пасха в указанном году
-		$er_e   = $er_e_prev;                // Кол-во дней до Недели по воздвижении от Пасхи
+	if ( $date <= $end ) {									// До конца годичного цикла - отсчет от предыдущей Пасхи
+		$easter = $easter_prev;									// Пасха в указанном году
+		$er_e   = $er_e_prev;									// Кол-во дней до Недели по воздвижении от Пасхи
 	}
 	// Воздвиженская отступка: начало Чтения Луки всегда в Пн. после Недели по Воздвижении
-	if ( $d > 168 ) {
+	if ( $d > 168 ) {										// Смещение на величину Воздвиженской отступки $er_e-168
 		$d = $d + ( $er_e - 168 );
-	}                            // Смещение на величину Воздвиженской отступки $er_e-168
-	if ( $date > $easter + 168 * ( 3600 * 24 ) && $date <= $easter + $er_e * ( 3600 * 24 ) ) {    // Если 18-я седмица случилась до Недели по Воздвижении,
-		if ( $d > 168 - ( $er_e - 168 ) && $d <= 168 ) {
+	}                            
+	if ( $date > ortcal_add_days($easter, 168) 
+		&& $date <= ortcal_add_days($easter, $er_e) ) {		// Если 18-я седмица случилась до Недели по Воздвижении,
+		if ( $d > 168 - ( $er_e - 168 ) && $d <= 168 ) {		// то дублируем чтения предыдущих(ей) седмиц(ы)
 			$d = $d + ( $er_e - 168 );
-		}                // то дублируем чтения предыдущих(ей) седмиц(ы)
+		}                
 	}
 
-	$res=$easter+$d*3600*24;
+	$res=ortcal_add_days($easter, $d);
 	return $res;
 }
 
-function ortcal_shift300 ($d, $date, $year) {				// Смещение даты для Чтений Псалтири
-	if ( $date < ortcal_easter( 'U', $year, true ) - 50 * 3600 * 24 ) {
+/*******************************************************************************
+// Смещение даты для Чтений Псалтири
+*******************************************************************************/  
+function ortcal_shift300 ($d, $date, $year) {				
+	$easter = ortcal_easter( 'U', $year, true );			// Пасха в текущем году
+	if ( $date < ortcal_add_days($easter, 50) ) {			// До субботы перед Неделей сыропустной - отсчет от предыдущей Пасхи
 		$year -= 1;
-	}    // До субботы перед Неделей сыропустной - отсчет от предыдущей Пасхи
-	$easter = ortcal_easter( 'U', $year, true );                                // Пасха в текущем году
-	$d_e    = ( $date - $easter ) / ( 3600 * 24 );                                // Дней после Пасхи
-	if ( $d_e > 12 ) {                                                // От субботы перед Антипасхой до субботы перед Неделей сыропустной
-		$dw = ( $d_e % 7 < 6 ) ? ( $d_e % 7 + 7 ) : 6;                                // По 2 кафизмы с недельным циклом
-		// От отдания Воздвижения (2.09 ст.ст.) до предпразднество Рождества Христова (20.12 ст.ст.) и от предпразнества Богоявления (15.01 ст.ст.) до субботы перед Неделей о блудном сыне
+	}    
+	$easter = ortcal_easter( 'U', $year, true );			// Пасха в текущем году
+	$d_e    = ( $date - $easter )/DAY_IN_SECONDS;			// Дней после Пасхи
+	if ( $d_e > 12 ) {										// От субботы перед Антипасхой до субботы перед Неделей сыропустной
+		$dw = ( $d_e % 7 < 6 ) ? ( $d_e % 7 + 7 ) : 6;			// По 2 кафизмы с недельным циклом
+		// От отдания Воздвижения (2.09 ст.ст.) до предпразднество Рождества Христова (20.12 ст.ст.) 
+		// и от предпразнества Богоявления (15.01 ст.ст.) до субботы перед Неделей о блудном сыне
+		$easter_next = ortcal_easter( 'U', $year+1, true );			// Пасха в следующем году
 		if ( ( $date > date( 'U', mktime( 0, 0, 0, 9, 21, $year ) ) && $date < date( 'U', mktime( 0, 0, 0, 12, 20, $year ) ) ) ||
-			 ( $date > date( 'U', mktime( 0, 0, 0, 1, 15, $year + 1 ) ) && $date < ortcal_easter( 'U', $year + 1, true ) - 64 * 3600 * 24 )
-		) {
+			 ( $date > date( 'U', mktime( 0, 0, 0, 1, 15, $year + 1 ) ) && $date < ortcal_add_days($easter_next, 64) )
+		) {													// По 3 кафизмы с недельным циклом
 			$dw += 350;
-		} // По 3 кафизмы с недельным циклом
+		} 
 
 		if ( $d == $dw ) {
 			return $date;
 		}
 	}
 
-	$res=$easter+$d*3600*24;
+	$res=ortcal_add_days($easter, $d);
 	return $res;
 }
 /*******************************************************************************
 // Функция выводит на экран информацию об указанном дне
 *******************************************************************************/  
 function bg_ortcal_showDayInfo ( 
-					$day,				// День (по умолчанию - сегодня)
+					$day,					// День (по умолчанию - сегодня)
 					$month,					// Месяц (по умолчанию - сегодня)
 					$year,					// Год (по умолчанию - сегодня)
 					$date,					// Формат даты по нов. стилю
@@ -605,7 +631,7 @@ function bg_ortcal_showDayInfo (
 		$year = date('Y', $mtime);
 		$wd = date('w', $mtime);
 
-		$qdate = "date=".$year."-".$month."-".$day;
+		$qdate = "&date=".$year."-".$month."-".$day;
 
 
 		if ($sedmica != 'on' && $sedmica != 'nedela') $sedmica = 'off';
@@ -806,7 +832,7 @@ function bg_ortcal_showDayInfo (
 				else if (function_exists ('bg_bibfers_convertTitles') && $links != 'off') { // Bg Bible References до версии 3.10 
 					$q = bg_bibfers_convertTitles($q, $links); // Преобразуем заголовки и подсвечиваем ссылки или выводим на экран текст Священного Писания
 				}
-				if ($q) $quote .= $qtitle.'<span class="bg_ortcal_readings">'.$q.'</span>';
+				if ($q) $quote .= $qtitle.'<span class="bg_ortcal_readings">'.$q.'</span><br>';
 			}
 			// Пользовательские ссылки
 			if ($custom != 'off') {
@@ -818,7 +844,7 @@ function bg_ortcal_showDayInfo (
 			}
 		}
 		$res="{$quote}";
-		wp_cache_set($key,$res,'bg-ortho-cal',3600*24);
+		wp_cache_set($key,$res,'bg-ortho-cal',DAY_IN_SECONDS);
 	}
 	return $res;
 }
