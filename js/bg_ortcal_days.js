@@ -179,12 +179,13 @@ function bg_ortcal_memory_days(year) {
 				bg_ortcal_easter(easter_day, y);
 			
 			
-				// Если не висакосный год, то праздники, приходящиеся на 29 февраля, отмечаются 28 февраля
+				// Если не високосный год, то праздники, приходящиеся на 29 февраля, отмечаются 28 февраля
 				if (!bg_ortcal_isLeap(y)) {
 					if (s_month == 2 && s_date == 29) s_date = 28;
 					if (f_month == 2 && f_date == 29) f_date = 28;
 				}	
-				if (s_month < 0) {					
+				if (s_month < 0) {
+					if (s_month == -4) f_date = f_date -3;
 					sd.setFullYear(y, f_month-1, f_date+dd);		// Сб./Вс. перед/после праздника = -1, Праздник в Сб./Вс. перед/после даты = -2 Праздник в указанный день недели = -3
 					we = sd.getDay();
 					wd = s_date-we;
@@ -334,6 +335,17 @@ function bg_ortcal_getDayInfo(d) {
 	tt = "";
 	for (k = 0; k < md.length; k++) {
 		if (md[k].name == "") continue;	
+		if (md[k].type == 16) {																		// Соборы святых. (Тип 16)
+			if (md[k].start.getDate() == curD && md[k].start.getMonth() == curM-1) {				
+				tt += md[k].name+"<br>";
+			} 	
+		}
+	}
+	if (tt !="") t += "<b>Соборы святых:</b><br>" + tt;
+		
+	tt = "";
+	for (k = 0; k < md.length; k++) {
+		if (md[k].name == "") continue;	
 		if (md[k].type == 18) {																		// Святые. (Тип 18)
 			if (md[k].start.getDate() == curD && md[k].start.getMonth() == curM-1) {				
 				tt += md[k].name+"<br>";
@@ -351,7 +363,7 @@ function bg_ortcal_getDayInfo(d) {
 			} 	
 		}
 	}
-	if (tt !="") t += "<b>День памяти исповедников и новомучеников российских:</b><br>" + tt;
+	if (tt !="") t += "<b>День памяти исповедников и новомучеников Церкви Русской:</b><br>" + tt;
 		
 	tt = "";
 	for (k = 0; k < md.length; k++) {

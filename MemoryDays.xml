@@ -161,10 +161,10 @@
 		<type>3</type>
 	</event>
 	<event>
-		<s_month>-2</s_month>
+		<s_month>-4</s_month>
 		<s_date>7</s_date>
 		<f_month>1</f_month>
-		<f_date>22</f_date>
+		<f_date>25</f_date>
 		<name>Собор новомучеников и исповедников Церкви Русской</name>
 		<type>3</type>
 	</event>
@@ -6425,10 +6425,10 @@
 		<type>9</type>
 	</event>
 	<event>
-		<s_month>-2</s_month>
+		<s_month>-4</s_month>
 		<s_date>7</s_date>
 		<f_month>1</f_month>
-		<f_date>22</f_date>
+		<f_date>25</f_date>
 		<name>Поминовение всех усопших, пострадавших в годину гонений за веру Христову</name>
 		<type>9</type>
 	</event>
@@ -6503,6 +6503,390 @@
 		<f_date>24</f_date>
 		<name>Рождественский (Филиппов) пост</name>
 		<type>10</type>
+	</event>
+	<event>
+		<s_month>0</s_month>
+		<s_date>-35</s_date>
+		<f_month>0</f_month>
+		<f_date>-35</f_date>
+		<name>Собор всех преподобных отцев Киево-Печерских</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>0</s_month>
+		<s_date>3</s_date>
+		<f_month>0</f_month>
+		<f_date>3</f_date>
+		<name>Собор преподобных отцев, на Богошественной горе Синай подвизавшихся</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>0</s_month>
+		<s_date>27</s_date>
+		<f_month>0</f_month>
+		<f_date>27</f_date>
+		<name>Собор новомучеников в Бутове пострадавших</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>0</s_month>
+		<s_date>70</s_date>
+		<f_month>0</f_month>
+		<f_date>70</f_date>
+		<name> Празднество в Вологде всем преподобным отцам Вологодским</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>0</s_month>
+		<s_date>70</s_date>
+		<f_month>0</f_month>
+		<f_date>70</f_date>
+		<name>Собор Новгородских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>0</s_month>
+		<s_date>70</s_date>
+		<f_month>0</f_month>
+		<f_date>70</f_date>
+		<name> Собор Белорусских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>0</s_month>
+		<s_date>70</s_date>
+		<f_month>0</f_month>
+		<f_date>70</f_date>
+		<name>Собор Псковских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>0</s_month>
+		<s_date>70</s_date>
+		<f_month>0</f_month>
+		<f_date>70</f_date>
+		<name>Собор Санкт-Петербургских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>1</s_month>
+		<s_date>23</s_date>
+		<f_month>1</f_month>
+		<f_date>23</f_date>
+		<name>Собор Костромских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>1</s_month>
+		<s_date>29</s_date>
+		<f_month>1</f_month>
+		<f_date>29</f_date>
+		<name>Собор Коми святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>1</s_month>
+		<s_date>29</s_date>
+		<f_month>1</f_month>
+		<f_date>29</f_date>
+		<name>Собор Екатеринбургских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>-2</s_month>
+		<s_date>7</s_date>
+		<f_month>1</f_month>
+		<f_date>29</f_date>
+		<name>Собор святых Пермской митрополии</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>2</s_month>
+		<s_date>13</s_date>
+		<f_month>2</f_month>
+		<f_date>13</f_date>
+		<name>Собор святых Омской митрополии</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>5</s_month>
+		<s_date>7</s_date>
+		<f_month>5</f_month>
+		<f_date>7</f_date>
+		<name>Собор преподобных отец Русского на Афоне Свято-Пантелеимонова монастыря</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>-2</s_month>
+		<s_date>7</s_date>
+		<f_month>5</f_month>
+		<f_date>19</f_date>
+		<name>Собор мучеников Холмских и Подляшских</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>5</s_month>
+		<s_date>21</s_date>
+		<f_month>5</f_month>
+		<f_date>21</f_date>
+		<name>Собор Карельских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>5</s_month>
+		<s_date>21</s_date>
+		<f_month>5</f_month>
+		<f_date>21</f_date>
+		<name>Собор Симбирских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>5</s_month>
+		<s_date>21</s_date>
+		<f_month>5</f_month>
+		<f_date>21</f_date>
+		<name>Собор Уфимских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>5</s_month>
+		<s_date>29</s_date>
+		<f_month>5</f_month>
+		<f_date>29</f_date>
+		<name>Собор святых Красноярской митрополии</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>6</s_month>
+		<s_date>7</s_date>
+		<f_month>6</f_month>
+		<f_date>7</f_date>
+		<name>Собор Иваново-Вознесенских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>6</s_month>
+		<s_date>14</s_date>
+		<f_month>6</f_month>
+		<f_date>14</f_date>
+		<name>Собор Дивеевских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>-2</s_month>
+		<s_date>7</s_date>
+		<f_month>6</f_month>
+		<f_date>29</f_date>
+		<name>Собор Тверских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>7</s_month>
+		<s_date>15</s_date>
+		<f_month>7</f_month>
+		<f_date>15</f_date>
+		<name>Собор Киевских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>7</s_month>
+		<s_date>19</s_date>
+		<f_month>7</f_month>
+		<f_date>19</f_date>
+		<name>Собор Курских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>-2</s_month>
+		<s_date>0</s_date>
+		<f_month>7</f_month>
+		<f_date>28</f_date>
+		<name>Собор Смоленских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>7</s_month>
+		<s_date>30</s_date>
+		<f_month>7</f_month>
+		<f_date>30</f_date>
+		<name>Собор Самарских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>-2</s_month>
+		<s_date>7</s_date>
+		<f_month>8</f_month>
+		<f_date>6</f_date>
+		<name>Собор Валаамских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>8</s_month>
+		<s_date>10</s_date>
+		<f_month>8</f_month>
+		<f_date>10</f_date>
+		<name>Собор новомучеников и исповедников Соловецких</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>-2</s_month>
+		<s_date>0</s_date>
+		<f_month>8</f_month>
+		<f_date>18</f_date>
+		<name>Собор Кемеровских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>-2</s_month>
+		<s_date>0</s_date>
+		<f_month>8</f_month>
+		<f_date>26</f_date>
+		<name>Собор Московских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>-2</s_month>
+		<s_date>7</s_date>
+		<f_month>8</f_month>
+		<f_date>26</f_date>
+		<name>Собор Нижегородских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>8</s_month>
+		<s_date>30</s_date>
+		<f_month>8</f_month>
+		<f_date>30</f_date>
+		<name>Собор святителей Сербских: Саввы I (1237), Арсения I (1266), Саввы II (1269), Евстафия I (ок. 1285), Иакова (1292), Никодима (1325), Даниила (1338) архиепископов; Иоанникия II (1354), Ефрема II (после 1395), Спиридона (1388), Макария (1574), Гавриила I (1659), патриархов, и Григория епископа (1012)</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>8</s_month>
+		<s_date>31</s_date>
+		<f_month>8</f_month>
+		<f_date>31</f_date>
+		<name>Собор новомучеников Ясеновацких (1941-1944) (Серб.)</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>-2</s_month>
+		<s_date>7</s_date>
+		<f_month>9</f_month>
+		<f_date>3</f_date>
+		<name> Собор новомучеников и исповедников Казахстанских</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>9</s_month>
+		<s_date>4</s_date>
+		<f_month>9</f_month>
+		<f_date>4</f_date>
+		<name>Собор Воронежских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>-2</s_month>
+		<s_date>7</s_date>
+		<f_month>9</f_month>
+		<f_date>7</f_date>
+		<name>Алтайских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>9</s_month>
+		<s_date>10</s_date>
+		<f_month>9</f_month>
+		<f_date>10</f_date>
+		<name>Собор Липецких святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>9</s_month>
+		<s_date>18</s_date>
+		<f_month>9</f_month>
+		<f_date>18</f_date>
+		<name>Новомучеников и исповедников земли Владимирской</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>9</s_month>
+		<s_date>20</s_date>
+		<f_month>9</f_month>
+		<f_date>20</f_date>
+		<name>Собор Брянских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>9</s_month>
+		<s_date>22</s_date>
+		<f_month>9</f_month>
+		<f_date>22</f_date>
+		<name>Собор Тульских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>9</s_month>
+		<s_date>28</s_date>
+		<f_month>9</f_month>
+		<f_date>28</f_date>
+		<name>Собор преподобных отцев Киево-Печерских, в Ближних пещерах (прп. Антония) почивающих</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>10</s_month>
+		<s_date>1</s_date>
+		<f_month>10</f_month>
+		<f_date>1</f_date>
+		<name>Собор Молдавских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>10</s_month>
+		<s_date>8</s_date>
+		<f_month>10</f_month>
+		<f_date>8</f_date>
+		<name>Собор Вятских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>10</s_month>
+		<s_date>10</s_date>
+		<f_month>10</f_month>
+		<f_date>10</f_date>
+		<name>Собор Волынских святых</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>10</s_month>
+		<s_date>11</s_date>
+		<f_month>10</f_month>
+		<f_date>11</f_date>
+		<name>Собор преподобных Оптинских старцев: Льва (1841), Макария (1860), Моисея (1862), Антония (1865), Илариона (1873), Амвросия (1891), Анатолия (1894), Исаакия (1894), Иосифа (1911), Варсонофия (1913), Анатолия (1922), Нектария (1928), Никона исповедника (1931), Исаакия священномученика (1938)</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>11</s_month>
+		<s_date>18</s_date>
+		<f_month>11</f_month>
+		<f_date>18</f_date>
+		<name>Собор святых Эстонской земли</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>11</s_month>
+		<s_date>27</s_date>
+		<f_month>11</f_month>
+		<f_date>27</f_date>
+		<name>Собор новомучеников и исповедников Радонежских</name>
+		<type>16</type>
+	</event>
+	<event>
+		<s_month>12</s_month>
+		<s_date>15</s_date>
+		<f_month>12</f_month>
+		<f_date>15</f_date>
+		<name>Собор Кольских святых</name>
+		<type>16</type>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -7594,14 +7978,6 @@
 	</event>
 	<event>
 		<s_month>0</s_month>
-		<s_date>3</s_date>
-		<f_month>0</f_month>
-		<f_date>3</f_date>
-		<name>Собор преподобных отцев, на Богошественной горе Синай подвизавшихся</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>0</s_month>
 		<s_date>39</s_date>
 		<f_month>0</f_month>
 		<f_date>39</f_date>
@@ -7618,58 +7994,10 @@
 	</event>
 	<event>
 		<s_month>0</s_month>
-		<s_date>55</s_date>
-		<f_month>0</f_month>
-		<f_date>55</f_date>
-		<name>Отдание праздника Пятидесятницы</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>0</s_month>
 		<s_date>61</s_date>
 		<f_month>0</f_month>
 		<f_date>61</f_date>
 		<name>Прп. Варлаама Хутынского (1192)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>0</s_month>
-		<s_date>70</s_date>
-		<f_month>0</f_month>
-		<f_date>70</f_date>
-		<name> Празднество в Вологде всем преподобным отцам Вологодским</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>0</s_month>
-		<s_date>70</s_date>
-		<f_month>0</f_month>
-		<f_date>70</f_date>
-		<name>Собор Новгородских святых</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>0</s_month>
-		<s_date>70</s_date>
-		<f_month>0</f_month>
-		<f_date>70</f_date>
-		<name> Собор Белорусских святых</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>0</s_month>
-		<s_date>70</s_date>
-		<f_month>0</f_month>
-		<f_date>70</f_date>
-		<name>Собор Псковских святых</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>0</s_month>
-		<s_date>70</s_date>
-		<f_month>0</f_month>
-		<f_date>70</f_date>
-		<name>Собор Санкт-Петербургских святых</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -8266,14 +8594,6 @@
 	</event>
 	<event>
 		<s_month>1</s_month>
-		<s_date>23</s_date>
-		<f_month>1</f_month>
-		<f_date>23</f_date>
-		<name>Собор Костромских святых</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>1</s_month>
 		<s_date>24</s_date>
 		<f_month>1</f_month>
 		<f_date>24</f_date>
@@ -8466,22 +8786,6 @@
 	</event>
 	<event>
 		<s_month>1</s_month>
-		<s_date>29</s_date>
-		<f_month>1</f_month>
-		<f_date>29</f_date>
-		<name>Собор Коми святых</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>1</s_month>
-		<s_date>29</s_date>
-		<f_month>1</f_month>
-		<f_date>29</f_date>
-		<name>Собор Екатеринбургских святых</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>1</s_month>
 		<s_date>30</s_date>
 		<f_month>1</f_month>
 		<f_date>30</f_date>
@@ -8518,14 +8822,6 @@
 		<f_month>1</f_month>
 		<f_date>30</f_date>
 		<name>Прп. Зинона, постника Печерского (XIV)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>1</s_month>
-		<s_date>30</s_date>
-		<f_month>1</f_month>
-		<f_date>30</f_date>
-		<name>Собор святых Пермской митрополии</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -9206,14 +9502,6 @@
 		<f_month>2</f_month>
 		<f_date>27</f_date>
 		<name>Прп. Тита Печерского, бывшего воина (XIV)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>2</s_month>
-		<s_date>27</s_date>
-		<f_month>2</f_month>
-		<f_date>27</f_date>
-		<name>Собор всех преподобных отцев Киево-Печерских</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -11173,14 +11461,6 @@
 		<s_date>7</s_date>
 		<f_month>5</f_month>
 		<f_date>7</f_date>
-		<name>Собор преподобных отец Русского на Афоне Свято-Пантелеимонова монастыря</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>5</s_month>
-		<s_date>7</s_date>
-		<f_month>5</f_month>
-		<f_date>7</f_date>
 		<name>Прпп. Иоанна Зедазнийского и учеников его: Авива, еп. Некресского, Антония Марткопского, Давида Гареджийского, Зенона Икалтского, Фаддея Степанцминдского, Исе, еп. Цилканского, Иосифа, еп. Алавердского, Исидора Самтавийского, Михаила Улумбийского, Пирра Бретского, Стефана Хирского, Шио Мгвимского (VI) (Груз.) </name>
 		<type>18</type>
 	</event>
@@ -11593,14 +11873,6 @@
 		<type>18</type>
 	</event>
 	<event>
-		<s_month>-2</s_month>
-		<s_date>7</s_date>
-		<f_month>5</f_month>
-		<f_date>19</f_date>
-		<name>Собор мучеников Холмских и Подляшских</name>
-		<type>18</type>
-	</event>
-	<event>
 		<s_month>5</s_month>
 		<s_date>20</s_date>
 		<f_month>5</f_month>
@@ -11630,30 +11902,6 @@
 		<f_month>5</f_month>
 		<f_date>21</f_date>
 		<name>Прп. Кассиана грека, Угличского чудотворца (1504)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>5</s_month>
-		<s_date>21</s_date>
-		<f_month>5</f_month>
-		<f_date>21</f_date>
-		<name>Собор Карельских святых</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>5</s_month>
-		<s_date>21</s_date>
-		<f_month>5</f_month>
-		<f_date>21</f_date>
-		<name>Собор Симбирских святых</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>5</s_month>
-		<s_date>21</s_date>
-		<f_month>5</f_month>
-		<f_date>21</f_date>
-		<name>Собор Уфимских святых</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -12106,14 +12354,6 @@
 	</event>
 	<event>
 		<s_month>6</s_month>
-		<s_date>7</s_date>
-		<f_month>6</f_month>
-		<f_date>7</f_date>
-		<name>Собор Иваново-Вознесенских святых</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>6</s_month>
 		<s_date>8</s_date>
 		<f_month>6</f_month>
 		<f_date>8</f_date>
@@ -12318,14 +12558,6 @@
 		<f_month>6</f_month>
 		<f_date>14</f_date>
 		<name>Блгв. кн. Мстислава Храброго, во св. Крещении Георгия, Новгородского (1180)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>6</s_month>
-		<s_date>14</s_date>
-		<f_month>6</f_month>
-		<f_date>14</f_date>
-		<name>Собор Дивеевских святых</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -12790,14 +13022,6 @@
 		<f_month>6</f_month>
 		<f_date>29</f_date>
 		<name>Перенесение мощей свт. Арсения, еп. Тверского (1483)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>-2</s_month>
-		<s_date>7</s_date>
-		<f_month>6</f_month>
-		<f_date>29</f_date>
-		<name>Собор Тверских святых</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -13306,14 +13530,6 @@
 	</event>
 	<event>
 		<s_month>7</s_month>
-		<s_date>15</s_date>
-		<f_month>7</f_month>
-		<f_date>15</f_date>
-		<name>Собор Киевских святых</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>7</s_month>
 		<s_date>16</s_date>
 		<f_month>7</f_month>
 		<f_date>16</f_date>
@@ -13390,14 +13606,6 @@
 		<f_month>7</f_month>
 		<f_date>18</f_date>
 		<name>Прп. Памвы, затворника Печерского (XIII)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>7</s_month>
-		<s_date>19</s_date>
-		<f_month>7</f_month>
-		<f_date>19</f_date>
-		<name>Собор Курских святых</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -13494,14 +13702,6 @@
 		<f_month>7</f_month>
 		<f_date>24</f_date>
 		<name>Обретение мощей прп. Далмата Исетского (1994)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>7</s_month>
-		<s_date>24</s_date>
-		<f_month>7</f_month>
-		<f_date>24</f_date>
-		<name>Собор Смоленских святых</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -13674,14 +13874,6 @@
 	</event>
 	<event>
 		<s_month>7</s_month>
-		<s_date>30</s_date>
-		<f_month>7</f_month>
-		<f_date>30</f_date>
-		<name>Собор Самарских святых</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>7</s_month>
 		<s_date>31</s_date>
 		<f_month>7</f_month>
 		<f_date>31</f_date>
@@ -13798,14 +13990,6 @@
 		<f_month>8</f_month>
 		<f_date>5</f_date>
 		<name>Мчч. Кантидия, Кантидиана и Сивела, в Египте (IV)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>-2</s_month>
-		<s_date>7</s_date>
-		<f_month>8</f_month>
-		<f_date>6</f_date>
-		<name>Собор Валаамских святых</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -14057,14 +14241,6 @@
 		<type>18</type>
 	</event>
 	<event>
-		<s_month>-2</s_month>
-		<s_date>0</s_date>
-		<f_month>8</f_month>
-		<f_date>18</f_date>
-		<name>Собор Кемеровских святых</name>
-		<type>18</type>
-	</event>
-	<event>
 		<s_month>8</s_month>
 		<s_date>18</s_date>
 		<f_month>8</f_month>
@@ -14273,27 +14449,11 @@
 		<type>18</type>
 	</event>
 	<event>
-		<s_month>-2</s_month>
-		<s_date>0</s_date>
-		<f_month>8</f_month>
-		<f_date>26</f_date>
-		<name>Собор Московских святых</name>
-		<type>18</type>
-	</event>
-	<event>
 		<s_month>8</s_month>
 		<s_date>26</s_date>
 		<f_month>8</f_month>
 		<f_date>26</f_date>
 		<name>Прп. Адриана Ондрусовского (1549)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>-2</s_month>
-		<s_date>7</s_date>
-		<f_month>8</f_month>
-		<f_date>26</f_date>
-		<name>Собор Нижегородских святых</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -14353,14 +14513,6 @@
 		<type>18</type>
 	</event>
 	<event>
-		<s_month>-2</s_month>
-		<s_date>7</s_date>
-		<f_month>8</f_month>
-		<f_date>28</f_date>
-		<name>Собор Саратовских святых</name>
-		<type>18</type>
-	</event>
-	<event>
 		<s_month>8</s_month>
 		<s_date>28</s_date>
 		<f_month>8</f_month>
@@ -14385,11 +14537,11 @@
 		<type>18</type>
 	</event>
 	<event>
-		<s_month>8</s_month>
-		<s_date>30</s_date>
+		<s_month>-4</s_month>
+		<s_date>7</s_date>
 		<f_month>8</f_month>
-		<f_date>30</f_date>
-		<name>Собор святителей Сербских: Саввы I (1237), Арсения I (1266), Саввы II (1269), Евстафия I (ок. 1285), Иакова (1292), Никодима (1325), Даниила (1338) архиепископов; Иоанникия II (1354), Ефрема II (после 1395), Спиридона (1388), Макария (1574), Гавриила I (1659), патриархов, и Григория епископа (1012)</name>
+		<f_date>31</f_date>
+		<name>Собор Саратовских святых</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -14406,14 +14558,6 @@
 		<f_month>8</f_month>
 		<f_date>31</f_date>
 		<name>Свт. Геннадия, Патриарха Константинопольского (471)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>8</s_month>
-		<s_date>31</s_date>
-		<f_month>8</f_month>
-		<f_date>31</f_date>
-		<name>Собор новомучеников Ясеновацких (1941-1944) (Серб.)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -14502,14 +14646,6 @@
 		<f_month>9</f_month>
 		<f_date>4</f_date>
 		<name>Прмч. Парфения, игумена Кизилташского (1867)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>9</s_month>
-		<s_date>4</s_date>
-		<f_month>9</f_month>
-		<f_date>4</f_date>
-		<name>Собор Воронежских святых</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -14790,14 +14926,6 @@
 		<f_month>9</f_month>
 		<f_date>10</f_date>
 		<name>Прп. кн. Андрея, в иночестве Иоасафа, Спасокубенского (1453)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>9</s_month>
-		<s_date>10</s_date>
-		<f_month>9</f_month>
-		<f_date>10</f_date>
-		<name>Собор Липецких святых</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -15162,14 +15290,6 @@
 	</event>
 	<event>
 		<s_month>9</s_month>
-		<s_date>20</s_date>
-		<f_month>9</f_month>
-		<f_date>20</f_date>
-		<name>Собор Брянских святых</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>9</s_month>
 		<s_date>21</s_date>
 		<f_month>9</f_month>
 		<f_date>21</f_date>
@@ -15246,14 +15366,6 @@
 		<f_month>9</f_month>
 		<f_date>22</f_date>
 		<name>Сщмч. Феодосия Бразского (1694) (Рум.)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>9</s_month>
-		<s_date>22</s_date>
-		<f_month>9</f_month>
-		<f_date>22</f_date>
-		<name>Собор Тульских святых</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -15426,14 +15538,6 @@
 	</event>
 	<event>
 		<s_month>9</s_month>
-		<s_date>28</s_date>
-		<f_month>9</f_month>
-		<f_date>28</f_date>
-		<name>Собор преподобных отцев Киево-Печерских, в Ближних пещерах (прп. Антония) почивающих</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>9</s_month>
 		<s_date>29</s_date>
 		<f_month>9</f_month>
 		<f_date>29</f_date>
@@ -15478,14 +15582,6 @@
 		<f_month>10</f_month>
 		<f_date>1</f_date>
 		<name>Празднование в честь Хитона Господня и Столпа Животворящего (330) (Груз.)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>10</s_month>
-		<s_date>1</s_date>
-		<f_month>10</f_month>
-		<f_date>1</f_date>
-		<name>Собор Молдавских святых</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -15741,14 +15837,6 @@
 		<s_date>8</s_date>
 		<f_month>10</f_month>
 		<f_date>8</f_date>
-		<name>Собор Вятских святых</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>10</s_month>
-		<s_date>8</s_date>
-		<f_month>10</f_month>
-		<f_date>8</f_date>
 		<name>Св. Пелагии девы (303)</name>
 		<type>18</type>
 	</event>
@@ -15837,14 +15925,6 @@
 		<s_date>10</s_date>
 		<f_month>10</f_month>
 		<f_date>10</f_date>
-		<name>Собор Волынских святых</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>10</s_month>
-		<s_date>10</s_date>
-		<f_month>10</f_month>
-		<f_date>10</f_date>
 		<name>Свт. Амфилохия, еп. Владимиро-Волынского (1122)</name>
 		<type>18</type>
 	</event>
@@ -15854,14 +15934,6 @@
 		<f_month>10</f_month>
 		<f_date>11</f_date>
 		<name>Прп. Льва Оптинского (1841)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>10</s_month>
-		<s_date>11</s_date>
-		<f_month>10</f_month>
-		<f_date>11</f_date>
-		<name>Собор преподобных Оптинских старцев: Льва (1841), Макария (1860), Моисея (1862), Антония (1865), Илариона (1873), Амвросия (1891), Анатолия (1894), Исаакия (1894), Иосифа (1911), Варсонофия (1913), Анатолия (1922), Нектария (1928), Никона исповедника (1931), Исаакия священномученика (1938)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -16826,14 +16898,6 @@
 	</event>
 	<event>
 		<s_month>11</s_month>
-		<s_date>18</s_date>
-		<f_month>11</f_month>
-		<f_date>18</f_date>
-		<name>Собор святых Эстонской земли</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>11</s_month>
 		<s_date>19</s_date>
 		<f_month>11</f_month>
 		<f_date>19</f_date>
@@ -17429,14 +17493,6 @@
 		<s_date>15</s_date>
 		<f_month>12</f_month>
 		<f_date>15</f_date>
-		<name>Собор Кольских святых</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>12</s_month>
-		<s_date>15</s_date>
-		<f_month>12</f_month>
-		<f_date>15</f_date>
 		<name>Мч. Марина (III)</name>
 		<type>18</type>
 	</event>
@@ -17783,14 +17839,6 @@
 		<f_date>31</f_date>
 		<name>Свт. Досифея, митр. Загребского, исп (1945)</name>
 		<type>18</type>
-	</event>
-	<event>
-		<s_month>0</s_month>
-		<s_date>27</s_date>
-		<f_month>0</f_month>
-		<f_date>27</f_date>
-		<name>Собор новомучеников в Бутове пострадавших</name>
-		<type>19</type>
 	</event>
 	<event>
 		<s_month>1</s_month>
@@ -19197,14 +19245,6 @@
 		<s_date>10</s_date>
 		<f_month>8</f_month>
 		<f_date>10</f_date>
-		<name>Собор новомучеников и исповедников Соловецких</name>
-		<type>19</type>
-	</event>
-	<event>
-		<s_month>8</s_month>
-		<s_date>10</s_date>
-		<f_month>8</f_month>
-		<f_date>10</f_date>
 		<name>Сщмч. Вячеслава Закедского пресвитера (1918); сщмч. Афанасия Кислова пресвитера (1937)</name>
 		<type>19</type>
 	</event>
@@ -19398,14 +19438,6 @@
 		<f_month>9</f_month>
 		<f_date>3</f_date>
 		<name>Сщмчч. Пимена, еп. Верненского, Сергия Феноменова, Василия Колмыкова, Филиппа Шацкого, Владимира Дмитриевского пресвитеров, прмч. Мелетия Голоколосова (1918); сщмчч. Василия Красивского, Парфения Красивского пресвитеров (1919); сщмчч. Андрея Дальникова, Феофана Соколова пресвитеров (1920); сщмчч. Владимира Садовского, Михаила Сушкова пресвитеров (1921); сщмч. Николая Сущевского пресвитера (1923); сщмч. Евфимия Круговых пресвитера и с ним 4-х мучеников (1924); сщмч. Романа Марченко пресвитера (1929); сщмчч. Алексия Зиновьева, Илии Бажанова пресвитеров (1937)</name>
-		<type>19</type>
-	</event>
-	<event>
-		<s_month>-2</s_month>
-		<s_date>7</s_date>
-		<f_month>9</f_month>
-		<f_date>3</f_date>
-		<name> Собор новомучеников и исповедников Казахстанских</name>
 		<type>19</type>
 	</event>
 	<event>
@@ -20078,14 +20110,6 @@
 		<f_month>11</f_month>
 		<f_date>26</f_date>
 		<name>Сщмчч. Николая Замараева, Иоанна Виноградова, Георгия Колоколова, Назария Грибкова, Василия Агафоникова, Василия Колосова, Илии Зачатейского, Василия Студницына, Даниила Мещанинова, Михаила Зеленцовского пресвитеров, прмч. Тихона Бузова (1937); мч. Петра Царапкина (после 1937)</name>
-		<type>19</type>
-	</event>
-	<event>
-		<s_month>11</s_month>
-		<s_date>27</s_date>
-		<f_month>11</f_month>
-		<f_date>27</f_date>
-		<name>Собор новомучеников и исповедников Радонежских</name>
 		<type>19</type>
 	</event>
 	<event>

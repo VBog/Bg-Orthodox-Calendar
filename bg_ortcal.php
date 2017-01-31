@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: VBog
-    Version: 0.11.6
+    Version: 0.11.7
     Author URI: http://bogaiskov.ru 
 	License:     GPL2
 */
@@ -36,7 +36,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.11.6');
+define('BG_ORTCAL_VERSION', '0.11.7');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -190,6 +190,7 @@ function bg_ortcal_DayInfo($atts) {
 		'honor' => 'on',					// Дни поминовения усопших
 		'holiday' => 7,						// Праздники (уровень значимости)
 		'img' => 'on',						// Значок праздника по Типикону
+		'hosts' => 'off',					// Соборы святых
 		'saints' => 'off',					// Святые
 		'martyrs' => 'off',					// Новомученники и исповедники российские
 		'icons' => 'off',					// Дни почитания икон Богоматери
@@ -206,7 +207,7 @@ function bg_ortcal_DayInfo($atts) {
 		list($year, $month, $day) = explode("-",$dd);
 	}
 // ===========================================================================
-	return bg_ortcal_showDayInfo ( $day, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom );
+	return bg_ortcal_showDayInfo ( $day, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $hosts, $saints, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom );
 }
 // Функция обработки шорт-кода next_day
 function bg_ortcal_nextday($atts) {
@@ -309,7 +310,7 @@ function ort_calendar($y=null, $m=null) {
 		if ($d < 1 OR $d > $day_count) {
 			$input .= '  <td align="center" class="bg_ortcal_day">&nbsp;';
 		} else {
-			$info = bg_ortcal_showDayInfo ( $d, $m, $y, 'l, j F Y г. ', '(j F ст.ст.)', 'on', 'on', 'on', 7, 'on', 'off', 'off', 'off', 'on', 'off', 'off', 'off', 'off' );
+			$info = bg_ortcal_showDayInfo ( $d, $m, $y, 'l, j F Y г. ', '(j F ст.ст.)', 'on', 'on', 'on', 7, 'on', 'off', 'off', 'off', 'off', 'on', 'off', 'off', 'off', 'off' );
 			$info = str_replace ( "<br>", "\n", $info );
 			$prop = bg_ortcal_dayProperties ($m, $d, $y);
 			$cur="$y-$m-".sprintf("%02d",$d);
@@ -369,6 +370,7 @@ function bg_ortcal_MonthInfo($atts) {
 		'honor' => 'on',					// Дни поминовения усопших
 		'holiday' => 7,						// Праздники (уровень значимости)
 		'img' => 'on',						// Значок праздника по Типикону
+		'hosts' => 'off',					// Соборы святых
 		'saints' => 'off',					// Святые
 		'martyrs' => 'off',					// Новомученники и исповедники российские
 		'icons' => 'off',					// Дни почитания икон Богоматери
@@ -390,7 +392,7 @@ function bg_ortcal_MonthInfo($atts) {
 	if ($month == '' || ($month < 1 || $month > 12)) $month = date('m');
 	$days = ortcal_numDays ($month, $year);
 	for ( $day = 1;  $day <= $days; $day++) {
-		$quote .= bg_ortcal_showDayInfo ( $day, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom )."<hr>";
+		$quote .= bg_ortcal_showDayInfo ( $day, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $hosts, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom )."<hr>";
 	}
 	return "{$quote}";
 }
@@ -444,7 +446,7 @@ function bg_ortcal_Readings ($atts) {
 		'links' => 't_verses',				// Ссылки и цитаты
 	), $atts ) );
 
-	return bg_ortcal_showDayInfo ( $day, $month, $year, 'off', 'off', 'off', 'off', 'off', 'off', 'off', 'off', 'off', 'off', 'off', 'off', $readings, $links, 'off' );
+	return bg_ortcal_showDayInfo ( $day, $month, $year, 'off', 'off', 'off', 'off', 'off', 'off', 'off', 'off', 'off', 'off', 'off', 'off', 'off', $readings, $links, 'off' );
 }
 // Функция обработки шорт-кода DayInfo_all
 function bg_ortcal_DayInfo_all ($atts) {
@@ -462,7 +464,7 @@ function bg_ortcal_DayInfo_all ($atts) {
 		}
 	}
 // ===========================================================================
-	return bg_ortcal_showDayInfo ( $day, $month, $year, 'l, j F Y г. ', '(j F ст.ст.)', 'on', 'on', 'on', 'on', 'on', '<b>День памяти святых:</b><br>', '<b>День памяти исповедников и новомучеников Церкви Русской:</b><br>', '<b>День почитания икон Божией Матери:</b><br>', '<hr />', 'on', '<hr /><b>Чтения дня</b><br>', 'on', '<hr />См. также:' );
+	return bg_ortcal_showDayInfo ( $day, $month, $year, 'l, j F Y г. ', '(j F ст.ст.)', 'on', 'on', 'on', 'on', 'on', '<b>Соборы святых:</b><br>', '<b>День памяти святых:</b><br>', '<b>День памяти исповедников и новомучеников Церкви Русской:</b><br>', '<b>День почитания икон Божией Матери:</b><br>', '<hr />', 'on', '<hr /><b>Чтения дня</b><br>', 'on', '<hr />См. также:' );
 }
 
 // Функция обработки шорт-кода UpcomingEvents
@@ -476,6 +478,7 @@ function bg_ortcal_UpcomingEvents($atts) {
 		'honor' => 'on',					// Дни поминовения усопших
 		'holiday' => 2,						// Праздники (уровень значимости)
 		'img' => 'on',						// Значок праздника по Типикону
+		'hosts' => 'off',					// Соборы святых
 		'saints' => 'off',					// Святые
 		'martyrs' => 'off',					// Новомученники и исповедники российские
 		'icons' => 'off',					// Дни почитания икон Богоматери
@@ -496,8 +499,8 @@ function bg_ortcal_UpcomingEvents($atts) {
 		$t = "";
 		for ($n = 0; $n < $numdays; $n++) {
 			$d = "+" . ($n + 1);
-			$tt = bg_ortcal_showDayInfo($d, $month, $year, "", "", $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom);
-			if ($tt) $t .= bg_ortcal_showDayInfo($d, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom);
+			$tt = bg_ortcal_showDayInfo($d, $month, $year, "", "", $sedmica, $memory, $honor, $holiday, $img, $hosts, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom);
+			if ($tt) $t .= bg_ortcal_showDayInfo($d, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $hosts, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom);
 		}
 		wp_cache_set($key,$t,'bg-ortho-cal',DAY_IN_SECONDS);
 	}
@@ -514,6 +517,7 @@ function bg_ortcal_schedule( $atts, $content=null ) {
 		'honor' => 'on',					// Дни поминовения усопших
 		'holiday' => 7,						// Праздники (уровень значимости)
 		'img' => 'on',						// Значок праздника по Типикону
+		'hosts' => 'off',					// Соборы святых
 		'saints' => 'off',					// Святые
 		'martyrs' => 'off',					// Новомученники и исповедники российские
 		'icons' => 'off',					// Дни почитания икон Богоматери
@@ -554,7 +558,7 @@ function bg_ortcal_schedule( $atts, $content=null ) {
 				$prev_week = $the_week;
 			}
 			if ($prev_date != $the_date) {
-				$content .= "<tr><td style='padding-left:4.5em;' colspan='2' class='bg_ortcal_day'>".bg_ortcal_showDayInfo ( $day, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom )."</td></tr>";
+				$content .= "<tr><td style='padding-left:4.5em;' colspan='2' class='bg_ortcal_day'>".bg_ortcal_showDayInfo ( $day, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $hosts, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom )."</td></tr>";
 				$prev_date = $the_date;
 			}
 			$content .= "<tr><td width='4em' class='bg_ortcal_time'>".(($the_time=='88:88')?"":date("G:i ", $time))."</td><td style='padding-left:0.5em;' class='bg_ortcal_event'>".$text."</td></tr>";

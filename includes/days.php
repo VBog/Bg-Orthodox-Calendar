@@ -275,6 +275,7 @@ function bg_ortcal_dayEvents($month, $day, $year){
 						$finish = date( 'U', mktime( 0, 0, 0, 1, 1, $os_year ) );
 						$start  = $finish;
 					} else {
+						if ($s_month == -4) $f_date = $f_date - 3;
 						$we     = date( 'w', mktime( 0, 0, 0, $f_month, $f_date+$dd, $os_year + $y ) );				// День недели
 						$finish = date( 'U', mktime( 0, 0, 0, $f_month, $f_date+($s_date-$we), $os_year + $y ) );	// Смещение относительно даты на $s_date-$we дней
 						$start  = $finish;
@@ -583,6 +584,7 @@ function bg_ortcal_showDayInfo (
 					$honor,					// Дни поминовения усопших
 					$holiday,				// Праздники (уровень значимости)
 					$img,					// Значок праздника по Типикону
+					$hosts,					// Соборы святых
 					$saints,				// Святые
 					$martyrs,				// Новомученники и исповедники российские
 					$icons,					// Дни почитания икон Богоматери
@@ -681,6 +683,14 @@ function bg_ortcal_showDayInfo (
 						else $quote .= '<span class="bg_ortcal_small">'.(($img=='off')?'':ortcal_imgTypicon($e[$i]['type'])).ortcal_eventLink ($e[$i], $qdate).'</span><br>';
 					}
 				}
+			}
+			// Соборы святых
+			if ($hosts != 'off') {
+				$q = "";
+				for ($i=0; $i < $cnt; $i++) {
+					if ($e[$i]['type'] == 16) $q .= ortcal_eventLink ($e[$i], $qdate).'. ';
+				}
+				if ($q) $quote .= (($hosts!='on')?htmlspecialchars_decode($hosts):'').'<span class="bg_ortcal_hosts">'.$q.'</span><br>';
 			}
 			// Дни почитания святых
 			if ($saints != 'off') {
