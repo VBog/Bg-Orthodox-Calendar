@@ -15,6 +15,7 @@ function bg_ortcal_loadXML(){
 			},
 			success: function (e) {
 				bg_ortcal_events = e;				// Добавляем  данные для календаря
+				bg_ortcal_show();
 			}
 		});
 	}
@@ -66,8 +67,20 @@ jQuery(window).keydown(function(e) {
 	}
 });
 
+function bg_ortcal_show() {
+	
+	jQuery(document).ready(function() {
+		var el=document.getElementById('bg_ortcal_year');
+		if (el) {
+			el.innerHTML = "";
+			bg_ortcal_bscal.show('', el);
+			ocument.getElementById('bg_ortcal_close').style.display == "none";
+		}
+	});	
+}
 
-	bg_ortcal_loadXML(); 							// Загрузка данных для календаря
-	bg_ortcal_bscal.init();							// Инициация картинки календаря
-	bg_ortcal_naming.init();						// Инициация месяцеслова
-	bg_ortcal_today.init();							// Инициация всплывающего календаря
+bg_ortcal_loadXML(); 								// Загрузка данных для календаря
+bg_ortcal_bscal.init();							// Инициация картинки календаря
+bg_ortcal_naming.init();						// Инициация месяцеслова
+bg_ortcal_today.init();							// Инициация всплывающего календаря
+

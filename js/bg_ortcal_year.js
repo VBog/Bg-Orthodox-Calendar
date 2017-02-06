@@ -349,7 +349,7 @@
 		var m=0;
 
 	    res += "<table width=100% unselectable=on>\n";
-	    res += "<tr class='bg_ortcal_top'><td class=bg_ortcal_top-left title = 'Если навести мышку на какую-нибудь дату высвечиваются: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, посты и сплошные седмицы.\nЕсли нажать на кнопку мыши на одном из дней текущего года, открывается дополнительное меню.'>Выберите дату</td><td colspan='3'> </td><td class=bg_ortcal_top-right> <span title='Закрыть' onclick='bg_ortcal_bscal.hide();' style='cursor:pointer;'>x</span> </td></tr>\n";
+	    res += "<tr class='bg_ortcal_top'><td class=bg_ortcal_top-left title = 'Если навести мышку на какую-нибудь дату высвечиваются: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, посты и сплошные седмицы.\nЕсли нажать на кнопку мыши на одном из дней текущего года, открывается дополнительное меню.'>Выберите дату</td><td colspan='3'> </td><td class=bg_ortcal_top-right> <span id='bg_ortcal_close' title='Закрыть' onclick='bg_ortcal_bscal.hide();' style='cursor:pointer;'>x</span> </td></tr>\n";
 		res += "<tr unselectable=on>"+
 	           "<td class='bg_ortcal_arrow' onClick=bg_ortcal_bscal.scroll_Y(-1);><< предыдущий год</td>"+
 				"<td unselectable=on></td>"+
@@ -445,21 +445,28 @@
 		}
 	},
 
-	show : function(year) {
+	show : function(year, inline) {
+		
     	if (bg_ortcal_bscal.div.style.display == "block"){
 			bg_ortcal_bscal.hide(); return false;
     	}
     	bg_ortcal_bscal.curD = bg_ortcal_bscal.nowD;
     	bg_ortcal_bscal.curM = bg_ortcal_bscal.nowM;
-		if (year === undefined) bg_ortcal_bscal.curY = bg_ortcal_bscal.nowY;
+		if (year === undefined || !year) bg_ortcal_bscal.curY = bg_ortcal_bscal.nowY;
 		else bg_ortcal_bscal.curY = year*1;
         bg_ortcal_bscal.scroll_Y(0);
 
 		bg_ortcal_bscal.div.style.display = "block";
 		setObj(bg_ortcal_bscal.div);
+		if (inline) {
+			inline.appendChild(bg_ortcal_bscal.div);
+			bg_ortcal_bscal.div.style.position = "static";
+		}
 	},
 	hide : function() {
-		bg_ortcal_bscal.div.style.display = "none";
+		var el=document.getElementById('bg_ortcal_year');
+		if (!el) bg_ortcal_bscal.div.style.display = "none";
+	
 		bg_ortcal_bscal.hideMenu();
 	},
     pos  : function (el) {

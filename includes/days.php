@@ -1,6 +1,4 @@
 <?php
-
-//wp_cache_add_non_persistent_groups('bg-ortho-cal');
 /*******************************************************************************
 // Функция определяет является ли указанный год високосным
 *******************************************************************************/  
@@ -106,29 +104,20 @@ function ortcal_dateRU ( $str ) {
 /*******************************************************************************
 // Функция определяет день Пасхи на заданный год
 *******************************************************************************/
-$easter=array();
+
 function ortcal_easter($format, $year, $old=false) {
-	$key='easter-'.$format.'_'.$year.'_'.$old;
-	global $easter;
-	if(isset($easter[$key])) {
-		return $easter[$key];
+	$a=((19*($year%19)+15)%30);
+	$b=((2*($year%4)+4*($year%7)+6*$a+6)%7);
+	if ($a+$b>9) {
+		$day=$a+$b-9;
+		$month=4;
+	} else {
+		$day=22+$a+$b;
+		$month=3;
 	}
-	if(false===($res=wp_cache_get($key,'bg-ortho-cal'))) {
-		$a=((19*($year%19)+15)%30);
-		$b=((2*($year%4)+4*($year%7)+6*$a+6)%7);
-		if ($a+$b>9) {
-			$day=$a+$b-9;
-			$month=4;
-		} else {
-			$day=22+$a+$b;
-			$month=3;
-		}
-		if ($old) $dd = 0;
-		else $dd = ortcal_dd($year);
-		$res=ortcal_dateRU ( date( $format, mktime ( 0, 0, 0, $month, $day+$dd, $year ) ) );
-		wp_cache_set($key,$res,'bg-ortho-cal',HOUR_IN_SECONDS);
-	}
-	$easter[$key]=$res;
+	if ($old) $dd = 0;
+	else $dd = ortcal_dd($year);
+	$res=ortcal_dateRU ( date( $format, mktime ( 0, 0, 0, $month, $day+$dd, $year ) ) );
 	return $res;
 }
 /*******************************************************************************
@@ -176,9 +165,56 @@ function ortcal_sedmica ($month, $day, $year) {
 	return "";
 }
 /*******************************************************************************
+// Функция формирует массив данных, полученных из XML файлов
+*******************************************************************************/
+function bg_ortcal_load_xml() {
+	if (false === ($events = get_transient('bg_ortcal_xml'))) {
+		$events = false;
+		$only_customXML = get_option( "bg_ortcal_only_customXML" );
+	// Загружаем в память базу данных событий из XML
+		if ($only_customXML != "on") {	
+			$plugins_dir = dirname(dirname(__FILE__)) . '/MemoryDays.xml';
+			$xml = ortcal_getXML($plugins_dir);
+			if ($xml) $events = bg_ortcal_events_array($xml["event"]);
+		}
+			
+		$customXML_val = get_option("bg_ortcal_customXML");
+		if (is_file(ABSPATH . $customXML_val)) {
+			$custom_xml = ortcal_getXML(ABSPATH . $customXML_val);
+			if ($custom_xml) {
+				if ($events) {
+					$custom_events = bg_ortcal_events_array($custom_xml["event"]);
+					if ($custom_events) $events = array_merge($custom_events, $events);
+				}
+				else $events = bg_ortcal_events_array($custom_xml["event"]);
+			}
+		}
+		set_transient( 'bg_ortcal_xml', $events, YEAR_IN_SECONDS );
+	}
+	return $events;
+}
+
+// Дополняет пропущенные элементы массива
+function bg_ortcal_events_array($event) {
+	$cnt = count ($event);
+	for ($i=0; $i < $cnt; $i++) {
+		if (!array_key_exists ( "s_month" , $event[$i] )) $event[$i]["s_month"]=0;
+		if (!array_key_exists ( "s_date" , $event[$i] )) $event[$i]["s_date"]=0;
+		if (!array_key_exists ( "f_month" , $event[$i] )) $event[$i]["f_month"]=0;
+		if (!array_key_exists ( "f_date" , $event[$i] )) $event[$i]["f_date"]=0;
+		if (!array_key_exists ( "name" , $event[$i] )) $event[$i]["name"]="";
+		if (!array_key_exists ( "type" , $event[$i] )) $event[$i]["type"]=0;
+		if (!array_key_exists ( "link" , $event[$i] )) $event[$i]["link"]="";
+		if (!array_key_exists ( "discription" , $event[$i] )) $event[$i]["discription"]="";
+	}
+	return $event;
+}
+
+/*******************************************************************************
 // Функция получает данные из XML файла	
 *******************************************************************************/
 function ortcal_getXML ($url) {
+		
 	$bg_curl_val = get_option( 'bg_ortcal_curl' );
 	$bg_fgc_val = get_option( 'bg_ortcal_fgc' );
 	$bg_fopen_val = get_option( 'bg_ortcal_fopen' );
@@ -208,8 +244,9 @@ function ortcal_getXML ($url) {
 		curl_close($ch);														// завершение сеанса и освобождение ресурсов
 	}
 	if (!$code) return false;												// Увы. Паранойя хостера достигла апогея. Файл не прочитан или ошибка
+	$result = xml_array($code);
 
-	return xml_array($code);											// Возвращаем PHP массив
+	return $result;																// Возвращаем PHP массив
 }
 /*******************************************************************************
 // Функция для преобразования XML в PHP Array
@@ -219,15 +256,16 @@ function xml_array($code){
 	$result = json_decode(json_encode($xml),true);
 	return $result;
 }
+
 /*******************************************************************************
 // Функция подготовки данных о событиях дня
 *******************************************************************************/  
 function bg_ortcal_dayEvents($month, $day, $year){
-	$key='dayEvents-'.intval($month).'-'.intval($day).'-'.intval($year);
-	if(false===($result=wp_cache_get($key,'bg-ortho-cal'))) {
-		global $events;
+//$start_time = microtime(true);
+	$key = 'bg_ortcal_dayEvents-'.intval($year).'-'.sprintf("%02d",intval($month)).'-'.sprintf("%02d",intval($day));
+	if(false === ($result = get_transient($key))) {
 
-		if (!$events) $events = bg_ortcal_load_xml();
+		$events = bg_ortcal_load_xml();
 
 		$date = ortcal_oldStyle('U', $month, $day, $year);				// Дата по старому стилю
 		$os_year = date ('Y', $date);									// Год по старому стилю
@@ -402,9 +440,10 @@ function bg_ortcal_dayEvents($month, $day, $year){
 				"discription" => "");
 		}
 
-		wp_cache_set( $key, $result, 'bg-ortho-cal', DAY_IN_SECONDS );
+		set_transient( $key, $result, YEAR_IN_SECONDS );
+//error_log(''.(microtime(true)-$start_time).' сек.(!!! '.$key.')'.PHP_EOL, 3, dirname(__FILE__)."/bg_error.log" );
 	}
-
+//error_log(''.(microtime(true)-$start_time).' сек.('.$key.')'.PHP_EOL, 3, dirname(__FILE__)."/bg_error.log" );
 	return $result;
 }
 /*******************************************************************************
@@ -594,6 +633,7 @@ function bg_ortcal_showDayInfo (
 					$links,					// Ссылки и цитаты
 					$custom)				// Пользовательские ссылки
 {
+//$start_time = microtime(true);
 	if ($day == 'post') {							// Дата создания текущего поста
 		$year = get_the_date('Y');
 		$month = get_the_date('m');
@@ -615,9 +655,9 @@ function bg_ortcal_showDayInfo (
 		$day = date('d')+((int)(substr($day,1)));
 	}
 	else {
-		if ($year == '') $year = date('Y');
-		if ($month == '' || ($month < 1 || $month > 12)) $month = date('m');
-		if ($day == '') $day = date('d');
+		if (!is_numeric ($year)) $year = date('Y');
+		if (!is_numeric ($month) || ($month < 1 || $month > 12)) $month = date('m');
+		if (!is_numeric ($day)) $day = date('d');
 		$days = ortcal_numDays ($month, $year);
 		if ($day < 1) $day = 1;			// если день задан меньше единицы то первое число 
 		if ($day > $days) $day = $days;	// а если дата больше количества дней в месяце, последний день месяца
@@ -625,237 +665,234 @@ function bg_ortcal_showDayInfo (
 	// Нормализуем дату
 	$mtime = mktime(0, 0, 0, $month, $day, $year);
 
-	$key='day-'.md5($mtime.serialize(func_get_args()));
+	$day = date('d', $mtime);
+	$month = date('m', $mtime);
+	$year = date('Y', $mtime);
+	$wd = date('w', $mtime);
 
-	if(false===($res=wp_cache_get($key,'bg-ortho-cal'))) {
-		$day = date('d', $mtime);
-		$month = date('m', $mtime);
-		$year = date('Y', $mtime);
-		$wd = date('w', $mtime);
-
-		$qdate = "&date=".$year."-".$month."-".$day;
+	$qdate = "&date=".$year."-".$month."-".$day;
 
 
-		if ($sedmica != 'on' && $sedmica != 'nedela') $sedmica = 'off';
-		if ($memory != 'off') $memory = 'on';
-		if ($honor != 'off') $honor = 'on';
+	if ($sedmica != 'on' && $sedmica != 'nedela') $sedmica = 'off';
+	if ($memory != 'off') $memory = 'on';
+	if ($honor != 'off') $honor = 'on';
 
-		if (!is_numeric ( $holiday ) && $holiday != 'off') $holiday = 7;
-		if ($holiday < 0) $holiday = 0;
-		if ($holiday > 7) $holiday = 7;
-		if ($img != 'off') $img = 'on';
+	if (!is_numeric ( $holiday ) && $holiday != 'off') $holiday = 7;
+	if ($holiday < 0) $holiday = 0;
+	if ($holiday > 7) $holiday = 7;
+	if ($img != 'off') $img = 'on';
 
-		// Тип отображения ссылок и цитат
-		if ($links == 'on') $links = '';		// on - отображать ссылки, off - ничего не отображать, verses, quotes, и т.д. - цитаты.
+	// Тип отображения ссылок и цитат
+	if ($links == 'on') $links = '';		// on - отображать ссылки, off - ничего не отображать, verses, quotes, и т.д. - цитаты.
 
-		$quote = '';
-		if ($date != 'off' && $date != '') $quote .= '<span class="bg_ortcal_date'.(($wd==0)?' bg_ortcal_sunday':'').'">'.ortcal_dateRU (date($date, mktime(0, 0, 0, $month, $day, $year))).'</span>';
-		if ($old != 'off' && $old != '') $quote .= '<span class="bg_ortcal_old'.(($wd==0)?' bg_ortcal_sunday':'').'">'.ortcal_oldStyle ($old,  $month, $day, $year).'</span><br>';
-		if ($sedmica == 'on' || ($sedmica == 'nedela' && $wd==0)) $quote .= '<span class="bg_ortcal_sedmica'.(($wd==0)?' bg_ortcal_sunday':'').'">'.ortcal_sedmica ($month, $day, $year).'</span><br>';
+	$quote = '';
+	if ($date != 'off' && $date != '') $quote .= '<span class="bg_ortcal_date'.(($wd==0)?' bg_ortcal_sunday':'').'">'.ortcal_dateRU (date($date, mktime(0, 0, 0, $month, $day, $year))).'</span>';
+	if ($old != 'off' && $old != '') $quote .= '<span class="bg_ortcal_old'.(($wd==0)?' bg_ortcal_sunday':'').'">'.ortcal_oldStyle ($old,  $month, $day, $year).'</span><br>';
+	if ($sedmica == 'on' || ($sedmica == 'nedela' && $wd==0)) $quote .= '<span class="bg_ortcal_sedmica'.(($wd==0)?' bg_ortcal_sunday':'').'">'.ortcal_sedmica ($month, $day, $year).'</span><br>';
 
-		$e = bg_ortcal_dayEvents($month, $day, $year);
-		$e1 = bg_ortcal_dayEvents($month, $day+1, $year);
-		$cnt = count($e);
-		$cnt1 = count($e1);
-		if ($cnt) {
-			// Памятные даты
-			if ($memory != 'off') {
-				$q = "";
-				for ($i=0; $i < $cnt; $i++) {
-					if ($e[$i]['type'] == 8) $q .= ortcal_eventLink ($e[$i], $qdate).'. ';
-				}
-				if ($q) $quote .= '<span class="bg_ortcal_memory">'.$q.'</span><br>';
+	$e = bg_ortcal_dayEvents($month, $day, $year);
+	$e1 = bg_ortcal_dayEvents($month, $day+1, $year);
+	$cnt = count($e);
+	$cnt1 = count($e1);
+	if ($cnt) {
+		// Памятные даты
+		if ($memory != 'off') {
+			$q = "";
+			for ($i=0; $i < $cnt; $i++) {
+				if ($e[$i]['type'] == 8) $q .= ortcal_eventLink ($e[$i], $qdate).'. ';
 			}
-			// Дни поминовения усопших
-			if ($honor != 'off') {
-				$q = "";
-				for ($i=0; $i < $cnt; $i++) {
-					if ($e[$i]['type'] == 9) $q .= ortcal_eventLink ($e[$i], $qdate).'. ';
-				}
-				if ($q) $quote .= '<span class="bg_ortcal_honor">'.$q.'</span><br>';
+			if ($q) $quote .= '<span class="bg_ortcal_memory">'.$q.'</span><br>';
+		}
+		// Дни поминовения усопших
+		if ($honor != 'off') {
+			$q = "";
+			for ($i=0; $i < $cnt; $i++) {
+				if ($e[$i]['type'] == 9) $q .= ortcal_eventLink ($e[$i], $qdate).'. ';
 			}
-			// Праздники
-			if ($holiday != 'off') {
-				for ($i=0; $i < $cnt; $i++) {
-					if ($e[$i]['type'] <= $holiday) {
-						if ($e[$i]['type'] <= 2) $quote .= '<span class="bg_ortcal_great">'.(($img=='off')?'':ortcal_imgTypicon($e[$i]['type'])).ortcal_eventLink ($e[$i], $qdate).'</span><br>';
-						else if ($e[$i]['type'] <= 4) $quote .= '<span class="bg_ortcal_middle">'.(($img=='off')?'':ortcal_imgTypicon($e[$i]['type'])).ortcal_eventLink ($e[$i], $qdate).'</span><br>';
-						else $quote .= '<span class="bg_ortcal_small">'.(($img=='off')?'':ortcal_imgTypicon($e[$i]['type'])).ortcal_eventLink ($e[$i], $qdate).'</span><br>';
-					}
+			if ($q) $quote .= '<span class="bg_ortcal_honor">'.$q.'</span><br>';
+		}
+		// Праздники
+		if ($holiday != 'off') {
+			for ($i=0; $i < $cnt; $i++) {
+				if ($e[$i]['type'] <= $holiday) {
+					if ($e[$i]['type'] <= 2) $quote .= '<span class="bg_ortcal_great">'.(($img=='off')?'':ortcal_imgTypicon($e[$i]['type'])).ortcal_eventLink ($e[$i], $qdate).'</span><br>';
+					else if ($e[$i]['type'] <= 4) $quote .= '<span class="bg_ortcal_middle">'.(($img=='off')?'':ortcal_imgTypicon($e[$i]['type'])).ortcal_eventLink ($e[$i], $qdate).'</span><br>';
+					else $quote .= '<span class="bg_ortcal_small">'.(($img=='off')?'':ortcal_imgTypicon($e[$i]['type'])).ortcal_eventLink ($e[$i], $qdate).'</span><br>';
 				}
-			}
-			// Соборы святых
-			if ($hosts != 'off') {
-				$q = "";
-				for ($i=0; $i < $cnt; $i++) {
-					if ($e[$i]['type'] == 16) $q .= ortcal_eventLink ($e[$i], $qdate).'. ';
-				}
-				if ($q) $quote .= (($hosts!='on')?htmlspecialchars_decode($hosts):'').'<span class="bg_ortcal_hosts">'.$q.'</span><br>';
-			}
-			// Дни почитания святых
-			if ($saints != 'off') {
-				$q = "";
-				for ($i=0; $i < $cnt; $i++) {
-					if ($e[$i]['type'] == 18) $q .= ortcal_eventLink ($e[$i], $qdate).'. ';
-				}
-				if ($q) $quote .= (($saints!='on')?htmlspecialchars_decode($saints):'').'<span class="bg_ortcal_saints">'.$q.'</span><br>';
-			}
-			// Дни почитания исповедников и новомучеников российских
-			if ($martyrs != 'off') {
-				$q = "";
-				for ($i=0; $i < $cnt; $i++) {
-					if ($e[$i]['type'] == 19) $q .= ortcal_eventLink ($e[$i], $qdate).'. ';
-				}
-				if ($q) $quote .= (($martyrs!='on')?htmlspecialchars_decode($martyrs):'').'<span class="bg_ortcal_martyrs">'.$q.'</span><br>';
-			}
-			// Дни почитания икон
-			if ($icons != 'off') {
-				$q = "";
-				for ($i=0; $i < $cnt; $i++) {
-					if ($e[$i]['type'] == 17) $q .= ortcal_eventLink ($e[$i], $qdate).'. ';
-				}
-				if ($q) $quote .= (($icons!='on')?htmlspecialchars_decode($icons):'').'<span class="bg_ortcal_icons">'.$q.'</span><br>';
-			}
-			// Посты и светлые седмицы
-			if ($posts != 'off') {
-				$q ="";
-				for ($i=0; $i < $cnt; $i++) {
-					if ($e[$i]['type'] == 10) $q = ortcal_eventLink ($e[$i], $qdate).'. ';
-				}
-				for ($i=0; $i < $cnt; $i++) {
-					if ($e[$i]['type'] == 100) $q = ortcal_eventLink ($e[$i], $qdate).'. ';
-				}
-				if ($q) $quote .= (($posts!='on')?htmlspecialchars_decode($posts):'').'<span class="bg_ortcal_posts">'.$q.'</span><br>';
-			}
-			// Дни, в которые браковенчание не проводится
-			if ($noglans != 'off') {
-				$q ="";
-				for ($i=0; $i < $cnt; $i++) {
-					if ($e[$i]['type'] == 20) $q = ortcal_eventLink ($e[$i], $qdate).'. ';
-				}
-				if ($q) $quote .= (($noglans!='on')?htmlspecialchars_decode($noglans):'').'<span class="bg_ortcal_noglans">'.$q.'</span><br>';
-			}
-			// Евангельские чтения
-			if ($readings != 'off') {
-				$q ="";
-				$qtitle = '';
-				$qq=array(); $qq1=array();
-					for ($id=200; $id < 310; $id++) {
-						$qq[$id] = ""; $qq1[$id] = "";
-					}
-				for ($i=0; $i < $cnt; $i++) {
-					if ($e[$i]['type'] >= 200 && $e[$i]['type'] <= 309) {
-						$id = $e[$i]['type'];
-						$qq[$id] .= (($qq[$id]!="")?('; '):('')).$e[$i]['name'];	// На сегодня
-					}
-				}
-				for ($i=0; $i < $cnt1; $i++) {
-					if ($e1[$i]['type'] >= 200 && $e1[$i]['type'] <= 309) {
-						$id = $e1[$i]['type'];
-						$qq1[$id] .= (($qq1[$id]!="")?('; '):('')).$e1[$i]['name'];	// На завтра
-					}
-				}
-
-				if ($readings == 'M') {												// Только Утрени
-					if ($qq[202] != "") $q .= $qq[202];
-				}
-				else if ($readings == 'A') {										// Только Апостол на Литургию
-					if ($qq[204] != "") $q .= $qq[204];
-				}
-				else if ($readings == 'G') {										// Только Евангелие на Литургию
-					if ($qq[207] != "") $q .= $qq[207];
-				}
-				else if ($readings == 'AG') {										// Только Апостол и Евангелие на Литургию
-					if ($qq[204] != "") $q .= $qq[204];
-					if ($qq[207] != "") $q .= (($q!="")?('; '):('')).$qq[207];
-				}
-				else if ($readings == 'MAG') {										// Только Утрени и Апостол и Евангелие на Литургию
-					if ($qq[202] != "") $q .= $qq[202];
-					if ($qq[204] != "") $q .= (($q!="")?('; '):('')).$qq[204];
-					if ($qq[207] != "") $q .= (($q!="")?('; '):('')).$qq[207];
-				}
-				else if ($readings == 'E') {										// Только Вечерни
-					if ($qq[208] != "") $q .= $qq[208];
-				}
-				else if ($readings == 'H') {										// Только Часы
-					if ($qq[201] != "") $q .= $qq[201];
-					if ($qq[203] != "") $q .= (($q!="")?('; '):('')).$qq[203];
-					if ($qq[206] != "") $q .= (($q!="")?('; '):('')).$qq[206];
-					if ($qq[209] != "") $q .= (($q!="")?('; '):('')).$qq[209];
-				}
-				else if ($readings == 'F') {										// Только Праздники
-					for ($type = 10; $type < 70; $type +=10) {
-						if ($qq[200+$type+2] != "") $q .= '<em> На утр.: - </em>'.$qq[200+$type+2]."<br>";			
-
-						if (($qq[200+$type+4] != "") || ($qq[200+$type+7] != "")) {
-							$q .= '<em> На Лит.: - </em>';
-							if ($qq[200+$type+4] != "") $q .= '<em> Ап.: </em>'.$qq[200+$type+4];			
-							if ($qq[200+$type+7] != "") $q .= '<em> Ев.: </em>'.$qq[200+$type+7];
-							$q .= "<br>";
-						}
-						if ($qq[200+$type+8] != "") $q .= '<em> На веч.: - </em>'.$qq[200+$type+8]."<br>";			
-						if ($qq[200+$type+1] != "") $q .= '<em> На 1-м часе: - </em>'.$qq[200+$type+1]."<br>";			
-						if ($qq[200+$type+3] != "") $q .= '<em> На 3-м часе.: - </em>'.$qq[200+$type+3]."<br>";			
-						if ($qq[200+$type+6] != "") $q .= '<em> На 6-м часе.: - </em>'.$qq[200+$type+6]."<br>";			
-						if ($qq[200+$type+9] != "") $q .= '<em> На 9-м часе.: - </em>'.$qq[200+$type+9]."<br>";			
-					}
-				}
-				else if ($readings == 'P') {										// Только Псалтирь
-					if ($qq[302] != "") $q .= $qq[302];
-					if ($qq[308] != "") $q .= (($q!="")?('; '):('')).$qq[308];
-					if ($qq[301] != "") $q .= (($q!="")?('; '):('')).$qq[301];
-					if ($qq[303] != "") $q .= (($q!="")?('; '):('')).$qq[303];
-					if ($qq[306] != "") $q .= (($q!="")?('; '):('')).$qq[306];
-					if ($qq[309] != "") $q .= (($q!="")?('; '):('')).$qq[309];
-				}
-				else {																// Все чтения
-					$qz = "";
-					$qw = ortcal_worshipReadins ($qq, 2);			// На Утрене
-					if ($qw) $qz .= '<em> На утр.: - </em>'.$qw;
-					
-					$qw = ortcal_liturgyReadins ($qq, $qq1, $wd);	// На литургии
-					if ($qw) $qz .= '<em> На лит.: - </em>'.$qw;
-
-					$qw = ortcal_worshipReadins ($qq, 8);			// На Вечерне
-					if ($qw) $qz .= '<em> На веч.: - </em>'.$qw;
-					$qw = ortcal_worshipReadins ($qq, 1);			// На 1-м часе
-					if ($qw) $qz .= '<em> На 1-м часе: - </em>'.$qw;
-					$qw = ortcal_worshipReadins ($qq, 3);			// На 3-м часе
-					if ($qw) $qz .= '<em> На 3-м часе: - </em>'.$qw;
-					$qw = ortcal_worshipReadins ($qq, 6);			// На 6-м часе
-					if ($qw) $qz .= '<em> На 6-м часе: - </em>'.$qw;
-					$qw = ortcal_worshipReadins ($qq, 9);			// На 9-м часе
-					if ($qw) $qz .= '<em> На 9-м часе: - </em>'.$qw;
-
-					if ($qz != "") $qz = "<em><strong>Евангелие и Апостол:</strong></em><br>".$qz;
-
-					$qw = ortcal_psalmsReadins ($qq);							// Чтения Псалтири
-					if ($readings != 'N' && $qw != "") $qz .= (($qz!="")?('<br>'):(''))."<em><strong>Псалтирь:</strong></em><br>".$qw;
-					$q .= $qz;
-					// Если не $readings специальные символы, то выводим их на экран
-					if ($readings!='on' && $readings != 'N') $qtitle = htmlspecialchars_decode($readings);
-				}
-// Если подключен плагин Bg Bible References, то допускается расширенное представление Чтений
-				if (function_exists ('bg_bibrefs_convertTitles') && $links != 'off') { // Bg Bible References версии выше 3.11 
-					$q = bg_bibrefs_convertTitles($q, $links); // Преобразуем заголовки и подсвечиваем ссылки или выводим на экран текст Священного Писания
-				}
-				else if (function_exists ('bg_bibfers_convertTitles') && $links != 'off') { // Bg Bible References до версии 3.10 
-					$q = bg_bibfers_convertTitles($q, $links); // Преобразуем заголовки и подсвечиваем ссылки или выводим на экран текст Священного Писания
-				}
-				if ($q) $quote .= $qtitle.'<span class="bg_ortcal_readings">'.$q.'</span><br>';
-			}
-			// Пользовательские ссылки
-			if ($custom != 'off') {
-				$q = "";
-				for ($i=0; $i < $cnt; $i++) {
-					if ($e[$i]['type'] == 999) $q .= ortcal_eventLink ($e[$i], $qdate).'<br>';
-				}
-				if ($q) $quote .= (($custom!='on')?'<strong>'.htmlspecialchars_decode($custom).'</strong>':'').'<br><span class="bg_ortcal_custom">'.$q.'</span>';
 			}
 		}
-		$res="{$quote}";
-		wp_cache_set($key,$res,'bg-ortho-cal',DAY_IN_SECONDS);
+		// Соборы святых
+		if ($hosts != 'off') {
+			$q = "";
+			for ($i=0; $i < $cnt; $i++) {
+				if ($e[$i]['type'] == 16) $q .= ortcal_eventLink ($e[$i], $qdate).'. ';
+			}
+			if ($q) $quote .= (($hosts!='on')?htmlspecialchars_decode($hosts):'').'<span class="bg_ortcal_hosts">'.$q.'</span><br>';
+		}
+		// Дни почитания святых
+		if ($saints != 'off') {
+			$q = "";
+			for ($i=0; $i < $cnt; $i++) {
+				if ($e[$i]['type'] == 18) $q .= ortcal_eventLink ($e[$i], $qdate).'. ';
+			}
+			if ($q) $quote .= (($saints!='on')?htmlspecialchars_decode($saints):'').'<span class="bg_ortcal_saints">'.$q.'</span><br>';
+		}
+		// Дни почитания исповедников и новомучеников российских
+		if ($martyrs != 'off') {
+			$q = "";
+			for ($i=0; $i < $cnt; $i++) {
+				if ($e[$i]['type'] == 19) $q .= ortcal_eventLink ($e[$i], $qdate).'. ';
+			}
+			if ($q) $quote .= (($martyrs!='on')?htmlspecialchars_decode($martyrs):'').'<span class="bg_ortcal_martyrs">'.$q.'</span><br>';
+		}
+		// Дни почитания икон
+		if ($icons != 'off') {
+			$q = "";
+			for ($i=0; $i < $cnt; $i++) {
+				if ($e[$i]['type'] == 17) $q .= ortcal_eventLink ($e[$i], $qdate).'. ';
+			}
+			if ($q) $quote .= (($icons!='on')?htmlspecialchars_decode($icons):'').'<span class="bg_ortcal_icons">'.$q.'</span><br>';
+		}
+		// Посты и светлые седмицы
+		if ($posts != 'off') {
+			$q ="";
+			for ($i=0; $i < $cnt; $i++) {
+				if ($e[$i]['type'] == 10) $q = ortcal_eventLink ($e[$i], $qdate).'. ';
+			}
+			for ($i=0; $i < $cnt; $i++) {
+				if ($e[$i]['type'] == 100) $q = ortcal_eventLink ($e[$i], $qdate).'. ';
+			}
+			if ($q) $quote .= (($posts!='on')?htmlspecialchars_decode($posts):'').'<span class="bg_ortcal_posts">'.$q.'</span><br>';
+		}
+		// Дни, в которые браковенчание не проводится
+		if ($noglans != 'off') {
+			$q ="";
+			for ($i=0; $i < $cnt; $i++) {
+				if ($e[$i]['type'] == 20) $q = ortcal_eventLink ($e[$i], $qdate).'. ';
+			}
+			if ($q) $quote .= (($noglans!='on')?htmlspecialchars_decode($noglans):'').'<span class="bg_ortcal_noglans">'.$q.'</span><br>';
+		}
+		// Евангельские чтения
+		if ($readings != 'off') {
+			$q ="";
+			$qtitle = '';
+			$qq=array(); $qq1=array();
+				for ($id=200; $id < 310; $id++) {
+					$qq[$id] = ""; $qq1[$id] = "";
+				}
+			for ($i=0; $i < $cnt; $i++) {
+				if ($e[$i]['type'] >= 200 && $e[$i]['type'] <= 309) {
+					$id = $e[$i]['type'];
+					$qq[$id] .= (($qq[$id]!="")?('; '):('')).$e[$i]['name'];	// На сегодня
+				}
+			}
+			for ($i=0; $i < $cnt1; $i++) {
+				if ($e1[$i]['type'] >= 200 && $e1[$i]['type'] <= 309) {
+					$id = $e1[$i]['type'];
+					$qq1[$id] .= (($qq1[$id]!="")?('; '):('')).$e1[$i]['name'];	// На завтра
+				}
+			}
+
+			if ($readings == 'M') {												// Только Утрени
+				if ($qq[202] != "") $q .= $qq[202];
+			}
+			else if ($readings == 'A') {										// Только Апостол на Литургию
+				if ($qq[204] != "") $q .= $qq[204];
+			}
+			else if ($readings == 'G') {										// Только Евангелие на Литургию
+				if ($qq[207] != "") $q .= $qq[207];
+			}
+			else if ($readings == 'AG') {										// Только Апостол и Евангелие на Литургию
+				if ($qq[204] != "") $q .= $qq[204];
+				if ($qq[207] != "") $q .= (($q!="")?('; '):('')).$qq[207];
+			}
+			else if ($readings == 'MAG') {										// Только Утрени и Апостол и Евангелие на Литургию
+				if ($qq[202] != "") $q .= $qq[202];
+				if ($qq[204] != "") $q .= (($q!="")?('; '):('')).$qq[204];
+				if ($qq[207] != "") $q .= (($q!="")?('; '):('')).$qq[207];
+			}
+			else if ($readings == 'E') {										// Только Вечерни
+				if ($qq[208] != "") $q .= $qq[208];
+			}
+			else if ($readings == 'H') {										// Только Часы
+				if ($qq[201] != "") $q .= $qq[201];
+				if ($qq[203] != "") $q .= (($q!="")?('; '):('')).$qq[203];
+				if ($qq[206] != "") $q .= (($q!="")?('; '):('')).$qq[206];
+				if ($qq[209] != "") $q .= (($q!="")?('; '):('')).$qq[209];
+			}
+			else if ($readings == 'F') {										// Только Праздники
+				for ($type = 10; $type < 70; $type +=10) {
+					if ($qq[200+$type+2] != "") $q .= '<em> На утр.: - </em>'.$qq[200+$type+2]."<br>";			
+
+					if (($qq[200+$type+4] != "") || ($qq[200+$type+7] != "")) {
+						$q .= '<em> На Лит.: - </em>';
+						if ($qq[200+$type+4] != "") $q .= '<em> Ап.: </em>'.$qq[200+$type+4];			
+						if ($qq[200+$type+7] != "") $q .= '<em> Ев.: </em>'.$qq[200+$type+7];
+						$q .= "<br>";
+					}
+					if ($qq[200+$type+8] != "") $q .= '<em> На веч.: - </em>'.$qq[200+$type+8]."<br>";			
+					if ($qq[200+$type+1] != "") $q .= '<em> На 1-м часе: - </em>'.$qq[200+$type+1]."<br>";			
+					if ($qq[200+$type+3] != "") $q .= '<em> На 3-м часе.: - </em>'.$qq[200+$type+3]."<br>";			
+					if ($qq[200+$type+6] != "") $q .= '<em> На 6-м часе.: - </em>'.$qq[200+$type+6]."<br>";			
+					if ($qq[200+$type+9] != "") $q .= '<em> На 9-м часе.: - </em>'.$qq[200+$type+9]."<br>";			
+				}
+			}
+			else if ($readings == 'P') {										// Только Псалтирь
+				if ($qq[302] != "") $q .= $qq[302];
+				if ($qq[308] != "") $q .= (($q!="")?('; '):('')).$qq[308];
+				if ($qq[301] != "") $q .= (($q!="")?('; '):('')).$qq[301];
+				if ($qq[303] != "") $q .= (($q!="")?('; '):('')).$qq[303];
+				if ($qq[306] != "") $q .= (($q!="")?('; '):('')).$qq[306];
+				if ($qq[309] != "") $q .= (($q!="")?('; '):('')).$qq[309];
+			}
+			else {																// Все чтения
+				$qz = "";
+				$qw = ortcal_worshipReadins ($qq, 2);			// На Утрене
+				if ($qw) $qz .= '<em> На утр.: - </em>'.$qw;
+				
+				$qw = ortcal_liturgyReadins ($qq, $qq1, $wd);	// На литургии
+				if ($qw) $qz .= '<em> На лит.: - </em>'.$qw;
+
+				$qw = ortcal_worshipReadins ($qq, 8);			// На Вечерне
+				if ($qw) $qz .= '<em> На веч.: - </em>'.$qw;
+				$qw = ortcal_worshipReadins ($qq, 1);			// На 1-м часе
+				if ($qw) $qz .= '<em> На 1-м часе: - </em>'.$qw;
+				$qw = ortcal_worshipReadins ($qq, 3);			// На 3-м часе
+				if ($qw) $qz .= '<em> На 3-м часе: - </em>'.$qw;
+				$qw = ortcal_worshipReadins ($qq, 6);			// На 6-м часе
+				if ($qw) $qz .= '<em> На 6-м часе: - </em>'.$qw;
+				$qw = ortcal_worshipReadins ($qq, 9);			// На 9-м часе
+				if ($qw) $qz .= '<em> На 9-м часе: - </em>'.$qw;
+
+				if ($qz != "") $qz = "<em><strong>Евангелие и Апостол:</strong></em><br>".$qz;
+
+				$qw = ortcal_psalmsReadins ($qq);							// Чтения Псалтири
+				if ($readings != 'N' && $qw != "") $qz .= (($qz!="")?('<br>'):(''))."<em><strong>Псалтирь:</strong></em><br>".$qw;
+				$q .= $qz;
+				// Если не $readings специальные символы, то выводим их на экран
+				if ($readings!='on' && $readings != 'N') $qtitle = htmlspecialchars_decode($readings);
+			}
+// Если подключен плагин Bg Bible References, то допускается расширенное представление Чтений
+			if (function_exists ('bg_bibrefs_convertTitles') && $links != 'off') { // Bg Bible References версии выше 3.11 
+				$q = bg_bibrefs_convertTitles($q, $links); // Преобразуем заголовки и подсвечиваем ссылки или выводим на экран текст Священного Писания
+			}
+			else if (function_exists ('bg_bibfers_convertTitles') && $links != 'off') { // Bg Bible References до версии 3.10 
+				$q = bg_bibfers_convertTitles($q, $links); // Преобразуем заголовки и подсвечиваем ссылки или выводим на экран текст Священного Писания
+			}
+			if ($q) $quote .= $qtitle.'<span class="bg_ortcal_readings">'.$q.'</span><br>';
+		}
+		// Пользовательские ссылки
+		if ($custom != 'off') {
+			$q = "";
+			for ($i=0; $i < $cnt; $i++) {
+				if ($e[$i]['type'] == 999) $q .= ortcal_eventLink ($e[$i], $qdate).'<br>';
+			}
+			if ($q) $quote .= (($custom!='on')?'<strong>'.htmlspecialchars_decode($custom).'</strong>':'').'<br><span class="bg_ortcal_custom">'.$q.'</span>';
+		}
 	}
+	$res="{$quote}";
+
+//error_log($qdate.' '.(microtime(true)-$start_time).' сек.(bg_ortcal_showDayInfo)'.PHP_EOL, 3, dirname(__FILE__)."/bg_error.log" );
 	return $res;
 }
 /*******************************************************************************

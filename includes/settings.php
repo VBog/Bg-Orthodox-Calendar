@@ -159,6 +159,13 @@ function bg_ortcal_options_page() {
 
         // Вывести сообщение об обновлении параметров на экран
 		echo '<div class="updated"><p><strong>Параметры сохранены.</strong></p></div>';
+
+        // Вывести сообщение об обновлении параметров на экран
+		if ( $bg_deleted_transients = bg_ortcal_delete_transients() ){
+			delete_option( "bg_ortcal_version" );
+			delete_option( "bg_ortcal_last_month" );
+			echo '<div class="updated"><p><strong>Внутренний кеш плагина сброшен. Удалено '.$bg_deleted_transients.' опций.</strong></p></div>';
+		}
     }
 ?>
 <!--  форма опций -->

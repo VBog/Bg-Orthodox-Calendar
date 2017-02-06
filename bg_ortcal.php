@@ -4,12 +4,12 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: VBog
-    Version: 0.11.7
+    Version: 0.12.0
     Author URI: http://bogaiskov.ru 
 	License:     GPL2
 */
 
-/*  Copyright 2015  Vadim Bogaiskov  (email: vadim.bogaiskov@gmail.com)
+/*  Copyright 2017  Vadim Bogaiskov  (email: vadim.bogaiskov@gmail.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -36,11 +36,49 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.11.7');
+define('BG_ORTCAL_VERSION', '0.12.0');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
 include_once('includes/days.php');
+
+// Если плагин обновился, сбросить весь внутренний кеш и создать новый
+if (BG_ORTCAL_VERSION != get_option( "bg_ortcal_version" )) {
+	bg_ortcal_delete_transients();
+	wp_schedule_single_event( time() + 60, 'bg_ortcal_create_year' );	// Запустить выполнение через 1 минуту
+	update_option( "bg_ortcal_version", BG_ORTCAL_VERSION );
+}
+// Создадим кеш календаря на ближайшие 366 дней в фоновом режиме
+function bg_ortcal_create_year_now() {
+	$m = date('n');
+	$y = date('Y');
+	for ($d=1; $d<=366; $d++) {
+		$month =  date( 'n', mktime ( 0, 0, 0, $m, $d, $y ));
+		$day =  date( 'j', mktime ( 0, 0, 0, $m, $d, $y ));
+		$year =  date( 'Y', mktime ( 0, 0, 0, $m, $d, $y ));
+		bg_ortcal_dayEvents($month, $day, $year);
+	}
+}
+add_action('bg_ortcal_create_year','bg_ortcal_create_year_now' );
+
+// Каждый месяц создаем кеш на такой же месяц следующего года
+if (intval (date('Ym')) > intval (get_option( "bg_ortcal_last_month" ))) {
+	wp_schedule_single_event( time() + 300, 'bg_ortcal_create_month' );	// Запустить выполнение через 5 минут
+	update_option( "bg_ortcal_last_month", date('Ym') );
+}
+// Создадим кеш календаря через год на 31 день в фоновом режиме
+function bg_ortcal_create_month_now() {
+	$m = date('n');
+	$y = date('Y')+1;
+	for ($d=1; $d<=31; $d++) {
+		$month =  date( 'n', mktime ( 0, 0, 0, $m, $d, $y ));
+		$day =  date( 'j', mktime ( 0, 0, 0, $m, $d, $y ));
+		$year =  date( 'Y', mktime ( 0, 0, 0, $m, $d, $y ));
+		bg_ortcal_dayEvents($month, $day, $year);
+	}
+}
+add_action('bg_ortcal_create_month','bg_ortcal_create_month_now' );
+
 
 // Динамическая Таблица стилей для плагина
 function bg_ortcal_frontend_styles () {
@@ -142,6 +180,7 @@ function bg_ortcal_callback() {
 	
 // Регистрируем шорт-код ortcal_button
 	add_shortcode( 'ortcal_button', 'bg_ortcal_button' );
+	add_shortcode( 'ortcal_year', 'bg_ortcal_year' );
 	add_shortcode( 'DayInfo', 'bg_ortcal_DayInfo' );		// Для совместимости с версией 0.4
 	add_shortcode( 'OldStyle', 'bg_ortcal_OldStyle' );		// Для совместимости с версией 0.4
 	add_shortcode( 'Sedmica', 'bg_ortcal_Sedmica' );		// Для совместимости с версией 0.4
@@ -177,6 +216,13 @@ function bg_ortcal_button($atts) {
 	$quote = "<button onClick='bg_ortcal_bscal.show();'>".$val."</button>";
 	return "{$quote}";
 }
+function bg_ortcal_year($atts) {
+	extract( shortcode_atts( array(
+		'val' => ' Календарь на год '
+	), $atts ) );
+
+	return "{$quote}";
+}
 // Функция обработки шорт-кода DayInfo
 function bg_ortcal_DayInfo($atts) {
 	extract( shortcode_atts( array(
@@ -204,6 +250,7 @@ function bg_ortcal_DayInfo($atts) {
 // Если $day задано значение "get", то получаем $day, $month и $year из ссылки	
 	if ($day == "get") {
 		if (isset($_GET['date'])) $dd = $_GET["date"];
+		else $dd = "";
 		list($year, $month, $day) = explode("-",$dd);
 	}
 // ===========================================================================
@@ -271,89 +318,94 @@ function ort_calendar($y=null, $m=null) {
 	if (!isset($y) OR !$y) $y=date("Y");
 	if (!isset($m) OR $m < 1 OR $m > 12) $m=date("m");
 	
-	$month_stamp=mktime(0,0,0,$m,1,$y);
-	$day_count=date("t",$month_stamp);
-	$weekday=date("w",$month_stamp);
-	if ($weekday==0) $weekday=7;
-	$start=-($weekday-2);
-	$end=$start+41;
-	$today=date("Y-m-d");
-	$prev_m=$m-1;
-	if ($prev_m < 1) {$prev_m = 12; $prev_y = $y-1;}
-	else $prev_y = $y;
-	$next_m=$m+1;
-	if ($next_m > 12) {$next_m = 1; $next_y = $y+1;}
-	else $next_y = $y;
-	
-	$input = '
-		<table> 
-		 <tr>
-		  <td colspan=7 align="center"> 
-		   <table width="100%" border=0 cellspacing=0 cellpadding=0> 
-			<tr> 
-			 <td align="left" class="bg_ortcal_arrow" onclick="bg_ortcal_month(this,'.$prev_y.','.$prev_m.');" title="Предыдущий месяц">&lt;&lt;</td> 
-			 <td align="center" class="bg_ortcal_month" style="font-size: 12px;"><span style="cursor: pointer;" onClick="bg_ortcal_bscal.show('. $y .');" title="Календарь на '. $y .' год">'. $month_names[$m-1] .' '. $y .'</span></td> 
-			 <td align="right" class="bg_ortcal_arrow" onclick="bg_ortcal_month(this,'.$next_y.','.$next_m.');" title="Следующий месяц">&gt;&gt;</td> 
-			</tr> 
-		   </table> 
-		  </td> 
-		 </tr> 
-		 <tr>
-	';
-	foreach ($day_name as $weekday) {
-		$input .= '<td class="bg_ortcal_week">'.$weekday.'</td>';
-	}
-	$input .= '<tr>';
-	$i=0;
-	for($d=$start;$d<=$end;$d++) { 
-		if (!($i++ % 7)) $input .= " <tr>\n";
-		if ($d < 1 OR $d > $day_count) {
-			$input .= '  <td align="center" class="bg_ortcal_day">&nbsp;';
-		} else {
-			$info = bg_ortcal_showDayInfo ( $d, $m, $y, 'l, j F Y г. ', '(j F ст.ст.)', 'on', 'on', 'on', 7, 'on', 'off', 'off', 'off', 'off', 'on', 'off', 'off', 'off', 'off' );
-			$info = str_replace ( "<br>", "\n", $info );
-			$prop = bg_ortcal_dayProperties ($m, $d, $y);
-			$cur="$y-$m-".sprintf("%02d",$d);
-			$selected=date('?\d\a\t\e=Y-m-d',mktime (0,0,0,$m,$d,$y));
-			if ($cur == $today) $input .= ' <td align="center" class="bg_ortcal_today">'; 
-			else {
-				switch ($prop) {
-				case 0:
-					$input .= '  <td align="center" class="bg_ortcal_easter">';
-					break;
-				case 1:
-				case 2:
-					$input .= '  <td align="center" class="bg_ortcal_holidays">';
-					break;
-				case 9:
-					$input .= '  <td align="center" class="bg_ortcal_memory">';
-					break;
-				case 11:
-				case 12:
-					$input .= '  <td align="center" class="bg_ortcal_post_holidays">';
-					break;
-				case 19:
-					$input .= '  <td align="center" class="bg_ortcal_post_memory">';
-					break;
-				default:
-					if ($prop > 10) {
-						if (!($i % 7)) $input .= '  <td align="center" class="bg_ortcal_post_weekend">';
-						else $input .= '  <td align="center" class="bg_ortcal_post">';
-					}
-					else {
-						if (!($i % 7)) $input .= '  <td align="center" class="bg_ortcal_weekend">';
-						else $input .= '  <td align="center" class="bg_ortcal_day">';
-					}
-					break;
-				}
-			}
-
-			$input .= '<a href="'. $bg_ortcal_page . $selected. '" title="'. htmlspecialchars ( strip_tags($info), ENT_QUOTES ). '">'.$d.'</a>'; 
+	$key='bg_ortcal_calendar-'.intval($y).'-'.sprintf("%02d",intval($m));
+	if(false === ($input = htmlspecialchars_decode(get_transient($key)))) {
+		$month_stamp=mktime(0,0,0,$m,1,$y);
+		$day_count=date("t",$month_stamp);
+		$weekday=date("w",$month_stamp);
+		if ($weekday==0) $weekday=7;
+		$start=-($weekday-2);
+		$end=$start+41;
+		$today=date("Y-m-d");
+		$prev_m=$m-1;
+		if ($prev_m < 1) {$prev_m = 12; $prev_y = $y-1;}
+		else $prev_y = $y;
+		$next_m=$m+1;
+		if ($next_m > 12) {$next_m = 1; $next_y = $y+1;}
+		else $next_y = $y;
+		
+		$input = '
+			<table> 
+			 <tr>
+			  <td colspan=7 align="center"> 
+			   <table width="100%" border=0 cellspacing=0 cellpadding=0> 
+				<tr> 
+				 <td align="left" class="bg_ortcal_arrow" onclick="bg_ortcal_month(this,'.$prev_y.','.$prev_m.');" title="Предыдущий месяц">&lt;&lt;</td> 
+				 <td align="center" class="bg_ortcal_month" style="font-size: 12px;"><span style="cursor: pointer;" onClick="bg_ortcal_bscal.show('. $y .');" title="Календарь на '. $y .' год">'. $month_names[$m-1] .' '. $y .'</span></td> 
+				 <td align="right" class="bg_ortcal_arrow" onclick="bg_ortcal_month(this,'.$next_y.','.$next_m.');" title="Следующий месяц">&gt;&gt;</td> 
+				</tr> 
+			   </table> 
+			  </td> 
+			 </tr> 
+			 <tr>
+		';
+		foreach ($day_name as $weekday) {
+			$input .= '<td class="bg_ortcal_week">'.$weekday.'</td>';
 		}
-		$input .= "</td>\n";
-		if (!($i % 7))  $input .= " </tr>\n";
-	} 
-	$input .= '</table>';
+		$input .= '<tr>';
+		$i=0;
+		for($d=$start;$d<=$end;$d++) { 
+			if (!($i++ % 7)) $input .= " <tr>\n";
+			if ($d < 1 OR $d > $day_count) {
+				$input .= '  <td align="center" class="bg_ortcal_day">&nbsp;';
+			} else {
+				$info = bg_ortcal_showDayInfo ( $d, $m, $y, 'l, j F Y г. ', '(j F ст.ст.)', 'on', 'on', 'on', 7, 'on', 'off', 'off', 'off', 'off', 'on', 'off', 'off', 'off', 'off' );
+				$info = str_replace ( "<br>", "\n", $info );
+				$prop = bg_ortcal_dayProperties ($m, $d, $y);
+				$cur="$y-$m-".sprintf("%02d",$d);
+				$selected=date('?\d\a\t\e=Y-m-d',mktime (0,0,0,$m,$d,$y));
+				if ($cur == $today) $input .= ' <td align="center" class="bg_ortcal_today">'; 
+				else {
+					switch ($prop) {
+					case 0:
+						$input .= '  <td align="center" class="bg_ortcal_easter">';
+						break;
+					case 1:
+					case 2:
+						$input .= '  <td align="center" class="bg_ortcal_holidays">';
+						break;
+					case 9:
+						$input .= '  <td align="center" class="bg_ortcal_memory">';
+						break;
+					case 11:
+					case 12:
+						$input .= '  <td align="center" class="bg_ortcal_post_holidays">';
+						break;
+					case 19:
+						$input .= '  <td align="center" class="bg_ortcal_post_memory">';
+						break;
+					default:
+						if ($prop > 10) {
+							if (!($i % 7)) $input .= '  <td align="center" class="bg_ortcal_post_weekend">';
+							else $input .= '  <td align="center" class="bg_ortcal_post">';
+						}
+						else {
+							if (!($i % 7)) $input .= '  <td align="center" class="bg_ortcal_weekend">';
+							else $input .= '  <td align="center" class="bg_ortcal_day">';
+						}
+						break;
+					}
+				}
+
+				$input .= '<a href="'. $bg_ortcal_page . $selected. '" title="'. htmlspecialchars ( strip_tags($info), ENT_QUOTES ). '">'.$d.'</a>'; 
+			}
+			$input .= "</td>\n";
+			if (!($i % 7))  $input .= " </tr>\n";
+		} 
+		$input .= '</table>';
+
+		set_transient( $key, htmlspecialchars($input, ENT_QUOTES), YEAR_IN_SECONDS );
+	}
 	return $input; 
 }
 
@@ -489,20 +541,16 @@ function bg_ortcal_UpcomingEvents($atts) {
 		'custom' => 'off',					// Пользовательские ссылки
 	), $atts ) );
 
-	$key='up_'.date("m.d.y").md5(json_encode($atts));
-	if(false===($t=wp_cache_get($key,'bg-ortho-cal'))) {
-		$day = '';                        // День (по умолчанию - сегодня)
-		$month = '';                    // Месяц (по умолчанию - сегодня)
-		$year = '';                        // Год (по умолчанию - сегодня)
+	$day = '';                        // День (по умолчанию - сегодня)
+	$month = '';                    // Месяц (по умолчанию - сегодня)
+	$year = '';                        // Год (по умолчанию - сегодня)
 
-		if ($numdays < 1) $numdays = 14;
-		$t = "";
-		for ($n = 0; $n < $numdays; $n++) {
-			$d = "+" . ($n + 1);
-			$tt = bg_ortcal_showDayInfo($d, $month, $year, "", "", $sedmica, $memory, $honor, $holiday, $img, $hosts, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom);
-			if ($tt) $t .= bg_ortcal_showDayInfo($d, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $hosts, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom);
-		}
-		wp_cache_set($key,$t,'bg-ortho-cal',DAY_IN_SECONDS);
+	if ($numdays < 1) $numdays = 14;
+	$t = "";
+	for ($n = 0; $n < $numdays; $n++) {
+		$d = "+" . ($n + 1);
+		$tt = bg_ortcal_showDayInfo($d, $month, $year, "", "", $sedmica, $memory, $honor, $holiday, $img, $hosts, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom);
+		if ($tt) $t .= bg_ortcal_showDayInfo($d, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $hosts, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom);
 	}
 	return $t;
 }
@@ -568,55 +616,12 @@ function bg_ortcal_schedule( $atts, $content=null ) {
 	return "{$content}";
 }
 
-
-
 // Определить версию плагина
 function bg_ortcal_get_plugin_version() {
 	$plugin_data = get_plugin_data( __FILE__  );
 	return $plugin_data['Version'];
 }
-function bg_ortcal_load_xml() {
-	if(false===($events=wp_cache_get('bg-orthodox-calendar-events','bg-ortho-cal'))) {
-		
-		$events = false;
-		$only_customXML = get_option( "bg_ortcal_only_customXML" );
-	// Загружаем в память базу данных событий из XML
-		if ($only_customXML != "on") {	
-			$plugins_dir = dirname(__FILE__) . '/MemoryDays.xml';
-			$xml = ortcal_getXML($plugins_dir);
-			if ($xml) $events = bg_ortcal_events_array($xml["event"]);
-		}
-			
-		$customXML_val = get_option("bg_ortcal_customXML");
-		if (is_file(ABSPATH . $customXML_val)) {
-			$custom_xml = ortcal_getXML(ABSPATH . $customXML_val);
-			if ($custom_xml) {
-				if ($events) {
-					$custom_events = bg_ortcal_events_array($custom_xml["event"]);
-					if ($custom_events) $events = array_merge($custom_events, $events);
-				}
-				else $events = bg_ortcal_events_array($custom_xml["event"]);
-			}
-		}
-		wp_cache_set('bg-orthodox-calendar-events',$events,'bg-ortho-cal',HOUR_IN_SECONDS);
-	}
-	return $events;
-}
-// Дополняет пропущенные элементы массива
-function bg_ortcal_events_array($event) {
-	$cnt = count ($event);
-	for ($i=0; $i < $cnt; $i++) {
-		if (!array_key_exists ( "s_month" , $event[$i] )) $event[$i]["s_month"]=0;
-		if (!array_key_exists ( "s_date" , $event[$i] )) $event[$i]["s_date"]=0;
-		if (!array_key_exists ( "f_month" , $event[$i] )) $event[$i]["f_month"]=0;
-		if (!array_key_exists ( "f_date" , $event[$i] )) $event[$i]["f_date"]=0;
-		if (!array_key_exists ( "name" , $event[$i] )) $event[$i]["name"]="";
-		if (!array_key_exists ( "type" , $event[$i] )) $event[$i]["type"]=0;
-		if (!array_key_exists ( "link" , $event[$i] )) $event[$i]["link"]="";
-		if (!array_key_exists ( "discription" , $event[$i] )) $event[$i]["discription"]="";
-	}
-	return $event;
-}
+
 /**
  * Returns the timezone string for a site, even if it's set to a UTC offset
  *
@@ -719,6 +724,14 @@ function bg_ortcal_deinstall() {
 	delete_option('bg_ortcal_fgc');
 	delete_option('bg_ortcal_fopen');
 	delete_option('bg_ortcal_curl');
+	delete_option("bg_ortcal_version");
+	delete_option("bg_ortcal_last_month");
+	bg_ortcal_delete_transients ();
 
 	delete_option('bg_ortcal_submit_hidden');
+}
+
+function bg_ortcal_delete_transients() {
+	global $wpdb;
+	return $wpdb->query("DELETE FROM `".$wpdb->prefix."options` WHERE  `option_name` LIKE  '_transient%bg_ortcal%'");
 }
