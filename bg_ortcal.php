@@ -216,11 +216,13 @@ function bg_ortcal_button($atts) {
 	$quote = "<button onClick='bg_ortcal_bscal.show();'>".$val."</button>";
 	return "{$quote}";
 }
+// Функция обработки шорт-кода ortcal_year
 function bg_ortcal_year($atts) {
 	extract( shortcode_atts( array(
 		'val' => ' Календарь на год '
 	), $atts ) );
 
+	$quote = "<div id='bg_ortcal_year' title='".$val."'><p id='bg_ortcal_loading'>Загрузка календаря ...</p></div>";
 	return "{$quote}";
 }
 // Функция обработки шорт-кода DayInfo
