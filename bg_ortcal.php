@@ -261,7 +261,7 @@ function bg_ortcal_DayInfo($atts) {
 // Функция обработки шорт-кода next_day
 function bg_ortcal_nextday($atts) {
 	extract( shortcode_atts( array(
-		'title' => 'Следующий день &#9205;'	// Подпись на кнопке
+		'title' => 'Следующий день'	// Подпись на кнопке
 	), $atts ) );
 	
 	if (isset($_GET['date'])) {
@@ -279,7 +279,7 @@ function bg_ortcal_nextday($atts) {
 // Функция обработки шорт-кода prev_day
 function bg_ortcal_prevday($atts) {
 	extract( shortcode_atts( array(
-		'title' => '&#9204; Предыдущий день'	// Подпись на кнопке
+		'title' => 'Предыдущий день'	// Подпись на кнопке
 	), $atts ) );
 	
 	if (isset($_GET['date'])) {
@@ -321,7 +321,7 @@ function ort_calendar($y=null, $m=null) {
 	if (!isset($m) OR $m < 1 OR $m > 12) $m=date("m");
 	
 	$key='bg_ortcal_calendar-'.intval($y).'-'.sprintf("%02d",intval($m));
-	if(false === ($input = htmlspecialchars_decode(get_transient($key)))) {
+	if(false === ($input = get_transient($key))) {
 		$month_stamp=mktime(0,0,0,$m,1,$y);
 		$day_count=date("t",$month_stamp);
 		$weekday=date("w",$month_stamp);
@@ -407,7 +407,7 @@ function ort_calendar($y=null, $m=null) {
 		$input .= '</table>';
 
 		set_transient( $key, htmlspecialchars($input, ENT_QUOTES), YEAR_IN_SECONDS );
-	}
+	} else $input = htmlspecialchars_decode ($input, ENT_QUOTES);
 	return $input; 
 }
 
