@@ -81,6 +81,14 @@
 		<type>1</type>
 	</event>
 	<event>
+		<s_month>9</s_month>
+		<s_date>14</s_date>
+		<f_month>9</f_month>
+		<f_date>14</f_date>
+		<name>Воздвижение Честного и Животворящего Креста Господня</name>
+		<type>1</type>
+	</event>
+	<event>
 		<s_month>11</s_month>
 		<s_date>21</s_date>
 		<f_month>11</f_month>
@@ -126,14 +134,6 @@
 		<f_month>8</f_month>
 		<f_date>29</f_date>
 		<name>Усекновение главы Пророка, Предтечи и Крестителя Господня Иоанна</name>
-		<type>2</type>
-	</event>
-	<event>
-		<s_month>9</s_month>
-		<s_date>14</s_date>
-		<f_month>9</f_month>
-		<f_date>14</f_date>
-		<name>Воздвижение Честного и Животворящего Креста Господня</name>
 		<type>2</type>
 	</event>
 	<event>
@@ -18037,7 +18037,7 @@
 		<s_date>30</s_date>
 		<f_month>1</f_month>
 		<f_date>30</f_date>
-		<name>щмч. Владимира Хрищеновича пресвитера (1933); мч. Стефана Наливайко (1945)</name>
+		<name>Сщмч. Владимира Хрищеновича пресвитера (1933); мч. Стефана Наливайко (1945)</name>
 		<type>19</type>
 	</event>
 	<event>
@@ -20597,7 +20597,7 @@
 		<s_date>-69</s_date>
 		<f_month>0</f_month>
 		<f_date>-64</f_date>
-		<name>Седмица о мытаре и фарисеи - сплошная</name>
+		<name>Седмица о мытаре и фарисее - сплошная</name>
 		<type>100</type>
 	</event>
 	<event>
@@ -20633,19 +20633,35 @@
 		<type>100</type>
 	</event>
 	<event>
-		<s_month>1</s_month>
-		<s_date>6</s_date>
+		<s_month>-3</s_month>
+		<s_date>3</s_date>
 		<f_month>1</f_month>
 		<f_date>6</f_date>
-		<name>на Богоявление в среду и пятницу поста нет</name>
+		<name>на Богоявление в среду поста нет</name>
 		<type>100</type>
 	</event>
 	<event>
-		<s_month>12</s_month>
-		<s_date>25</s_date>
+		<s_month>-3</s_month>
+		<s_date>3</s_date>
 		<f_month>12</f_month>
 		<f_date>25</f_date>
-		<name>на Рождество в среду и пятницу поста нет</name>
+		<name>на Рождество в среду поста нет</name>
+		<type>100</type>
+	</event>
+	<event>
+		<s_month>-3</s_month>
+		<s_date>5</s_date>
+		<f_month>1</f_month>
+		<f_date>6</f_date>
+		<name>на Богоявление в пятницу поста нет</name>
+		<type>100</type>
+	</event>
+	<event>
+		<s_month>-3</s_month>
+		<s_date>5</s_date>
+		<f_month>12</f_month>
+		<f_date>25</f_date>
+		<name>на Рождество в пятницу поста нет</name>
 		<type>100</type>
 	</event>
 	<event>

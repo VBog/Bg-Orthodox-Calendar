@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: VBog
-    Version: 0.12.0
+    Version: 0.12.1
     Author URI: http://bogaiskov.ru 
 	License:     GPL2
 */
@@ -36,7 +36,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.12.0');
+define('BG_ORTCAL_VERSION', '0.12.1');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -256,7 +256,7 @@ function bg_ortcal_DayInfo($atts) {
 		list($year, $month, $day) = explode("-",$dd);
 	}
 // ===========================================================================
-	return bg_ortcal_showDayInfo ( $day, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $hosts, $saints, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom );
+	return bg_ortcal_showDayInfo ( $day, $month, $year, $date, $old, $sedmica, $memory, $honor, $holiday, $img, $hosts, $saints, $martyrs, $icons, $posts, $noglans, $readings, $links, $custom );
 }
 // Функция обработки шорт-кода next_day
 function bg_ortcal_nextday($atts) {
@@ -320,6 +320,7 @@ function ort_calendar($y=null, $m=null) {
 	if (!isset($y) OR !$y) $y=date("Y");
 	if (!isset($m) OR $m < 1 OR $m > 12) $m=date("m");
 	
+	$today=date("Y-m-d");
 	$key='bg_ortcal_calendar-'.intval($y).'-'.sprintf("%02d",intval($m));
 	if(false === ($input = get_transient($key))) {
 		$month_stamp=mktime(0,0,0,$m,1,$y);
@@ -328,7 +329,6 @@ function ort_calendar($y=null, $m=null) {
 		if ($weekday==0) $weekday=7;
 		$start=-($weekday-2);
 		$end=$start+41;
-		$today=date("Y-m-d");
 		$prev_m=$m-1;
 		if ($prev_m < 1) {$prev_m = 12; $prev_y = $y-1;}
 		else $prev_y = $y;
