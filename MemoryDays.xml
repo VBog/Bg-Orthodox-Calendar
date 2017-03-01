@@ -4517,7 +4517,7 @@
 		<s_date>15</s_date>
 		<f_month>8</f_month>
 		<f_date>15</f_date>
-		<name>Чтимой иконы Успения Божией Матери </name>
+		<name>Чтимой иконы Успения Божией Матери</name>
 		<type>7</type>
 	</event>
 	<event>
@@ -4565,7 +4565,7 @@
 		<s_date>15</s_date>
 		<f_month>8</f_month>
 		<f_date>15</f_date>
-		<name> Иконы Божией Матери Ацкурской (I)</name>
+		<name>Иконы Божией Матери Ацкурской (I)</name>
 		<type>7</type>
 	</event>
 	<event>
@@ -4573,7 +4573,7 @@
 		<s_date>15</s_date>
 		<f_month>8</f_month>
 		<f_date>15</f_date>
-		<name> Иконы Божией Матери Цилканской (IV)</name>
+		<name>Иконы Божией Матери Цилканской (IV)</name>
 		<type>7</type>
 	</event>
 	<event>
@@ -4581,7 +4581,7 @@
 		<s_date>15</s_date>
 		<f_month>8</f_month>
 		<f_date>15</f_date>
-		<name> Иконы Божией Матери Владимирской-Ростовской (XII)</name>
+		<name>Иконы Божией Матери Владимирской-Ростовской (XII)</name>
 		<type>7</type>
 	</event>
 	<event>
@@ -4589,7 +4589,7 @@
 		<s_date>15</s_date>
 		<f_month>8</f_month>
 		<f_date>15</f_date>
-		<name> Иконы Божией Матери Моздокской (XIII)</name>
+		<name>Иконы Божией Матери Моздокской (XIII)</name>
 		<type>7</type>
 	</event>
 	<event>
@@ -4597,7 +4597,7 @@
 		<s_date>15</s_date>
 		<f_month>8</f_month>
 		<f_date>15</f_date>
-		<name> Иконы Божией Матери Гаенатской (XIII)</name>
+		<name>Иконы Божией Матери Гаенатской (XIII)</name>
 		<type>7</type>
 	</event>
 	<event>
@@ -4605,7 +4605,7 @@
 		<s_date>15</s_date>
 		<f_month>8</f_month>
 		<f_date>15</f_date>
-		<name> Иконы Божией Матери Чухломской (XIV)</name>
+		<name>Иконы Божией Матери Чухломской (XIV)</name>
 		<type>7</type>
 	</event>
 	<event>
@@ -4613,7 +4613,7 @@
 		<s_date>15</s_date>
 		<f_month>8</f_month>
 		<f_date>15</f_date>
-		<name> Иконы Божией Матери Сурдегской (1530)</name>
+		<name>Иконы Божией Матери Сурдегской (1530)</name>
 		<type>7</type>
 	</event>
 	<event>
@@ -4621,7 +4621,7 @@
 		<s_date>15</s_date>
 		<f_month>8</f_month>
 		<f_date>15</f_date>
-		<name> Иконы Божией Матери Тупичевской (XVII)</name>
+		<name>Иконы Божией Матери Тупичевской (XVII)</name>
 		<type>7</type>
 	</event>
 	<event>
@@ -4629,7 +4629,7 @@
 		<s_date>15</s_date>
 		<f_month>8</f_month>
 		<f_date>15</f_date>
-		<name> Иконы Божией Матери Влахернской</name>
+		<name>Иконы Божией Матери Влахернской</name>
 		<type>7</type>
 	</event>
 	<event>
@@ -4637,7 +4637,7 @@
 		<s_date>15</s_date>
 		<f_month>8</f_month>
 		<f_date>15</f_date>
-		<name> Иконы Божией Матери Бахчисарайской</name>
+		<name>Иконы Божией Матери Бахчисарайской</name>
 		<type>7</type>
 	</event>
 	<event>
@@ -6533,7 +6533,7 @@
 		<s_date>70</s_date>
 		<f_month>0</f_month>
 		<f_date>70</f_date>
-		<name> Празднество в Вологде всем преподобным отцам Вологодским</name>
+		<name>Празднество в Вологде всем преподобным отцам Вологодским</name>
 		<type>16</type>
 	</event>
 	<event>
@@ -6549,7 +6549,7 @@
 		<s_date>70</s_date>
 		<f_month>0</f_month>
 		<f_date>70</f_date>
-		<name> Собор Белорусских святых</name>
+		<name>Собор Белорусских святых</name>
 		<type>16</type>
 	</event>
 	<event>
@@ -6577,6 +6577,14 @@
 		<type>16</type>
 	</event>
 	<event>
+		<s_month>-2</s_month>
+		<s_date>7</s_date>
+		<f_month>1</f_month>
+		<f_date>29</f_date>
+		<name>Собор святых Пермской митрополии</name>
+		<type>16</type>
+	</event>
+	<event>
 		<s_month>1</s_month>
 		<s_date>29</s_date>
 		<f_month>1</f_month>
@@ -6590,14 +6598,6 @@
 		<f_month>1</f_month>
 		<f_date>29</f_date>
 		<name>Собор Екатеринбургских святых</name>
-		<type>16</type>
-	</event>
-	<event>
-		<s_month>-2</s_month>
-		<s_date>7</s_date>
-		<f_month>1</f_month>
-		<f_date>29</f_date>
-		<name>Собор святых Пермской митрополии</name>
 		<type>16</type>
 	</event>
 	<event>
@@ -6773,7 +6773,7 @@
 		<s_date>7</s_date>
 		<f_month>9</f_month>
 		<f_date>3</f_date>
-		<name> Собор новомучеников и исповедников Казахстанских</name>
+		<name>Собор новомучеников и исповедников Казахстанских</name>
 		<type>16</type>
 	</event>
 	<event>
@@ -6957,7 +6957,7 @@
 		<s_date>61</s_date>
 		<f_month>0</f_month>
 		<f_date>61</f_date>
-		<name> Табынской и "Знамение" Курской-Коренной икон Божией Матери</name>
+		<name>Табынской и "Знамение" Курской-Коренной икон Божией Матери</name>
 		<type>17</type>
 	</event>
 	<event>
@@ -7345,6 +7345,14 @@
 		<type>17</type>
 	</event>
 	<event>
+		<s_month>-2</s_month>
+		<s_date>7</s_date>
+		<f_month>6</f_month>
+		<f_date>18</f_date>
+		<name>Коробейниковской-Казанской иконы Божией Матери</name>
+		<type>17</type>
+	</event>
+	<event>
 		<s_month>6</s_month>
 		<s_date>18</s_date>
 		<f_month>6</f_month>
@@ -7366,14 +7374,6 @@
 		<f_month>6</f_month>
 		<f_date>18</f_date>
 		<name>Сретение Пюхтицкой иконы Божией Матери, именуемой «У источника» (1946)</name>
-		<type>17</type>
-	</event>
-	<event>
-		<s_month>-2</s_month>
-		<s_date>7</s_date>
-		<f_month>6</f_month>
-		<f_date>18</f_date>
-		<name>Коробейниковской-Казанской иконы Божией Матери</name>
 		<type>17</type>
 	</event>
 	<event>
@@ -8085,7 +8085,7 @@
 		<s_date>5</s_date>
 		<f_month>1</f_month>
 		<f_date>5</f_date>
-		<name> Прп. Фостирия (VI)</name>
+		<name>Прп. Фостирия (VI)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -8109,7 +8109,7 @@
 		<s_date>5</s_date>
 		<f_month>1</f_month>
 		<f_date>5</f_date>
-		<name> Прп. Григория Акритского (ок. 820)</name>
+		<name>Прп. Григория Акритского (ок. 820)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -8429,7 +8429,7 @@
 		<s_date>19</s_date>
 		<f_month>1</f_month>
 		<f_date>19</f_date>
-		<name> Прп. Макария, диакона Печерского (XIII-XIV)</name>
+		<name>Прп. Макария, диакона Печерского (XIII-XIV)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -8661,7 +8661,7 @@
 		<s_date>25</s_date>
 		<f_month>1</f_month>
 		<f_date>25</f_date>
-		<name> Прп. Мара певца (ок. 430)</name>
+		<name>Прп. Мара певца (ок. 430)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -8693,7 +8693,7 @@
 		<s_date>26</s_date>
 		<f_month>1</f_month>
 		<f_date>26</f_date>
-		<name> Свт. Иосифа Студита, архиеп. Солунского (830)</name>
+		<name>Свт. Иосифа Студита, архиеп. Солунского (830)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -9509,7 +9509,7 @@
 		<s_date>28</s_date>
 		<f_month>2</f_month>
 		<f_date>28</f_date>
-		<name> Сщмч. Арсения, митр. Ростовского (1772)</name>
+		<name>Сщмч. Арсения, митр. Ростовского (1772)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -11461,7 +11461,7 @@
 		<s_date>7</s_date>
 		<f_month>5</f_month>
 		<f_date>7</f_date>
-		<name>Прпп. Иоанна Зедазнийского и учеников его: Авива, еп. Некресского, Антония Марткопского, Давида Гареджийского, Зенона Икалтского, Фаддея Степанцминдского, Исе, еп. Цилканского, Иосифа, еп. Алавердского, Исидора Самтавийского, Михаила Улумбийского, Пирра Бретского, Стефана Хирского, Шио Мгвимского (VI) (Груз.) </name>
+		<name>Прпп. Иоанна Зедазнийского и учеников его: Авива, еп. Некресского, Антония Марткопского, Давида Гареджийского, Зенона Икалтского, Фаддея Степанцминдского, Исе, еп. Цилканского, Иосифа, еп. Алавердского, Исидора Самтавийского, Михаила Улумбийского, Пирра Бретского, Стефана Хирского, Шио Мгвимского (VI) (Груз.)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -11493,7 +11493,7 @@
 		<s_date>9</s_date>
 		<f_month>5</f_month>
 		<f_date>9</f_date>
-		<name> Прп. Иосифа Оптинского (1911)</name>
+		<name>Прп. Иосифа Оптинского (1911)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -12045,7 +12045,7 @@
 		<s_date>27</s_date>
 		<f_month>5</f_month>
 		<f_date>27</f_date>
-		<name> Прп. Ферапонта Монзенского (1597)</name>
+		<name>Прп. Ферапонта Монзенского (1597)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -12165,7 +12165,7 @@
 		<s_date>3</s_date>
 		<f_month>6</f_month>
 		<f_date>3</f_date>
-		<name> Павлы девы (ок. 270-275)</name>
+		<name>Павлы девы (ок. 270-275)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -12549,7 +12549,7 @@
 		<s_date>13</s_date>
 		<f_month>6</f_month>
 		<f_date>13</f_date>
-		<name> Прп. Александры Дивеевской (1789)</name>
+		<name>Прп. Александры Дивеевской (1789)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -12993,22 +12993,6 @@
 		<type>18</type>
 	</event>
 	<event>
-		<s_month>6</s_month>
-		<s_date>29</s_date>
-		<f_month>6</f_month>
-		<f_date>29</f_date>
-		<name>Свт. Григория, митр. Ираклийского (1925) (Конст.)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>6</s_month>
-		<s_date>29</s_date>
-		<f_month>6</f_month>
-		<f_date>29</f_date>
-		<name>Прп. Паисия Святогорца (1994)</name>
-		<type>18</type>
-	</event>
-	<event>
 		<s_month>-2</s_month>
 		<s_date>7</s_date>
 		<f_month>6</f_month>
@@ -13022,6 +13006,22 @@
 		<f_month>6</f_month>
 		<f_date>29</f_date>
 		<name>Перенесение мощей свт. Арсения, еп. Тверского (1483)</name>
+		<type>18</type>
+	</event>
+	<event>
+		<s_month>6</s_month>
+		<s_date>29</s_date>
+		<f_month>6</f_month>
+		<f_date>29</f_date>
+		<name>Свт. Григория, митр. Ираклийского (1925) (Конст.)</name>
+		<type>18</type>
+	</event>
+	<event>
+		<s_month>6</s_month>
+		<s_date>29</s_date>
+		<f_month>6</f_month>
+		<f_date>29</f_date>
+		<name>Прп. Паисия Святогорца (1994)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -13933,7 +13933,7 @@
 		<s_date>4</s_date>
 		<f_month>8</f_month>
 		<f_date>4</f_date>
-		<name> Обретение мощей прав. Алексия Бортсурманского (2000)</name>
+		<name>Обретение мощей прав. Алексия Бортсурманского (2000)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -14737,6 +14737,14 @@
 		<type>18</type>
 	</event>
 	<event>
+		<s_month>-2</s_month>
+		<s_date>0</s_date>
+		<f_month>9</f_month>
+		<f_date>6</f_date>
+		<name>Перенесение мощей блгвв. кн. Петра, в иночестве Давида, и кн. Февронии, в иночестве Евфросинии, Муромских чудотворцев (1992)</name>
+		<type>18</type>
+	</event>
+	<event>
 		<s_month>9</s_month>
 		<s_date>6</s_date>
 		<f_month>9</f_month>
@@ -14757,7 +14765,7 @@
 		<s_date>6</s_date>
 		<f_month>9</f_month>
 		<f_date>6</f_date>
-		<name>Мчч. Кириака, Фавста пресвитера, Авива диакона и с ним 11-ти мучеников (ок. 250) </name>
+		<name>Мчч. Кириака, Фавста пресвитера, Авива диакона и с ним 11-ти мучеников (ок. 250)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -14774,14 +14782,6 @@
 		<f_month>9</f_month>
 		<f_date>6</f_date>
 		<name>Прп. Давида (VI)</name>
-		<type>18</type>
-	</event>
-	<event>
-		<s_month>-2</s_month>
-		<s_date>0</s_date>
-		<f_month>9</f_month>
-		<f_date>6</f_date>
-		<name>Перенесение мощей блгвв. кн. Петра, в иночестве Давида, и кн. Февронии, в иночестве Евфросинии, Муромских чудотворцев (1992) </name>
 		<type>18</type>
 	</event>
 	<event>
@@ -14973,7 +14973,7 @@
 		<s_date>12</s_date>
 		<f_month>9</f_month>
 		<f_date>12</f_date>
-		<name>Сщмч. Корнута, еп. Никомидийского (Иконийского) (ок. 249-259) </name>
+		<name>Сщмч. Корнута, еп. Никомидийского (Иконийского) (ок. 249-259)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -20378,10 +20378,26 @@
 	</event>
 	<event>
 		<s_month>0</s_month>
+		<s_date>-56</s_date>
+		<f_month>0</f_month>
+		<f_date>-56</f_date>
+		<name>Браковенчание не совершается в Неделю мясопустную</name>
+		<type>20</type>
+	</event>
+	<event>
+		<s_month>0</s_month>
 		<s_date>-55</s_date>
 		<f_month>0</f_month>
-		<f_date>-49</f_date>
+		<f_date>-50</f_date>
 		<name>Браковенчание не совершается в течение Сырной седмицы (масленицы)</name>
+		<type>20</type>
+	</event>
+	<event>
+		<s_month>0</s_month>
+		<s_date>-49</s_date>
+		<f_month>0</f_month>
+		<f_date>-49</f_date>
+		<name>Браковенчание не совершается в Неделю сыропустную</name>
 		<type>20</type>
 	</event>
 	<event>
@@ -20444,7 +20460,7 @@
 		<s_month>12</s_month>
 		<s_date>25</s_date>
 		<f_month>1</f_month>
-		<f_date>6</f_date>
+		<f_date>4</f_date>
 		<name>Браковенчание не совершается в продолжение Святок</name>
 		<type>20</type>
 	</event>
@@ -20604,7 +20620,7 @@
 		<s_month>0</s_month>
 		<s_date>-55</s_date>
 		<f_month>0</f_month>
-		<f_date>-49</f_date>
+		<f_date>-50</f_date>
 		<name>Сырная седмица (масленица) - сплошная</name>
 		<type>100</type>
 	</event>
@@ -20620,7 +20636,7 @@
 		<s_month>0</s_month>
 		<s_date>50</s_date>
 		<f_month>0</f_month>
-		<f_date>56</f_date>
+		<f_date>55</f_date>
 		<name>Троицкая седмица - сплошная</name>
 		<type>100</type>
 	</event>
@@ -20628,7 +20644,7 @@
 		<s_month>12</s_month>
 		<s_date>25</s_date>
 		<f_month>1</f_month>
-		<f_date>5</f_date>
+		<f_date>4</f_date>
 		<name>Святки</name>
 		<type>100</type>
 	</event>
@@ -20642,18 +20658,18 @@
 	</event>
 	<event>
 		<s_month>-3</s_month>
-		<s_date>3</s_date>
-		<f_month>12</f_month>
-		<f_date>25</f_date>
-		<name>на Рождество в среду поста нет</name>
-		<type>100</type>
-	</event>
-	<event>
-		<s_month>-3</s_month>
 		<s_date>5</s_date>
 		<f_month>1</f_month>
 		<f_date>6</f_date>
 		<name>на Богоявление в пятницу поста нет</name>
+		<type>100</type>
+	</event>
+	<event>
+		<s_month>-3</s_month>
+		<s_date>3</s_date>
+		<f_month>12</f_month>
+		<f_date>25</f_date>
+		<name>на Рождество в среду поста нет</name>
 		<type>100</type>
 	</event>
 	<event>
@@ -20671,7 +20687,6 @@
 		<f_date>-2</f_date>
 		<name>Гал.6:14-18; Мф.27:1-56</name>
 		<type>201</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20680,7 +20695,6 @@
 		<f_date>-7</f_date>
 		<name>Мф.21:1-11,15-17</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20689,7 +20703,6 @@
 		<f_date>-6</f_date>
 		<name>Мф.21:18-43</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20698,7 +20711,6 @@
 		<f_date>-5</f_date>
 		<name>Мф.22:15 –23,39</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20707,7 +20719,6 @@
 		<f_date>-4</f_date>
 		<name>Ин.12:17-50</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20716,7 +20727,6 @@
 		<f_date>-3</f_date>
 		<name>Лк.22:1-39</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20725,7 +20735,6 @@
 		<f_date>-3</f_date>
 		<name>Двенадцать Евангелий святых страстей Иисуса Христа: Ин.13:31-18:1; Ин.18:1-28; Мф.26:57-75; Ин.18:28-19:16; Мф.27:3-32; Мк.15:16-32; Мф.27:33-54; Лк.23:32-49; Ин.19:25-37; Мк.15:43-47; Ин.19:38-42; Мф.27:62-66</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20734,7 +20743,6 @@
 		<f_date>-1</f_date>
 		<name>1 Кор.5:6-8; Гал.3:13-14; Мф.27:62-66</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20743,7 +20751,6 @@
 		<f_date>7</f_date>
 		<name>Мф.28:16-20</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20752,7 +20759,6 @@
 		<f_date>14</f_date>
 		<name>Мк.16:9-20</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20761,7 +20767,6 @@
 		<f_date>21</f_date>
 		<name>Лк.24:1-12</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20770,7 +20775,6 @@
 		<f_date>28</f_date>
 		<name>Ин.20:1-10</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20779,7 +20783,6 @@
 		<f_date>35</f_date>
 		<name>Ин.20:11-18</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20788,7 +20791,6 @@
 		<f_date>39</f_date>
 		<name>Мк.16:9-20</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20797,7 +20799,6 @@
 		<f_date>42</f_date>
 		<name>Ин.21:1-14</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20806,7 +20807,6 @@
 		<f_date>49</f_date>
 		<name>Ин.20:19-31</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20815,7 +20815,6 @@
 		<f_date>56</f_date>
 		<name>Мф.28:16-20</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20824,7 +20823,6 @@
 		<f_date>63</f_date>
 		<name>Мк.16:1-8</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20833,7 +20831,6 @@
 		<f_date>70</f_date>
 		<name>Мк.16:9-20</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20842,7 +20839,6 @@
 		<f_date>77</f_date>
 		<name>Лк.24:1-12</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20851,7 +20847,6 @@
 		<f_date>84</f_date>
 		<name>Лк.24:12-35</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20860,7 +20855,6 @@
 		<f_date>91</f_date>
 		<name>Лк.24:36-53</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20869,7 +20863,6 @@
 		<f_date>98</f_date>
 		<name>Ин.20:1-10</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20878,7 +20871,6 @@
 		<f_date>105</f_date>
 		<name>Ин.20:11-18</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20887,7 +20879,6 @@
 		<f_date>112</f_date>
 		<name>Ин.20:19-31</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20896,7 +20887,6 @@
 		<f_date>119</f_date>
 		<name>Ин.21:1-14</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20905,7 +20895,6 @@
 		<f_date>126</f_date>
 		<name>Ин.21:15-25</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20914,7 +20903,6 @@
 		<f_date>133</f_date>
 		<name>Мф.28:16-20</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20923,7 +20911,6 @@
 		<f_date>140</f_date>
 		<name>Мк.16:1-8</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20932,7 +20919,6 @@
 		<f_date>147</f_date>
 		<name>Мк.16:9-20</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20941,7 +20927,6 @@
 		<f_date>154</f_date>
 		<name>Лк.24:1-12</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20950,7 +20935,6 @@
 		<f_date>161</f_date>
 		<name>Лк.24:12-35</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20959,7 +20943,6 @@
 		<f_date>168</f_date>
 		<name>Лк.24:36-53</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20968,7 +20951,6 @@
 		<f_date>175</f_date>
 		<name>Ин.20:1-10</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20977,7 +20959,6 @@
 		<f_date>182</f_date>
 		<name>Ин.20:11-18</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20986,7 +20967,6 @@
 		<f_date>189</f_date>
 		<name>Ин.20:19-31</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -20995,7 +20975,6 @@
 		<f_date>196</f_date>
 		<name>Ин.21:1-14</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21004,7 +20983,6 @@
 		<f_date>203</f_date>
 		<name>Ин.21:15-25</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21013,7 +20991,6 @@
 		<f_date>210</f_date>
 		<name>Мф.28:16-20</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21022,7 +20999,6 @@
 		<f_date>217</f_date>
 		<name>Мк.16:1-8</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21031,7 +21007,6 @@
 		<f_date>224</f_date>
 		<name>Мк.16:9-20</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21040,7 +21015,6 @@
 		<f_date>231</f_date>
 		<name>Лк.24:1-12</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21049,7 +21023,6 @@
 		<f_date>238</f_date>
 		<name>Лк.24:12-35</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21058,7 +21031,6 @@
 		<f_date>245</f_date>
 		<name>Лк.24:36-53</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21067,7 +21039,6 @@
 		<f_date>252</f_date>
 		<name>Ин.20:1-10</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21076,7 +21047,6 @@
 		<f_date>259</f_date>
 		<name>Ин.20:11-18</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21085,7 +21055,6 @@
 		<f_date>266</f_date>
 		<name>Ин.20:19-31</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21094,7 +21063,6 @@
 		<f_date>273</f_date>
 		<name>Ин.21:1-14</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21103,7 +21071,6 @@
 		<f_date>280</f_date>
 		<name>Ин.21:15-25</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21112,7 +21079,6 @@
 		<f_date>287</f_date>
 		<name>Мф.28:16-20</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21121,7 +21087,6 @@
 		<f_date>294</f_date>
 		<name>Мк.16:1-8</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21130,7 +21095,6 @@
 		<f_date>301</f_date>
 		<name>Мк.16:9-20</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21139,7 +21103,6 @@
 		<f_date>308</f_date>
 		<name>Лк.24:1-12</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21148,7 +21111,6 @@
 		<f_date>315</f_date>
 		<name>Лк.24:12-35</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21157,7 +21119,6 @@
 		<f_date>322</f_date>
 		<name>Лк.24:36-53</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21166,7 +21127,6 @@
 		<f_date>329</f_date>
 		<name>Ин.20:1-10</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21175,7 +21135,6 @@
 		<f_date>336</f_date>
 		<name>Ин.20:11-18</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21184,7 +21143,6 @@
 		<f_date>343</f_date>
 		<name>Ин.20:19-31</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21193,7 +21151,6 @@
 		<f_date>350</f_date>
 		<name>Ин.21:1-14</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21202,7 +21159,6 @@
 		<f_date>357</f_date>
 		<name>Ин.21:15-25</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21211,7 +21167,6 @@
 		<f_date>364</f_date>
 		<name>Мф.28:16-20</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21220,7 +21175,6 @@
 		<f_date>371</f_date>
 		<name>Мк.16:1-8</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21229,7 +21183,6 @@
 		<f_date>378</f_date>
 		<name>Мк.16:9-20</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21238,7 +21191,6 @@
 		<f_date>385</f_date>
 		<name>Лк.24:1-12</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21247,7 +21199,6 @@
 		<f_date>392</f_date>
 		<name>Лк.24:12-35</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21256,7 +21207,6 @@
 		<f_date>399</f_date>
 		<name>Лк.24:36-53</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21265,7 +21215,6 @@
 		<f_date>406</f_date>
 		<name>Ин.20:1-10</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21274,7 +21223,6 @@
 		<f_date>413</f_date>
 		<name>Ин.20:11-18</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21283,7 +21231,6 @@
 		<f_date>420</f_date>
 		<name>Ин.20:19-31</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21292,7 +21239,6 @@
 		<f_date>427</f_date>
 		<name>Ин.21:1-14</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21301,7 +21247,6 @@
 		<f_date>434</f_date>
 		<name>Ин.21:15-25</name>
 		<type>202</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21310,7 +21255,6 @@
 		<f_date>-2</f_date>
 		<name>Рим.5:6-11; Мк.15:16-41</name>
 		<type>203</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21319,7 +21263,6 @@
 		<f_date>-104</f_date>
 		<name>Еф.1:22-2:3</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21328,7 +21271,6 @@
 		<f_date>-103</f_date>
 		<name>Еф.2:19-3:7</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21337,7 +21279,6 @@
 		<f_date>-102</f_date>
 		<name>Еф.3:8-21</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21346,7 +21287,6 @@
 		<f_date>-101</f_date>
 		<name>Еф.4:14-19</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21355,7 +21295,6 @@
 		<f_date>-100</f_date>
 		<name>Еф.4:17-25</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21364,7 +21303,6 @@
 		<f_date>-99</f_date>
 		<name>1 Кор.14:20-25</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21373,7 +21311,6 @@
 		<f_date>-98</f_date>
 		<name>2 Кор.6:16-7:1</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21382,7 +21319,6 @@
 		<f_date>-97</f_date>
 		<name>Евр.8:7-13</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21391,7 +21327,6 @@
 		<f_date>-96</f_date>
 		<name>Евр.9:8-10,15-23</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21400,7 +21335,6 @@
 		<f_date>-95</f_date>
 		<name>Евр.10:1-18</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21409,7 +21343,6 @@
 		<f_date>-94</f_date>
 		<name>Евр.10:35-11:7 </name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21418,7 +21351,6 @@
 		<f_date>-93</f_date>
 		<name>Евр.11:8,11-16</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21427,7 +21359,6 @@
 		<f_date>-92</f_date>
 		<name>Еф.5:1-8</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21436,7 +21367,6 @@
 		<f_date>-91</f_date>
 		<name>Кол.3:12-16</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21445,7 +21375,6 @@
 		<f_date>-90</f_date>
 		<name>Евр.11:17-23,27-31</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21454,7 +21383,6 @@
 		<f_date>-89</f_date>
 		<name>Евр.12:25-26,13:22-25</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21463,7 +21391,6 @@
 		<f_date>-88</f_date>
 		<name>Иак.1:1-18</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21472,7 +21399,6 @@
 		<f_date>-87</f_date>
 		<name>Иак.1:19-27</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21481,7 +21407,6 @@
 		<f_date>-86</f_date>
 		<name>Иак.2:1-13</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21490,7 +21415,6 @@
 		<f_date>-85</f_date>
 		<name>Кол.1:3-6</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21499,7 +21423,6 @@
 		<f_date>-84</f_date>
 		<name>1 Тим.1:15-17</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21508,7 +21431,6 @@
 		<f_date>-83</f_date>
 		<name>Иак.2:14-26</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21517,7 +21439,6 @@
 		<f_date>-82</f_date>
 		<name>Иак.3:1-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21526,7 +21447,6 @@
 		<f_date>-81</f_date>
 		<name>Иак.3:11-4:6</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21535,7 +21455,6 @@
 		<f_date>-80</f_date>
 		<name>Иак.4:7-5:9</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21544,7 +21463,6 @@
 		<f_date>-79</f_date>
 		<name>1 Пет.1:1-2,10-12,2:6-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21553,7 +21471,6 @@
 		<f_date>-78</f_date>
 		<name>1 Сол.5:14-23</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21562,7 +21479,6 @@
 		<f_date>-77</f_date>
 		<name>1 Тим.4:9-15</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21571,7 +21487,6 @@
 		<f_date>-76</f_date>
 		<name>1 Пет.2:21-3:9</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21580,7 +21495,6 @@
 		<f_date>-75</f_date>
 		<name>1 Пет.3:10-22</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21589,7 +21503,6 @@
 		<f_date>-74</f_date>
 		<name>1 Пет.4:1-11</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21598,7 +21511,6 @@
 		<f_date>-73</f_date>
 		<name>1 Пет.4:12-5:5</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21607,7 +21519,6 @@
 		<f_date>-72</f_date>
 		<name>2 Пет.1:1-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21616,7 +21527,6 @@
 		<f_date>-71</f_date>
 		<name>2 Тим.2:11-19</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21625,7 +21535,6 @@
 		<f_date>-70</f_date>
 		<name>2 Тим.3:10-15</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21634,7 +21543,6 @@
 		<f_date>-69</f_date>
 		<name>2 Пет.1:20-2:9</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21643,7 +21551,6 @@
 		<f_date>-68</f_date>
 		<name>2 Пет.2:9-22</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21652,7 +21559,6 @@
 		<f_date>-67</f_date>
 		<name>2 Пет.3:1-18</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21661,7 +21567,6 @@
 		<f_date>-66</f_date>
 		<name>1 Ин.1:8-2:6</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21670,7 +21575,6 @@
 		<f_date>-65</f_date>
 		<name>1 Ин.2:7-17</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21679,7 +21583,6 @@
 		<f_date>-64</f_date>
 		<name>2 Тим.3:1-9</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21688,7 +21591,6 @@
 		<f_date>-63</f_date>
 		<name>1 Кор.6:12-20</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21697,7 +21599,6 @@
 		<f_date>-62</f_date>
 		<name>1 Ин.2:18-3:10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21706,7 +21607,6 @@
 		<f_date>-61</f_date>
 		<name>1 Ин.3:11-20</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21715,7 +21615,6 @@
 		<f_date>-60</f_date>
 		<name>1 Ин.3:21-4:6</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21724,7 +21623,6 @@
 		<f_date>-59</f_date>
 		<name>1 Ин.4:20-5:21</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21733,7 +21631,6 @@
 		<f_date>-58</f_date>
 		<name>2 Ин.1:1-13</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21742,7 +21639,6 @@
 		<f_date>-57</f_date>
 		<name>1 Кор.10:23-28</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21751,7 +21647,6 @@
 		<f_date>-56</f_date>
 		<name>1 Кор.8:8-9:2 </name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21760,7 +21655,6 @@
 		<f_date>-55</f_date>
 		<name>3 Ин.1:1-15</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21769,7 +21663,6 @@
 		<f_date>-54</f_date>
 		<name>Иуд.1:1-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21778,7 +21671,6 @@
 		<f_date>-52</f_date>
 		<name>Иуд.1:11-25</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21787,7 +21679,6 @@
 		<f_date>-50</f_date>
 		<name>Рим.14:19-26</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21796,7 +21687,6 @@
 		<f_date>-49</f_date>
 		<name>Рим.13:11-14:4</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21805,7 +21695,6 @@
 		<f_date>-43</f_date>
 		<name>Евр.1:1-12</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21814,7 +21703,6 @@
 		<f_date>-42</f_date>
 		<name>Евр.11:24-26,32-12:2</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21823,7 +21711,6 @@
 		<f_date>-36</f_date>
 		<name>Евр.3:12-16</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21832,7 +21719,6 @@
 		<f_date>-35</f_date>
 		<name>Евр.1:10-2:3</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21841,7 +21727,6 @@
 		<f_date>-29</f_date>
 		<name>Евр.10:32-38</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21850,7 +21735,6 @@
 		<f_date>-28</f_date>
 		<name>Евр.4:14-5:6</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21859,7 +21743,6 @@
 		<f_date>-22</f_date>
 		<name>Евр.6:9-12</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21868,7 +21751,6 @@
 		<f_date>-21</f_date>
 		<name>Евр.6:13-20</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21877,7 +21759,6 @@
 		<f_date>-15</f_date>
 		<name>Евр.9:24-28</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21886,7 +21767,6 @@
 		<f_date>-14</f_date>
 		<name>Евр.9:11-14</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21895,7 +21775,6 @@
 		<f_date>-8</f_date>
 		<name>Евр.12:28-13:8</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21904,7 +21783,6 @@
 		<f_date>-7</f_date>
 		<name>Флп.4:4-9</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21913,7 +21791,6 @@
 		<f_date>-3</f_date>
 		<name>1 Кор.11:23-32</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21922,7 +21799,6 @@
 		<f_date>-1</f_date>
 		<name>Рим.6:3-11</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21931,7 +21807,6 @@
 		<f_date>0</f_date>
 		<name>Деян.1:1-8</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21940,7 +21815,6 @@
 		<f_date>1</f_date>
 		<name>Деян.1:12-17,21-26</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21949,7 +21823,6 @@
 		<f_date>2</f_date>
 		<name>Деян.2:14-21</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21958,7 +21831,6 @@
 		<f_date>3</f_date>
 		<name>Деян.2:22-36</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21967,7 +21839,6 @@
 		<f_date>4</f_date>
 		<name>Деян.2:38-43</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21976,7 +21847,6 @@
 		<f_date>5</f_date>
 		<name>Деян.3:1-8</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21985,7 +21855,6 @@
 		<f_date>6</f_date>
 		<name>Деян.3:11-16</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -21994,7 +21863,6 @@
 		<f_date>7</f_date>
 		<name>Деян.5:12-20</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22003,7 +21871,6 @@
 		<f_date>8</f_date>
 		<name>Деян.3:19-26</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22012,7 +21879,6 @@
 		<f_date>9</f_date>
 		<name>Деян.4:1-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22021,7 +21887,6 @@
 		<f_date>10</f_date>
 		<name>Деян.4:13-22</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22030,7 +21895,6 @@
 		<f_date>11</f_date>
 		<name>Деян.4:23-31</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22039,7 +21903,6 @@
 		<f_date>12</f_date>
 		<name>Деян.5:1-11</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22048,7 +21911,6 @@
 		<f_date>13</f_date>
 		<name>Деян.5:21-33</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22057,7 +21919,6 @@
 		<f_date>14</f_date>
 		<name>Деян.6:1-7</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22066,7 +21927,6 @@
 		<f_date>15</f_date>
 		<name>Деян.6:8-7:5,47-60</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22075,7 +21935,6 @@
 		<f_date>16</f_date>
 		<name>Деян.8:5-17</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22084,7 +21943,6 @@
 		<f_date>17</f_date>
 		<name>Деян.8:18-25</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22093,7 +21951,6 @@
 		<f_date>18</f_date>
 		<name>Деян.8:26-39</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22102,7 +21959,6 @@
 		<f_date>19</f_date>
 		<name>Деян.8:40-9:19</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22111,7 +21967,6 @@
 		<f_date>20</f_date>
 		<name>Деян.9:20-31</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22120,7 +21975,6 @@
 		<f_date>21</f_date>
 		<name>Деян.9:32-42</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22129,7 +21983,6 @@
 		<f_date>22</f_date>
 		<name>Деян.10:1-16</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22138,7 +21991,6 @@
 		<f_date>23</f_date>
 		<name>Деян.10:21-33</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22147,7 +21999,6 @@
 		<f_date>24</f_date>
 		<name>Деян.14:6-18</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22156,7 +22007,6 @@
 		<f_date>25</f_date>
 		<name>Деян.10:34-43</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22165,7 +22015,6 @@
 		<f_date>26</f_date>
 		<name>Деян.10:44-11:10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22174,7 +22023,6 @@
 		<f_date>27</f_date>
 		<name>Деян.12:1-11</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22183,7 +22031,6 @@
 		<f_date>28</f_date>
 		<name>Деян.11:19-26,29-30</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22192,7 +22039,6 @@
 		<f_date>29</f_date>
 		<name>Деян.12:12-17</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22201,7 +22047,6 @@
 		<f_date>30</f_date>
 		<name>Деян.12:25-13:12</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22210,7 +22055,6 @@
 		<f_date>31</f_date>
 		<name>Деян.13:13-24</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22219,7 +22063,6 @@
 		<f_date>32</f_date>
 		<name>Деян.14:20-27</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22228,7 +22071,6 @@
 		<f_date>33</f_date>
 		<name>Деян.15:5-34</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22237,7 +22079,6 @@
 		<f_date>34</f_date>
 		<name>Деян.15:35-41</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22246,7 +22087,6 @@
 		<f_date>35</f_date>
 		<name>Деян.16:16-34</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22255,7 +22095,6 @@
 		<f_date>36</f_date>
 		<name>Деян.17:1-15</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22264,7 +22103,6 @@
 		<f_date>37</f_date>
 		<name>Деян.17:19-28</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22273,7 +22111,6 @@
 		<f_date>38</f_date>
 		<name>Деян.18:22-28</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22282,7 +22119,6 @@
 		<f_date>39</f_date>
 		<name>Деян.1:1-12</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22291,7 +22127,6 @@
 		<f_date>40</f_date>
 		<name>Деян.19:1-8</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22300,7 +22135,6 @@
 		<f_date>41</f_date>
 		<name>Деян.20:7-12</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22309,7 +22143,6 @@
 		<f_date>42</f_date>
 		<name>Деян.20:16-18,28-36</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22318,7 +22151,6 @@
 		<f_date>43</f_date>
 		<name>Деян.21:8-14</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22327,7 +22159,6 @@
 		<f_date>44</f_date>
 		<name>Деян.21:26-32</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22336,7 +22167,6 @@
 		<f_date>45</f_date>
 		<name>Деян.23:1-11</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22345,7 +22175,6 @@
 		<f_date>46</f_date>
 		<name>Деян.25:13-19</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22354,7 +22183,6 @@
 		<f_date>47</f_date>
 		<name>Деян.27:1-44</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22363,7 +22191,6 @@
 		<f_date>48</f_date>
 		<name>Деян.28:1-31</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22372,7 +22199,6 @@
 		<f_date>49</f_date>
 		<name>Деян.2:1-11</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22381,7 +22207,6 @@
 		<f_date>50</f_date>
 		<name>Еф.5:9-19</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22390,7 +22215,6 @@
 		<f_date>51</f_date>
 		<name>Рим.1:1-7,13-17</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22399,7 +22223,6 @@
 		<f_date>52</f_date>
 		<name>Рим.1:18-27</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22408,7 +22231,6 @@
 		<f_date>53</f_date>
 		<name>Рим.1:28-2:9</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22417,7 +22239,6 @@
 		<f_date>54</f_date>
 		<name>Рим.2:14-29</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22426,7 +22247,6 @@
 		<f_date>55</f_date>
 		<name>Рим.1:7-12</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22435,7 +22255,6 @@
 		<f_date>56</f_date>
 		<name>Евр.11:33-12:2</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22444,7 +22263,6 @@
 		<f_date>57</f_date>
 		<name>Рим.2:28-3,18</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22453,7 +22271,6 @@
 		<f_date>58</f_date>
 		<name>Рим.4:4-12</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22462,7 +22279,6 @@
 		<f_date>59</f_date>
 		<name>Рим.4:13-25</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22471,7 +22287,6 @@
 		<f_date>60</f_date>
 		<name>Рим.5:10-16</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22480,7 +22295,6 @@
 		<f_date>61</f_date>
 		<name>Рим.5:17-6:2</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22489,7 +22303,6 @@
 		<f_date>62</f_date>
 		<name>Рим.3:19-26</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22498,7 +22311,6 @@
 		<f_date>63</f_date>
 		<name>Рим.2:10-16</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22507,7 +22319,6 @@
 		<f_date>64</f_date>
 		<name>Рим.7:1-13</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22516,7 +22327,6 @@
 		<f_date>65</f_date>
 		<name>Рим.7:14-8:2</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22525,7 +22335,6 @@
 		<f_date>66</f_date>
 		<name>Рим.8:2-13</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22534,7 +22343,6 @@
 		<f_date>67</f_date>
 		<name>Рим.8:22-27</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22543,7 +22351,6 @@
 		<f_date>68</f_date>
 		<name>Рим.9:6-19</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22552,7 +22359,6 @@
 		<f_date>69</f_date>
 		<name>Рим.3:28-4:3</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22561,7 +22367,6 @@
 		<f_date>70</f_date>
 		<name>Рим.5:1-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22570,7 +22375,6 @@
 		<f_date>71</f_date>
 		<name>Рим.9:18-33</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22579,7 +22383,6 @@
 		<f_date>72</f_date>
 		<name>Рим.10:11-11:2</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22588,7 +22391,6 @@
 		<f_date>73</f_date>
 		<name>Рим.11:2-12</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22597,7 +22399,6 @@
 		<f_date>74</f_date>
 		<name>Рим.11:13-24</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22606,7 +22407,6 @@
 		<f_date>75</f_date>
 		<name>Рим.11:25-36</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22615,7 +22415,6 @@
 		<f_date>76</f_date>
 		<name>Рим.6:11-17</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22624,7 +22423,6 @@
 		<f_date>77</f_date>
 		<name>Рим.6:18-23</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22633,7 +22431,6 @@
 		<f_date>78</f_date>
 		<name>Рим.12:4-5:15-21</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22642,7 +22439,6 @@
 		<f_date>79</f_date>
 		<name>Рим.14:9-18</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22651,7 +22447,6 @@
 		<f_date>80</f_date>
 		<name>Рим.15:7-16</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22660,7 +22455,6 @@
 		<f_date>81</f_date>
 		<name>Рим.15:17-29</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22669,7 +22463,6 @@
 		<f_date>82</f_date>
 		<name>Рим.16:1-16</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22678,7 +22471,6 @@
 		<f_date>83</f_date>
 		<name>Рим.8:14-21</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22687,7 +22479,6 @@
 		<f_date>84</f_date>
 		<name>Рим.10:1-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22696,7 +22487,6 @@
 		<f_date>85</f_date>
 		<name>Рим.16:17-24</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22705,7 +22495,6 @@
 		<f_date>86</f_date>
 		<name>1 Кор.1:1-9</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22714,7 +22503,6 @@
 		<f_date>87</f_date>
 		<name>1 Кор.2:9-3:8</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22723,7 +22511,6 @@
 		<f_date>88</f_date>
 		<name>1 Кор.3:18-23</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22732,7 +22519,6 @@
 		<f_date>89</f_date>
 		<name>1 Кор.4:5-8</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22741,7 +22527,6 @@
 		<f_date>90</f_date>
 		<name>Рим.9:1-5</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22750,7 +22535,6 @@
 		<f_date>91</f_date>
 		<name>Рим.12:6-14</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22759,7 +22543,6 @@
 		<f_date>92</f_date>
 		<name>1 Кор.5:9-6:11</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22768,7 +22551,6 @@
 		<f_date>93</f_date>
 		<name>1 Кор.6:20-7:12</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22777,7 +22559,6 @@
 		<f_date>94</f_date>
 		<name>1 Кор.7:12-24</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22786,7 +22567,6 @@
 		<f_date>95</f_date>
 		<name>1 Кор.7:24-35</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22795,7 +22575,6 @@
 		<f_date>96</f_date>
 		<name>1 Кор.7:35-8:7</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22804,7 +22583,6 @@
 		<f_date>97</f_date>
 		<name>Рим.12:1-3</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22813,7 +22591,6 @@
 		<f_date>98</f_date>
 		<name>Рим.15:1-7</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22822,7 +22599,6 @@
 		<f_date>99</f_date>
 		<name>1 Кор.9:13-18</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22831,7 +22607,6 @@
 		<f_date>100</f_date>
 		<name>1 Кор.10:5-12</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22840,7 +22615,6 @@
 		<f_date>101</f_date>
 		<name>1 Кор.10:12-22</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22849,7 +22623,6 @@
 		<f_date>102</f_date>
 		<name>1 Кор.10:28-11:7</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22858,7 +22631,6 @@
 		<f_date>103</f_date>
 		<name>1 Кор.11:8-22</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22867,7 +22639,6 @@
 		<f_date>104</f_date>
 		<name>Рим.13:1-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22876,7 +22647,6 @@
 		<f_date>105</f_date>
 		<name>1 Кор.1:10-18</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22885,7 +22655,6 @@
 		<f_date>106</f_date>
 		<name>1 Кор.11:31-12:6</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22894,7 +22663,6 @@
 		<f_date>107</f_date>
 		<name>1 Кор.12:12-26</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22903,7 +22671,6 @@
 		<f_date>108</f_date>
 		<name>1 Кор.13:4-14:5</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22912,7 +22679,6 @@
 		<f_date>109</f_date>
 		<name>1 Кор.14:6-19</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22921,7 +22687,6 @@
 		<f_date>110</f_date>
 		<name>1 Кор.14:26-40</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22930,7 +22695,6 @@
 		<f_date>111</f_date>
 		<name>Рим.14:6-9</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22939,7 +22703,6 @@
 		<f_date>112</f_date>
 		<name>1 Кор.3:9-17</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22948,7 +22711,6 @@
 		<f_date>113</f_date>
 		<name>1 Кор.15:12-19</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22957,7 +22719,6 @@
 		<f_date>114</f_date>
 		<name>1 Кор.15:29-38</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22966,7 +22727,6 @@
 		<f_date>115</f_date>
 		<name>1 Кор.16:4-12</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22975,7 +22735,6 @@
 		<f_date>116</f_date>
 		<name>2 Кор.1:1-7</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22984,7 +22743,6 @@
 		<f_date>117</f_date>
 		<name>2 Кор.1:12-20</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -22993,7 +22751,6 @@
 		<f_date>118</f_date>
 		<name>Рим.15:30-33</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23002,7 +22759,6 @@
 		<f_date>119</f_date>
 		<name>1 Кор.4:9-16</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23011,7 +22767,6 @@
 		<f_date>120</f_date>
 		<name>2 Кор.2:4-15</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23020,7 +22775,6 @@
 		<f_date>121</f_date>
 		<name>2 Кор.2:14-3:3</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23029,7 +22783,6 @@
 		<f_date>122</f_date>
 		<name>2 Кор.3:4-11</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23038,7 +22791,6 @@
 		<f_date>123</f_date>
 		<name>2 Кор.4:1-6</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23047,7 +22799,6 @@
 		<f_date>124</f_date>
 		<name>2 Кор.4:13-18</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23056,7 +22807,6 @@
 		<f_date>125</f_date>
 		<name>1 Кор.1:3-9</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23065,7 +22815,6 @@
 		<f_date>126</f_date>
 		<name>1 Кор.9:2-12</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23074,7 +22823,6 @@
 		<f_date>127</f_date>
 		<name>2 Кор.5:10-15</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23083,7 +22831,6 @@
 		<f_date>128</f_date>
 		<name>2 Кор.5:15-21</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23092,7 +22839,6 @@
 		<f_date>129</f_date>
 		<name>2 Кор.6:11-16</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23101,7 +22847,6 @@
 		<f_date>130</f_date>
 		<name>2 Кор.7:1-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23110,7 +22855,6 @@
 		<f_date>131</f_date>
 		<name>2 Кор.7:10-16</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23119,7 +22863,6 @@
 		<f_date>132</f_date>
 		<name>1 Кор.1:26-29</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23128,7 +22871,6 @@
 		<f_date>133</f_date>
 		<name>1 Кор.15:1-11</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23137,7 +22879,6 @@
 		<f_date>134</f_date>
 		<name>2 Кор.8:7-15</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23146,7 +22887,6 @@
 		<f_date>135</f_date>
 		<name>2 Кор.8:16-9:5</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23155,7 +22895,6 @@
 		<f_date>136</f_date>
 		<name>2 Кор.9:12-10:7</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23164,7 +22903,6 @@
 		<f_date>137</f_date>
 		<name>2 Кор.10:7-18</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23173,7 +22911,6 @@
 		<f_date>138</f_date>
 		<name>2 Кор.11:5-21</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23182,7 +22919,6 @@
 		<f_date>139</f_date>
 		<name>1 Кор.2:6-9</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23191,7 +22927,6 @@
 		<f_date>140</f_date>
 		<name>1 Кор.16:13-24</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23200,7 +22935,6 @@
 		<f_date>141</f_date>
 		<name>2 Кор.12:10-19</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23209,7 +22943,6 @@
 		<f_date>142</f_date>
 		<name>2 Кор.12:20-13:2</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23218,7 +22951,6 @@
 		<f_date>143</f_date>
 		<name>2 Кор.13:3-13</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23227,7 +22959,6 @@
 		<f_date>144</f_date>
 		<name>Гал.1:1-10,20-2:5</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23236,7 +22967,6 @@
 		<f_date>145</f_date>
 		<name>Гал.2:6-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23245,7 +22975,6 @@
 		<f_date>146</f_date>
 		<name>1 Кор.4:1-5</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23254,7 +22983,6 @@
 		<f_date>147</f_date>
 		<name>2 Кор.1:21-2:4</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23263,7 +22991,6 @@
 		<f_date>148</f_date>
 		<name>Гал.2:11-16</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23272,7 +22999,6 @@
 		<f_date>149</f_date>
 		<name>Гал.2:21-3:7</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23281,7 +23007,6 @@
 		<f_date>150</f_date>
 		<name>Гал.3:15-22</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23290,7 +23015,6 @@
 		<f_date>151</f_date>
 		<name>Гал.3:23-4:5</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23299,7 +23023,6 @@
 		<f_date>152</f_date>
 		<name>Гал.4:8-21</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23308,7 +23031,6 @@
 		<f_date>153</f_date>
 		<name>1 Кор.4:17-5:5</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23317,7 +23039,6 @@
 		<f_date>154</f_date>
 		<name>2 Кор.4:6-15</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23326,7 +23047,6 @@
 		<f_date>155</f_date>
 		<name>Гал.4:28-5:10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23335,7 +23055,6 @@
 		<f_date>156</f_date>
 		<name>Гал.5:11-21</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23344,7 +23063,6 @@
 		<f_date>157</f_date>
 		<name>Гал.6:2-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23353,7 +23071,6 @@
 		<f_date>158</f_date>
 		<name>Еф.1:1-9</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23362,7 +23079,6 @@
 		<f_date>159</f_date>
 		<name>Еф.1:7-17</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23371,7 +23087,6 @@
 		<f_date>160</f_date>
 		<name>1 Кор.10:23-28</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23380,7 +23095,6 @@
 		<f_date>161</f_date>
 		<name>2 Кор.6:1-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23389,7 +23103,6 @@
 		<f_date>162</f_date>
 		<name>Еф.1:22-2:3</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23398,7 +23111,6 @@
 		<f_date>163</f_date>
 		<name>Еф.2:19-3:7</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23407,7 +23119,6 @@
 		<f_date>164</f_date>
 		<name>Еф.3:8-21</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23416,7 +23127,6 @@
 		<f_date>165</f_date>
 		<name>Еф.4:14-19</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23425,7 +23135,6 @@
 		<f_date>166</f_date>
 		<name>Еф.4:17-25</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23434,7 +23143,6 @@
 		<f_date>167</f_date>
 		<name>1 Кор.14:20-25</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23443,7 +23151,6 @@
 		<f_date>168</f_date>
 		<name>2 Кор.6:16-7:1</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23452,7 +23159,6 @@
 		<f_date>169</f_date>
 		<name>Еф.4:25-32</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23461,7 +23167,6 @@
 		<f_date>170</f_date>
 		<name>Еф.5:20-26</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23470,7 +23175,6 @@
 		<f_date>171</f_date>
 		<name>Еф.5:25-33</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23479,7 +23183,6 @@
 		<f_date>172</f_date>
 		<name>Еф.5:33-6:9</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23488,7 +23191,6 @@
 		<f_date>173</f_date>
 		<name>Еф.6:18-24</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23497,7 +23199,6 @@
 		<f_date>174</f_date>
 		<name>1 Кор.15:39-45</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23506,7 +23207,6 @@
 		<f_date>175</f_date>
 		<name>2 Кор.9:6-11</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23515,7 +23215,6 @@
 		<f_date>176</f_date>
 		<name>Флп.1:1-7</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23524,7 +23223,6 @@
 		<f_date>177</f_date>
 		<name>Флп.1:8-14</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23533,7 +23231,6 @@
 		<f_date>178</f_date>
 		<name>Флп.1:12-20</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23542,7 +23239,6 @@
 		<f_date>179</f_date>
 		<name>Флп.1:20-27</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23551,7 +23247,6 @@
 		<f_date>180</f_date>
 		<name>Флп.1:27-2:4</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23560,7 +23255,6 @@
 		<f_date>181</f_date>
 		<name>1 Кор.15:58-16:3</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23569,7 +23263,6 @@
 		<f_date>182</f_date>
 		<name>2 Кор.11:31-12:9</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23578,7 +23271,6 @@
 		<f_date>183</f_date>
 		<name>Флп.2:12-16</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23587,7 +23279,6 @@
 		<f_date>184</f_date>
 		<name>Флп.2:17-23</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23596,7 +23287,6 @@
 		<f_date>185</f_date>
 		<name>Флп.2:24-30</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23605,7 +23295,6 @@
 		<f_date>186</f_date>
 		<name>Флп.3:1-8</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23614,7 +23303,6 @@
 		<f_date>187</f_date>
 		<name>Флп.3:8-19</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23623,7 +23311,6 @@
 		<f_date>188</f_date>
 		<name>2 Кор.1:8-11</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23632,7 +23319,6 @@
 		<f_date>189</f_date>
 		<name>Гал.1:11-19</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23641,7 +23327,6 @@
 		<f_date>190</f_date>
 		<name>Флп.4:10-23</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23650,7 +23335,6 @@
 		<f_date>191</f_date>
 		<name>Кол.1:1-2:7-11</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23659,7 +23343,6 @@
 		<f_date>192</f_date>
 		<name>Кол.1:18-23</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23668,7 +23351,6 @@
 		<f_date>193</f_date>
 		<name>Кол.1:24-29</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23677,7 +23359,6 @@
 		<f_date>194</f_date>
 		<name>Кол.2:1-7</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23686,7 +23367,6 @@
 		<f_date>195</f_date>
 		<name>2 Кор.3:12-18</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23695,7 +23375,6 @@
 		<f_date>196</f_date>
 		<name>Гал.2:16-20</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23704,7 +23383,6 @@
 		<f_date>197</f_date>
 		<name>Кол.2:13-20</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23713,7 +23391,6 @@
 		<f_date>198</f_date>
 		<name>Кол.2:20-3:3</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23722,7 +23399,6 @@
 		<f_date>199</f_date>
 		<name>Кол.3:17-4:1</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23731,7 +23407,6 @@
 		<f_date>200</f_date>
 		<name>Кол.4:2-9</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23740,7 +23415,6 @@
 		<f_date>201</f_date>
 		<name>Кол.4:10-18</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23749,7 +23423,6 @@
 		<f_date>202</f_date>
 		<name>2 Кор.5:1-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23758,7 +23431,6 @@
 		<f_date>203</f_date>
 		<name>Гал.6:11-18</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23767,7 +23439,6 @@
 		<f_date>204</f_date>
 		<name>1 Сол.1:1-5</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23776,7 +23447,6 @@
 		<f_date>205</f_date>
 		<name>1 Сол.1:6-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23785,7 +23455,6 @@
 		<f_date>206</f_date>
 		<name>1 Сол.2:1-8</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23794,7 +23463,6 @@
 		<f_date>207</f_date>
 		<name>1 Сол.2:9-14</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23803,7 +23471,6 @@
 		<f_date>208</f_date>
 		<name>1 Сол.2:14-19</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23812,7 +23479,6 @@
 		<f_date>209</f_date>
 		<name>2 Кор.8:1-5</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23821,7 +23487,6 @@
 		<f_date>210</f_date>
 		<name>Еф.2:4-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23830,7 +23495,6 @@
 		<f_date>211</f_date>
 		<name>1 Сол.2:20-3:8</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23839,7 +23503,6 @@
 		<f_date>212</f_date>
 		<name>1 Сол.3:9-13</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23848,7 +23511,6 @@
 		<f_date>213</f_date>
 		<name>1 Сол.4:1-12</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23857,7 +23519,6 @@
 		<f_date>214</f_date>
 		<name>1 Сол.5:1-8 </name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23866,7 +23527,6 @@
 		<f_date>215</f_date>
 		<name>1 Сол.5:9-13,24-28</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23875,7 +23535,6 @@
 		<f_date>216</f_date>
 		<name>2 Кор.11:1-6</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23884,7 +23543,6 @@
 		<f_date>217</f_date>
 		<name>Еф.2:14-22</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23893,7 +23551,6 @@
 		<f_date>218</f_date>
 		<name>2 Сол.1:1-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23902,7 +23559,6 @@
 		<f_date>219</f_date>
 		<name>2 Сол.1:10-2:2</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23911,7 +23567,6 @@
 		<f_date>220</f_date>
 		<name>2 Сол.2:1-12</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23920,7 +23575,6 @@
 		<f_date>221</f_date>
 		<name>2 Сол.2:13-3:5</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23929,7 +23583,6 @@
 		<f_date>222</f_date>
 		<name>2 Сол.3:6-18</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23938,7 +23591,6 @@
 		<f_date>223</f_date>
 		<name>Гал.1:3-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23947,7 +23599,6 @@
 		<f_date>224</f_date>
 		<name>Еф.4:1-6</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23956,7 +23607,6 @@
 		<f_date>225</f_date>
 		<name>1 Тим.1:1-7</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23965,7 +23615,6 @@
 		<f_date>226</f_date>
 		<name>1 Тим.1:8-14</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23974,7 +23623,6 @@
 		<f_date>227</f_date>
 		<name>1 Тим.1:18-20,2:8-15</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23983,7 +23631,6 @@
 		<f_date>228</f_date>
 		<name>1 Тим.3:1-13</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -23992,7 +23639,6 @@
 		<f_date>229</f_date>
 		<name>1 Тим.4:4-8:16</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24001,7 +23647,6 @@
 		<f_date>230</f_date>
 		<name>Гал.3:8-12</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24010,7 +23655,6 @@
 		<f_date>231</f_date>
 		<name>Еф.5:9-19</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24019,7 +23663,6 @@
 		<f_date>232</f_date>
 		<name>1 Тим.5:1-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24028,7 +23671,6 @@
 		<f_date>233</f_date>
 		<name>1 Тим.5:11-21</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24037,7 +23679,6 @@
 		<f_date>234</f_date>
 		<name>1 Тим.5:22-6:11</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24046,7 +23687,6 @@
 		<f_date>235</f_date>
 		<name>1 Тим.6:17-21</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24055,7 +23695,6 @@
 		<f_date>236</f_date>
 		<name>2 Тим.1:1-2:8-18</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24064,7 +23703,6 @@
 		<f_date>237</f_date>
 		<name>Гал.5:22-6:2</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24073,7 +23711,6 @@
 		<f_date>238</f_date>
 		<name>Еф.6:10-17</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24082,7 +23719,6 @@
 		<f_date>239</f_date>
 		<name>2 Тим.2:20-26</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24091,7 +23727,6 @@
 		<f_date>240</f_date>
 		<name>2 Тим.3:16-4:4</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24100,7 +23735,6 @@
 		<f_date>241</f_date>
 		<name>2 Тим.4:9-22</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24109,7 +23743,6 @@
 		<f_date>242</f_date>
 		<name>Тит.1:5-2:1</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24118,7 +23751,6 @@
 		<f_date>243</f_date>
 		<name>Тит.1:15-2:10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24127,7 +23759,6 @@
 		<f_date>244</f_date>
 		<name>Еф.1:16-23</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24136,7 +23767,6 @@
 		<f_date>245</f_date>
 		<name>Кол.1:12-18 </name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24145,7 +23775,6 @@
 		<f_date>246</f_date>
 		<name>Евр.3:5-11,17-19</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24154,7 +23783,6 @@
 		<f_date>247</f_date>
 		<name>Евр.4:1-13</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24163,7 +23791,6 @@
 		<f_date>248</f_date>
 		<name>Евр.5:11-6:8 </name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24172,7 +23799,6 @@
 		<f_date>249</f_date>
 		<name>Евр.7:1-6 </name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24181,7 +23807,6 @@
 		<f_date>250</f_date>
 		<name>Евр.7:18-25</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24190,7 +23815,6 @@
 		<f_date>251</f_date>
 		<name>Еф.2:11-13</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24199,7 +23823,6 @@
 		<f_date>252</f_date>
 		<name>Кол.3:4-11</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24208,7 +23831,6 @@
 		<f_date>253</f_date>
 		<name>Евр.8:7-13</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24217,7 +23839,6 @@
 		<f_date>254</f_date>
 		<name>Евр.9:8-10,15-23</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24226,7 +23847,6 @@
 		<f_date>255</f_date>
 		<name>Евр.10:1-18</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24235,7 +23855,6 @@
 		<f_date>256</f_date>
 		<name>Евр.10:35-11:7 </name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24244,7 +23863,6 @@
 		<f_date>257</f_date>
 		<name>Евр.11:8,11-16</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24253,7 +23871,6 @@
 		<f_date>258</f_date>
 		<name>Еф.5:1-8</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24262,7 +23879,6 @@
 		<f_date>259</f_date>
 		<name>Кол.3:12-16</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24271,7 +23887,6 @@
 		<f_date>260</f_date>
 		<name>Евр.11:17-23,27-31</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24280,7 +23895,6 @@
 		<f_date>261</f_date>
 		<name>Евр.12:25-26,13:22-25</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24289,7 +23903,6 @@
 		<f_date>262</f_date>
 		<name>Иак.1:1-18</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24298,7 +23911,6 @@
 		<f_date>263</f_date>
 		<name>Иак.1:19-27</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24307,7 +23919,6 @@
 		<f_date>264</f_date>
 		<name>Иак.2:1-13</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24316,7 +23927,6 @@
 		<f_date>265</f_date>
 		<name>Кол.1:3-6</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24325,7 +23935,6 @@
 		<f_date>266</f_date>
 		<name>1 Тим.1:15-17</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24334,7 +23943,6 @@
 		<f_date>267</f_date>
 		<name>Иак.2:14-26</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24343,7 +23951,6 @@
 		<f_date>268</f_date>
 		<name>Иак.3:1-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24352,7 +23959,6 @@
 		<f_date>269</f_date>
 		<name>Иак.3:11-4:6</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24361,7 +23967,6 @@
 		<f_date>270</f_date>
 		<name>Иак.4:7-5:9</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24370,7 +23975,6 @@
 		<f_date>271</f_date>
 		<name>1 Пет.1:1-2 ,10-12,2:6-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24379,7 +23983,6 @@
 		<f_date>272</f_date>
 		<name>1 Сол.5:14-23</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24388,7 +23991,6 @@
 		<f_date>273</f_date>
 		<name>1 Тим.4:9-15</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24397,7 +23999,6 @@
 		<f_date>274</f_date>
 		<name>1 Пет.2:21-3:9</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24406,7 +24007,6 @@
 		<f_date>275</f_date>
 		<name>1 Пет.3:10-22</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24415,7 +24015,6 @@
 		<f_date>276</f_date>
 		<name>1 Пет.4:1-11</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24424,7 +24023,6 @@
 		<f_date>277</f_date>
 		<name>1 Пет.4:12-5:5</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24433,7 +24031,6 @@
 		<f_date>278</f_date>
 		<name>2 Пет.1:1-10</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24442,7 +24039,6 @@
 		<f_date>279</f_date>
 		<name>2 Тим.2:11-19</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24451,7 +24047,6 @@
 		<f_date>280</f_date>
 		<name>2 Тим.3:10-15</name>
 		<type>204</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24460,7 +24055,6 @@
 		<f_date>-41</f_date>
 		<name>Ис.4:2-5:7</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24469,7 +24063,6 @@
 		<f_date>-40</f_date>
 		<name>Ис.5:7-16</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24478,7 +24071,6 @@
 		<f_date>-39</f_date>
 		<name>Ис.5:16-25</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24487,7 +24079,6 @@
 		<f_date>-38</f_date>
 		<name>Ис.6:1-12</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24496,7 +24087,6 @@
 		<f_date>-37</f_date>
 		<name>Ис.8:1-14</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24505,7 +24095,6 @@
 		<f_date>-34</f_date>
 		<name>Ис.8:13-9:7</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24514,7 +24103,6 @@
 		<f_date>-33</f_date>
 		<name>Ис.9:9-10:4</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24523,7 +24111,6 @@
 		<f_date>-32</f_date>
 		<name>Ис.10:12-20</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24532,7 +24119,6 @@
 		<f_date>-31</f_date>
 		<name>Ис.11:10-12:2</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24541,7 +24127,6 @@
 		<f_date>-30</f_date>
 		<name>Ис.13:2-13</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24550,7 +24135,6 @@
 		<f_date>-27</f_date>
 		<name>Ис.14:24-32</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24559,7 +24143,6 @@
 		<f_date>-26</f_date>
 		<name>Ис.25:1-9</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24568,7 +24151,6 @@
 		<f_date>-25</f_date>
 		<name>Ис.26:21-27:9</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24577,7 +24159,6 @@
 		<f_date>-24</f_date>
 		<name>Ис.28:14-22</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24586,7 +24167,6 @@
 		<f_date>-23</f_date>
 		<name>Ис.29:13-23</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24595,7 +24175,6 @@
 		<f_date>-20</f_date>
 		<name>Ис.37:33-38:6</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24604,7 +24183,6 @@
 		<f_date>-19</f_date>
 		<name>Ис.40:18-31</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24613,7 +24191,6 @@
 		<f_date>-18</f_date>
 		<name>Ис.41:4-14</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24622,7 +24199,6 @@
 		<f_date>-17</f_date>
 		<name>Ис.42:5-16</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24631,7 +24207,6 @@
 		<f_date>-16</f_date>
 		<name>Ис.45:11-17</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24640,7 +24215,6 @@
 		<f_date>-13</f_date>
 		<name>Ис.48:17-49:4</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24649,7 +24223,6 @@
 		<f_date>-12</f_date>
 		<name>Ис.49:6-10</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24658,7 +24231,6 @@
 		<f_date>-11</f_date>
 		<name>Ис.58:1-11</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24667,7 +24239,6 @@
 		<f_date>-10</f_date>
 		<name>Ис.65:8-16</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24676,7 +24247,6 @@
 		<f_date>-9</f_date>
 		<name> Ис.66:10-24</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24685,7 +24255,6 @@
 		<f_date>-2</f_date>
 		<name>Евр.2:11-18; Лк.23:32-49</name>
 		<type>206</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24694,7 +24263,6 @@
 		<f_date>-104</f_date>
 		<name>Мк.10:46-52</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24703,7 +24271,6 @@
 		<f_date>-103</f_date>
 		<name>Мк.11:11-23</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24712,7 +24279,6 @@
 		<f_date>-102</f_date>
 		<name>Мк.11:23-26</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24721,7 +24287,6 @@
 		<f_date>-101</f_date>
 		<name>Мк.11:27-33</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24730,7 +24295,6 @@
 		<f_date>-100</f_date>
 		<name>Мк.12:1-12</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24739,7 +24303,6 @@
 		<f_date>-99</f_date>
 		<name>Мф.25:1-13</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24748,7 +24311,6 @@
 		<f_date>-98</f_date>
 		<name>Мф.15:21-28</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24757,7 +24319,6 @@
 		<f_date>-97</f_date>
 		<name>Мк.8:11-21</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24766,7 +24327,6 @@
 		<f_date>-96</f_date>
 		<name>Мк.8:22-26</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24775,7 +24335,6 @@
 		<f_date>-95</f_date>
 		<name>Мк.8:30-34</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24784,7 +24343,6 @@
 		<f_date>-94</f_date>
 		<name>Мк.9:10-16</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24793,7 +24351,6 @@
 		<f_date>-93</f_date>
 		<name>Мк.9:33-41</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24802,7 +24359,6 @@
 		<f_date>-92</f_date>
 		<name>Лк.14:1-11</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24811,7 +24367,6 @@
 		<f_date>-91</f_date>
 		<name>Лк.18:18-27</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24820,7 +24375,6 @@
 		<f_date>-90</f_date>
 		<name>Мк.9:42-10:1</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24829,7 +24383,6 @@
 		<f_date>-89</f_date>
 		<name>Мк.10:2-12</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24838,7 +24391,6 @@
 		<f_date>-88</f_date>
 		<name>Мк.10:11-16</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24847,7 +24399,6 @@
 		<f_date>-87</f_date>
 		<name>Мк.10:17-27</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24856,7 +24407,6 @@
 		<f_date>-86</f_date>
 		<name>Мк.10:23-32</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24865,7 +24415,6 @@
 		<f_date>-85</f_date>
 		<name>Лк.16:10-15</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24874,7 +24423,6 @@
 		<f_date>-84</f_date>
 		<name>Лк.18:35-43</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24883,7 +24431,6 @@
 		<f_date>-83</f_date>
 		<name>Мк.10:46-52</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24892,7 +24439,6 @@
 		<f_date>-82</f_date>
 		<name>Мк.11:11-23</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24901,7 +24447,6 @@
 		<f_date>-81</f_date>
 		<name>Мк.11:23-26</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24910,7 +24455,6 @@
 		<f_date>-80</f_date>
 		<name>Мк.11:27-33</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24919,7 +24463,6 @@
 		<f_date>-79</f_date>
 		<name>Мк.12:1-12</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24928,7 +24471,6 @@
 		<f_date>-78</f_date>
 		<name>Лк.17:3-10</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24937,7 +24479,6 @@
 		<f_date>-77</f_date>
 		<name>Лк.19:1-10</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24946,7 +24487,6 @@
 		<f_date>-76</f_date>
 		<name>Мк.12:13-17</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24955,7 +24495,6 @@
 		<f_date>-75</f_date>
 		<name>Мк.12:18-27</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24964,7 +24503,6 @@
 		<f_date>-74</f_date>
 		<name>Мк.12:28-37</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24973,7 +24511,6 @@
 		<f_date>-73</f_date>
 		<name>Мк.12:38-44</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24982,7 +24519,6 @@
 		<f_date>-72</f_date>
 		<name>Мк.13:1-8</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -24991,7 +24527,6 @@
 		<f_date>-71</f_date>
 		<name>Лк.18:2-8</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25000,7 +24535,6 @@
 		<f_date>-70</f_date>
 		<name>Лк.18:10-14</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25009,7 +24543,6 @@
 		<f_date>-69</f_date>
 		<name>Мк.13:9-13</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25018,7 +24551,6 @@
 		<f_date>-68</f_date>
 		<name>Мк.13:14-23</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25027,7 +24559,6 @@
 		<f_date>-67</f_date>
 		<name>Мк.13:24-31 </name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25036,7 +24567,6 @@
 		<f_date>-66</f_date>
 		<name>Мк.13:31-14:2</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25045,7 +24575,6 @@
 		<f_date>-65</f_date>
 		<name>Мк.14:3-9 </name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25054,7 +24583,6 @@
 		<f_date>-64</f_date>
 		<name>Лк.20:45-21:4</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25063,7 +24591,6 @@
 		<f_date>-63</f_date>
 		<name>Лк.15:11-32</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25072,7 +24599,6 @@
 		<f_date>-62</f_date>
 		<name>Мк.11:1-11</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25081,7 +24607,6 @@
 		<f_date>-61</f_date>
 		<name>Мк.14:10-42</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25090,7 +24615,6 @@
 		<f_date>-60</f_date>
 		<name>Мк.14:43-15:1</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25099,7 +24623,6 @@
 		<f_date>-59</f_date>
 		<name>Мк.15:1-15</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25108,7 +24631,6 @@
 		<f_date>-58</f_date>
 		<name>Мк.15:22-25,33-41</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25117,7 +24639,6 @@
 		<f_date>-57</f_date>
 		<name>Лк.21:8-9,25-27,33-36</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25126,7 +24647,6 @@
 		<f_date>-56</f_date>
 		<name>Мф.25:31-46</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25135,7 +24655,6 @@
 		<f_date>-55</f_date>
 		<name>Лк.19:29-40,22:7-39 </name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25144,7 +24663,6 @@
 		<f_date>-54</f_date>
 		<name>Лк.22:39-42,45-23:1</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25153,7 +24671,6 @@
 		<f_date>-52</f_date>
 		<name>Лк.23:1-34,44-56</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25162,7 +24679,6 @@
 		<f_date>-50</f_date>
 		<name>Мф.6:1-13</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25171,7 +24687,6 @@
 		<f_date>-49</f_date>
 		<name>Мф.6:14-21</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25180,7 +24695,6 @@
 		<f_date>-43</f_date>
 		<name>Мк.2:23-3:5</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25189,7 +24703,6 @@
 		<f_date>-42</f_date>
 		<name>Ин.1:43-51</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25198,7 +24711,6 @@
 		<f_date>-36</f_date>
 		<name>Мк.1:35-44</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25207,7 +24719,6 @@
 		<f_date>-35</f_date>
 		<name>Мк.2:1-12</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25216,7 +24727,6 @@
 		<f_date>-29</f_date>
 		<name>Мк.2:14-17</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25225,7 +24735,6 @@
 		<f_date>-28</f_date>
 		<name>Мк.8:34-9:1</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25234,7 +24743,6 @@
 		<f_date>-22</f_date>
 		<name>Мк.7:31-37</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25243,7 +24751,6 @@
 		<f_date>-21</f_date>
 		<name>Мк.9:17-31</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25252,7 +24759,6 @@
 		<f_date>-15</f_date>
 		<name>Мк.8:27-31</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25261,7 +24767,6 @@
 		<f_date>-14</f_date>
 		<name>Мк.10:32-45</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25270,7 +24775,6 @@
 		<f_date>-8</f_date>
 		<name>Ин.11:1-45</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25279,7 +24783,6 @@
 		<f_date>-7</f_date>
 		<name>Ин.12:1-18</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25288,7 +24791,6 @@
 		<f_date>-6</f_date>
 		<name> Мф.24:3-35</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25297,7 +24799,6 @@
 		<f_date>-5</f_date>
 		<name>Мф.24:36-26:2</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25306,7 +24807,6 @@
 		<f_date>-4</f_date>
 		<name>Мф.26:6-16</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25315,7 +24815,6 @@
 		<f_date>-3</f_date>
 		<name>Мф.26:1-20; Ин.13:3-17; Мф.26:21-39; Лк.22:43-45; Мф.26:40-27:2</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25324,7 +24823,6 @@
 		<f_date>-1</f_date>
 		<name>Мф.28:1-20</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25333,7 +24831,6 @@
 		<f_date>0</f_date>
 		<name>Ин.1:1-17</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25342,7 +24839,6 @@
 		<f_date>1</f_date>
 		<name>Ин.1:18-28</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25351,7 +24847,6 @@
 		<f_date>2</f_date>
 		<name>Лк.24:12-35</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25360,7 +24855,6 @@
 		<f_date>3</f_date>
 		<name>Ин.1:35-51</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25369,7 +24863,6 @@
 		<f_date>4</f_date>
 		<name>Ин.3:1-15</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25378,7 +24871,6 @@
 		<f_date>5</f_date>
 		<name>Ин.2:12-22</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25387,7 +24879,6 @@
 		<f_date>6</f_date>
 		<name>Ин.3:22-33</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25396,7 +24887,6 @@
 		<f_date>7</f_date>
 		<name>Ин.20:19-31</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25405,7 +24895,6 @@
 		<f_date>8</f_date>
 		<name>Ин.2:1-11 </name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25414,7 +24903,6 @@
 		<f_date>9</f_date>
 		<name>Ин.3:16-21</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25423,7 +24911,6 @@
 		<f_date>10</f_date>
 		<name>Ин.5:17-24</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25432,7 +24919,6 @@
 		<f_date>11</f_date>
 		<name>Ин.5:24-30</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25441,7 +24927,6 @@
 		<f_date>12</f_date>
 		<name>Ин.5:30-6:2</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25450,7 +24935,6 @@
 		<f_date>13</f_date>
 		<name>Ин.6:14-27</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25459,7 +24943,6 @@
 		<f_date>14</f_date>
 		<name>Мк.15:43-16:8</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25468,7 +24951,6 @@
 		<f_date>15</f_date>
 		<name>Ин.4:46-54</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25477,7 +24959,6 @@
 		<f_date>16</f_date>
 		<name>Ин.6:27-33</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25486,7 +24967,6 @@
 		<f_date>17</f_date>
 		<name>Ин.6:35-39</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25495,7 +24975,6 @@
 		<f_date>18</f_date>
 		<name>Ин.6:40-44</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25504,7 +24983,6 @@
 		<f_date>19</f_date>
 		<name>Ин.6:48-54</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25513,7 +24991,6 @@
 		<f_date>20</f_date>
 		<name>Ин.15:17-16:2</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25522,7 +24999,6 @@
 		<f_date>21</f_date>
 		<name>Ин.5:1-15</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25531,7 +25007,6 @@
 		<f_date>22</f_date>
 		<name>Ин.6:56-69</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25540,7 +25015,6 @@
 		<f_date>23</f_date>
 		<name>Ин.7:1-13</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25549,7 +25023,6 @@
 		<f_date>24</f_date>
 		<name>Ин.7:14-30</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25558,7 +25031,6 @@
 		<f_date>25</f_date>
 		<name>Ин.8:12-20</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25567,7 +25039,6 @@
 		<f_date>26</f_date>
 		<name>Ин.8:21-30</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25576,7 +25047,6 @@
 		<f_date>27</f_date>
 		<name>Ин.8:31-42</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25585,7 +25055,6 @@
 		<f_date>28</f_date>
 		<name>Ин.4:5-42</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25594,7 +25063,6 @@
 		<f_date>29</f_date>
 		<name>Ин.8:42-51</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25603,7 +25071,6 @@
 		<f_date>30</f_date>
 		<name>Ин.8:51-59</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25612,7 +25079,6 @@
 		<f_date>31</f_date>
 		<name>Ин.6:5-14</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25621,7 +25087,6 @@
 		<f_date>32</f_date>
 		<name>Ин.9:39-10:9</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25630,7 +25095,6 @@
 		<f_date>33</f_date>
 		<name>Ин.10:17-28</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25639,7 +25103,6 @@
 		<f_date>34</f_date>
 		<name>Ин.10:27-38</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25648,7 +25111,6 @@
 		<f_date>35</f_date>
 		<name>Ин.9:1-38</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25657,7 +25119,6 @@
 		<f_date>36</f_date>
 		<name>Ин.11:47-57</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25666,7 +25127,6 @@
 		<f_date>37</f_date>
 		<name>Ин.12:19-36</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25675,7 +25135,6 @@
 		<f_date>38</f_date>
 		<name>Ин.12:36-47</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25684,7 +25143,6 @@
 		<f_date>39</f_date>
 		<name>Лк.24:36-53</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25693,7 +25151,6 @@
 		<f_date>40</f_date>
 		<name>Ин.14:1-11</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25702,7 +25159,6 @@
 		<f_date>41</f_date>
 		<name>Ин.14:10-21</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25711,7 +25167,6 @@
 		<f_date>42</f_date>
 		<name>Ин.17:1-13</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25720,7 +25175,6 @@
 		<f_date>43</f_date>
 		<name>Ин.14:27-15:7</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25729,7 +25183,6 @@
 		<f_date>44</f_date>
 		<name>Ин.16:2-13</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25738,7 +25191,6 @@
 		<f_date>45</f_date>
 		<name>Ин.16:15-23</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25747,7 +25199,6 @@
 		<f_date>46</f_date>
 		<name>Ин.16:23-33</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25756,7 +25207,6 @@
 		<f_date>47</f_date>
 		<name>Ин.17:18-26</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25765,7 +25215,6 @@
 		<f_date>48</f_date>
 		<name>Ин.21:15-25</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25774,7 +25223,6 @@
 		<f_date>49</f_date>
 		<name>Ин.7:37-52,8:12</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25783,7 +25231,6 @@
 		<f_date>50</f_date>
 		<name>Мф.18:10-20</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25792,7 +25239,6 @@
 		<f_date>51</f_date>
 		<name>Мф.4:25,5:1-13</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25801,7 +25247,6 @@
 		<f_date>52</f_date>
 		<name>Мф.5:20-26</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25810,7 +25255,6 @@
 		<f_date>53</f_date>
 		<name>Мф.5:27-32</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25819,7 +25263,6 @@
 		<f_date>54</f_date>
 		<name>Мф.5:33-41</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25828,7 +25271,6 @@
 		<f_date>55</f_date>
 		<name>Мф.5:42-48</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25837,7 +25279,6 @@
 		<f_date>56</f_date>
 		<name>Мф.10:32-33,37-38,19:27-30</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25846,7 +25287,6 @@
 		<f_date>57</f_date>
 		<name>Мф.6:31-34,7:9-11</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25855,7 +25295,6 @@
 		<f_date>58</f_date>
 		<name>Мф.7:15-21</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25864,7 +25303,6 @@
 		<f_date>59</f_date>
 		<name>Мф.7:21-23</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25873,7 +25311,6 @@
 		<f_date>60</f_date>
 		<name>Мф.8:23-27</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25882,7 +25319,6 @@
 		<f_date>61</f_date>
 		<name>Мф.9:14-17</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25891,7 +25327,6 @@
 		<f_date>62</f_date>
 		<name>Мф.7:1-8</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25900,7 +25335,6 @@
 		<f_date>63</f_date>
 		<name>Мф.4:18-23</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25909,7 +25343,6 @@
 		<f_date>64</f_date>
 		<name>Мф.9:36-10:8</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25918,7 +25351,6 @@
 		<f_date>65</f_date>
 		<name>Мф.10:9-15</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25927,7 +25359,6 @@
 		<f_date>66</f_date>
 		<name>Мф.10:16-22</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25936,7 +25367,6 @@
 		<f_date>67</f_date>
 		<name>Мф.10:23-31</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25945,7 +25375,6 @@
 		<f_date>68</f_date>
 		<name>Мф.10:32-36,11:1</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25954,7 +25383,6 @@
 		<f_date>69</f_date>
 		<name>Мф.7:24-8:4</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25963,7 +25391,6 @@
 		<f_date>70</f_date>
 		<name>Мф.6:22-33</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25972,7 +25399,6 @@
 		<f_date>71</f_date>
 		<name>Мф.11:2-15</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25981,7 +25407,6 @@
 		<f_date>72</f_date>
 		<name>Мф.11:16-20</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25990,7 +25415,6 @@
 		<f_date>73</f_date>
 		<name>Мф.11:20-26</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -25999,7 +25423,6 @@
 		<f_date>74</f_date>
 		<name>Мф.11:27-30</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26008,7 +25431,6 @@
 		<f_date>75</f_date>
 		<name>Мф.12:1-8</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26017,7 +25439,6 @@
 		<f_date>76</f_date>
 		<name>Мф.8:14-23</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26026,7 +25447,6 @@
 		<f_date>77</f_date>
 		<name>Мф.8:5-13</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26035,7 +25455,6 @@
 		<f_date>78</f_date>
 		<name>Мф.12:9-13</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26044,7 +25463,6 @@
 		<f_date>79</f_date>
 		<name>Мф.12:14-16:22-30</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26053,7 +25471,6 @@
 		<f_date>80</f_date>
 		<name>Мф.12:38-45</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26062,7 +25479,6 @@
 		<f_date>81</f_date>
 		<name>Мф.12:46-13:3</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26071,7 +25487,6 @@
 		<f_date>82</f_date>
 		<name>Мф.13:4-9</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26080,7 +25495,6 @@
 		<f_date>83</f_date>
 		<name>Мф.9:9-13</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26089,7 +25503,6 @@
 		<f_date>84</f_date>
 		<name>Мф.8:28-9:1</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26098,7 +25511,6 @@
 		<f_date>85</f_date>
 		<name>Мф.13:10-23</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26107,7 +25519,6 @@
 		<f_date>86</f_date>
 		<name>Мф.13:24-30</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26116,7 +25527,6 @@
 		<f_date>87</f_date>
 		<name>Мф.13:31-36</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26125,7 +25535,6 @@
 		<f_date>88</f_date>
 		<name>Мф.13:36-43</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26134,7 +25543,6 @@
 		<f_date>89</f_date>
 		<name>Мф.13:44-54</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26143,7 +25551,6 @@
 		<f_date>90</f_date>
 		<name>Мф.9:18-26</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26152,7 +25559,6 @@
 		<f_date>91</f_date>
 		<name>Мф.9:1-8</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26161,7 +25567,6 @@
 		<f_date>92</f_date>
 		<name>Мф.13:54-58</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26170,7 +25575,6 @@
 		<f_date>93</f_date>
 		<name>Мф.14:1-13</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26179,7 +25583,6 @@
 		<f_date>94</f_date>
 		<name>Мф.14:35-15:11</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26188,7 +25591,6 @@
 		<f_date>95</f_date>
 		<name>Мф.15:12-21</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26197,7 +25599,6 @@
 		<f_date>96</f_date>
 		<name>Мф.15:29-31</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26206,7 +25607,6 @@
 		<f_date>97</f_date>
 		<name>Мф.10:37-11:1</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26215,7 +25615,6 @@
 		<f_date>98</f_date>
 		<name>Мф.9:27-35</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26224,7 +25623,6 @@
 		<f_date>99</f_date>
 		<name>Мф.16:1-6</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26233,7 +25631,6 @@
 		<f_date>100</f_date>
 		<name>Мф.16:6-12</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26242,7 +25639,6 @@
 		<f_date>101</f_date>
 		<name>Мф.16:20-24</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26251,7 +25647,6 @@
 		<f_date>102</f_date>
 		<name>Мф.16:24-28</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26260,7 +25655,6 @@
 		<f_date>103</f_date>
 		<name>Мф.17:10-18</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26269,7 +25663,6 @@
 		<f_date>104</f_date>
 		<name>Мф.12:30-37</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26278,7 +25671,6 @@
 		<f_date>105</f_date>
 		<name>Мф.14:14-22</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26287,7 +25679,6 @@
 		<f_date>106</f_date>
 		<name>Мф.18:1-11</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26296,7 +25687,6 @@
 		<f_date>107</f_date>
 		<name>Мф.18:18-22,19:1-2,13-15</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26305,7 +25695,6 @@
 		<f_date>108</f_date>
 		<name>Мф.20:1-16</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26314,7 +25703,6 @@
 		<f_date>109</f_date>
 		<name>Мф.20:17-28</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26323,7 +25711,6 @@
 		<f_date>110</f_date>
 		<name>Мф.21:12-14:17-20</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26332,7 +25719,6 @@
 		<f_date>111</f_date>
 		<name>Мф.15:32-39</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26341,7 +25727,6 @@
 		<f_date>112</f_date>
 		<name>Мф.14:22-34</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26350,7 +25735,6 @@
 		<f_date>113</f_date>
 		<name>Мф.21:18-22</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26359,7 +25743,6 @@
 		<f_date>114</f_date>
 		<name>Мф.21:23-27</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26368,7 +25751,6 @@
 		<f_date>115</f_date>
 		<name>Мф.21:28-32</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26377,7 +25759,6 @@
 		<f_date>116</f_date>
 		<name>Мф.21:43-46</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26386,7 +25767,6 @@
 		<f_date>117</f_date>
 		<name>Мф.22:23-33</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26395,7 +25775,6 @@
 		<f_date>118</f_date>
 		<name>Мф.17:24-18:4</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26404,7 +25783,6 @@
 		<f_date>119</f_date>
 		<name>Мф.17:14-23</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26413,7 +25791,6 @@
 		<f_date>120</f_date>
 		<name>Мф.23:13-22</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26422,7 +25799,6 @@
 		<f_date>121</f_date>
 		<name>Мф.23:23-28</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26431,7 +25807,6 @@
 		<f_date>122</f_date>
 		<name>Мф.23:29-39</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26440,7 +25815,6 @@
 		<f_date>123</f_date>
 		<name>Мф.24:13-28</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26449,7 +25823,6 @@
 		<f_date>124</f_date>
 		<name>Мф.24:27-33,42-51</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26458,7 +25831,6 @@
 		<f_date>125</f_date>
 		<name>Мф.19:3-12</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26467,7 +25839,6 @@
 		<f_date>126</f_date>
 		<name>Мф.18:23-35</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26476,7 +25847,6 @@
 		<f_date>127</f_date>
 		<name>Мк.1:9-15</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26485,7 +25855,6 @@
 		<f_date>128</f_date>
 		<name>Мк.1:16-22</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26494,7 +25863,6 @@
 		<f_date>129</f_date>
 		<name>Мк.1:23-28</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26503,7 +25871,6 @@
 		<f_date>130</f_date>
 		<name>Мк.1:29-35</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26512,7 +25879,6 @@
 		<f_date>131</f_date>
 		<name>Мк.2:18-22</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26521,7 +25887,6 @@
 		<f_date>132</f_date>
 		<name>Мф.20:29-34</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26530,7 +25895,6 @@
 		<f_date>133</f_date>
 		<name>Мф.19:16-26</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26539,7 +25903,6 @@
 		<f_date>134</f_date>
 		<name>Мк.3:6-12</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26548,7 +25911,6 @@
 		<f_date>135</f_date>
 		<name>Мк.3:13-19</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26557,7 +25919,6 @@
 		<f_date>136</f_date>
 		<name>Мк.3:20-27</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26566,7 +25927,6 @@
 		<f_date>137</f_date>
 		<name>Мк.3:28-35</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26575,7 +25935,6 @@
 		<f_date>138</f_date>
 		<name>Мк.4:1-9</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26584,7 +25943,6 @@
 		<f_date>139</f_date>
 		<name>Мф.22:15-22</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26593,7 +25951,6 @@
 		<f_date>140</f_date>
 		<name>Мф.21:33-42</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26602,7 +25959,6 @@
 		<f_date>141</f_date>
 		<name>Мк.4:10-23</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26611,7 +25967,6 @@
 		<f_date>142</f_date>
 		<name>Мк.4:24-34</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26620,7 +25975,6 @@
 		<f_date>143</f_date>
 		<name>Мк.4:35-41</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26629,7 +25983,6 @@
 		<f_date>144</f_date>
 		<name>Мк.5:1-20</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26638,7 +25991,6 @@
 		<f_date>145</f_date>
 		<name>Мк.5:22-24,35-6:1</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26647,7 +25999,6 @@
 		<f_date>146</f_date>
 		<name>Мф.23:1-12</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26656,7 +26007,6 @@
 		<f_date>147</f_date>
 		<name>Мф.22:1-14</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26665,7 +26015,6 @@
 		<f_date>148</f_date>
 		<name>Мк.5:24-34</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26674,7 +26023,6 @@
 		<f_date>149</f_date>
 		<name>Мк.6:1-7</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26683,7 +26031,6 @@
 		<f_date>150</f_date>
 		<name>Мк.6:7-13</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26692,7 +26039,6 @@
 		<f_date>151</f_date>
 		<name>Мк.6:30-45</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26701,7 +26047,6 @@
 		<f_date>152</f_date>
 		<name>Мк.6:45-53</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26710,7 +26055,6 @@
 		<f_date>153</f_date>
 		<name>Мф.24:1-13</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26719,7 +26063,6 @@
 		<f_date>154</f_date>
 		<name>Мф.22:35-46</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26728,7 +26071,6 @@
 		<f_date>155</f_date>
 		<name>Мк.6:54-7:8</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26737,7 +26079,6 @@
 		<f_date>156</f_date>
 		<name>Мк.7:5-16</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26746,7 +26087,6 @@
 		<f_date>157</f_date>
 		<name>Мк.7:14-24</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26755,7 +26095,6 @@
 		<f_date>158</f_date>
 		<name>Мк.7:24-30</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26764,7 +26103,6 @@
 		<f_date>159</f_date>
 		<name>Мк.8:1-10</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26773,7 +26111,6 @@
 		<f_date>160</f_date>
 		<name>Мф.24:34-44</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26782,7 +26119,6 @@
 		<f_date>161</f_date>
 		<name>Мф.25:14-30</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26791,7 +26127,6 @@
 		<f_date>162</f_date>
 		<name>Мк.10:46-52</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26800,7 +26135,6 @@
 		<f_date>163</f_date>
 		<name>Мк.11:11-23</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26809,7 +26143,6 @@
 		<f_date>164</f_date>
 		<name>Мк.11:23-26</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26818,7 +26151,6 @@
 		<f_date>165</f_date>
 		<name>Мк.11:27-33</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26827,7 +26159,6 @@
 		<f_date>166</f_date>
 		<name>Мк.12:1-12</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26836,7 +26167,6 @@
 		<f_date>167</f_date>
 		<name>Мф.25:1-13</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26845,7 +26175,6 @@
 		<f_date>168</f_date>
 		<name>Мф.15:21-28</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26854,7 +26183,6 @@
 		<f_date>169</f_date>
 		<name>Лк.3:19-22</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26863,7 +26191,6 @@
 		<f_date>170</f_date>
 		<name>Лк.3:23-4:1</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26872,7 +26199,6 @@
 		<f_date>171</f_date>
 		<name>Лк.4:1-15</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26881,7 +26207,6 @@
 		<f_date>172</f_date>
 		<name>Лк.4:16-22</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26890,7 +26215,6 @@
 		<f_date>173</f_date>
 		<name>Лк.4:22-30</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26899,7 +26223,6 @@
 		<f_date>174</f_date>
 		<name>Лк.4:31-36</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26908,7 +26231,6 @@
 		<f_date>175</f_date>
 		<name>Лк.5:1-11</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26917,7 +26239,6 @@
 		<f_date>176</f_date>
 		<name>Лк.4:37-44</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26926,7 +26247,6 @@
 		<f_date>177</f_date>
 		<name>Лк.5:12-16 </name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26935,7 +26255,6 @@
 		<f_date>178</f_date>
 		<name>Лк.5:33-39</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26944,7 +26263,6 @@
 		<f_date>179</f_date>
 		<name>Лк.6:12-19</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26953,7 +26271,6 @@
 		<f_date>180</f_date>
 		<name>Лк.6:17-23</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26962,7 +26279,6 @@
 		<f_date>181</f_date>
 		<name>Лк.5:17-26</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26971,7 +26287,6 @@
 		<f_date>182</f_date>
 		<name>Лк.6:31-36</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26980,7 +26295,6 @@
 		<f_date>183</f_date>
 		<name>Лк.6:24-30</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26989,7 +26303,6 @@
 		<f_date>184</f_date>
 		<name>Лк.6:37-45</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -26998,7 +26311,6 @@
 		<f_date>185</f_date>
 		<name>Лк.6:46-7:1</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27007,7 +26319,6 @@
 		<f_date>186</f_date>
 		<name>Лк.7:17-30</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27016,7 +26327,6 @@
 		<f_date>187</f_date>
 		<name>Лк.7:31-35</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27025,7 +26335,6 @@
 		<f_date>188</f_date>
 		<name>Лк.5:27-32</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27034,7 +26343,6 @@
 		<f_date>189</f_date>
 		<name>Лк.7:11-16</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27043,7 +26351,6 @@
 		<f_date>190</f_date>
 		<name>Лк.7:36-50</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27052,7 +26359,6 @@
 		<f_date>191</f_date>
 		<name>Лк.8:1-3</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27061,7 +26367,6 @@
 		<f_date>192</f_date>
 		<name>Лк.8:22-25</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27070,7 +26375,6 @@
 		<f_date>193</f_date>
 		<name>Лк.9:7-11</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27079,7 +26383,6 @@
 		<f_date>194</f_date>
 		<name>Лк.9:12-18</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27088,7 +26391,6 @@
 		<f_date>195</f_date>
 		<name>Лк.6:1-10</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27097,7 +26399,6 @@
 		<f_date>196</f_date>
 		<name>Лк.8:5-15</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27106,7 +26407,6 @@
 		<f_date>197</f_date>
 		<name>Лк.9:18-22</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27115,7 +26415,6 @@
 		<f_date>198</f_date>
 		<name>Лк.9:23-27</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27124,7 +26423,6 @@
 		<f_date>199</f_date>
 		<name>Лк.9:44-50</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27133,7 +26431,6 @@
 		<f_date>200</f_date>
 		<name>Лк.9:49-56</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27142,7 +26439,6 @@
 		<f_date>201</f_date>
 		<name>Лк.10:1-15</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27151,7 +26447,6 @@
 		<f_date>202</f_date>
 		<name>Лк.7:2-10</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27160,7 +26455,6 @@
 		<f_date>203</f_date>
 		<name>Лк.16:19-31</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27169,7 +26463,6 @@
 		<f_date>204</f_date>
 		<name>Лк.10:22-24</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27178,7 +26471,6 @@
 		<f_date>205</f_date>
 		<name>Лк.11:1-10</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27187,7 +26479,6 @@
 		<f_date>206</f_date>
 		<name>Лк.11:9-13</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27196,7 +26487,6 @@
 		<f_date>207</f_date>
 		<name>Лк.11:14-23</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27205,7 +26495,6 @@
 		<f_date>208</f_date>
 		<name>Лк.11:23-26</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27214,7 +26503,6 @@
 		<f_date>209</f_date>
 		<name>Лк.8:16-21</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27223,7 +26511,6 @@
 		<f_date>210</f_date>
 		<name>Лк.8:26-39</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27232,7 +26519,6 @@
 		<f_date>211</f_date>
 		<name>Лк.11:29-33</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27241,7 +26527,6 @@
 		<f_date>212</f_date>
 		<name>Лк.11:34-41</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27250,7 +26535,6 @@
 		<f_date>213</f_date>
 		<name>Лк.11:42-46</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27259,7 +26543,6 @@
 		<f_date>214</f_date>
 		<name>Лк.11:47-12:1</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27268,7 +26551,6 @@
 		<f_date>215</f_date>
 		<name>Лк.12:2-12</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27277,7 +26559,6 @@
 		<f_date>216</f_date>
 		<name>Лк.9:1-6</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27286,7 +26567,6 @@
 		<f_date>217</f_date>
 		<name>Лк.8:41-56</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27295,7 +26575,6 @@
 		<f_date>218</f_date>
 		<name>Лк.12:13-15,22-31</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27304,7 +26583,6 @@
 		<f_date>219</f_date>
 		<name>Лк.12:42-48</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27313,7 +26591,6 @@
 		<f_date>220</f_date>
 		<name>Лк.12:48-59</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27322,7 +26599,6 @@
 		<f_date>221</f_date>
 		<name>Лк.13:1-9</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27331,7 +26607,6 @@
 		<f_date>222</f_date>
 		<name>Лк.13:31-35</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27340,7 +26615,6 @@
 		<f_date>223</f_date>
 		<name>Лк.9:37-43</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27349,7 +26623,6 @@
 		<f_date>224</f_date>
 		<name>Лк.10:25-37</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27358,7 +26631,6 @@
 		<f_date>225</f_date>
 		<name>Лк.14:12-15</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27367,7 +26639,6 @@
 		<f_date>226</f_date>
 		<name>Лк.14:25-35</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27376,7 +26647,6 @@
 		<f_date>227</f_date>
 		<name>Лк.15:1-10</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27385,7 +26655,6 @@
 		<f_date>228</f_date>
 		<name>Лк.16:1-9</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27394,7 +26663,6 @@
 		<f_date>229</f_date>
 		<name>Лк.16:15-18,17:1-4</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27403,7 +26671,6 @@
 		<f_date>230</f_date>
 		<name>Лк.9:57-62</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27412,7 +26679,6 @@
 		<f_date>231</f_date>
 		<name>Лк.12:16-21</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27421,7 +26687,6 @@
 		<f_date>232</f_date>
 		<name>Лк.17:20-25</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27430,7 +26695,6 @@
 		<f_date>233</f_date>
 		<name>Лк.17:26-37</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27439,7 +26703,6 @@
 		<f_date>234</f_date>
 		<name>Лк.18:15-17,26-30</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27448,7 +26711,6 @@
 		<f_date>235</f_date>
 		<name>Лк.18:31-34</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27457,7 +26719,6 @@
 		<f_date>236</f_date>
 		<name>Лк.19:12-28</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27466,7 +26727,6 @@
 		<f_date>237</f_date>
 		<name>Лк.10:19-21</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27475,7 +26735,6 @@
 		<f_date>238</f_date>
 		<name>Лк.13:10-17</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27484,7 +26743,6 @@
 		<f_date>239</f_date>
 		<name>Лк.19:37-44</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27493,7 +26751,6 @@
 		<f_date>240</f_date>
 		<name>Лк.19:45-48</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27502,7 +26759,6 @@
 		<f_date>241</f_date>
 		<name>Лк.20:1-8</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27511,7 +26767,6 @@
 		<f_date>242</f_date>
 		<name>Лк.20:9-18</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27520,7 +26775,6 @@
 		<f_date>243</f_date>
 		<name>Лк.20:19-26</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27529,7 +26783,6 @@
 		<f_date>244</f_date>
 		<name>Лк.12:32-40</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27538,7 +26791,6 @@
 		<f_date>245</f_date>
 		<name>Лк.14:16-24</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27547,7 +26799,6 @@
 		<f_date>246</f_date>
 		<name>Лк.20:27-44</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27556,7 +26807,6 @@
 		<f_date>247</f_date>
 		<name>Лк.21:12-19</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27565,7 +26815,6 @@
 		<f_date>248</f_date>
 		<name>Лк.21:5-7,10-11,20-24</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27574,7 +26823,6 @@
 		<f_date>249</f_date>
 		<name>Лк.21:28-33</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27583,7 +26831,6 @@
 		<f_date>250</f_date>
 		<name>Лк.21:37-22:8</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27592,7 +26839,6 @@
 		<f_date>251</f_date>
 		<name>Лк.13:18-29</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27601,7 +26847,6 @@
 		<f_date>252</f_date>
 		<name>Лк.17:12-19</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27610,7 +26855,6 @@
 		<f_date>253</f_date>
 		<name>Мк.8:11-21</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27619,7 +26863,6 @@
 		<f_date>254</f_date>
 		<name>Мк.8:22-26</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27628,7 +26871,6 @@
 		<f_date>255</f_date>
 		<name>Мк.8:30-34</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27637,7 +26879,6 @@
 		<f_date>256</f_date>
 		<name>Мк.9:10-16</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27646,7 +26887,6 @@
 		<f_date>257</f_date>
 		<name>Мк.9:33-41</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27655,7 +26895,6 @@
 		<f_date>258</f_date>
 		<name>Лк.14:1-11</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27664,7 +26903,6 @@
 		<f_date>259</f_date>
 		<name>Лк.18:18-27</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27673,7 +26911,6 @@
 		<f_date>260</f_date>
 		<name>Мк.9:42-10:1</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27682,7 +26919,6 @@
 		<f_date>261</f_date>
 		<name>Мк.10:2-12</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27691,7 +26927,6 @@
 		<f_date>262</f_date>
 		<name>Мк.10:11-16</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27700,7 +26935,6 @@
 		<f_date>263</f_date>
 		<name>Мк.10:17-27</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27709,7 +26943,6 @@
 		<f_date>264</f_date>
 		<name>Мк.10:23-32</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27718,7 +26951,6 @@
 		<f_date>265</f_date>
 		<name>Лк.16:10-15</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27727,7 +26959,6 @@
 		<f_date>266</f_date>
 		<name>Лк.18:35-43</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27736,7 +26967,6 @@
 		<f_date>267</f_date>
 		<name>Мк.10:46-52</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27745,7 +26975,6 @@
 		<f_date>268</f_date>
 		<name>Мк.11:11-23</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27754,7 +26983,6 @@
 		<f_date>269</f_date>
 		<name>Мк.11:23-26</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27763,7 +26991,6 @@
 		<f_date>270</f_date>
 		<name>Мк.11:27-33</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27772,7 +26999,6 @@
 		<f_date>271</f_date>
 		<name>Мк.12:1-12</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27781,7 +27007,6 @@
 		<f_date>272</f_date>
 		<name>Лк.17:3-10</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27790,7 +27015,6 @@
 		<f_date>273</f_date>
 		<name>Лк.19:1-10</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27799,7 +27023,6 @@
 		<f_date>274</f_date>
 		<name>Мк.12:13-17</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27808,7 +27031,6 @@
 		<f_date>275</f_date>
 		<name>Мк.12:18-27</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27817,7 +27039,6 @@
 		<f_date>276</f_date>
 		<name>Мк.12:28-37</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27826,7 +27047,6 @@
 		<f_date>277</f_date>
 		<name>Мк.12:38-44</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27835,7 +27055,6 @@
 		<f_date>278</f_date>
 		<name>Мк.13:1-8</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27844,7 +27063,6 @@
 		<f_date>279</f_date>
 		<name>Лк.18:2-8</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27853,7 +27071,6 @@
 		<f_date>280</f_date>
 		<name>Лк.18:10-14</name>
 		<type>207</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27862,7 +27079,6 @@
 		<f_date>-48</f_date>
 		<name>Быт.1:1-20; Притч.1:1-20</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27871,7 +27087,6 @@
 		<f_date>-47</f_date>
 		<name>Быт.1:14-23; Притч.1:20-33</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27880,7 +27095,6 @@
 		<f_date>-46</f_date>
 		<name>Быт.1:24-2:3; Притч.2:1-22</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27889,7 +27103,6 @@
 		<f_date>-45</f_date>
 		<name> Быт.2:4-19; Притч.3:1-18</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27898,7 +27111,6 @@
 		<f_date>-44</f_date>
 		<name>Быт.2:20-3:20; Притч.3:19-34</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27907,7 +27119,6 @@
 		<f_date>-41</f_date>
 		<name>Быт.3:21-4:7; Притч.3:34-4:22</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27916,7 +27127,6 @@
 		<f_date>-40</f_date>
 		<name>Быт.4:8-15; Притч.5:1-15</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27925,7 +27135,6 @@
 		<f_date>-39</f_date>
 		<name>Быт.4:16-26; Притч.5:15-6:3</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27934,7 +27143,6 @@
 		<f_date>-38</f_date>
 		<name>Быт.5:1-24; Притч.6:3-20</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27943,7 +27151,6 @@
 		<f_date>-37</f_date>
 		<name>Быт.5:30-6:8; Притч.5:20-7:1</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27952,7 +27159,6 @@
 		<f_date>-34</f_date>
 		<name>Быт.6:9-22; Притч.8:1-21</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27961,7 +27167,6 @@
 		<f_date>-33</f_date>
 		<name>Быт.7:1-5; Притч.8:32-9:11</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27970,7 +27175,6 @@
 		<f_date>-32</f_date>
 		<name>Быт.7:6-9; Притч.9:12-18</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27979,7 +27183,6 @@
 		<f_date>-31</f_date>
 		<name>Быт.7:11-8:3; Притч.10:1-22</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27988,7 +27191,6 @@
 		<f_date>-30</f_date>
 		<name>Быт.8:4-21; Притч.10:31-11:12</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -27997,7 +27199,6 @@
 		<f_date>-27</f_date>
 		<name>Быт.8:21-9:7; Притч.11:19-12:6</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -28006,7 +27207,6 @@
 		<f_date>-26</f_date>
 		<name>Быт.9:8-17; Притч.12:8-22</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -28015,7 +27215,6 @@
 		<f_date>-25</f_date>
 		<name>Быт.9:19-10:1; Притч.12:23-13:9</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -28024,7 +27223,6 @@
 		<f_date>-24</f_date>
 		<name>Быт.10:32-11:9; Притч.13:20-14:6</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -28033,7 +27231,6 @@
 		<f_date>-23</f_date>
 		<name>Быт.12:1-7; Притч.14:15-26</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -28042,7 +27239,6 @@
 		<f_date>-20</f_date>
 		<name>Быт.13:13-18; Притч.14:27-15:4</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -28051,7 +27247,6 @@
 		<f_date>-19</f_date>
 		<name>Быт.15:1-15; Притч.15:7-19</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -28060,7 +27255,6 @@
 		<f_date>-18</f_date>
 		<name>Быт.17:1-9; Притч.15:20-16:9</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -28069,7 +27263,6 @@
 		<f_date>-17</f_date>
 		<name>Быт.18:20-33; Притч.16:17-17:17</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -28078,7 +27271,6 @@
 		<f_date>-16</f_date>
 		<name>Быт.22:1-18; Притч.17:17-18:5</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -28087,7 +27279,6 @@
 		<f_date>-13</f_date>
 		<name>Быт.27:1-41; Притч.19:19-25</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -28096,7 +27287,6 @@
 		<f_date>-12</f_date>
 		<name>Быт.31:3-16; Притч.21:3-21</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -28105,7 +27295,6 @@
 		<f_date>-11</f_date>
 		<name>Быт.43:26-31,45:1-16;Притч.21:23-22:4</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -28114,7 +27303,6 @@
 		<f_date>-10</f_date>
 		<name>Быт.46:1-7; Притч.23:23-24:5</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -28123,7 +27311,6 @@
 		<f_date>-9</f_date>
 		<name>Быт.49:33-50:26; Притч.31:8-31</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -28132,7 +27319,6 @@
 		<f_date>-2</f_date>
 		<name>1 Кор.1:18-2:2; Мф.27:1-38; Лк.23:39-43; Мф.27:39-54; Ин.19:31-37; Мф.27:55-61</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -28141,7 +27327,6 @@
 		<f_date>0</f_date>
 		<name>Ин.20:19-25</name>
 		<type>208</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -28150,7 +27335,6 @@
 		<f_date>-2</f_date>
 		<name>Евр.10:19-31; Ин.18:28-19:37</name>
 		<type>209</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>1</s_month>
@@ -29401,7 +28585,6 @@
 		<f_date>-47</f_date>
 		<name>Пс.91-100</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29410,7 +28593,6 @@
 		<f_date>-46</f_date>
 		<name>Пс.9-16</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29419,7 +28601,6 @@
 		<f_date>-45</f_date>
 		<name>Пс.64-69</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29428,7 +28609,6 @@
 		<f_date>-40</f_date>
 		<name>Пс.91-100</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29437,7 +28617,6 @@
 		<f_date>-39</f_date>
 		<name>Пс.9-16</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29446,7 +28625,6 @@
 		<f_date>-38</f_date>
 		<name>Пс.64-69</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29455,7 +28633,6 @@
 		<f_date>-33</f_date>
 		<name>Пс.91-100</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29464,7 +28641,6 @@
 		<f_date>-32</f_date>
 		<name>Пс.9-16</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29473,7 +28649,6 @@
 		<f_date>-31</f_date>
 		<name>Пс.64-69</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29482,7 +28657,6 @@
 		<f_date>-26</f_date>
 		<name>Пс.91-100</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29491,7 +28665,6 @@
 		<f_date>-25</f_date>
 		<name>Пс.9-16</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29500,7 +28673,6 @@
 		<f_date>-24</f_date>
 		<name>Пс.64-69</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29509,7 +28681,6 @@
 		<f_date>-19</f_date>
 		<name>Пс.101-104</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29518,7 +28689,6 @@
 		<f_date>-18</f_date>
 		<name>Пс.17-23</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29527,7 +28697,6 @@
 		<f_date>-12</f_date>
 		<name>Пс.91-100</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29536,7 +28705,6 @@
 		<f_date>-11</f_date>
 		<name>Пс.9-16</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29545,7 +28713,6 @@
 		<f_date>-10</f_date>
 		<name>Пс.64-69</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29554,7 +28721,6 @@
 		<f_date>332</f_date>
 		<name>Пс.9-16</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29563,7 +28729,6 @@
 		<f_date>333</f_date>
 		<name>Пс.64-69</name>
 		<type>301</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29572,7 +28737,6 @@
 		<f_date>-50</f_date>
 		<name>Пс.109-111; Пс.118</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29581,7 +28745,6 @@
 		<f_date>-49</f_date>
 		<name>Пс.9-16; Пс.17-23</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29590,7 +28753,6 @@
 		<f_date>-48</f_date>
 		<name>Пс.24-31; Пс.32-36; Пс.37-45</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29599,7 +28761,6 @@
 		<f_date>-47</f_date>
 		<name>Пс.46-54; Пс.55-63; Пс.64-69</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29608,7 +28769,6 @@
 		<f_date>-46</f_date>
 		<name>Пс.70-76; Пс.77-84; Пс.85-90</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29617,7 +28777,6 @@
 		<f_date>-45</f_date>
 		<name>Пс.91-100; Пс.101-104; Пс.105-108</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29626,7 +28785,6 @@
 		<f_date>-44</f_date>
 		<name>Пс.134-142; Пс.9-16</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29635,7 +28793,6 @@
 		<f_date>-43</f_date>
 		<name>Пс.109-111; Пс.118</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29644,7 +28801,6 @@
 		<f_date>-42</f_date>
 		<name>Пс.9-16; Пс.17-23; Пс.118</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29653,7 +28809,6 @@
 		<f_date>-41</f_date>
 		<name>Пс.24-31; Пс.32-36; Пс.37-45</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29662,7 +28817,6 @@
 		<f_date>-40</f_date>
 		<name>Пс.70-76; Пс.77-84; Пс.85-90</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29671,7 +28825,6 @@
 		<f_date>-39</f_date>
 		<name>Пс.134-142; Пс.143-150; Пс.1-8</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29680,7 +28833,6 @@
 		<f_date>-38</f_date>
 		<name>Пс.37-45; Пс.46-54; Пс.55-63</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29689,7 +28841,6 @@
 		<f_date>-37</f_date>
 		<name>Пс.91-100; Пс.101-104; Пс.105-108</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29698,7 +28849,6 @@
 		<f_date>-36</f_date>
 		<name>Пс.109-111; Пс.118</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29707,7 +28857,6 @@
 		<f_date>-35</f_date>
 		<name>Пс.9-16; Пс.17-23; Пс.118</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29716,7 +28865,6 @@
 		<f_date>-34</f_date>
 		<name>Пс.24-31; Пс.32-36; Пс.37-45</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29725,7 +28873,6 @@
 		<f_date>-33</f_date>
 		<name>Пс.70-76; Пс.77-84; Пс.85-90</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29734,7 +28881,6 @@
 		<f_date>-32</f_date>
 		<name>Пс.134-142; Пс.143-150; Пс.1-8</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29743,7 +28889,6 @@
 		<f_date>-31</f_date>
 		<name>Пс.37-45; Пс.46-54; Пс.55-63</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29752,7 +28897,6 @@
 		<f_date>-30</f_date>
 		<name>Пс.91-100; Пс.101-104; Пс.105-108</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29761,7 +28905,6 @@
 		<f_date>-29</f_date>
 		<name>Пс.109-111; Пс.118</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29770,7 +28913,6 @@
 		<f_date>-28</f_date>
 		<name>Пс.9-16; Пс.17-23; Пс.118</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29779,7 +28921,6 @@
 		<f_date>-27</f_date>
 		<name>Пс.24-31; Пс.32-36; Пс.37-45</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29788,7 +28929,6 @@
 		<f_date>-26</f_date>
 		<name>Пс.70-76; Пс.77-84; Пс.85-90</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29797,7 +28937,6 @@
 		<f_date>-25</f_date>
 		<name>Пс.134-142; Пс.143-150; Пс.1-8</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29806,7 +28945,6 @@
 		<f_date>-24</f_date>
 		<name>Пс.37-45; Пс.46-54; Пс.55-63</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29815,7 +28953,6 @@
 		<f_date>-23</f_date>
 		<name>Пс.91-100; Пс.101-104; Пс.105-108</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29824,7 +28961,6 @@
 		<f_date>-22</f_date>
 		<name>Пс.109-111; Пс.118</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29833,7 +28969,6 @@
 		<f_date>-21</f_date>
 		<name>Пс.9-16; Пс.17-23; Пс.118</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29842,7 +28977,6 @@
 		<f_date>-20</f_date>
 		<name>Пс.24-31; Пс.32-36; Пс.37-45</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29851,7 +28985,6 @@
 		<f_date>-19</f_date>
 		<name>Пс.77-84; Пс.85-90; Пс.91-100</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29860,7 +28993,6 @@
 		<f_date>-18</f_date>
 		<name>Пс.143-150; Пс.1-8; Пс.9-16</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29869,7 +29001,6 @@
 		<f_date>-17</f_date>
 		<name>Пс.55-63</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29878,7 +29009,6 @@
 		<f_date>-16</f_date>
 		<name>Пс.91-100; Пс.101-104; Пс.105-108</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29887,7 +29017,6 @@
 		<f_date>-15</f_date>
 		<name>Пс.109-111; Пс.118</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29896,7 +29025,6 @@
 		<f_date>-14</f_date>
 		<name>Пс.9-16; Пс.17-23; Пс.118</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29905,7 +29033,6 @@
 		<f_date>-13</f_date>
 		<name>Пс.24-31; Пс.32-36; Пс.37-45</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29914,7 +29041,6 @@
 		<f_date>-12</f_date>
 		<name>Пс.70-76; Пс.77-84; Пс.85-90</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29923,7 +29049,6 @@
 		<f_date>-11</f_date>
 		<name>Пс.134-142; Пс.143-150; Пс.1-8</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29932,7 +29057,6 @@
 		<f_date>-10</f_date>
 		<name>Пс.37-45; Пс.46-54; Пс.55-63</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29941,7 +29065,6 @@
 		<f_date>-9</f_date>
 		<name>Пс.91-100; Пс.101-104; Пс.105-108</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29950,7 +29073,6 @@
 		<f_date>-8</f_date>
 		<name>Пс.118</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29959,7 +29081,6 @@
 		<f_date>-7</f_date>
 		<name>Пс.9-16; Пс.17-23</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29968,7 +29089,6 @@
 		<f_date>-6</f_date>
 		<name>Пс.24-31; Пс.32-36; Пс.37-45</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29977,7 +29097,6 @@
 		<f_date>-5</f_date>
 		<name>Пс.64-69; Пс.70-76; Пс.77-84</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29986,7 +29105,6 @@
 		<f_date>-4</f_date>
 		<name>Пс.101-104; Пс.105-108; Пс.109-111</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -29995,7 +29113,6 @@
 		<f_date>6</f_date>
 		<name>Пс.109-111; Пс.118</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30004,7 +29121,6 @@
 		<f_date>7</f_date>
 		<name>Пс.9-16; Пс.17-23</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30013,7 +29129,6 @@
 		<f_date>8</f_date>
 		<name>Пс.24-31; Пс.32-36</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30022,7 +29137,6 @@
 		<f_date>9</f_date>
 		<name>Пс.46-54; Пс.55-63</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30031,7 +29145,6 @@
 		<f_date>10</f_date>
 		<name>Пс.70-76; Пс.77-84</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30040,7 +29153,6 @@
 		<f_date>11</f_date>
 		<name>Пс.91-100; Пс.101-104</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30049,7 +29161,6 @@
 		<f_date>12</f_date>
 		<name>Пс.134-142; Пс.9-16</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30058,7 +29169,6 @@
 		<f_date>331</f_date>
 		<name>Пс.85-90</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30067,7 +29177,6 @@
 		<f_date>332</f_date>
 		<name>Пс.134-142; Пс.143-150; Пс.1-8</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30076,7 +29185,6 @@
 		<f_date>333</f_date>
 		<name>Пс.37-45; Пс.46-54; Пс.55-63</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30085,7 +29193,6 @@
 		<f_date>356</f_date>
 		<name>Пс.109-111; Пс.118</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30094,7 +29201,6 @@
 		<f_date>357</f_date>
 		<name>Пс.9-16; Пс.17-23</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30103,7 +29209,6 @@
 		<f_date>358</f_date>
 		<name>Пс.24-31; Пс.32-36; Пс.37-45</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30112,7 +29217,6 @@
 		<f_date>359</f_date>
 		<name>Пс.46-54; Пс.55-63; Пс.64-69</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30121,7 +29225,6 @@
 		<f_date>360</f_date>
 		<name>Пс.70-76; Пс.77-84; Пс.85-90</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30130,7 +29233,6 @@
 		<f_date>361</f_date>
 		<name>Пс.91-100; Пс.101-104; Пс.105-108</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30139,7 +29241,6 @@
 		<f_date>362</f_date>
 		<name>Пс.134-142; Пс.9-16</name>
 		<type>302</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30148,7 +29249,6 @@
 		<f_date>-48</f_date>
 		<name>Пс.46-54</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30157,7 +29257,6 @@
 		<f_date>-47</f_date>
 		<name>Пс.101-104</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30166,7 +29265,6 @@
 		<f_date>-46</f_date>
 		<name>Пс.17-23</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30175,7 +29273,6 @@
 		<f_date>-45</f_date>
 		<name>Пс.70-76</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30184,7 +29281,6 @@
 		<f_date>-44</f_date>
 		<name>Пс.134-142</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30193,7 +29289,6 @@
 		<f_date>-41</f_date>
 		<name>Пс.46-54</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30202,7 +29297,6 @@
 		<f_date>-40</f_date>
 		<name>Пс.101-104</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30211,7 +29305,6 @@
 		<f_date>-39</f_date>
 		<name>Пс.17-23</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30220,7 +29313,6 @@
 		<f_date>-38</f_date>
 		<name>Пс.70-76</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30229,7 +29321,6 @@
 		<f_date>-37</f_date>
 		<name>Пс.134-142</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30238,7 +29329,6 @@
 		<f_date>-34</f_date>
 		<name>Пс.46-54</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30247,7 +29337,6 @@
 		<f_date>-33</f_date>
 		<name>Пс.101-104</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30256,7 +29345,6 @@
 		<f_date>-32</f_date>
 		<name>Пс.17-23</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30265,7 +29353,6 @@
 		<f_date>-31</f_date>
 		<name>Пс.70-76</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30274,7 +29361,6 @@
 		<f_date>-30</f_date>
 		<name>Пс.134-142</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30283,7 +29369,6 @@
 		<f_date>-27</f_date>
 		<name>Пс.46-54</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30292,7 +29377,6 @@
 		<f_date>-26</f_date>
 		<name>Пс.101-104</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30301,7 +29385,6 @@
 		<f_date>-25</f_date>
 		<name>Пс.17-23</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30310,7 +29393,6 @@
 		<f_date>-24</f_date>
 		<name>Пс.70-76</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30319,7 +29401,6 @@
 		<f_date>-23</f_date>
 		<name>Пс.134-142</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30328,7 +29409,6 @@
 		<f_date>-20</f_date>
 		<name>Пс.46-54</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30337,7 +29417,6 @@
 		<f_date>-19</f_date>
 		<name>Пс.105-108</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30346,7 +29425,6 @@
 		<f_date>-18</f_date>
 		<name>Пс.24-31</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30355,7 +29433,6 @@
 		<f_date>-17</f_date>
 		<name>Пс.64-69</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30364,7 +29441,6 @@
 		<f_date>-16</f_date>
 		<name>Пс.134-142</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30373,7 +29449,6 @@
 		<f_date>-13</f_date>
 		<name>Пс.46-54</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30382,7 +29457,6 @@
 		<f_date>-12</f_date>
 		<name>Пс.101-104</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30391,7 +29465,6 @@
 		<f_date>-11</f_date>
 		<name>Пс.17-23</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30400,7 +29473,6 @@
 		<f_date>-10</f_date>
 		<name>Пс.70-76</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30409,7 +29481,6 @@
 		<f_date>-9</f_date>
 		<name>Пс.134-142</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30418,7 +29489,6 @@
 		<f_date>-6</f_date>
 		<name>Пс.46-54</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30427,7 +29497,6 @@
 		<f_date>-5</f_date>
 		<name>Пс.85-90</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30436,7 +29505,6 @@
 		<f_date>-4</f_date>
 		<name>Пс.134-142</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30445,7 +29513,6 @@
 		<f_date>331</f_date>
 		<name>Пс.91-100</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30454,7 +29521,6 @@
 		<f_date>332</f_date>
 		<name>Пс.17-23</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30463,7 +29529,6 @@
 		<f_date>333</f_date>
 		<name>Пс.70-76</name>
 		<type>303</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30472,7 +29537,6 @@
 		<f_date>-48</f_date>
 		<name>Пс.55-63</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30481,7 +29545,6 @@
 		<f_date>-47</f_date>
 		<name>Пс.105-108</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30490,7 +29553,6 @@
 		<f_date>-46</f_date>
 		<name>Пс.24-31</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30499,7 +29561,6 @@
 		<f_date>-45</f_date>
 		<name>Пс.77-84</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30508,7 +29569,6 @@
 		<f_date>-44</f_date>
 		<name>Пс.143-150</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30517,7 +29577,6 @@
 		<f_date>-41</f_date>
 		<name>Пс.55-63</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30526,7 +29585,6 @@
 		<f_date>-40</f_date>
 		<name>Пс.105-108</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30535,7 +29593,6 @@
 		<f_date>-39</f_date>
 		<name>Пс.24-31</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30544,7 +29601,6 @@
 		<f_date>-38</f_date>
 		<name>Пс.77-84</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30553,7 +29609,6 @@
 		<f_date>-37</f_date>
 		<name>Пс.143-150</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30562,7 +29617,6 @@
 		<f_date>-34</f_date>
 		<name>Пс.55-63</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30571,7 +29625,6 @@
 		<f_date>-33</f_date>
 		<name>Пс.105-108</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30580,7 +29633,6 @@
 		<f_date>-32</f_date>
 		<name>Пс.24-31</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30589,7 +29641,6 @@
 		<f_date>-31</f_date>
 		<name>Пс.77-84</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30598,7 +29649,6 @@
 		<f_date>-30</f_date>
 		<name>Пс.143-150</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30607,7 +29657,6 @@
 		<f_date>-27</f_date>
 		<name>Пс.55-63</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30616,7 +29665,6 @@
 		<f_date>-26</f_date>
 		<name>Пс.105-108</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30625,7 +29673,6 @@
 		<f_date>-25</f_date>
 		<name>Пс.24-31</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30634,7 +29681,6 @@
 		<f_date>-24</f_date>
 		<name>Пс.77-84</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30643,7 +29689,6 @@
 		<f_date>-23</f_date>
 		<name>Пс.143-150</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30652,7 +29697,6 @@
 		<f_date>-20</f_date>
 		<name>Пс.55-63</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30661,7 +29705,6 @@
 		<f_date>-19</f_date>
 		<name>Пс.109-111</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30670,7 +29713,6 @@
 		<f_date>-18</f_date>
 		<name>Пс.32-36</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30679,7 +29721,6 @@
 		<f_date>-17</f_date>
 		<name>Пс.70-76</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30688,7 +29729,6 @@
 		<f_date>-16</f_date>
 		<name>Пс.143-150</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30697,7 +29737,6 @@
 		<f_date>-13</f_date>
 		<name>Пс.55-63</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30706,7 +29745,6 @@
 		<f_date>-12</f_date>
 		<name>Пс.105-108</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30715,7 +29753,6 @@
 		<f_date>-11</f_date>
 		<name>Пс.24-31</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30724,7 +29761,6 @@
 		<f_date>-10</f_date>
 		<name>Пс.77-84</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30733,7 +29769,6 @@
 		<f_date>-9</f_date>
 		<name>Пс.143-150</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30742,7 +29777,6 @@
 		<f_date>-6</f_date>
 		<name>Пс.55-63</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30751,7 +29785,6 @@
 		<f_date>-5</f_date>
 		<name>Пс.91-100</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30760,7 +29793,6 @@
 		<f_date>-4</f_date>
 		<name>Пс.143-150</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30769,7 +29801,6 @@
 		<f_date>331</f_date>
 		<name>Пс.101-104</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30778,7 +29809,6 @@
 		<f_date>332</f_date>
 		<name>Пс.24-31</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30787,7 +29817,6 @@
 		<f_date>333</f_date>
 		<name>Пс.77-84</name>
 		<type>306</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30796,7 +29825,6 @@
 		<f_date>-50</f_date>
 		<name>Пс.1-8</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30805,7 +29833,6 @@
 		<f_date>-48</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30814,7 +29841,6 @@
 		<f_date>-47</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30823,7 +29849,6 @@
 		<f_date>-46</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30832,7 +29857,6 @@
 		<f_date>-45</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30841,7 +29865,6 @@
 		<f_date>-44</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30850,7 +29873,6 @@
 		<f_date>-43</f_date>
 		<name>Пс.1-8</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30859,7 +29881,6 @@
 		<f_date>-41</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30868,7 +29889,6 @@
 		<f_date>-40</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30877,7 +29897,6 @@
 		<f_date>-39</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30886,7 +29905,6 @@
 		<f_date>-38</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30895,7 +29913,6 @@
 		<f_date>-37</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30904,7 +29921,6 @@
 		<f_date>-36</f_date>
 		<name>Пс.1-8</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30913,7 +29929,6 @@
 		<f_date>-34</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30922,7 +29937,6 @@
 		<f_date>-33</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30931,7 +29945,6 @@
 		<f_date>-32</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30940,7 +29953,6 @@
 		<f_date>-31</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30949,7 +29961,6 @@
 		<f_date>-30</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30958,7 +29969,6 @@
 		<f_date>-29</f_date>
 		<name>Пс.1-8</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30967,7 +29977,6 @@
 		<f_date>-27</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30976,7 +29985,6 @@
 		<f_date>-26</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30985,7 +29993,6 @@
 		<f_date>-25</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -30994,7 +30001,6 @@
 		<f_date>-24</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31003,7 +30009,6 @@
 		<f_date>-23</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31012,7 +30017,6 @@
 		<f_date>-22</f_date>
 		<name>Пс.1-8</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31021,7 +30025,6 @@
 		<f_date>-20</f_date>
 		<name>Пс.70-76</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31030,7 +30033,6 @@
 		<f_date>-19</f_date>
 		<name>Пс.134-142</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31039,7 +30041,6 @@
 		<f_date>-18</f_date>
 		<name>Пс.46-54</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31048,7 +30049,6 @@
 		<f_date>-17</f_date>
 		<name>Пс.85-90</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31057,7 +30057,6 @@
 		<f_date>-16</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31066,7 +30065,6 @@
 		<f_date>-15</f_date>
 		<name>Пс.1-8</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31075,7 +30073,6 @@
 		<f_date>-13</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31084,7 +30081,6 @@
 		<f_date>-12</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31093,7 +30089,6 @@
 		<f_date>-11</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31102,7 +30097,6 @@
 		<f_date>-10</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31111,7 +30105,6 @@
 		<f_date>-9</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31120,7 +30113,6 @@
 		<f_date>-8</f_date>
 		<name>Пс.1-8</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31129,7 +30121,6 @@
 		<f_date>-6</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31138,7 +30129,6 @@
 		<f_date>-5</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31147,7 +30137,6 @@
 		<f_date>-4</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31156,7 +30145,6 @@
 		<f_date>6</f_date>
 		<name>Пс.1-8</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31165,7 +30153,6 @@
 		<f_date>8</f_date>
 		<name>Пс.37-45</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31174,7 +30161,6 @@
 		<f_date>9</f_date>
 		<name>Пс.64-69</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31183,7 +30169,6 @@
 		<f_date>10</f_date>
 		<name>Пс.85-90</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31192,7 +30177,6 @@
 		<f_date>11</f_date>
 		<name>Пс.105-108</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31201,7 +30185,6 @@
 		<f_date>12</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31210,7 +30193,6 @@
 		<f_date>331</f_date>
 		<name>Пс.109-111</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31219,7 +30201,6 @@
 		<f_date>356</f_date>
 		<name>Пс.1-8</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31228,7 +30209,6 @@
 		<f_date>358</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31237,7 +30217,6 @@
 		<f_date>359</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31246,7 +30225,6 @@
 		<f_date>360</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31255,7 +30233,6 @@
 		<f_date>361</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31264,7 +30241,6 @@
 		<f_date>362</f_date>
 		<name>Пс.119-133</name>
 		<type>308</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31273,7 +30249,6 @@
 		<f_date>-48</f_date>
 		<name>Пс.64-69</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31282,7 +30257,6 @@
 		<f_date>-47</f_date>
 		<name>Пс.109-111</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31291,7 +30265,6 @@
 		<f_date>-46</f_date>
 		<name>Пс.32-36</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31300,7 +30273,6 @@
 		<f_date>-45</f_date>
 		<name>Пс.85-90</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31309,7 +30281,6 @@
 		<f_date>-41</f_date>
 		<name>Пс.64-69</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31318,7 +30289,6 @@
 		<f_date>-40</f_date>
 		<name>Пс.109-111</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31327,7 +30297,6 @@
 		<f_date>-39</f_date>
 		<name>Пс.32-36</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31336,7 +30305,6 @@
 		<f_date>-38</f_date>
 		<name>Пс.85-90</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31345,7 +30313,6 @@
 		<f_date>-34</f_date>
 		<name>Пс.64-69</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31354,7 +30321,6 @@
 		<f_date>-33</f_date>
 		<name>Пс.109-111</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31363,7 +30329,6 @@
 		<f_date>-32</f_date>
 		<name>Пс.32-36</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31372,7 +30337,6 @@
 		<f_date>-31</f_date>
 		<name>Пс.85-90</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31381,7 +30345,6 @@
 		<f_date>-27</f_date>
 		<name>Пс.64-69</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31390,7 +30353,6 @@
 		<f_date>-26</f_date>
 		<name>Пс.109-111</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31399,7 +30361,6 @@
 		<f_date>-25</f_date>
 		<name>Пс.32-36</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31408,7 +30369,6 @@
 		<f_date>-24</f_date>
 		<name>Пс.85-90</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31417,7 +30377,6 @@
 		<f_date>-20</f_date>
 		<name>Пс.64-69</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31426,7 +30385,6 @@
 		<f_date>-19</f_date>
 		<name>Пс.119-133</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31435,7 +30393,6 @@
 		<f_date>-18</f_date>
 		<name>Пс.37-45</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31444,7 +30401,6 @@
 		<f_date>-17</f_date>
 		<name>Пс.77-84</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31453,7 +30409,6 @@
 		<f_date>-13</f_date>
 		<name>Пс.64-69</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31462,7 +30417,6 @@
 		<f_date>-12</f_date>
 		<name>Пс.109-111</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31471,7 +30425,6 @@
 		<f_date>-11</f_date>
 		<name>Пс.32-36</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31480,7 +30433,6 @@
 		<f_date>-10</f_date>
 		<name>Пс.85-90</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31489,7 +30441,6 @@
 		<f_date>331</f_date>
 		<name>Пс.105-108</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31498,7 +30449,6 @@
 		<f_date>332</f_date>
 		<name>Пс.32-36</name>
 		<type>309</type>
-		<discription/>
 	</event>
 	<event>
 		<s_month>0</s_month>
@@ -31507,6 +30457,5 @@
 		<f_date>333</f_date>
 		<name>Пс.85-90</name>
 		<type>309</type>
-		<discription/>
 	</event>
 </MemoryDays>

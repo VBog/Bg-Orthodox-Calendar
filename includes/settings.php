@@ -21,6 +21,7 @@ function bg_ortcal_options_page() {
     $popmenu1_name = "bg_ortcal_popmenu1";						// Официальный календарь РПЦ
     $popmenu2_name = "bg_ortcal_popmenu2";						// Календарь на Православие.Ru
     $popmenu3_name = "bg_ortcal_popmenu3";						// Богослужебные указания
+    $popmenu4_name = "bg_ortcal_popmenu4";						// Календарь на Azbyka.Ru
     $popmenu101_name = "bg_ortcal_popmenu101";					// Этот день в календаре
     $popmenu1001_name = "bg_ortcal_popmenu1001";				// Текущий день
     $popmenu1002_name = "bg_ortcal_popmenu1002";				// Выбор имени по Месяцеслову
@@ -56,6 +57,7 @@ function bg_ortcal_options_page() {
     $popmenu1_val = get_option( "bg_ortcal_popmenu1" );
     $popmenu2_val = get_option( "bg_ortcal_popmenu2" );
     $popmenu3_val = get_option( "bg_ortcal_popmenu3" );
+    $popmenu4_val = get_option( "bg_ortcal_popmenu4" );
     $popmenu101_val = get_option( "bg_ortcal_popmenu101" );
     $popmenu1001_val = get_option( "bg_ortcal_popmenu1001" );
     $popmenu1002_val = get_option( "bg_ortcal_popmenu1002" );
@@ -117,6 +119,9 @@ function bg_ortcal_options_page() {
 
 		$popmenu3_val = ( isset( $_POST[$popmenu3_name] ) && $_POST[$popmenu3_name] ) ? $_POST[$popmenu3_name] : '' ;
 		update_option( $popmenu3_name, $popmenu3_val );
+
+		$popmenu4_val = ( isset( $_POST[$popmenu4_name] ) && $_POST[$popmenu4_name] ) ? $_POST[$popmenu4_name] : '' ;
+		update_option( $popmenu4_name, $popmenu4_val );
 
 		$popmenu101_val = ( isset( $_POST[$popmenu101_name] ) && $_POST[$popmenu101_name] ) ? $_POST[$popmenu101_name] : '' ;
 		update_option( $popmenu101_name, $popmenu101_val );
@@ -263,6 +268,11 @@ function bg_ortcal_options_page() {
 	<input type="text" id="popmenu3_name" name="<?php echo $popmenu3_name ?>" size="60" value="<?php echo $popmenu3_val ?>"><br />
 	</td></tr>
 	<tr valign="top">
+	<th scope="row">Ссылка на сайт календаря Азбука веры</th>
+	<td>
+	<input type="text" id="popmenu4_name" name="<?php echo $popmenu4_name ?>" size="60" value="<?php echo $popmenu4_val ?>"><br />
+	</td></tr>
+	<tr valign="top">
 	<th scope="row">Этот день в календаре (страница сайта)</th>
 	<td>
 	<input type="text" id="popmenu101_name" name="<?php echo $popmenu101_name ?>" size="60" value="<?php echo $popmenu101_val ?>"><br />
@@ -348,6 +358,10 @@ function bg_ortcal_options_page() {
 </p>
 
 </form>
+</div>
+<div>
+<img src="<?php echo plugins_url('/bg_pbu.jpg', plugin_basename(__FILE__) ); ?>" style="float:left;  margin: 2px 7px 0px 0px;" width="32" height="32" />Новый плагин <a href="https://wordpress.org/plugins/bg-patriarchia-bu/" target="_blank">Bg Patriarchia BU</a> копирует богослужебные указания с сайта Patriarchia.ru и вставляет их на страницу вашего сайта.<br>
+Плагин может работать как автономно, так и совместно с плагином "Православный календарь".
 </div>
 </td>
 

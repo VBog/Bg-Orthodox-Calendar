@@ -159,7 +159,10 @@ function ortcal_sedmica ($month, $day, $year) {
 	else  {														// Седмицы по Пятидесятнице
 		$nw = (int)(($cd - ($ed+49))/7)+1;
 		if ($wd == 0) return "Неделя ".($nw-1)."-я по Пятидесятнице";
-		else return "Седмица ".$nw."-я по Пятидесятнице";
+		else {
+			if ($nw==1) return "Седмица 1-я по Пятидесятнице (Троицкая)";
+			else return "Седмица ".$nw."-я по Пятидесятнице";
+		}
 	}
 
 	return "";
@@ -399,7 +402,8 @@ function bg_ortcal_dayEvents($month, $day, $year){
 					if ($name != "" && $date >= $start && $date <= $finish) {
 						$s = ortcal_add_days($start, $dd);
 						$f = ortcal_add_days($finish, $dd);
-						$result[] = array (	"s_date" => date ("d", $s),
+						$result[] = array (	
+							"s_date" => date ("d", $s),
 							"s_month" => date ("m", $s),
 							"s_year" => date ("Y", $s),
 							"f_date" => date ("d", $f),

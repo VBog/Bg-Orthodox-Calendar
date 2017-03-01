@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: VBog
-    Version: 0.12.2
+    Version: 0.12.3
     Author URI: http://bogaiskov.ru 
 	License:     GPL2
 */
@@ -36,7 +36,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.12.2');
+define('BG_ORTCAL_VERSION', '0.12.3');
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -106,6 +106,7 @@ function bg_ortcal_js_options () {
     $popmenu1_val = get_option( "bg_ortcal_popmenu1" );
     $popmenu2_val = get_option( "bg_ortcal_popmenu2" );
     $popmenu3_val = get_option( "bg_ortcal_popmenu3" );
+    $popmenu4_val = get_option( "bg_ortcal_popmenu4" );
     $popmenu101_val = get_option( "bg_ortcal_popmenu101" );
     $popmenu1001_val = get_option( "bg_ortcal_popmenu1001" );
     $popmenu1002_val = get_option( "bg_ortcal_popmenu1002" );
@@ -121,6 +122,7 @@ function bg_ortcal_js_options () {
 		if ($popmenu1_val) {echo 'bg_ortcal_popmenu['.$i.']={name:"'.$popmenu1_val.'", type: 1};'; $i++;}
 		if ($popmenu2_val) {echo 'bg_ortcal_popmenu['.$i.']={name: "'.$popmenu2_val.'", type: 2};';$i++;}
 		if ($popmenu3_val) {echo 'bg_ortcal_popmenu['.$i.']={name: "'.$popmenu3_val.'", type: 3};';$i++;}
+		if ($popmenu4_val) {echo 'bg_ortcal_popmenu['.$i.']={name: "'.$popmenu4_val.'", type: 4};';$i++;}
 		if ($popmenu101_val) {echo 'bg_ortcal_popmenu['.$i.']={name: "'.$popmenu101_val.'", type: 101};';$i++;}
 		if ($popmenu1001_val) {echo 'bg_ortcal_popmenu['.$i.']={name: "'.$popmenu1001_val.'", type: 1001};';$i++;}
 		if ($popmenu1002_val) {echo 'bg_ortcal_popmenu['.$i.']={name: "'.$popmenu1002_val.'", type: 1002};';$i++;}
@@ -682,6 +684,7 @@ function bg_ortcal_options_ini () {
 	add_option('bg_ortcal_popmenu1', "Официальный календарь РПЦ");
 	add_option('bg_ortcal_popmenu2', "Календарь на Православие.Ru");
 	add_option('bg_ortcal_popmenu3', "Богослужебные указания");
+	add_option('bg_ortcal_popmenu4', "Календарь на Азбука веры");
 	add_option('bg_ortcal_popmenu101', "Этот день в календаре (страница)");
 	add_option('bg_ortcal_popmenu1001', "Этот день в календаре (окно)");
 	add_option('bg_ortcal_popmenu1002', "Выбор имени по Месяцеслову");
@@ -713,6 +716,7 @@ function bg_ortcal_deinstall() {
 	delete_option('bg_ortcal_popmenu1');
 	delete_option('bg_ortcal_popmenu2');
 	delete_option('bg_ortcal_popmenu3');
+	delete_option('bg_ortcal_popmenu4');
 	delete_option('bg_ortcal_popmenu101');
 	delete_option('bg_ortcal_popmenu1001');
 	delete_option('bg_ortcal_popmenu1002');

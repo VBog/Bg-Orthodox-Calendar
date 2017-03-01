@@ -88,7 +88,10 @@ function bg_ortcal_Sedmica (d) {											// d - текущая дата
 	else  {														// Седмицы по Пятидесятнице
 		nw = Math.ceil((cd - (ed+49))/7);
 		if (wd == 0) return "Неделя "+nw+"-я по Пятидесятнице";
-		else return "Седмица "+nw+"-я по Пятидесятнице";
+		else {
+			if (nw==1) return "Седмица 1-я по Пятидесятнице (Троицкая)";
+			else return "Седмица "+nw+"-я по Пятидесятнице";
+		}
 	}
 
 	return "";
@@ -126,6 +129,14 @@ function bg_ortcal_getLink(d, type) {
 		odate=d.getDate();
 		if (odate<10) {odate="0"+odate}
 		l = "http://www.patriarchia.ru/bu/"+od.getFullYear()+"-"+omonth+"-"+odate+"/print.html";
+		break;
+	case 4: 								// Страница дня на Azbyka.Ru
+		if (d.getFullYear()!=now.getFullYear()) break;	// Если не текущий год, то на выход
+		omonth=d.getMonth()+1;
+		if (omonth<10) {omonth="0"+omonth}
+		odate=d.getDate();
+		if (odate<10) {odate="0"+odate}
+		l = "https://azbyka.ru/days/"+od.getFullYear()+"-"+omonth+"-"+odate;
 		break;
 	case 101: 								// Страница на сайте
 		omonth=d.getMonth()+1;
