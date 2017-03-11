@@ -8042,6 +8042,14 @@
 	</event>
 	<event>
 		<s_month>1</s_month>
+		<s_date>3</s_date>
+		<f_month>1</f_month>
+		<f_date>3</f_date>
+		<name>Прп. Женевьевы Парижской (512 г.)</name>
+		<type>18</type>
+	</event>
+	<event>
+		<s_month>1</s_month>
 		<s_date>4</s_date>
 		<f_month>1</f_month>
 		<f_date>4</f_date>
@@ -8326,6 +8334,14 @@
 		<f_month>1</f_month>
 		<f_date>15</f_date>
 		<name>Свт. Герасима, Патриарха Александрийского (1714)</name>
+		<type>18</type>
+	</event>
+	<event>
+		<s_month>1</s_month>
+		<s_date>16</s_date>
+		<f_month>1</f_month>
+		<f_date>16</f_date>
+		<name>Свт. Гонората, еп. Арльского (429 г.)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -10101,6 +10117,14 @@
 		<s_date>17</s_date>
 		<f_month>3</f_month>
 		<f_date>17</f_date>
+		<name>Свт. Патрикия, просветителя Ирландии (после 460 г.)</name>
+		<type>18</type>
+	</event>
+	<event>
+		<s_month>3</s_month>
+		<s_date>17</s_date>
+		<f_month>3</f_month>
+		<f_date>17</f_date>
 		<name>Мч. Марина (260)</name>
 		<type>18</type>
 	</event>
@@ -11053,6 +11077,14 @@
 		<s_date>22</s_date>
 		<f_month>4</f_month>
 		<f_date>22</f_date>
+		<name>Мч. Епиподия Лионского (ок. 177 г.)</name>
+		<type>18</type>
+	</event>
+	<event>
+		<s_month>4</s_month>
+		<s_date>22</s_date>
+		<f_month>4</f_month>
+		<f_date>22</f_date>
 		<name>Апп. Нафанаила, Луки и Климента (I)</name>
 		<type>18</type>
 	</event>
@@ -11094,6 +11126,14 @@
 		<f_month>4</f_month>
 		<f_date>23</f_date>
 		<name>Мчч. Анатолия и Протолеона (303)</name>
+		<type>18</type>
+	</event>
+	<event>
+		<s_month>4</s_month>
+		<s_date>24</s_date>
+		<f_month>4</f_month>
+		<f_date>24</f_date>
+		<name>Мч. Александра Лионского (ок. 177 г.)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -11965,6 +12005,14 @@
 		<s_date>24</s_date>
 		<f_month>5</f_month>
 		<f_date>24</f_date>
+		<name>Прп. Викентия Леринского (до 450 г.)</name>
+		<type>18</type>
+	</event>
+	<event>
+		<s_month>5</s_month>
+		<s_date>24</s_date>
+		<f_month>5</f_month>
+		<f_date>24</f_date>
 		<name>Блж. Ксении Петербургской (прославление 1988)</name>
 		<type>18</type>
 	</event>
@@ -12046,6 +12094,14 @@
 		<f_month>5</f_month>
 		<f_date>27</f_date>
 		<name>Прп. Ферапонта Монзенского (1597)</name>
+		<type>18</type>
+	</event>
+	<event>
+		<s_month>5</s_month>
+		<s_date>28</s_date>
+		<f_month>5</f_month>
+		<f_date>28</f_date>
+		<name>Свт. Германа, еп. Парижского ( 576 г.)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -12150,6 +12206,22 @@
 		<f_month>6</f_month>
 		<f_date>1</f_date>
 		<name>Прп. Иустина Поповича, Челийского (1978) (Серб.)</name>
+		<type>18</type>
+	</event>
+	<event>
+		<s_month>6</s_month>
+		<s_date>2</s_date>
+		<f_month>6</f_month>
+		<f_date>2</f_date>
+		<name>Сщмч.  Пофина, еп. Лионского, и с ним пострадавших (177 г.)</name>
+		<type>18</type>
+	</event>
+	<event>
+		<s_month>6</s_month>
+		<s_date>2</s_date>
+		<f_month>6</f_month>
+		<f_date>2</f_date>
+		<name>Мц. Бландины и мч. Понтика Лионских (177 г.)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -12797,6 +12869,14 @@
 		<s_date>21</s_date>
 		<f_month>6</f_month>
 		<f_date>21</f_date>
+		<name>Мч. Виктора Марсельского (ок. 290 г.)</name>
+		<type>18</type>
+	</event>
+	<event>
+		<s_month>6</s_month>
+		<s_date>21</s_date>
+		<f_month>6</f_month>
+		<f_date>21</f_date>
 		<name>Обретение мощей преподобного Максима Грека (1996)</name>
 		<type>18</type>
 	</event>
@@ -12822,6 +12902,14 @@
 		<f_month>6</f_month>
 		<f_date>21</f_date>
 		<name>Мчч. Арчила II, царя Иверского (744), и Луарсаба II, царя Карталинского (1622) (Груз.)</name>
+		<type>18</type>
+	</event>
+	<event>
+		<s_month>6</s_month>
+		<s_date>22</s_date>
+		<f_month>6</f_month>
+		<f_date>22</f_date>
+		<name>Мч. Албана Британского (III — нач. IV вв.)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -13805,6 +13893,14 @@
 		<s_date>29</s_date>
 		<f_month>7</f_month>
 		<f_date>29</f_date>
+		<name>Свт. Лупа, епископа Труа (479 г.)</name>
+		<type>18</type>
+	</event>
+	<event>
+		<s_month>7</s_month>
+		<s_date>29</s_date>
+		<f_month>7</f_month>
+		<f_date>29</f_date>
 		<name>Мц. Серафимы девы (117-138)</name>
 		<type>18</type>
 	</event>
@@ -13870,6 +13966,14 @@
 		<f_month>7</f_month>
 		<f_date>30</f_date>
 		<name>Обретение мощей прп. Германа Соловецкого (1484)</name>
+		<type>18</type>
+	</event>
+	<event>
+		<s_month>7</s_month>
+		<s_date>31</s_date>
+		<f_month>7</f_month>
+		<f_date>31</f_date>
+		<name>Свт. Германа, еп. Осерского ( 448 г.)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -15110,6 +15214,14 @@
 		<f_month>9</f_month>
 		<f_date>15</f_date>
 		<name>Свт. Симеона, архиеп. Солунского (1429)</name>
+		<type>18</type>
+	</event>
+	<event>
+		<s_month>9</s_month>
+		<s_date>16</s_date>
+		<f_month>9</f_month>
+		<f_date>16</f_date>
+		<name>Прп. Прокопия, игум. Сазавского (1053 г.)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -17118,6 +17230,14 @@
 		<f_month>11</f_month>
 		<f_date>28</f_date>
 		<name>Свт. Феодора, архиеп. Ростовского (1394)</name>
+		<type>18</type>
+	</event>
+	<event>
+		<s_month>11</s_month>
+		<s_date>29</s_date>
+		<f_month>11</f_month>
+		<f_date>29</f_date>
+		<name>Сщмч. Сатурнина, первого епископа Тулузского (III в.)</name>
 		<type>18</type>
 	</event>
 	<event>
@@ -20449,19 +20569,19 @@
 		<type>20</type>
 	</event>
 	<event>
-		<s_month>1</s_month>
-		<s_date>5</s_date>
-		<f_month>1</f_month>
-		<f_date>5</f_date>
-		<name>Браковенчание не совершается накануне праздника Святого Богоявления (Крещения Господа Бога и Спаса нашего Иисуса Христа)</name>
-		<type>20</type>
-	</event>
-	<event>
 		<s_month>12</s_month>
 		<s_date>25</s_date>
 		<f_month>1</f_month>
 		<f_date>4</f_date>
 		<name>Браковенчание не совершается в продолжение Святок</name>
+		<type>20</type>
+	</event>
+	<event>
+		<s_month>1</s_month>
+		<s_date>5</s_date>
+		<f_month>1</f_month>
+		<f_date>5</f_date>
+		<name>Браковенчание не совершается накануне праздника Святого Богоявления (Крещения Господа Бога и Спаса нашего Иисуса Христа)</name>
 		<type>20</type>
 	</event>
 	<event>
