@@ -1,0 +1,875 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Bg Orthodox Calendar\n"
+"POT-Creation-Date: 2017-03-19 20:46+0300\n"
+"PO-Revision-Date: 2017-03-19 15:24+0300\n"
+"Last-Translator: Vadim Bogaiskov <vadim.bogaiskov@gmail.com>\n"
+"Language-Team: Vadim Bogaiskov <vadim.bogaiskov@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: bg_ortcal.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: bg_ortcal.php:111 bg_ortcal.php:377 bg_ortcal.php:647 includes/days.php:46
+msgid "Январь"
+msgstr ""
+
+#: bg_ortcal.php:111 bg_ortcal.php:377 bg_ortcal.php:647 includes/days.php:47
+msgid "Февраль"
+msgstr ""
+
+#: bg_ortcal.php:111 bg_ortcal.php:377 bg_ortcal.php:647 includes/days.php:48
+msgid "Март"
+msgstr ""
+
+#: bg_ortcal.php:111 bg_ortcal.php:377 bg_ortcal.php:647 includes/days.php:49
+msgid "Апрель"
+msgstr ""
+
+#: bg_ortcal.php:111 bg_ortcal.php:377 bg_ortcal.php:647 includes/days.php:50
+msgid "Май"
+msgstr ""
+
+#: bg_ortcal.php:111 bg_ortcal.php:377 bg_ortcal.php:647 includes/days.php:51
+msgid "Июнь"
+msgstr ""
+
+#: bg_ortcal.php:111 bg_ortcal.php:377 bg_ortcal.php:647 includes/days.php:52
+msgid "Июль"
+msgstr ""
+
+#: bg_ortcal.php:111 bg_ortcal.php:377 bg_ortcal.php:647 includes/days.php:53
+msgid "Август"
+msgstr ""
+
+#: bg_ortcal.php:111 bg_ortcal.php:377 bg_ortcal.php:647 includes/days.php:54
+msgid "Сентябрь"
+msgstr ""
+
+#: bg_ortcal.php:111 bg_ortcal.php:377 bg_ortcal.php:647 includes/days.php:55
+msgid "Октябрь"
+msgstr ""
+
+#: bg_ortcal.php:111 bg_ortcal.php:377 bg_ortcal.php:647 includes/days.php:56
+msgid "Ноябрь"
+msgstr ""
+
+#: bg_ortcal.php:111 bg_ortcal.php:377 bg_ortcal.php:647 includes/days.php:57
+msgid "Декабрь"
+msgstr ""
+
+#: bg_ortcal.php:112 bg_ortcal.php:378 includes/days.php:64
+msgid "января"
+msgstr ""
+
+#: bg_ortcal.php:112 bg_ortcal.php:378 includes/days.php:65
+msgid "февраля"
+msgstr ""
+
+#: bg_ortcal.php:112 bg_ortcal.php:378 includes/days.php:66
+msgid "марта"
+msgstr ""
+
+#: bg_ortcal.php:112 bg_ortcal.php:378 includes/days.php:67
+msgid "апреля"
+msgstr ""
+
+#: bg_ortcal.php:112 bg_ortcal.php:378 includes/days.php:68
+msgid "мая"
+msgstr ""
+
+#: bg_ortcal.php:112 bg_ortcal.php:378 includes/days.php:69
+msgid "июня"
+msgstr ""
+
+#: bg_ortcal.php:112 bg_ortcal.php:378 includes/days.php:70
+msgid "июля"
+msgstr ""
+
+#: bg_ortcal.php:112 bg_ortcal.php:378 includes/days.php:71
+msgid "августа"
+msgstr ""
+
+#: bg_ortcal.php:112 bg_ortcal.php:378 includes/days.php:72
+msgid "сентября"
+msgstr ""
+
+#: bg_ortcal.php:112 bg_ortcal.php:378 includes/days.php:73
+msgid "октября"
+msgstr ""
+
+#: bg_ortcal.php:112 bg_ortcal.php:378 includes/days.php:74
+msgid "ноября"
+msgstr ""
+
+#: bg_ortcal.php:112 bg_ortcal.php:378 includes/days.php:75
+msgid "декабря"
+msgstr ""
+
+#: bg_ortcal.php:113
+msgid "Воскресение"
+msgstr ""
+
+#: bg_ortcal.php:113 includes/days.php:32 includes/days.php:87
+msgid "Понедельник"
+msgstr ""
+
+#: bg_ortcal.php:113 includes/days.php:32 includes/days.php:88
+msgid "Вторник"
+msgstr ""
+
+#: bg_ortcal.php:113 includes/days.php:32 includes/days.php:89
+msgid "Среда"
+msgstr ""
+
+#: bg_ortcal.php:113 includes/days.php:32 includes/days.php:90
+msgid "Четверг"
+msgstr ""
+
+#: bg_ortcal.php:113 includes/days.php:32 includes/days.php:91
+msgid "Пятница"
+msgstr ""
+
+#: bg_ortcal.php:113 includes/days.php:32 includes/days.php:92
+msgid "Суббота"
+msgstr ""
+
+#: bg_ortcal.php:114 bg_ortcal.php:379 includes/days.php:33
+#: includes/days.php:94
+msgid "Пн"
+msgstr ""
+
+#: bg_ortcal.php:114 bg_ortcal.php:379 includes/days.php:33
+#: includes/days.php:95
+msgid "Вт"
+msgstr ""
+
+#: bg_ortcal.php:114 bg_ortcal.php:379 includes/days.php:33
+#: includes/days.php:96
+msgid "Ср"
+msgstr ""
+
+#: bg_ortcal.php:114 bg_ortcal.php:379 includes/days.php:33
+#: includes/days.php:97
+msgid "Чт"
+msgstr ""
+
+#: bg_ortcal.php:114 bg_ortcal.php:379 includes/days.php:33
+#: includes/days.php:98
+msgid "Пт"
+msgstr ""
+
+#: bg_ortcal.php:114 bg_ortcal.php:379 includes/days.php:33
+#: includes/days.php:99
+msgid "Сб"
+msgstr ""
+
+#: bg_ortcal.php:114 bg_ortcal.php:379 includes/days.php:33
+#: includes/days.php:100
+msgid "Вс"
+msgstr ""
+
+#: bg_ortcal.php:115
+msgid "Светлое Христово Воскресение"
+msgstr ""
+
+#: bg_ortcal.php:115 includes/days.php:1004
+msgid "Двунадесятый праздник"
+msgstr ""
+
+#: bg_ortcal.php:115 includes/days.php:1004
+msgid "Великий праздник"
+msgstr ""
+
+#: bg_ortcal.php:115 includes/days.php:1004
+msgid "Средний бденный праздник"
+msgstr ""
+
+#: bg_ortcal.php:115 includes/days.php:1004
+msgid "Средний полиелейный праздник"
+msgstr ""
+
+#: bg_ortcal.php:115 includes/days.php:1004
+msgid "Малый славословный праздник"
+msgstr ""
+
+#: bg_ortcal.php:115 includes/days.php:1004
+msgid "Малый шестиричный праздник"
+msgstr ""
+
+#: bg_ortcal.php:115
+msgid "Вседневный праздник"
+msgstr ""
+
+#: bg_ortcal.php:115
+msgid "Памятная дата"
+msgstr ""
+
+#: bg_ortcal.php:115
+msgid "День особого поминовения усопших"
+msgstr ""
+
+#: bg_ortcal.php:117 includes/days.php:283
+msgid "Постный день"
+msgstr ""
+
+#: bg_ortcal.php:118 includes/days.php:285
+msgid "Браковенчание не совершается"
+msgstr ""
+
+#: bg_ortcal.php:119
+msgid "Показать дни браковенчаний"
+msgstr ""
+
+#: bg_ortcal.php:120
+msgid ""
+"Если навести мышку на какую-нибудь дату высвечиваются: дата по старому "
+"стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, "
+"дни поминовения усопших, посты и сплошные седмицы.\n"
+"Если нажать на кнопку мыши на одном из дней текущего года, открывается "
+"дополнительное меню."
+msgstr ""
+
+#: bg_ortcal.php:121
+msgid "Выберите дату"
+msgstr ""
+
+#: bg_ortcal.php:122
+msgid "Закрыть"
+msgstr ""
+
+#: bg_ortcal.php:123
+msgid "предыдущий год"
+msgstr ""
+
+#: bg_ortcal.php:124
+msgid "следующий год"
+msgstr ""
+
+#: bg_ortcal.php:125
+msgid "вчера"
+msgstr ""
+
+#: bg_ortcal.php:126
+msgid "сегодня"
+msgstr ""
+
+#: bg_ortcal.php:127
+msgid "завтра"
+msgstr ""
+
+#: bg_ortcal.php:129
+msgid "Наречение имени по месяцеслову"
+msgstr ""
+
+#: bg_ortcal.php:130 bg_ortcal.php:268
+msgid "Православный календарь"
+msgstr ""
+
+#: bg_ortcal.php:131
+msgid "Наречение имени на 8-й день от рождения"
+msgstr ""
+
+#: bg_ortcal.php:132
+msgid "Таинство крещения на"
+msgstr ""
+
+#: bg_ortcal.php:133
+msgid "-й день от рождения"
+msgstr ""
+
+#: bg_ortcal.php:134 bg_ortcal.php:347
+msgid "Предыдущий день"
+msgstr ""
+
+#: bg_ortcal.php:135 bg_ortcal.php:329
+msgid "Следующий день"
+msgstr ""
+
+#: bg_ortcal.php:137 includes/days.php:134 includes/days.php:146
+#: includes/days.php:156 includes/days.php:161
+msgid "Неделя"
+msgstr ""
+
+#: bg_ortcal.php:138 includes/days.php:135 includes/days.php:147
+#: includes/days.php:157 includes/days.php:164
+msgid "Седмица"
+msgstr ""
+
+#: bg_ortcal.php:139 includes/days.php:134 includes/days.php:135
+#: includes/days.php:161 includes/days.php:164
+msgid "-я по Пятидесятнице"
+msgstr ""
+
+#: bg_ortcal.php:140 includes/days.php:146 includes/days.php:147
+msgid "-я Великого поста"
+msgstr ""
+
+#: bg_ortcal.php:141 includes/days.php:156 includes/days.php:157
+msgid "-я по Пасхе"
+msgstr ""
+
+#: bg_ortcal.php:142 includes/days.php:137
+msgid "Неделя о мытаре и фарисее"
+msgstr ""
+
+#: bg_ortcal.php:143 includes/days.php:138
+msgid "Седмица о мытаре и фарисее"
+msgstr ""
+
+#: bg_ortcal.php:144 includes/days.php:139
+msgid "Неделя о блудном сыне"
+msgstr ""
+
+#: bg_ortcal.php:145 includes/days.php:140
+msgid "Седмица о блудном сыне"
+msgstr ""
+
+#: bg_ortcal.php:146 includes/days.php:141
+msgid "Неделя мясопустная, о Страшнем суде"
+msgstr ""
+
+#: bg_ortcal.php:147 includes/days.php:142
+msgid "Сырная седмица (масленица)"
+msgstr ""
+
+#: bg_ortcal.php:148 includes/days.php:143
+msgid "Неделя сыропустная. Воспоминание Адамова изгнания. Прощеное воскресенье"
+msgstr ""
+
+#: bg_ortcal.php:149 includes/days.php:149
+msgid "Седмица 6-я Великого поста (седмица ваий)"
+msgstr ""
+
+#: bg_ortcal.php:150 includes/days.php:150
+msgid "Неделя 6-я Великого поста ваий (цветоносная, Вербное воскресенье)"
+msgstr ""
+
+#: bg_ortcal.php:151 includes/days.php:151
+msgid "Страстная седмица"
+msgstr ""
+
+#: bg_ortcal.php:152 includes/days.php:153
+msgid "Пасхальная (Светлая) седмица"
+msgstr ""
+
+#: bg_ortcal.php:153 includes/days.php:163
+msgid "Седмица 1-я по Пятидесятнице (Троицкая)"
+msgstr ""
+
+#: bg_ortcal.php:154
+msgid "в Год Рождества Христова"
+msgstr ""
+
+#: bg_ortcal.php:155
+msgid "г. до РХ"
+msgstr ""
+
+#: bg_ortcal.php:156
+msgid "г. от РХ"
+msgstr ""
+
+#: bg_ortcal.php:157
+msgid "Праздники:"
+msgstr ""
+
+#: bg_ortcal.php:158
+msgid "Соборы святых:"
+msgstr ""
+
+#: bg_ortcal.php:159
+msgid "День памяти святых:"
+msgstr ""
+
+#: bg_ortcal.php:160
+msgid "День памяти исповедников и новомучеников Церкви Русской:"
+msgstr ""
+
+#: bg_ortcal.php:161
+msgid "День почитания икон Божией Матери:"
+msgstr ""
+
+#: bg_ortcal.php:278 bg_ortcal.php:287
+msgid "Календарь на год"
+msgstr ""
+
+#: bg_ortcal.php:290
+msgid "Загрузка календаря"
+msgstr ""
+
+#: bg_ortcal.php:412
+msgid "Предыдущий месяц"
+msgstr ""
+
+#: bg_ortcal.php:413
+msgid "Календарь на"
+msgstr ""
+
+#: bg_ortcal.php:413
+msgid "год"
+msgstr ""
+
+#: bg_ortcal.php:414
+msgid "Следующий месяц"
+msgstr ""
+
+#: bg_ortcal.php:431 bg_ortcal.php:487 bg_ortcal.php:588 bg_ortcal.php:630
+msgid "l, j F Y г. "
+msgstr ""
+
+#: bg_ortcal.php:431 bg_ortcal.php:488 bg_ortcal.php:588 bg_ortcal.php:596
+#: bg_ortcal.php:631
+msgid "(j F ст.ст.)"
+msgstr ""
+
+#: bg_ortcal.php:526
+msgid "l, j F Y г. ст.ст."
+msgstr ""
+
+#: bg_ortcal.php:595
+msgid "j F "
+msgstr ""
+
+#: bg_ortcal.php:670
+msgid "г."
+msgstr ""
+
+#: bg_ortcal.php:749 includes/settings.php:294
+msgid "Официальный календарь РПЦ"
+msgstr ""
+
+#: bg_ortcal.php:750 includes/settings.php:295
+msgid "Календарь на Православие.Ru"
+msgstr ""
+
+#: bg_ortcal.php:751 includes/settings.php:296
+msgid "Богослужебные указания"
+msgstr ""
+
+#: bg_ortcal.php:752
+msgid "Календарь на Азбука веры"
+msgstr ""
+
+#: bg_ortcal.php:753 includes/settings.php:297
+msgid "Этот день в календаре (страница)"
+msgstr ""
+
+#: bg_ortcal.php:754 includes/settings.php:298
+msgid "Этот день в календаре (окно)"
+msgstr ""
+
+#: bg_ortcal.php:755 includes/settings.php:299
+msgid "Выбор имени по Месяцеслову"
+msgstr ""
+
+#: includes/days.php:32 includes/days.php:93
+msgid "Воскресенье"
+msgstr ""
+
+#: includes/days.php:76
+msgid "янв"
+msgstr ""
+
+#: includes/days.php:77
+msgid "фев"
+msgstr ""
+
+#: includes/days.php:78
+msgid "мар"
+msgstr ""
+
+#: includes/days.php:79
+msgid "апр"
+msgstr ""
+
+#: includes/days.php:80
+msgid "июн"
+msgstr ""
+
+#: includes/days.php:81
+msgid "июл"
+msgstr ""
+
+#: includes/days.php:82
+msgid "авг"
+msgstr ""
+
+#: includes/days.php:83
+msgid "сен"
+msgstr ""
+
+#: includes/days.php:84
+msgid "окт"
+msgstr ""
+
+#: includes/days.php:85
+msgid "ноя"
+msgstr ""
+
+#: includes/days.php:86
+msgid "дек"
+msgstr ""
+
+#: includes/days.php:829 includes/days.php:855 includes/days.php:984
+msgid "На утр.:"
+msgstr ""
+
+#: includes/days.php:832
+msgid "На Лит.:"
+msgstr ""
+
+#: includes/days.php:833 includes/days.php:926 includes/days.php:931
+#: includes/days.php:935 includes/days.php:942 includes/days.php:947
+#: includes/days.php:952 includes/days.php:957 includes/days.php:962
+#: includes/days.php:966 includes/days.php:972 includes/days.php:987
+msgid "Ап.:"
+msgstr ""
+
+#: includes/days.php:834 includes/days.php:927 includes/days.php:932
+#: includes/days.php:936 includes/days.php:943 includes/days.php:948
+#: includes/days.php:953 includes/days.php:958 includes/days.php:963
+#: includes/days.php:967 includes/days.php:973 includes/days.php:988
+msgid "Ев.:"
+msgstr ""
+
+#: includes/days.php:837 includes/days.php:861 includes/days.php:990
+msgid "На веч.:"
+msgstr ""
+
+#: includes/days.php:838 includes/days.php:863 includes/days.php:991
+msgid "На 1-м часе:"
+msgstr ""
+
+#: includes/days.php:839 includes/days.php:865 includes/days.php:992
+msgid "На 3-м часе:"
+msgstr ""
+
+#: includes/days.php:840 includes/days.php:867 includes/days.php:993
+msgid "На 6-м часе:"
+msgstr ""
+
+#: includes/days.php:841 includes/days.php:869 includes/days.php:994
+msgid "На 9-м часе:"
+msgstr ""
+
+#: includes/days.php:858 includes/days.php:986
+msgid "На лит.:"
+msgstr ""
+
+#: includes/days.php:871
+msgid "Евангелие и Апостол:"
+msgstr ""
+
+#: includes/days.php:874
+msgid "Псалтирь:"
+msgstr ""
+
+#: includes/days.php:925 includes/days.php:930 includes/days.php:946
+#: includes/days.php:961
+msgid "Праздник:"
+msgstr ""
+
+#: includes/days.php:934 includes/days.php:944 includes/days.php:954
+#: includes/days.php:971
+msgid "Под зач.:"
+msgstr ""
+
+#: includes/days.php:1004
+msgid "Светлое Христово Воскресение. Пасха"
+msgstr ""
+
+#: includes/days.php:1004
+msgid ""
+"Вседневный праздник. Cовершается служба, не отмеченная в Типиконе никаким "
+"знаком"
+msgstr ""
+
+#: includes/settings.php:166
+msgid "Параметры сохранены."
+msgstr ""
+
+#: includes/settings.php:172
+msgid "Внутренний кеш плагина сброшен. Удалено"
+msgstr ""
+
+#: includes/settings.php:172
+msgid "опций."
+msgstr ""
+
+#: includes/settings.php:182
+msgid "Параметры плагина \"Православный календарь\""
+msgstr ""
+
+#: includes/settings.php:183
+msgid "Версия"
+msgstr ""
+
+#: includes/settings.php:190
+msgid "Цвета формы календаря"
+msgstr ""
+
+#: includes/settings.php:193
+msgid "Основной цвет текста:"
+msgstr ""
+
+#: includes/settings.php:199
+msgid "Основной цвет фона:"
+msgstr ""
+
+#: includes/settings.php:204
+msgid "Цвет заголовков:"
+msgstr ""
+
+#: includes/settings.php:206
+msgid "(стрелки перехода на другой год, названия месяцев)"
+msgstr ""
+
+#: includes/settings.php:209
+msgid "Дополнительный цвет текста:"
+msgstr ""
+
+#: includes/settings.php:211 includes/settings.php:216
+msgid "(заголовок, подвал, дни недели)"
+msgstr ""
+
+#: includes/settings.php:214
+msgid "Дополнительный цвет фона:"
+msgstr ""
+
+#: includes/settings.php:219
+msgid "Цвет текста выбранного дня:"
+msgstr ""
+
+#: includes/settings.php:221 includes/settings.php:226
+msgid "(день, на который указывает курсор)"
+msgstr ""
+
+#: includes/settings.php:224
+msgid "Цвет фона выбранного дня:"
+msgstr ""
+
+#: includes/settings.php:229
+msgid "Цвет текста сегодня:"
+msgstr ""
+
+#: includes/settings.php:234
+msgid "Цвет фона сегодня:"
+msgstr ""
+
+#: includes/settings.php:239
+msgid "Цвет рамки дней браковенчаний:"
+msgstr ""
+
+#: includes/settings.php:244
+msgid "Z-index всплывающего окна календаря:"
+msgstr ""
+
+#: includes/settings.php:253
+msgid "Элементы всплывающего меню календаря"
+msgstr ""
+
+#: includes/settings.php:256
+msgid "Ссылка на сайт официального календаря РПЦ"
+msgstr ""
+
+#: includes/settings.php:261
+msgid "Ссылка на сайт календаря на Православие.Ru"
+msgstr ""
+
+#: includes/settings.php:266
+msgid "Ссылка на сайт богослужебных указаний"
+msgstr ""
+
+#: includes/settings.php:271
+msgid "Ссылка на сайт календаря Азбука веры"
+msgstr ""
+
+#: includes/settings.php:276
+msgid "Этот день в календаре (страница сайта)"
+msgstr ""
+
+#: includes/settings.php:281
+msgid "Этот день в календаре (всплывающее окно)"
+msgstr ""
+
+#: includes/settings.php:286
+msgid "Выбор имени по Месяцеслову (всплывающее окно)"
+msgstr ""
+
+#: includes/settings.php:291
+msgid "Функция при двойном щелчке по дате"
+msgstr ""
+
+#: includes/settings.php:308
+msgid "Прочие параметры ..."
+msgstr ""
+
+#: includes/settings.php:311
+msgid "Постоянная ссылка на страницу с календарем"
+msgstr ""
+
+#: includes/settings.php:316
+msgid "Пользовательский XML-файл данных"
+msgstr ""
+
+#: includes/settings.php:319
+msgid "Только пользовательский XML-файл"
+msgstr ""
+
+#: includes/settings.php:322
+msgid "Изображение кнопки ссылки"
+msgstr ""
+
+#: includes/settings.php:325
+msgid ""
+"(Если изображение не задано (указан просто текст), то отображается указанный "
+"здесь текст в виде текстовой ссылки.<br> Если ничего не указано (пустая "
+"строка), то отображается название события как простая текстовая ссылка.)"
+msgstr ""
+
+#: includes/settings.php:328 includes/settings.php:336
+msgid "Часовой пояс"
+msgstr ""
+
+#: includes/settings.php:338
+msgid "(для определения даты на сервере)"
+msgstr ""
+
+#: includes/settings.php:338
+msgid "Местное время на сервере:"
+msgstr ""
+
+#: includes/settings.php:341
+msgid "Добавлять дату к ссылке в событии календаря"
+msgstr ""
+
+#: includes/settings.php:343
+msgid "Например"
+msgstr ""
+
+#: includes/settings.php:346
+msgid "Метод чтения файлов"
+msgstr ""
+
+#: includes/settings.php:351
+msgid ""
+"(Плагин пытается загружать XML-файлы данных отмеченными методами в указанном "
+"порядке.<br>Чтобы сделать загрузку более быстрой отключите лишние методы."
+msgstr ""
+
+#: includes/settings.php:351
+msgid "Внимание:"
+msgstr ""
+
+#: includes/settings.php:351
+msgid "Некоторые методы могут быть недоступны на Вашем сервере.)"
+msgstr ""
+
+#: includes/settings.php:357
+msgid "Сохранить настройки"
+msgstr ""
+
+#: includes/settings.php:363
+msgid "Новый плагин"
+msgstr ""
+
+#: includes/settings.php:363
+msgid ""
+"копирует богослужебные указания с сайта Patriarchia.ru и вставляет их на "
+"страницу вашего сайта."
+msgstr ""
+
+#: includes/settings.php:364
+msgid ""
+"Плагин может работать как автономно, так и совместно с плагином "
+"\"Православный календарь\"."
+msgstr ""
+
+#: includes/settings.php:373
+msgid "Спасибо, что используете Православный календарь!"
+msgstr ""
+
+#: includes/settings.php:375
+msgid ""
+"Дорогие братия и сестры!<br />Спасибо, что используете мой плагин!<br />Я "
+"надеюсь, что он оказался полезен для вашего сайта."
+msgstr ""
+
+#: includes/settings.php:378
+msgid "Мне нравится этот плагин. Как я могу Вас отблагодарить?"
+msgstr ""
+
+#: includes/settings.php:379
+msgid "Есть несколько путей сделать это:"
+msgstr ""
+
+#: includes/settings.php:381
+msgid ""
+"<a href=\"http://hpf.ru.com/\" target=\"_blank\">Сделать пожертвование</a> "
+"на храм свв. Петра и Февронии в Марьино."
+msgstr ""
+
+#: includes/settings.php:382
+msgid ""
+"<a href=\"http://wordpress.org/support/view/plugin-reviews/bg-orthodox-"
+"calendar\" target=\"_blank\">Присвоить 5 звезд</a> в каталоге плагинов "
+"WordPress."
+msgstr ""
+
+#: includes/settings.php:383
+msgid "Распространить информацию или написать заметку в свой блог о плагине."
+msgstr ""
+
+#: includes/settings.php:385
+msgid ""
+"Bg Orthodox Calendar - отличный плагин для православных сайтов на  WordPress"
+msgstr ""
+
+#: includes/settings.php:388
+msgid "Поддержка"
+msgstr ""
+
+#: includes/settings.php:389
+msgid ""
+"См. <a href=\"http://wordpress.org/support/plugin/bg-orthodox-calendar\" "
+"target=\"_blank\">форум поддержки</a> или мой <a href=\"http://bogaiskov.ru/"
+"plagin-orthodox-calendar/\" target=\"_blank\">персональный сайт</a> для "
+"справки."
+msgstr ""
+
+#: includes/settings.php:391
+msgid "Храни вас Господи!"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Bg Orthodox Calendar"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://bogaiskov.ru/plugin-orthodox-calendar/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Плагин выводит на экран православный календарь: дата по старому стилю, "
+"праздники по типикону (от двунадесятых до вседневных), памятные даты, дни "
+"поминовения усопших, дни почитания икон, посты и сплошные седмицы."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "VBog"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://bogaiskov.ru"
+msgstr ""

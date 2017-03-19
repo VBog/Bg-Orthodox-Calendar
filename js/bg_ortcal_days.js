@@ -60,37 +60,37 @@ function bg_ortcal_Sedmica (d) {											// d - текущая дата
 		bg_ortcal_easter(easter_day, (year-1));
 		ed = Math.floor(easter_day.getTime()/one_day)-1;
 		nw = Math.ceil((cd - (ed+49))/7);
-		if (wd == 0) return "Неделя "+nw+"-я по Пятидесятнице";
-		else return "Седмица "+nw+"-я по Пятидесятнице";
+		if (wd == 0) return bg_ortcal_lang.nedela+" "+nw+bg_ortcal_lang.po50;
+		else return bg_ortcal_lang.sedmica+" "+nw+bg_ortcal_lang.po50;
 	}
-	else if (cd == ed-70) return "Неделя о мытаре и фарисее";	// Седмицы подготовительные
-	else if (cd < ed-63) return "Седмица о мытаре и фарисее";	
-	else if (cd == ed-63) return "Неделя о блудном сыне";	
-	else if (cd < ed-56) return "Седмица о блудном сыне";	
-	else if (cd == ed-56) return "Неделя мясопустная, о Страшнем суде";	
-	else if (cd < ed-49) return "Сырная седмица (масленица)";						
-	else if (cd == ed-49) return "Неделя сыропустная. Воспоминание Адамова изгнания. Прощеное воскресенье";						
+	else if (cd == ed-70) return bg_ortcal_lang.n1pred;	// Седмицы подготовительные
+	else if (cd < ed-63) return bg_ortcal_lang.s1pred;	
+	else if (cd == ed-63) return bg_ortcal_lang.n2pred;	
+	else if (cd < ed-56) return bg_ortcal_lang.s2pred;	
+	else if (cd == ed-56) return bg_ortcal_lang.n3pred;	
+	else if (cd < ed-49) return bg_ortcal_lang.s3pred;						
+	else if (cd == ed-49) return bg_ortcal_lang.n4pred;						
 	else if (cd < ed-13) {										// Седмицы Великого поста
 		nw = Math.ceil((cd - (ed-49))/7);
-		if (wd == 0) return "Неделя "+nw+"-я Великого поста";
-		else return "Седмица "+nw+"-я Великого поста";
+		if (wd == 0) return bg_ortcal_lang.nedela+" "+nw+bg_ortcal_lang.posta;
+		else return bg_ortcal_lang.sedmica+" "+nw+bg_ortcal_lang.posta;
 	}
-	else if (cd < ed-7) return "Седмица 6-я Великого поста (седмица ваий)";
-	else if (cd == ed-7) return "Неделя 6-я Великого поста ваий (цветоносная, Вербное воскресенье)";
-	else if (cd < ed) return "Страстная седмица";
+	else if (cd < ed-7) return bg_ortcal_lang.s6post;
+	else if (cd == ed-7) return bg_ortcal_lang.n6post;
+	else if (cd < ed) return bg_ortcal_lang.s7post;
 	else if (cd == ed) return "";
-	else if (cd < ed+7) return "Пасхальная (Светлая) седмица";
+	else if (cd < ed+7) return bg_ortcal_lang.spascha;
 	else if (cd < ed+50) {										// Седмицы по Пасхе
 		nw = Math.ceil((cd - ed)/7);
-		if (wd == 0) return "Неделя "+(nw+1)+"-я по Пасхе";
-		else return "Седмица "+nw+"-я по Пасхе";
+		if (wd == 0) return bg_ortcal_lang.nedela+" "+(nw+1)+bg_ortcal_lang.popasche;
+		else return bg_ortcal_lang.sedmica+" "+nw+bg_ortcal_lang.popasche;
 	}
 	else  {														// Седмицы по Пятидесятнице
 		nw = Math.ceil((cd - (ed+49))/7);
-		if (wd == 0) return "Неделя "+nw+"-я по Пятидесятнице";
+		if (wd == 0) return bg_ortcal_lang.nedela+" "+nw+bg_ortcal_lang.po50;
 		else {
-			if (nw==1) return "Седмица 1-я по Пятидесятнице (Троицкая)";
-			else return "Седмица "+nw+"-я по Пятидесятнице";
+			if (nw==1) return bg_ortcal_lang.s1po50;
+			else return bg_ortcal_lang.sedmica+" "+nw+bg_ortcal_lang.po50;
 		}
 	}
 
@@ -269,9 +269,9 @@ function bg_ortcal_setLink(t) {
 
 function bg_ortcal_getDayInfo(d) {
 
-    var mnr = new Array(" января"," февраля"," марта"," апреля"," мая"," июня"," июля"," августа"," сентября"," октября"," ноября"," декабря");
-	var cwd = new Array("Воскресение","Понедельник","Вторник","Среда","Четверг","Пятница","Суббота");
-	var typicon = new Array("Светлое Христово Воскресение","Двунадесятый праздник","Великий праздник","Средний бденный праздник","Средний полиелейный праздник","Малый славословный праздник","Малый шестиричный праздник","Вседневный праздник","Памятная дата","День особого поминовения усопших");
+    var mnr = bg_ortcal_lang.mnr;
+	var cwd = bg_ortcal_lang.cwd;
+	var typicon = bg_ortcal_lang.typicon;
 
 	var curD = d.getDate();
 	var curM = d.getMonth()+1;
@@ -291,11 +291,11 @@ function bg_ortcal_getDayInfo(d) {
 // Дата по новому и старому стилю, Седмица, Памятные дни
 	var od = new Date(0);
 	bg_ortcal_OldStyle(od, d);
-	if (curY == 0) yCh = 'в Год Рождества Христова';
-	else if (curY < 0) yCh = (-curY) + ' г. до РХ';
-	else yCh = curY + ' г. от РХ';
+	if (curY == 0) yCh = bg_ortcal_lang.bc;
+	else if (curY < 0) yCh = (-curY) + ' '+bg_ortcal_lang.b_bc;
+	else yCh = curY + ' '+bg_ortcal_lang.a_bc;
 		
-	var t = curD+mnr[curM-1]+" "+yCh+" ("+od.getDate()+mnr[od.getMonth()]+" ст.ст.), "+cwd[curW];
+	var t = curD+" "+mnr[curM-1]+" "+yCh+" ("+od.getDate()+" "+mnr[od.getMonth()]+" ст.ст.), "+cwd[curW];
 	if (curY == nowY) t = "<span class='bg_ortcal_curDate' style='cursor:pointer' onclick=\'bg_ortcal_setLink("+d.getTime()+")\'>" + t + "</span><br>";
 	else t = "<span class='bg_ortcal_curDate' style='cursor:auto' onclick=\'bg_ortcal_setLink("+d.getTime()+")\'>" + t + "</span><br>";		// Если не текущий год, то курсор обыкновенный
 	var tt = bg_ortcal_Sedmica(d);																			// Седмица
@@ -340,7 +340,7 @@ function bg_ortcal_getDayInfo(d) {
 			} 	
 		}
 	}
-	if (tt !="") t += "<b>Праздники:</b><br>" + tt;
+	if (tt !="") t += "<b>"+bg_ortcal_lang.t07+"</b><br>" + tt;
 		
 		
 	tt = "";
@@ -352,7 +352,7 @@ function bg_ortcal_getDayInfo(d) {
 			} 	
 		}
 	}
-	if (tt !="") t += "<b>Соборы святых:</b><br>" + tt;
+	if (tt !="") t += "<b>"+bg_ortcal_lang.t16+"</b><br>" + tt;
 		
 	tt = "";
 	for (k = 0; k < md.length; k++) {
@@ -363,7 +363,7 @@ function bg_ortcal_getDayInfo(d) {
 			} 	
 		}
 	}
-	if (tt !="") t += "<b>День памяти святых:</b><br>" + tt;
+	if (tt !="") t += "<b>"+bg_ortcal_lang.t18+"</b><br>" + tt;
 		
 	tt = "";
 	for (k = 0; k < md.length; k++) {
@@ -374,7 +374,7 @@ function bg_ortcal_getDayInfo(d) {
 			} 	
 		}
 	}
-	if (tt !="") t += "<b>День памяти исповедников и новомучеников Церкви Русской:</b><br>" + tt;
+	if (tt !="") t += "<b>"+bg_ortcal_lang.t19+"</b><br>" + tt;
 		
 	tt = "";
 	for (k = 0; k < md.length; k++) {
@@ -385,7 +385,7 @@ function bg_ortcal_getDayInfo(d) {
 			} 	
 		}
 	}
-	if (tt !="") t += "<b>День почитания икон Божией Матери:</b><br>" + tt;
+	if (tt !="") t += "<b>"+bg_ortcal_lang.t17+"</b><br>" + tt;
 		
 	tt = "";
 	for (k = 0; k < md.length; k++) {													// Сплошные седмицы. (Тип 100)												
@@ -413,10 +413,10 @@ function bg_ortcal_getDayInfo(d) {
 			}
 		}
 	}
-	if ((tt =="") && (curW == 3 || curW == 5)) {tt +=  "<i>Постный день</i>";}			// Среда и пятница - постные дни	 						
+	if ((tt =="") && (curW == 3 || curW == 5)) {tt +=  "<i>"+bg_ortcal_lang.post+"</i>";}			// Среда и пятница - постные дни	 						
 
 // Браковенчание не совершается
-	var nowedding = "<i>Браковенчание не совершается</i>";
+	var nowedding = "<i>"+bg_ortcal_lang.nowedding+"</i>";
 	if (curW == 2 || curW == 4 || curW == 6) {											// Не совершается браковенчание накануне среды и пятницы всего года (вторник и четверг), и воскресных дней (суббота)
 		if (tt !="") tt += ". ";
 		tt +=  nowedding;

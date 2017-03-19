@@ -22,8 +22,8 @@
 		bg_ortcal_naming.div.style.display = "none";
 	},
 	html: function() {
-	var t = '<table width="100%" class="bg_ortcal_header"><tr><td></td><td width="20px" style="cursor: pointer;" onclick="bg_ortcal_naming.hide();" title="Закрыть"><b>х</b></td></tr>';
-		t += '<tr><td colspan="2"><p style="margin:12px 0px; font-size: 24px;">Наречение имени по месяцеслову</p></td></tr></table>';
+	var t = '<table width="100%" class="bg_ortcal_header"><tr><td></td><td width="20px" style="cursor: pointer;" onclick="bg_ortcal_naming.hide();" title="'+bg_ortcal_lang.close+'"><b>х</b></td></tr>';
+		t += '<tr><td colspan="2"><p style="margin:12px 0px; font-size: 24px;">'+bg_ortcal_lang.the_title1+'</p></td></tr></table>';
 		t += '<div class="bg_ortcal_separator1"></div>';
 		t += '<div class="bg_ortcal_separator2"></div>';
 		t += '<div id="day1" class="bg_ortcal_day"></div>';
@@ -34,16 +34,15 @@
 		t += '<div class="bg_ortcal_separator2"></div>';
 		t += '<div id="day8" class="bg_ortcal_day"></div>';
 		t += '<table width="100%" class="bg_ortcal_footer"><tr><td width="10%"></td>';
-		t += '<td width="80%">Наречение имени на 8-й день от рождения</td>';
+		t += '<td width="80%">'+bg_ortcal_lang.title1+'</td>';
 		t += '<td width="10%"></td></tr></table>';
 		t += '<div class="bg_ortcal_separator1"></div>';
 		t += '<div class="bg_ortcal_separator2"></div>';
 		t += '<div id="day40" class="bg_ortcal_day"></div>';
-		t += '<table width="100%" class="bg_ortcal_footer"><tr><td id="prevDay" width="10%" style="cursor: pointer;" onclick="bg_ortcal_naming.prevDay();" title="Предыдущий день"><b><<</b></td>';
-		t += '<td id="bapID" width="80%">Таинство крещения на '+bg_ortcal_naming.baptism+'-й день от рождения</td>';
-		t += '<td id="nextDay" width="10%" style="cursor: pointer;" onclick="bg_ortcal_naming.nextDay();" title="Следующий день"><b>>></b></td></tr></table>';
+		t += '<table width="100%" class="bg_ortcal_footer"><tr><td id="prevDay" width="10%" style="cursor: pointer;" onclick="bg_ortcal_naming.prevDay();" title="'+bg_ortcal_lang.prev_day+'"><b><<</b></td>';
+		t += '<td id="bapID" width="80%">'+bg_ortcal_lang.title2+' '+bg_ortcal_naming.baptism+bg_ortcal_lang.title3+'</td>';
+		t += '<td id="nextDay" width="10%" style="cursor: pointer;" onclick="bg_ortcal_naming.nextDay();" title="'+bg_ortcal_lang.next_day+'"><b>>></b></td></tr></table>';
 		t += '<div class="bg_ortcal_bottom1"></div>';
-		t += '<div class="bg_ortcal_bottom2"><p style="margin-left:1em; font-size:80%"><a href="http://hpf.ru.com/"><b>Храм святых благоверных князей Петра и Февронии Муромских в Марьино г. Москвы</b></a>.<br /> © 2014 Все права защищены.</p></div>';
 	return t;
 	},
 	show : function(d, obj) {
@@ -80,7 +79,7 @@
 		if (bg_ortcal_naming.baptism > 2) {
 			bg_ortcal_naming.baptism--;
 			var el = document.getElementById("bapID");
-			el.innerHTML = 'Таинство крещения на '+bg_ortcal_naming.baptism+'-й день от рождения';		
+			el.innerHTML = bg_ortcal_lang.title2+' '+bg_ortcal_naming.baptism+bg_ortcal_lang.title3;		
 			el = document.getElementById("day40");
 			el.innerHTML = bg_ortcal_naming.dayInfo(bg_ortcal_naming.baptism);	
 		}
@@ -89,7 +88,7 @@
 		if (bg_ortcal_naming.baptism < 365) {
 			bg_ortcal_naming.baptism++;
 			var el = document.getElementById("bapID");
-			el.innerHTML = 'Таинство крещения на '+bg_ortcal_naming.baptism+'-й день от рождения';		
+			el.innerHTML = bg_ortcal_lang.title2+' '+bg_ortcal_naming.baptism+bg_ortcal_lang.title3;		
 			el = document.getElementById("day40");
 			el.innerHTML = bg_ortcal_naming.dayInfo(bg_ortcal_naming.baptism);	
 		}
@@ -146,13 +145,13 @@ var bg_ortcal_today = {
 		bg_ortcal_today.div.style.display = "none";
 	},
 	html: function() {
-	var t = '<table width="100%" class="bg_ortcal_header"><tr><td></td><td width="20px" style="cursor: pointer;" onclick="bg_ortcal_today.hide();" title="Закрыть"><b>х</b></td></tr>';
-		t += '<tr><td colspan="2"><p style="margin:12px 0px; font-size: 24px;">Православный календарь</p></td></tr></table>';
+	var t = '<table width="100%" class="bg_ortcal_header"><tr><td></td><td width="20px" style="cursor: pointer;" onclick="bg_ortcal_today.hide();" title="'+bg_ortcal_lang.close+'"><b>х</b></td></tr>';
+		t += '<tr><td colspan="2"><p style="margin:12px 0px; font-size: 24px;">'+bg_ortcal_lang.the_title2+'</p></td></tr></table>';
 		t += '<div class="bg_ortcal_separator"></div>';
 		t += '<div id="thisDay" class="bg_ortcal_day"></div>';
-		t += '<table width="100%" class="bg_ortcal_footer"><tr><td id="prevDay" width="30%" style="cursor: pointer;" onclick="bg_ortcal_today.prevDay();" title="Предыдущий день"><b><< Вчера</b></td>';
+		t += '<table width="100%" class="bg_ortcal_footer"><tr><td id="prevDay" width="30%" style="cursor: pointer;" onclick="bg_ortcal_today.prevDay();" title="'+bg_ortcal_lang.prev_day+'"><b><< '+bg_ortcal_lang.yesterday+'</b></td>';
 		t += '<td width="40%"> </td>';
-		t += '<td id="nextDay" width="30%" style="cursor: pointer;" onclick="bg_ortcal_today.nextDay();" title="Следующий день"><b>Завтра >></b></td></tr></table>';
+		t += '<td id="nextDay" width="30%" style="cursor: pointer;" onclick="bg_ortcal_today.nextDay();" title="'+bg_ortcal_lang.next_day+'"><b>'+bg_ortcal_lang.tomorrow+' >></b></td></tr></table>';
 	return t;
 	},
 	show : function(d, obj) {

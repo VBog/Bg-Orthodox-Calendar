@@ -4,9 +4,12 @@
     width: 0,
     height: 0,
 
-    wds  : new Array("Пн","Вт","Ср","Чт","Пт","Сб","Вс"),
-    mns  : new Array("Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"),
-    mnr  : new Array(" января"," февраля"," марта"," апреля"," мая"," июня"," июля"," августа"," сентября"," октября"," ноября"," декабря"),
+//    wds  : new Array("Пн","Вт","Ср","Чт","Пт","Сб","Вс"),
+//    mns  : new Array("Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"),
+//    mnr  : new Array(" января"," февраля"," марта"," апреля"," мая"," июня"," июля"," августа"," сентября"," октября"," ноября"," декабря"),
+	wds  : bg_ortcal_lang.wds,
+	mns  : bg_ortcal_lang.mns,
+	mnr  : bg_ortcal_lang.mnr,
     dim  : new Array(31,28,31,30,31,30,31,31,30,31,30,31),
 
     nowD : new Date().getDate(),
@@ -212,7 +215,7 @@
 
 // Браковенчание не совершается
 			el.className = el.className + " bg_ortcal_wedding_off";
-			var nowedding = "Браковенчание не совершается";
+			var nowedding = bg_ortcal_lang.nowedding;
 			if (x == 2 || x == 4 || x == 6) {								// Не совершается браковенчание накануне среды и пятницы всего года (вторник и четверг), и воскресных дней (суббота)
 				el.title = (el.title == "")? nowedding : el.title+',\n'+nowedding;
 				el.className = el.className.replace(" bg_ortcal_wedding_off", " bg_ortcal_nowedding_off");
@@ -349,13 +352,13 @@
 		var m=0;
 
 	    res += "<table width=100% unselectable=on>\n";
-	    res += "<tr class='bg_ortcal_top'><td class=bg_ortcal_top-left title = 'Если навести мышку на какую-нибудь дату высвечиваются: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, посты и сплошные седмицы.\nЕсли нажать на кнопку мыши на одном из дней текущего года, открывается дополнительное меню.'>Выберите дату</td><td colspan='3'> </td><td class=bg_ortcal_top-right> <span id='bg_ortcal_close' title='Закрыть' onclick='bg_ortcal_bscal.hide();' style='cursor:pointer;'>x</span> </td></tr>\n";
+	    res += "<tr class='bg_ortcal_top'><td class=bg_ortcal_top-left title = '"+bg_ortcal_lang.help+"'>"+bg_ortcal_lang.title+"</td><td colspan='3'> </td><td class=bg_ortcal_top-right> <span id='bg_ortcal_close' title='"+bg_ortcal_lang.close+"' onclick='bg_ortcal_bscal.hide();' style='cursor:pointer;'>x</span> </td></tr>\n";
 		res += "<tr unselectable=on>"+
-	           "<td class='bg_ortcal_arrow' onClick=bg_ortcal_bscal.scroll_Y(-1);><< предыдущий год</td>"+
+	           "<td class='bg_ortcal_arrow' onClick=bg_ortcal_bscal.scroll_Y(-1);><< "+bg_ortcal_lang.prev+"</td>"+
 				"<td unselectable=on></td>"+
 				"<td unselectable=on><input id='bs_year' type='text' style='width: 90px' onchange=bg_ortcal_bscal.change_Y(this.value); onkeyup='return onlyDigits(this);'></input> <button onClick='bg_ortcal_bscal.change_Y(bs_year.value);'>&nbsp;Ok&nbsp;</button></td>"+
 				"<td unselectable=on></td>"+
-			   "<td class='bg_ortcal_arrow' onClick=bg_ortcal_bscal.scroll_Y(1);>следующий год >></td>\n"+
+			   "<td class='bg_ortcal_arrow' onClick=bg_ortcal_bscal.scroll_Y(1);>"+bg_ortcal_lang.next+" >></td>\n"+
 				"</tr>\n";
 		for (var j=1; j<=4; j++)
 		{
@@ -390,15 +393,14 @@
 			if (j<=3) res += "<tr><td colspan=5 unselectable=on></td></tr>\n";
 		}
 		res += "<tr class='bg_ortcal_top' align=center>\n"+
-				"<td colspan=1 class=bg_ortcal_bot oncontextmenu=\"bg_ortcal_bscal.retMenu(0, -1, this); return false;\" onClick=\"bg_ortcal_bscal.retD(0, -1);\" ondblclick=\"bg_ortcal_bscal.retLink(0, -1);\" unselectable=on>вчера</td>\n"+
+				"<td colspan=1 class=bg_ortcal_bot oncontextmenu=\"bg_ortcal_bscal.retMenu(0, -1, this); return false;\" onClick=\"bg_ortcal_bscal.retD(0, -1);\" ondblclick=\"bg_ortcal_bscal.retLink(0, -1);\" unselectable=on>"+bg_ortcal_lang.yesterday+"</td>\n"+
 				"<td class=bg_ortcal_bot>/</td>"+
-				"<td colspan=1 class=bg_ortcal_bot oncontextmenu=\"bg_ortcal_bscal.retMenu(0, 0, this); return false;\" onClick=\"bg_ortcal_bscal.retD(0, 0);\" ondblclick=\"bg_ortcal_bscal.retLink(0, 0);\" unselectable=on>сегодня</td>\n"+
+				"<td colspan=1 class=bg_ortcal_bot oncontextmenu=\"bg_ortcal_bscal.retMenu(0, 0, this); return false;\" onClick=\"bg_ortcal_bscal.retD(0, 0);\" ondblclick=\"bg_ortcal_bscal.retLink(0, 0);\" unselectable=on>"+bg_ortcal_lang.today+"</td>\n"+
 				"<td class=bg_ortcal_bot>/</td>"+
-				"<td colspan=1 class=bg_ortcal_bot oncontextmenu=\"bg_ortcal_bscal.retMenu(0, 1, this); return false;\" onClick=\"bg_ortcal_bscal.retD(0, 1);\" ondblclick=\"bg_ortcal_bscal.retLink(0, 1);\" unselectable=on>завтра</td>\n"+
+				"<td colspan=1 class=bg_ortcal_bot oncontextmenu=\"bg_ortcal_bscal.retMenu(0, 1, this); return false;\" onClick=\"bg_ortcal_bscal.retD(0, 1);\" ondblclick=\"bg_ortcal_bscal.retLink(0, 1);\" unselectable=on>"+bg_ortcal_lang.tomorrow+"</td>\n"+
 				"</tr>\n";
 		res += "</table>";
-		res += "<span style='margin-left:1em;'><input id='weddingID' type='checkbox' onchange='bg_ortcal_bscal.changeWedding();'> Показать дни браковенчаний</span><br>";
-		res += "<p style='margin-left:1em; font-size:80%'><a href='http://hpf.ru.com/'><b>Храм святых благоверных князей Петра и Февронии Муромских в Марьино г. Москвы</b></a>.<br /> © 2014 Все права защищены.</p>";
+		res += "<span style='margin-left:1em;'><input id='weddingID' type='checkbox' onchange='bg_ortcal_bscal.changeWedding();'> "+bg_ortcal_lang.wedding+"</span><br>";
 
 	return res;
 	},

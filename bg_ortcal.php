@@ -4,9 +4,11 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: VBog
-    Version: 0.12.5
+    Version: 0.13.0
     Author URI: http://bogaiskov.ru 
 	License:     GPL2
+	Text Domain: bg_ortcal
+	Domain Path: /languages
 */
 
 /*  Copyright 2017  Vadim Bogaiskov  (email: vadim.bogaiskov@gmail.com)
@@ -36,7 +38,13 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.12.5');
+define('BG_ORTCAL_VERSION', '0.13.0');
+
+// Загрузка интернационализации
+add_action( 'plugins_loaded', 'bg_ortcal_load_textdomain' );
+function bg_ortcal_load_textdomain() {
+  load_plugin_textdomain( 'bg_ortcal', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
+}
 
 // Подключаем дополнительные модули
 include_once('includes/settings.php');
@@ -98,6 +106,61 @@ function bg_ortcal_frontend_scripts () {
 	wp_enqueue_script( 'bg_ortcal_names', plugins_url( 'js/bg_ortcal_names.js' , __FILE__ ), false, BG_ORTCAL_VERSION, true );
 	wp_enqueue_script( 'bg_ortcal_year', plugins_url( 'js/bg_ortcal_year.js' , __FILE__ ), false, BG_ORTCAL_VERSION, true );
 	wp_enqueue_script( 'bg_ortcal_init', plugins_url( 'js/bg_ortcal_init.js' , __FILE__ ), false, BG_ORTCAL_VERSION, true );
+	wp_localize_script( 'bg_ortcal_year', 'bg_ortcal_lang', 
+		array( 
+			'mns' => array(__("Январь", 'bg_ortcal'),__("Февраль", 'bg_ortcal'),__("Март", 'bg_ortcal'),__("Апрель", 'bg_ortcal'),__("Май", 'bg_ortcal'),__("Июнь", 'bg_ortcal'),__("Июль", 'bg_ortcal'),__("Август", 'bg_ortcal'),__("Сентябрь", 'bg_ortcal'),__("Октябрь", 'bg_ortcal'),__("Ноябрь", 'bg_ortcal'),__("Декабрь", 'bg_ortcal')), 
+			'mnr' => array(__("января", 'bg_ortcal'),__("февраля", 'bg_ortcal'),__("марта", 'bg_ortcal'),__("апреля", 'bg_ortcal'),__("мая", 'bg_ortcal'),__("июня", 'bg_ortcal'),__("июля", 'bg_ortcal'),__("августа", 'bg_ortcal'),__("сентября", 'bg_ortcal'),__("октября", 'bg_ortcal'),__("ноября", 'bg_ortcal'),__("декабря", 'bg_ortcal')),
+			'cwd' => array(__("Воскресение", 'bg_ortcal'),__("Понедельник", 'bg_ortcal'),__("Вторник", 'bg_ortcal'),__("Среда", 'bg_ortcal'),__("Четверг", 'bg_ortcal'),__("Пятница", 'bg_ortcal'),__("Суббота", 'bg_ortcal')),
+			'wds' => array(__("Пн", 'bg_ortcal'),__("Вт", 'bg_ortcal'),__("Ср", 'bg_ortcal'),__("Чт", 'bg_ortcal'),__("Пт", 'bg_ortcal'),__("Сб", 'bg_ortcal'),__("Вс", 'bg_ortcal')),
+			'typicon' => array(__("Светлое Христово Воскресение", 'bg_ortcal'),__("Двунадесятый праздник", 'bg_ortcal'),__("Великий праздник", 'bg_ortcal'),__("Средний бденный праздник", 'bg_ortcal'),__("Средний полиелейный праздник", 'bg_ortcal'),__("Малый славословный праздник", 'bg_ortcal'),__("Малый шестиричный праздник", 'bg_ortcal'),__("Вседневный праздник", 'bg_ortcal'),__("Памятная дата", 'bg_ortcal'),__("День особого поминовения усопших", 'bg_ortcal')),
+
+			'post' => __("Постный день", 'bg_ortcal'),
+			'nowedding' => __("Браковенчание не совершается", 'bg_ortcal'),
+			'wedding' => __("Показать дни браковенчаний", 'bg_ortcal'),
+			'help' => __("Если навести мышку на какую-нибудь дату высвечиваются: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, посты и сплошные седмицы.\nЕсли нажать на кнопку мыши на одном из дней текущего года, открывается дополнительное меню.", 'bg_ortcal'),
+			'title' => __("Выберите дату", 'bg_ortcal'),
+			'close' => __("Закрыть", 'bg_ortcal'),
+			'prev' => __("предыдущий год", 'bg_ortcal'),
+			'next' => __("следующий год", 'bg_ortcal'),
+			'yesterday' => __("вчера", 'bg_ortcal'),
+			'today' => __("сегодня", 'bg_ortcal'),
+			'tomorrow' => __("завтра", 'bg_ortcal'),
+
+			'the_title1' => __("Наречение имени по месяцеслову", 'bg_ortcal'),
+			'the_title2' => __("Православный календарь", 'bg_ortcal'),
+			'title1' => __("Наречение имени на 8-й день от рождения", 'bg_ortcal'),
+			'title2' => __("Таинство крещения на", 'bg_ortcal'),
+			'title3' => __("-й день от рождения", 'bg_ortcal'),
+			'prev_day' => __("Предыдущий день", 'bg_ortcal'),
+			'next_day' => __("Следующий день", 'bg_ortcal'),
+			
+			'nedela' => __("Неделя", 'bg_ortcal'),
+			'sedmica' => __("Седмица", 'bg_ortcal'),
+			'po50' => __("-я по Пятидесятнице", 'bg_ortcal'),
+			'posta' => __("-я Великого поста", 'bg_ortcal'),
+			'popasche' => __("-я по Пасхе", 'bg_ortcal'),
+			'n1pred' => __("Неделя о мытаре и фарисее", 'bg_ortcal'),
+			's1pred' => __("Седмица о мытаре и фарисее", 'bg_ortcal'),
+			'n2pred' => __("Неделя о блудном сыне", 'bg_ortcal'),
+			's2pred' => __("Седмица о блудном сыне", 'bg_ortcal'),
+			'n3pred' => __("Неделя мясопустная, о Страшнем суде", 'bg_ortcal'),	
+			's3pred' => __("Сырная седмица (масленица)", 'bg_ortcal'),
+			'n4pred' => __("Неделя сыропустная. Воспоминание Адамова изгнания. Прощеное воскресенье", 'bg_ortcal'),
+			's6post' => __("Седмица 6-я Великого поста (седмица ваий)", 'bg_ortcal'),
+			'n6post' => __("Неделя 6-я Великого поста ваий (цветоносная, Вербное воскресенье)", 'bg_ortcal'),
+			'n7post' => __("Страстная седмица", 'bg_ortcal'),
+			'spascha' => __("Пасхальная (Светлая) седмица", 'bg_ortcal'),
+			's1po50' => __("Седмица 1-я по Пятидесятнице (Троицкая)", 'bg_ortcal'),
+			'bc' => __('в Год Рождества Христова', 'bg_ortcal'),
+			'b_bc' => __('г. до РХ', 'bg_ortcal'),
+			'a_bc' => __('г. от РХ', 'bg_ortcal'),
+			't07' => __('Праздники:', 'bg_ortcal'),
+			't16' => __('Соборы святых:', 'bg_ortcal'),
+			't18' => __('День памяти святых:', 'bg_ortcal'),
+			't19' => __('День памяти исповедников и новомучеников Церкви Русской:', 'bg_ortcal'),
+			't17' => __('День почитания икон Божией Матери:', 'bg_ortcal'),
+		) 
+	);
 }
 function bg_ortcal_js_options () { 
 	global $events;
@@ -202,7 +265,7 @@ function bg_ortcal_callback() {
 // Функция действия перед крючком добавления меню
 function bg_ortcal_add_pages() {
     // Добавим новое подменю в раздел Параметры 
-    add_options_page( 'Православный календарь', 'Православный календарь', 'manage_options', __FILE__, 'bg_ortcal_options_page');
+    add_options_page( __('Православный календарь', 'bg_ortcal'), __('Православный календарь', 'bg_ortcal'), 'manage_options', __FILE__, 'bg_ortcal_options_page');
 }
 /*****************************************************************************************
 	Функции запуска плагина
@@ -212,7 +275,7 @@ function bg_ortcal_add_pages() {
 // Функция обработки шорт-кода ortcal_button
 function bg_ortcal_button($atts) {
 	extract( shortcode_atts( array(
-		'val' => ' Календарь на год '
+		'val' => __('Календарь на год', 'bg_ortcal')
 	), $atts ) );
 
 	$quote = "<button onClick='bg_ortcal_bscal.show();'>".$val."</button>";
@@ -221,10 +284,10 @@ function bg_ortcal_button($atts) {
 // Функция обработки шорт-кода ortcal_year
 function bg_ortcal_year($atts) {
 	extract( shortcode_atts( array(
-		'val' => ' Календарь на год '
+		'val' => __('Календарь на год', 'bg_ortcal')
 	), $atts ) );
 
-	$quote = "<div id='bg_ortcal_year' title='".$val."'><p id='bg_ortcal_loading'>Загрузка календаря ...</p></div>";
+	$quote = "<div id='bg_ortcal_year' title='".$val."'><p id='bg_ortcal_loading'>".__('Загрузка календаря', 'bg_ortcal')." ...</p></div>";
 	return "{$quote}";
 }
 // Функция обработки шорт-кода DayInfo
@@ -263,7 +326,7 @@ function bg_ortcal_DayInfo($atts) {
 // Функция обработки шорт-кода next_day
 function bg_ortcal_nextday($atts) {
 	extract( shortcode_atts( array(
-		'title' => 'Следующий день'	// Подпись на кнопке
+		'title' => __('Следующий день', 'bg_ortcal')	// Подпись на кнопке
 	), $atts ) );
 	
 	if (isset($_GET['date'])) {
@@ -281,7 +344,7 @@ function bg_ortcal_nextday($atts) {
 // Функция обработки шорт-кода prev_day
 function bg_ortcal_prevday($atts) {
 	extract( shortcode_atts( array(
-		'title' => 'Предыдущий день'	// Подпись на кнопке
+		'title' => __('Предыдущий день', 'bg_ortcal')	// Подпись на кнопке
 	), $atts ) );
 	
 	if (isset($_GET['date'])) {
@@ -311,9 +374,9 @@ function bg_ortcal_setDate($atts) {
 function ort_calendar($y=null, $m=null) { 
     $bg_ortcal_page = get_option( "bg_ortcal_page" );
 	if (!$bg_ortcal_page) $bg_ortcal_page = plugins_url( '/' , __FILE__ );
-	$month_names=array("Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"); 
-	$month_names2=array("января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря");
-	$day_name=array("Пн","Вт","Ср","Чт","Пт","Сб","Вс");
+	$month_names=array(__("Январь", 'bg_ortcal'),__("Февраль", 'bg_ortcal'),__("Март", 'bg_ortcal'),__("Апрель", 'bg_ortcal'),__("Май", 'bg_ortcal'),__("Июнь", 'bg_ortcal'),__("Июль", 'bg_ortcal'),__("Август", 'bg_ortcal'),__("Сентябрь", 'bg_ortcal'),__("Октябрь", 'bg_ortcal'),__("Ноябрь", 'bg_ortcal'),__("Декабрь", 'bg_ortcal')); 
+	$month_names2=array(__("января", 'bg_ortcal'),__("февраля", 'bg_ortcal'),__("марта", 'bg_ortcal'),__("апреля", 'bg_ortcal'),__("мая", 'bg_ortcal'),__("июня", 'bg_ortcal'),__("июля", 'bg_ortcal'),__("августа", 'bg_ortcal'),__("сентября", 'bg_ortcal'),__("октября", 'bg_ortcal'),__("ноября", 'bg_ortcal'),__("декабря", 'bg_ortcal'));
+	$day_name=array(__("Пн", 'bg_ortcal'),__("Вт", 'bg_ortcal'),__("Ср", 'bg_ortcal'),__("Чт", 'bg_ortcal'),__("Пт", 'bg_ortcal'),__("Сб", 'bg_ortcal'),__("Вс", 'bg_ortcal'));
 
 	if (isset($_GET['date'])) {
 		if (isset($_GET['date'])) $dd = $_GET["date"];
@@ -346,9 +409,9 @@ function ort_calendar($y=null, $m=null) {
 			  <td colspan=7 align="center"> 
 			   <table width="100%" border=0 cellspacing=0 cellpadding=0> 
 				<tr> 
-				 <td align="left" class="bg_ortcal_arrow" onclick="bg_ortcal_month(this,'.$prev_y.','.$prev_m.');" title="Предыдущий месяц">&lt;&lt;</td> 
-				 <td align="center" class="bg_ortcal_month" style="font-size: 12px;"><span style="cursor: pointer;" onClick="bg_ortcal_bscal.show('. $y .');" title="Календарь на '. $y .' год">'. $month_names[$m-1] .' '. $y .'</span></td> 
-				 <td align="right" class="bg_ortcal_arrow" onclick="bg_ortcal_month(this,'.$next_y.','.$next_m.');" title="Следующий месяц">&gt;&gt;</td> 
+				 <td align="left" class="bg_ortcal_arrow" onclick="bg_ortcal_month(this,'.$prev_y.','.$prev_m.');" title="'.__('Предыдущий месяц', 'bg_ortcal').'">&lt;&lt;</td> 
+				 <td align="center" class="bg_ortcal_month" style="font-size: 12px;"><span style="cursor: pointer;" onClick="bg_ortcal_bscal.show('. $y .');" title="'.__('Календарь на', 'bg_ortcal').' '. $y .' '.__('год', 'bg_ortcal').'">'. $month_names[$m-1] .' '. $y .'</span></td> 
+				 <td align="right" class="bg_ortcal_arrow" onclick="bg_ortcal_month(this,'.$next_y.','.$next_m.');" title="'.__('Следующий месяц', 'bg_ortcal').'">&gt;&gt;</td> 
 				</tr> 
 			   </table> 
 			  </td> 
@@ -365,7 +428,7 @@ function ort_calendar($y=null, $m=null) {
 			if ($d < 1 OR $d > $day_count) {
 				$input .= '  <td align="center" class="bg_ortcal_day">&nbsp;';
 			} else {
-				$info = bg_ortcal_showDayInfo ( $d, $m, $y, 'l, j F Y г. ', '(j F ст.ст.)', 'on', 'on', 'on', 7, 'on', 'off', 'off', 'off', 'off', 'on', 'off', 'off', 'off', 'off' );
+				$info = bg_ortcal_showDayInfo ( $d, $m, $y, __('l, j F Y г. ', 'bg_ortcal'), __('(j F ст.ст.)', 'bg_ortcal'), 'on', 'on', 'on', 7, 'on', 'off', 'off', 'off', 'off', 'on', 'off', 'off', 'off', 'off' );
 				$info = str_replace ( "<br>", "\n", $info );
 				$prop = bg_ortcal_dayProperties ($m, $d, $y);
 				$cur="$y-$m-".sprintf("%02d",$d);
@@ -421,8 +484,8 @@ function bg_ortcal_MonthInfo($atts) {
 	extract( shortcode_atts( array(
 		'month' => '',						// Месяц (по умолчанию - сегодня)
 		'year' => '',						// Год (по умолчанию - сегодня)
-		'date' => 'l, j F Y г. ',			// Формат даты по нов. стилю
-		'old' => '(j F ст.ст.)',			// Формат даты по ст. стилю
+		'date' => __('l, j F Y г. ', 'bg_ortcal'),			// Формат даты по нов. стилю
+		'old' => __('(j F ст.ст.)', 'bg_ortcal'),			// Формат даты по ст. стилю
 		'sedmica' => 'on',					// Седмица
 		'memory' => 'on',					// Памятные дни
 		'honor' => 'on',					// Дни поминовения усопших
@@ -460,7 +523,7 @@ function bg_ortcal_OldStyle($atts) {
 		'day' => '',
 		'month' => '',
 		'year' => '',
-		'old' => 'l, j F Y г. ст.ст.',
+		'old' => __('l, j F Y г. ст.ст.', 'bg_ortcal')
 	), $atts ) );
 			
 	if ($year == '') $year = date('Y');
@@ -522,15 +585,15 @@ function bg_ortcal_DayInfo_all ($atts) {
 		}
 	}
 // ===========================================================================
-	return bg_ortcal_showDayInfo ( $day, $month, $year, 'l, j F Y г. ', '(j F ст.ст.)', 'on', 'on', 'on', 'on', 'on', '<b>Соборы святых:</b><br>', '<b>День памяти святых:</b><br>', '<b>День памяти исповедников и новомучеников Церкви Русской:</b><br>', '<b>День почитания икон Божией Матери:</b><br>', '<hr />', 'on', '<hr /><b>Чтения дня</b><br>', 'on', '<hr />См. также:' );
+	return bg_ortcal_showDayInfo ( $day, $month, $year, __('l, j F Y г. ', 'bg_ortcal'), __('(j F ст.ст.)', 'bg_ortcal'), 'on', 'on', 'on', 'on', 'on', '<b>Соборы святых:</b><br>', '<b>День памяти святых:</b><br>', '<b>День памяти исповедников и новомучеников Церкви Русской:</b><br>', '<b>День почитания икон Божией Матери:</b><br>', '<hr />', 'on', '<hr /><b>Чтения дня</b><br>', 'on', '<hr />См. также:' );
 }
 
 // Функция обработки шорт-кода UpcomingEvents
 function bg_ortcal_UpcomingEvents($atts) {
 	extract( shortcode_atts( array(
 		'numdays' => 14,					// Количество дней поиска ближайших событий
-		'date' => 'j F ',					// Формат даты по нов. стилю
-		'old' => '(j F ст.ст.)',			// Формат даты по ст. стилю
+		'date' => __('j F ', 'bg_ortcal'),					// Формат даты по нов. стилю
+		'old' => __('(j F ст.ст.)', 'bg_ortcal'),			// Формат даты по ст. стилю
 		'sedmica' => 'off',					// Седмица
 		'memory' => 'off',					// Памятные дни
 		'honor' => 'on',					// Дни поминовения усопших
@@ -564,8 +627,8 @@ function bg_ortcal_UpcomingEvents($atts) {
 function bg_ortcal_schedule( $atts, $content=null ) {
 	extract( shortcode_atts( array(
 		'period' => 's',					// Период группировки дней: m - месяц, s - седмица
-		'date' => 'l, j F Y г. ',			// Формат даты по нов. стилю
-		'old' => '(j F ст.ст.)',			// Формат даты по ст. стилю
+		'date' => __('l, j F Y г. ', 'bg_ortcal'),			// Формат даты по нов. стилю
+		'old' => __('(j F ст.ст.)', 'bg_ortcal'),			// Формат даты по ст. стилю
 		'sedmica' => 'nedela',				// Седмица
 		'memory' => 'on',					// Памятные дни
 		'honor' => 'on',					// Дни поминовения усопших
@@ -581,7 +644,7 @@ function bg_ortcal_schedule( $atts, $content=null ) {
 		'links' => 'on',					// Ссылки и цитаты
 		'custom' => 'off',					// Пользовательские ссылки
 	), $atts ) );
-	$rus_month = array('Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь');
+	$rus_month = array(__("Январь", 'bg_ortcal'),__("Февраль", 'bg_ortcal'),__("Март", 'bg_ortcal'),__("Апрель", 'bg_ortcal'),__("Май", 'bg_ortcal'),__("Июнь", 'bg_ortcal'),__("Июль", 'bg_ortcal'),__("Август", 'bg_ortcal'),__("Сентябрь", 'bg_ortcal'),__("Октябрь", 'bg_ortcal'),__("Ноябрь", 'bg_ortcal'),__("Декабрь", 'bg_ortcal')); 
 	$template = '/(\d{1,2}[\/-]\d{1,2}[\/-]\d{2,4})\s+(\d{1,2}:\d{1,2})\s(.*)/ui';
 	preg_match_all($template, $content, $matches, PREG_OFFSET_CAPTURE);
 	$cnt = count($matches[0]);
@@ -604,7 +667,7 @@ function bg_ortcal_schedule( $atts, $content=null ) {
 			$wd = (int) date("w", $time);
 			list($year, $month, $day) = explode("-", $the_date);
 			if ($period == 'm' && $prev_month != $the_month) {
-				$content .= "<tr><td colspan='2' class='bg_ortcal_week'>".$rus_month [$month-1]." ".$year." г.</td></tr>";
+				$content .= "<tr><td colspan='2' class='bg_ortcal_week'>".$rus_month [$month-1]." ".$year." ".__('г.', 'bg_ortcal')."</td></tr>";
 				$prev_month = $the_month;
 			}
 			else if ($period == 's' && $prev_week != $the_week) {
@@ -683,13 +746,13 @@ function bg_ortcal_options_ini () {
 	add_option('bg_ortcal_todayBgColor', "#335AAB");
 	add_option('bg_ortcal_weddingColor', "#335AAB");
 	add_option('bg_ortcal_Zindex', "10000");
-	add_option('bg_ortcal_popmenu1', "Официальный календарь РПЦ");
-	add_option('bg_ortcal_popmenu2', "Календарь на Православие.Ru");
-	add_option('bg_ortcal_popmenu3', "Богослужебные указания");
-	add_option('bg_ortcal_popmenu4', "Календарь на Азбука веры");
-	add_option('bg_ortcal_popmenu101', "Этот день в календаре (страница)");
-	add_option('bg_ortcal_popmenu1001', "Этот день в календаре (окно)");
-	add_option('bg_ortcal_popmenu1002', "Выбор имени по Месяцеслову");
+	add_option('bg_ortcal_popmenu1', __("Официальный календарь РПЦ", 'bg_ortcal'));
+	add_option('bg_ortcal_popmenu2', __("Календарь на Православие.Ru", 'bg_ortcal'));
+	add_option('bg_ortcal_popmenu3', __("Богослужебные указания", 'bg_ortcal'));
+	add_option('bg_ortcal_popmenu4', __("Календарь на Азбука веры", 'bg_ortcal'));
+	add_option('bg_ortcal_popmenu101', __("Этот день в календаре (страница)", 'bg_ortcal'));
+	add_option('bg_ortcal_popmenu1001', __("Этот день в календаре (окно)", 'bg_ortcal'));
+	add_option('bg_ortcal_popmenu1002', __("Выбор имени по Месяцеслову", 'bg_ortcal'));
 	add_option('bg_ortcal_dblClick', "2");
 	add_option('bg_ortcal_page', "");
 	add_option('bg_ortcal_customXML', "");
