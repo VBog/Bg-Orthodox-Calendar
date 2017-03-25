@@ -238,13 +238,13 @@
 // Седмица
 			var d = new Date (bg_ortcal_bscal.curY, m-1, c);
 			var t = bg_ortcal_Sedmica(d);
-			if (t !="") el.title = t + ".,\n" + el.title;
+			if (t !="") el.title = t + ",\n" + el.title;
 
 // Дата по старому стилю			
 			var od = new Date(0);
 			d.setFullYear(bg_ortcal_bscal.curY);
 			bg_ortcal_OldStyle(od, d);
-			el.title = d.getDate()+bg_ortcal_bscal.mnr[d.getMonth()]+" ("+od.getDate()+bg_ortcal_bscal.mnr[od.getMonth()]+" ст.ст.),\n" + el.title;
+			el.title = d.getDate()+" "+bg_ortcal_bscal.mnr[d.getMonth()]+" ("+od.getDate()+" "+bg_ortcal_bscal.mnr[od.getMonth()]+" "+bg_ortcal_lang.oldstyle+"),\n" + el.title;
 			
 			x++; if (x>7){x=1;y++;}
          }

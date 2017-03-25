@@ -175,8 +175,11 @@ function bg_ortcal_load_xml() {
 		$events = false;
 		$only_customXML = get_option( "bg_ortcal_only_customXML" );
 	// Загружаем в память базу данных событий из XML
-		if ($only_customXML != "on") {	
-			$plugins_dir = dirname(dirname(__FILE__)) . '/MemoryDays.xml';
+		if ($only_customXML != "on") {
+			$locale = get_locale();
+			$plugins_dir = dirname(dirname(__FILE__)) . '/MemoryDays-'.$locale.'.xml';
+			if (!file_exists($plugins_dir))
+				$plugins_dir = dirname(dirname(__FILE__)) . '/MemoryDays.xml';
 			$xml = ortcal_getXML($plugins_dir);
 			if ($xml) $events = bg_ortcal_events_array($xml["event"]);
 		}
@@ -829,7 +832,7 @@ function bg_ortcal_showDayInfo (
 					if ($qq[200+$type+2] != "") $q .= '<em> '.__('На утр.:', 'bg_ortcal').' - </em>'.$qq[200+$type+2]."<br>";			
 
 					if (($qq[200+$type+4] != "") || ($qq[200+$type+7] != "")) {
-						$q .= '<em> '.__('На Лит.:', 'bg_ortcal').' - </em>';
+						$q .= '<em> '.__('На лит.:', 'bg_ortcal').' - </em>';
 						if ($qq[200+$type+4] != "") $q .= '<em> '.__('Ап.:', 'bg_ortcal').' </em>'.$qq[200+$type+4];			
 						if ($qq[200+$type+7] != "") $q .= '<em> '.__('Ев.:', 'bg_ortcal').' </em>'.$qq[200+$type+7];
 						$q .= "<br>";

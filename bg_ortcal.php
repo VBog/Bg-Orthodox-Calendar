@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: VBog
-    Version: 0.13.0
+    Version: 0.13.1
     Author URI: http://bogaiskov.ru 
 	License:     GPL2
 	Text Domain: bg_ortcal
@@ -38,7 +38,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.13.0');
+define('BG_ORTCAL_VERSION', '0.13.1');
 
 // Загрузка интернационализации
 add_action( 'plugins_loaded', 'bg_ortcal_load_textdomain' );
@@ -125,12 +125,14 @@ function bg_ortcal_frontend_scripts () {
 			'yesterday' => __("вчера", 'bg_ortcal'),
 			'today' => __("сегодня", 'bg_ortcal'),
 			'tomorrow' => __("завтра", 'bg_ortcal'),
+			'oldstyle' => __("ст.ст.", 'bg_ortcal'),
 
 			'the_title1' => __("Наречение имени по месяцеслову", 'bg_ortcal'),
 			'the_title2' => __("Православный календарь", 'bg_ortcal'),
-			'title1' => __("Наречение имени на 8-й день от рождения", 'bg_ortcal'),
-			'title2' => __("Таинство крещения на", 'bg_ortcal'),
-			'title3' => __("-й день от рождения", 'bg_ortcal'),
+			'title1' => __("День рождения", 'bg_ortcal'),
+			'title2' => __("Наречение имени на 8-й день от рождения", 'bg_ortcal'),
+			'title3' => __("Таинство крещения на", 'bg_ortcal'),
+			'title3a' => __("-й день от рождения", 'bg_ortcal'),
 			'prev_day' => __("Предыдущий день", 'bg_ortcal'),
 			'next_day' => __("Следующий день", 'bg_ortcal'),
 			
@@ -148,7 +150,7 @@ function bg_ortcal_frontend_scripts () {
 			'n4pred' => __("Неделя сыропустная. Воспоминание Адамова изгнания. Прощеное воскресенье", 'bg_ortcal'),
 			's6post' => __("Седмица 6-я Великого поста (седмица ваий)", 'bg_ortcal'),
 			'n6post' => __("Неделя 6-я Великого поста ваий (цветоносная, Вербное воскресенье)", 'bg_ortcal'),
-			'n7post' => __("Страстная седмица", 'bg_ortcal'),
+			's7post' => __("Страстная седмица", 'bg_ortcal'),
 			'spascha' => __("Пасхальная (Светлая) седмица", 'bg_ortcal'),
 			's1po50' => __("Седмица 1-я по Пятидесятнице (Троицкая)", 'bg_ortcal'),
 			'bc' => __('в Год Рождества Христова', 'bg_ortcal'),
@@ -296,8 +298,8 @@ function bg_ortcal_DayInfo($atts) {
 		'day' => '',						// День (по умолчанию - сегодня)
 		'month' => '',						// Месяц (по умолчанию - сегодня)
 		'year' => '',						// Год (по умолчанию - сегодня)
-		'date' => 'l, j F Y г. ',			// Формат даты по нов. стилю
-		'old' => '(j F ст.ст.)',			// Формат даты по ст. стилю
+		'date' => __('l, j F Y г. ', 'bg_ortcal'),			// Формат даты по нов. стилю
+		'old' => __('(j F ст.ст.)', 'bg_ortcal'),			// Формат даты по ст. стилю
 		'sedmica' => 'on',					// Седмица
 		'memory' => 'on',					// Памятные дни
 		'honor' => 'on',					// Дни поминовения усопших
