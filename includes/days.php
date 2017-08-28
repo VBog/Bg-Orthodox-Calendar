@@ -956,7 +956,7 @@ function ortcal_liturgyReadins ($qq, $qq1, $wd) {
 			if ($qq[207] != "") $q .= '<em> '.__('Ев.:', 'bg_ortcal').' </em>'.$qq[207];
 			$q .= "<em> ".__('Под зач.:', 'bg_ortcal')." </em>";	// Чтения праздника "под зачало"
 		}
-		$q .= "<em><strong>Праздник:', 'bg_ortcal').'</strong></em> ";
+		$q .= "<em><strong>".__('Праздник:', 'bg_ortcal')."</strong></em> ";
 		if ($qq[224] != "") $q .= '<em> '.__('Ап.:', 'bg_ortcal').' </em>'.$qq[224];
 		if ($qq[227] != "") $q .= '<em> '.__('Ев.:', 'bg_ortcal').' </em>'.$qq[227];
 	}
