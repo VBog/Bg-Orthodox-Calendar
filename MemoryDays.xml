@@ -6441,10 +6441,58 @@
 		<type>9</type>
 	</event>
 	<event>
-		<s_month>-2</s_month>
-		<s_date>-1</s_date>
+		<s_month>-3</s_month>
+		<s_date>6</s_date>
 		<f_month>10</f_month>
-		<f_date>26</f_date>
+		<f_date>25</f_date>
+		<name>Димитриевская родительская суббота</name>
+		<type>9</type>
+	</event>
+	<event>
+		<s_month>-3</s_month>
+		<s_date>6</s_date>
+		<f_month>10</f_month>
+		<f_date>24</f_date>
+		<name>Димитриевская родительская суббота</name>
+		<type>9</type>
+	</event>
+	<event>
+		<s_month>-3</s_month>
+		<s_date>6</s_date>
+		<f_month>10</f_month>
+		<f_date>23</f_date>
+		<name>Димитриевская родительская суббота</name>
+		<type>9</type>
+	</event>
+	<event>
+		<s_month>-3</s_month>
+		<s_date>6</s_date>
+		<f_month>10</f_month>
+		<f_date>15</f_date>
+		<name>Димитриевская родительская суббота (перенесена с 22 октября по ст.ст.)</name>
+		<type>9</type>
+	</event>
+	<event>
+		<s_month>-3</s_month>
+		<s_date>6</s_date>
+		<f_month>10</f_month>
+		<f_date>21</f_date>
+		<name>Димитриевская родительская суббота</name>
+		<type>9</type>
+	</event>
+	<event>
+		<s_month>-3</s_month>
+		<s_date>6</s_date>
+		<f_month>10</f_month>
+		<f_date>20</f_date>
+		<name>Димитриевская родительская суббота</name>
+		<type>9</type>
+	</event>
+	<event>
+		<s_month>-3</s_month>
+		<s_date>6</s_date>
+		<f_month>10</f_month>
+		<f_date>19</f_date>
 		<name>Димитриевская родительская суббота</name>
 		<type>9</type>
 	</event>
