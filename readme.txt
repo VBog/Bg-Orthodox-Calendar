@@ -1,27 +1,16 @@
 ﻿=== Bg Orthodox Calendar ===
-
 Contributors: VBog
-
 Donate link: http://bogaiskov.ru/about-me/donate/
-
 Tags: calendar, orthodoxy, christianity, календарь, православие, христианство, месяцеслов, именины, браковенчание, ορθοδοξία, χριστιανισμός
-
 Requires at least: 3.0.1
-
-Tested up to: 4.7.2
-
+Tested up to: 4.8.2
 Stable tag: trunk
-
 License: GPLv2
-
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
 
 Orthodox calendar on your site.
 
-
 == Description ==
-
 Plugin allows you to display the window with the Orthodox calendar.
 
 Details in Russian only:
@@ -248,6 +237,10 @@ https://bogaiskov.ru/ortcal/?date=2015-10-31,
 3. Страница календаря на год (месяц, день).
 
 == Changelog ==
+
+= 0.13.4 =
+
+* Исправлены некоторые баги.
 
 = 0.13.3 =
 

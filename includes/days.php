@@ -457,14 +457,15 @@ function bg_ortcal_dayEvents($month, $day, $year){
 // Функция возвращает свойства дня
 *******************************************************************************/  
 function bg_ortcal_dayProperties ($month, $day, $year){
-	$res = 7;							// Самый обычный день
+	$res = 777;							// Самый обычный день
 	$post = 0;							// Нет поста
 	$e = bg_ortcal_dayEvents($month, $day, $year);
 	$cnt = count($e);
 	for ($i=0; $i < $cnt; $i++) {
-		if (($e[$i]['type'] <= 2 OR $e[$i]['type'] == 9)  AND $e[$i]['type'] < $res) $res = $e[$i]['type'];	
+		if (($e[$i]['type'] <= 2 OR $e[$i]['type'] == 9) AND $e[$i]['type'] < $res) $res = $e[$i]['type'];	
 		if ($e[$i]['type'] == 10) $post = 10;
 	}
+	if ($res == 777) $res = 7;
 	return $res+$post;
 }
 /*******************************************************************************
