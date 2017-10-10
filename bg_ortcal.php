@@ -339,7 +339,7 @@ function bg_ortcal_nextday($atts) {
 		$d = date ("U", mktime ( 0, 0, 0 ));
 	}
 	$selected = date('?\d\a\t\e=Y-m-d', ortcal_add_days($d, 1));
-	$input = '<a class="bg_ortcal_nextday" href="'. get_page_link( ) . $selected. '" title="'.$title.'">'.$title.'</a>'; 
+	$input = '<a class="bg_ortcal_nextday" href="'. get_page_link( ) . $selected. '" title="'.$title.'" rel="nofollow">'.$title.'</a>'; 
 	return "{$input}"; 
 	
 }
@@ -357,7 +357,7 @@ function bg_ortcal_prevday($atts) {
 		$d = date ("U", mktime ( 0, 0, 0 ));
 	}
 	$selected = date('?\d\a\t\e=Y-m-d', ortcal_add_days($d, (-1)));
-	$input = '<a class="bg_ortcal_prevday" href="'. get_page_link( ) . $selected. '" title="'.$title.'">'.$title.'</a>'; 
+	$input = '<a class="bg_ortcal_prevday" href="'. get_page_link( ) . $selected. '" title="'.$title.'" rel="nofollow">'.$title.'</a>'; 
 	return "{$input}"; 
 	
 }
@@ -446,14 +446,14 @@ function ort_calendar($y=null, $m=null) {
 						$input .= '  <td align="center" class="bg_ortcal_holidays">';
 						break;
 					case 9:
-						$input .= '  <td align="center" class="bg_ortcal_memory">';
+						$input .= '  <td align="center" class="bg_ortcal_commemoration">';
 						break;
 					case 11:
 					case 12:
 						$input .= '  <td align="center" class="bg_ortcal_post_holidays">';
 						break;
 					case 19:
-						$input .= '  <td align="center" class="bg_ortcal_post_memory">';
+						$input .= '  <td align="center" class="bg_ortcal_post_commemoration">';
 						break;
 					default:
 						if ($prop > 10) {
