@@ -881,10 +881,10 @@ function bg_ortcal_showDayInfo (
 				if ($readings!='on' && $readings != 'N') $qtitle = htmlspecialchars_decode($readings);
 			}
 // Если подключен плагин Bg Bible References, то допускается расширенное представление Чтений
-			if (function_exists ('bg_bibrefs_convertTitles') && $links != 'off') { // Bg Bible References версии выше 3.11 
+			if (function_exists ('bg_bibrefs_convertTitles')) { // Bg Bible References версии выше 3.11 
 				$q = bg_bibrefs_convertTitles($q, $links); // Преобразуем заголовки и подсвечиваем ссылки или выводим на экран текст Священного Писания
 			}
-			else if (function_exists ('bg_bibfers_convertTitles') && $links != 'off') { // Bg Bible References до версии 3.10 
+			else if (function_exists ('bg_bibfers_convertTitles')) { // Bg Bible References до версии 3.10 
 				$q = bg_bibfers_convertTitles($q, $links); // Преобразуем заголовки и подсвечиваем ссылки или выводим на экран текст Священного Писания
 			}
 			if ($q) $quote .= $qtitle.'<span class="bg_ortcal_readings">'.$q.'</span><br>';
