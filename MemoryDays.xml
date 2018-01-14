@@ -162,7 +162,7 @@
 	</event>
 	<event>
 		<s_month>-4</s_month>
-		<s_date>7</s_date>
+		<s_date>0</s_date>
 		<f_month>1</f_month>
 		<f_date>25</f_date>
 		<name>Собор новомучеников и исповедников Церкви Русской</name>
@@ -6426,7 +6426,7 @@
 	</event>
 	<event>
 		<s_month>-4</s_month>
-		<s_date>7</s_date>
+		<s_date>0</s_date>
 		<f_month>1</f_month>
 		<f_date>25</f_date>
 		<name>Поминовение всех усопших, пострадавших в годину гонений за веру Христову</name>
@@ -14690,7 +14690,7 @@
 	</event>
 	<event>
 		<s_month>-4</s_month>
-		<s_date>7</s_date>
+		<s_date>0</s_date>
 		<f_month>8</f_month>
 		<f_date>31</f_date>
 		<name>Собор Саратовских святых</name>
@@ -22373,7 +22373,7 @@
 		<s_date>50</s_date>
 		<f_month>0</f_month>
 		<f_date>50</f_date>
-		<name>Еф.5:9-19</name>
+		<name>Еф.5:8-19</name>
 		<type>204</type>
 	</event>
 	<event>
@@ -23805,7 +23805,7 @@
 		<s_date>229</s_date>
 		<f_month>0</f_month>
 		<f_date>229</f_date>
-		<name>1 Тим.4:4-8:16</name>
+		<name>1 Тим.4:4-8,16</name>
 		<type>204</type>
 	</event>
 	<event>
@@ -27977,7 +27977,7 @@
 		<s_date>21</s_date>
 		<f_month>11</f_month>
 		<f_date>21</f_date>
-		<name>Лк.1:39-49:56</name>
+		<name>Лк.1:39-49,56</name>
 		<type>222</type>
 		<discription>Введение</discription>
 	</event>

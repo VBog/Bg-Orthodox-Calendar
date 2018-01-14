@@ -98,8 +98,8 @@ function bg_ortcal_Sedmica (d) {											// d - текущая дата
 }
 function bg_ortcal_getLink(d, type) {
 	var omonth, odate, l = "";
-	var od= new Date();
-	var now = new Date();
+	var od= new Date(0);
+	var now = new Date(0);
 	var mon = new Array("jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec");
 
 	bg_ortcal_OldStyle(od, d);
@@ -204,6 +204,7 @@ function bg_ortcal_memory_days(year) {
 					if (s_month == -3 && we != s_date) continue;	// Если праздник не совпадает с указанным днем недели, то не отмечается
 					sd.setDate(sd.getDate()+wd);
 					fd.setTime(sd.getTime());
+					if (s_month == -4) f_date = f_date +3;
 				}
 				else {
 					if (s_month == 0) {						// Переходящие даты

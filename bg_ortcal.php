@@ -4,7 +4,7 @@
     Plugin URI: http://bogaiskov.ru/plugin-orthodox-calendar/
     Description: Плагин выводит на экран православный календарь: дата по старому стилю, праздники по типикону (от двунадесятых до вседневных), памятные даты, дни поминовения усопших, дни почитания икон, посты и сплошные седмицы. 
     Author: VBog
-    Version: 0.13.5
+    Version: 0.13.7
     Author URI: http://bogaiskov.ru 
 	License:     GPL2
 	Text Domain: bg_ortcal
@@ -38,7 +38,7 @@ if ( !defined('ABSPATH') ) {
 	die( 'Sorry, you are not allowed to access this page directly.' ); 
 }
 
-define('BG_ORTCAL_VERSION', '0.13.5');
+define('BG_ORTCAL_VERSION', '0.13.7');
 
 // Загрузка интернационализации
 add_action( 'plugins_loaded', 'bg_ortcal_load_textdomain' );
@@ -106,6 +106,8 @@ function bg_ortcal_frontend_scripts () {
 	wp_enqueue_script( 'bg_ortcal_names', plugins_url( 'js/bg_ortcal_names.js' , __FILE__ ), false, BG_ORTCAL_VERSION, true );
 	wp_enqueue_script( 'bg_ortcal_year', plugins_url( 'js/bg_ortcal_year.js' , __FILE__ ), false, BG_ORTCAL_VERSION, true );
 	wp_enqueue_script( 'bg_ortcal_init', plugins_url( 'js/bg_ortcal_init.js' , __FILE__ ), false, BG_ORTCAL_VERSION, true );
+	$ajaxurl = admin_url('admin-ajax.php');
+	wp_localize_script( 'bg_ortcal_init', 'bg_ortcal', array( 'ajaxurl' => $ajaxurl ) );
 	wp_localize_script( 'bg_ortcal_year', 'bg_ortcal_lang', 
 		array( 
 			'mns' => array(__("Январь", 'bg_ortcal'),__("Февраль", 'bg_ortcal'),__("Март", 'bg_ortcal'),__("Апрель", 'bg_ortcal'),__("Май", 'bg_ortcal'),__("Июнь", 'bg_ortcal'),__("Июль", 'bg_ortcal'),__("Август", 'bg_ortcal'),__("Сентябрь", 'bg_ortcal'),__("Октябрь", 'bg_ortcal'),__("Ноябрь", 'bg_ortcal'),__("Декабрь", 'bg_ortcal')), 

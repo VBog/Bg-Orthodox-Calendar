@@ -9,7 +9,7 @@ function bg_ortcal_loadXML(){
 			type: 'GET',
 			async: true,
 			dataType: 'json',
-			url: '/wp-admin/admin-ajax.php?load=Y',	// Запрос загрузки данных
+			url: bg_ortcal.ajaxurl+'?load=Y',	// Запрос загрузки данных
 			data: {
 				action: 'bg_ortcal'
 			},
@@ -29,7 +29,7 @@ function bg_ortcal_month(ee, y, m) {
 		type: 'GET',
 		async: true,
 		dataType: 'html',
-		url: '/wp-admin/admin-ajax.php?year='+y+'&month='+m,	// Запрос загрузки данных
+		url: bg_ortcal.ajaxurl+'?year='+y+'&month='+m,	// Запрос загрузки данных
 		data: {
 				action: 'bg_ortcal'
 		},

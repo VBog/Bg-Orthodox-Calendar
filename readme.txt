@@ -3,7 +3,7 @@ Contributors: VBog
 Donate link: http://bogaiskov.ru/about-me/donate/
 Tags: calendar, orthodoxy, christianity, календарь, православие, христианство, месяцеслов, именины, браковенчание, ορθοδοξία, χριστιανισμός
 Requires at least: 3.0.1
-Tested up to: 4.8.2
+Tested up to: 4.9.1
 Stable tag: trunk
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -238,11 +238,7 @@ https://bogaiskov.ru/ortcal/?date=2015-10-31,
 
 == Changelog ==
 
-= 0.13.5 =
-
-* Незначительные изменения.
-
-= 0.13.4 =
+= 0.13.4-7 =
 
 * Исправлены некоторые баги.
 
